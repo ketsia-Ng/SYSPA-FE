@@ -1,0 +1,67 @@
+<div class="layout-topbar">
+
+    <a id="layout-menubutton" href="#" class="layout-menubutton" (click)="app.onMenuButtonClick($event)">
+        <div class="layout-menubutton-icon"></div>
+    </a>
+
+    <div class="layout-topbar-grid">
+        <div class="layout-topbar-grid-column layout-topbar-grid-column-fixed">
+            <a href="#" class="layout-logo">
+                <img src="assets/layout/images/logo-white.svg" alt="sapphire-layout" />
+            </a>
+        </div>
+
+        <div class="layout-topbar-grid-column">
+            <app-menu [reset]="app.resetMenu"></app-menu>
+        </div>
+
+        <div class="layout-topbar-grid-column layout-topbar-grid-column-fixed">
+            <span class="layout-topbar-search">
+                <span class="md-inputfield">
+                    <input type="text" pInputText />
+                    <label>Search</label>
+                    <i class="material-icons">search</i>
+                </span>
+            </span>
+        </div>
+
+        <div class="layout-topbar-grid-column layout-topbar-grid-column-fixed">
+            <a id="profile-menu-button" href="#" class="profile-menu-button" (click)="app.onTopbarUserMenuButtonClick($event)">
+                <img src="assets/layout/images/avatar.png" alt="sapphire-layout" />
+            </a>
+        </div>
+    </div>
+
+    <ul id="layout-profile-menu" class="layout-profile-menu fadeInDown" [ngClass]="{'layout-profile-menu-active': app.topbarUserMenuActive}">
+        <li class="layout-profile-menu-search">
+            <span class="md-inputfield">
+                <input type="text" pInputText />
+                <label>Search</label>
+            </span>
+        </li>
+        <li role="menuitem">
+            <a href="#" class="ripplelink">
+                <i class="material-icons">account_circle</i>
+                <span>Profile</span>
+            </a>
+        </li>
+        <li role="menuitem">
+            <a href="#" class="ripplelink">
+                <i class="material-icons">inbox</i>
+                <span>Inbox</span>
+            </a>
+        </li>
+        <li role="menuitem">
+            <a href="#" class="ripplelink">
+                <i class="material-icons">settings</i>
+                <span>Settings</span>
+            </a>
+        </li>
+        <li role="menuitem">
+            <a href="#" class="ripplelink">
+                <i class="material-icons">cancel</i>
+                <span>Logout</span>
+            </a>
+        </li>
+    </ul>
+</div>
