@@ -6,7 +6,7 @@ body {
             li {
                 a {
                     color: #ffffff;
-                    font-size: $inputHeaderFontSize;
+                    font-size: $iconFontSize;
                 }
             }
         }
@@ -30,7 +30,7 @@ body {
 
                 .ui-steps-number {
                     display: inline-block;
-                    background-color: $grayBgColor;
+                    background-color: #757575;
                     @include border-radius(50%);
                     font-size: 1em;
                     color: #ffffff;
@@ -98,7 +98,7 @@ body {
             @include hover-element();
         }
         .ui-menuitem-text {
-          vertical-align: middle;
+            vertical-align: middle;
         }
         .ui-menuitem-icon {
             color: #757575;
@@ -111,7 +111,7 @@ body {
             padding: .5em 0;
 
             .ui-menuitem {
-              margin: 0;
+                margin: 0;
             }
         }
     }
@@ -125,7 +125,7 @@ body {
 
             .ui-menuitem-link {
                 .ui-menuitem-icon {
-                  vertical-align: middle;
+                    vertical-align: middle;
                 }
             }
         }
@@ -147,28 +147,28 @@ body {
 
         .ui-menubar-root-list {
             &>.ui-menuitem>.ui-menuitem-link {
-              padding: .625em 1em;
+                padding: .625em 1em;
             }
         }
 
         .ui-menuitem {
             .ui-menuitem-link {
-              .ui-menuitem-icon {
-                vertical-align: middle;
-              }
+                .ui-menuitem-icon {
+                    vertical-align: middle;
+                }
 
-              .ui-submenu-icon {
-                vertical-align: middle;
-              }
+                .ui-submenu-icon {
+                    vertical-align: middle;
+                }
             }
             &.ui-menuitem-active {
-              > .ui-menuitem-link {
-                @include hover-element;
+                > .ui-menuitem-link {
+                    @include hover-element;
 
-                .ui-menuitem-icon {
-                  vertical-align: middle;
+                    .ui-menuitem-icon {
+                        vertical-align: middle;
+                    }
                 }
-              }
             }
         }
     }
@@ -180,12 +180,12 @@ body {
 
             .ui-menuitem-link {
                 .ui-menuitem-icon {
-                  vertical-align: middle;
+                    vertical-align: middle;
                 }
             }
             &.ui-menuitem-active {
                 > .ui-menuitem-link {
-                  @include hover-element;
+                    @include hover-element;
                 }
             }
         }
@@ -199,13 +199,13 @@ body {
 
             .ui-menuitem-link {
                 .ui-menuitem-icon {
-                  vertical-align: middle;
+                    vertical-align: middle;
                 }
             }
 
             &.ui-menuitem-active {
                 > .ui-menuitem-link {
-                  @include hover-element;
+                    @include hover-element;
                 }
             }
         }
@@ -220,7 +220,7 @@ body {
             border: 0 none;
 
             &:hover {
-              background-color: darken($primaryColor, 10%);
+                background-color: darken($primaryColor, 10%);
             }
         }
     }
@@ -232,12 +232,12 @@ body {
 
             .ui-menuitem-link {
                 .ui-menuitem-icon {
-                  vertical-align: middle;
+                    vertical-align: middle;
                 }
             }
             &.ui-menuitem-active {
                 > .ui-menuitem-link {
-                  @include hover-element;
+                    @include hover-element;
                 }
             }
         }
@@ -247,7 +247,7 @@ body {
         padding: 0;
 
         .ui-megamenu-panel {
-          padding: .5em 0;
+            padding: .5em 0;
         }
 
         .ui-megamenu-submenu-header {
@@ -260,7 +260,7 @@ body {
             border: 0 none;
 
             .ui-menuitem {
-              margin: 0;
+                margin: 0;
             }
         }
 
@@ -269,93 +269,93 @@ body {
 
             .ui-menuitem-link {
                 .ui-menuitem-icon {
-                  vertical-align: middle;
+                    vertical-align: middle;
                 }
 
                 .ui-submenu-icon {
-                  vertical-align: middle;
+                    vertical-align: middle;
                 }
             }
 
             &.ui-menuitem-active {
                 > .ui-menuitem-link {
-                  @include hover-element;
+                    @include hover-element;
                 }
             }
         }
     }
 
     .ui-tabmenu {
-         padding: 0;
+        padding: 0;
 
-         .ui-tabmenu-nav {
-             padding: 0;
-             background-color: #ffffff;
-             border: 0 none;
-             @include border-radius(0);
+        .ui-tabmenu-nav {
+            padding: 0;
+            background-color: #ffffff;
+            border: 0 none;
+            @include border-radius(0);
 
-             > .ui-tabmenuitem {
-               top: auto;
-               margin: 0 .25em 0 0;
-               padding: 0;
-               border-style: solid;
-               border-width: 0 0 2px 0;
-               @include transition(border-color .3s);
+            > .ui-tabmenuitem {
+                top: auto;
+                margin: 0 .25em 0 0;
+                padding: 0;
+                border-style: solid;
+                border-width: 0 0 2px 0;
+                @include transition(border-color .3s);
 
-               > a {
-                   padding: $headerPadding;
+                > a {
+                    padding: $headerPadding;
 
-                   &:focus {
-                       outline: 0 none;
-                   }
+                    &:focus {
+                        outline: 0 none;
+                    }
 
-                   .ui-menuitem-icon, .ui-menuitem-text {
-                       float: none;
-                       display: inline-block;
-                       vertical-align: middle;
-                   }
+                    .ui-menuitem-icon, .ui-menuitem-text {
+                        float: none;
+                        display: inline-block;
+                        vertical-align: middle;
+                    }
 
-                   .ui-menuitem-icon {
-                       font-weight: 1em;
-                       margin-right: .25em;
-                   }
-               }
+                    .ui-menuitem-icon {
+                        font-weight: 1em;
+                        margin-right: .25em;
+                    }
+                }
 
-               &.ui-state-default {
-                   a {
-                       color: $textSecondaryColor;
+                &.ui-state-default {
+                    a {
+                        color: $textSecondaryColor;
 
-                       .pi {
-                           color: $textSecondaryColor;
-                       }
-                   }
-               }
+                        .pi {
+                            color: $textSecondaryColor;
+                        }
+                    }
+                }
 
-               &:not(.ui-state-active):hover {
-                   background-color: #ffffff;
-               }
+                &:not(.ui-state-active):hover {
+                    background-color: #ffffff;
+                }
 
-               &.ui-state-active {
-                   background-color: #ffffff;
-                   border-color: $accentColor;
-                   border-style: solid;
+                &.ui-state-active {
+                    background-color: #ffffff;
+                    border-color: $accentColor;
+                    border-style: solid;
 
-                   a {
-                       color: $primaryColor;
+                    a {
+                        color: $primaryColor;
 
-                       .pi {
-                           color: $primaryColor;
-                       }
-                   }
-               }
-           }
+                        .pi {
+                            color: $primaryColor;
+                        }
+                    }
+                }
+            }
         }
     }
 
     .ui-panelmenu {
 
         span {
-          vertical-align: middle;
+            vertical-align: middle;
         }
         .ui-panelmenu-header {
             background-color: $primaryColor;

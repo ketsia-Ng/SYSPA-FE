@@ -7,7 +7,7 @@
                 <a [routerLink]="item.routerLink" *ngIf="item.routerLink">{{item.label}}</a>
                 <ng-container *ngIf="!item.routerLink">{{item.label}}</ng-container>
             </li>
-            <li *ngIf="!last">/</li>
+            <li *ngIf="!last"><i class="material-icons">chevron_right</i></li>
         </ng-template>
     </ul>
 </div>

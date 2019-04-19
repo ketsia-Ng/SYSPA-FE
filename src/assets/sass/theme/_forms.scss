@@ -7,7 +7,7 @@ body {
         transition: background-size 0.3s cubic-bezier(0.64, 0.09, 0.08, 1);
         border-width: 0;
         padding: 2px;
-        //font-size: $inputFontSize;
+        font-size: $fontSize;
         @include border-radius(0px);
 
         &:focus,
@@ -29,7 +29,7 @@ body {
         }
 
         &.ui-state-error {
-            //border-color: $invalidInputBorderColor;
+            border-color: $inputInvalidBorderColor;
         }
     }
 
@@ -45,34 +45,34 @@ body {
         position:relative;
 
         > label {
-          color:#999;
-          font-weight:normal;
-          position:absolute;
-          pointer-events:none;
-          left:5px;
-          top:1px;
-          transition: 0.3s ease all;
-          -moz-transition: 0.3s ease all;
-          -webkit-transition: 0.3s ease all;
+            color:#999;
+            font-weight:normal;
+            position:absolute;
+            pointer-events:none;
+            left:5px;
+            top:1px;
+            transition: 0.3s ease all;
+            -moz-transition: 0.3s ease all;
+            -webkit-transition: 0.3s ease all;
         }
 
         input:focus ~ label,
         input.ui-state-filled ~ label,
         .ui-inputwrapper-focus ~ label,
         .ui-inputwrapper-filled ~ label {
-          top:-20px;
-          font-size:12px;
-          color:$primaryColor;
+            top:-20px;
+            font-size:12px;
+            color:$primaryColor;
         }
 
         .input:-webkit-autofill ~ label {
-          top:-20px;
-          font-size:12px;
-          color:$primaryColor;
+            top:-20px;
+            font-size:12px;
+            color:$primaryColor;
         }
 
         input.ng-dirty.ng-invalid ~ label {
-            //color: $invalidInputLabelColor;
+            color: $inputErrorTextColor;
         }
 
         .ui-message {
@@ -80,7 +80,7 @@ body {
                 background-color: transparent;
                 border: 0 none;
                 margin: 0px;
-                //color: $invalidInputLabelColor;
+                color: $inputErrorTextColor;
                 font-size: .75em;
             }
         }
@@ -114,11 +114,11 @@ body {
             input.ui-state-filled ~ label,
             .ui-inputwrapper-focus ~ label,
             .ui-inputwrapper-filled ~ label {
-              top:1px;
+                top:1px;
             }
 
             .input:-webkit-autofill ~ label {
-              top:1px;
+                top:1px;
             }
         }
     }
@@ -150,7 +150,6 @@ body {
 
         .ui-listbox-item {
             overflow: hidden;
-            //font-size: $inputOptionFontSize;
             padding: $listItemPadding;
             margin: 0;
             color: $textColor;
@@ -201,13 +200,12 @@ body {
         overflow: hidden;
         background-color: $primaryColor;
         color: $primaryTextColor;
-        //font-size: $buttonFontSize;
         height: 2.25em;
         padding: 0 1em;
         border: 0 none;
         -moz-box-shadow: 0 1px 2.5px 0 rgba(0, 0, 0, 0.26), 0 1px 5px 0 rgba(0, 0, 0, 0.16);
         -webkit-box-shadow: 0 1px 2.5px 0 rgba(0, 0, 0, 0.26), 0 1px 5px 0 rgba(0, 0, 0, 0.16);
-    	box-shadow: 0 1px 2.5px 0 rgba(0, 0, 0, 0.26), 0 1px 5px 0 rgba(0, 0, 0, 0.16);
+        box-shadow: 0 1px 2.5px 0 rgba(0, 0, 0, 0.26), 0 1px 5px 0 rgba(0, 0, 0, 0.16);
         @include transition(background-color .3s);
 
         &:enabled:not(:focus):hover {
@@ -263,7 +261,7 @@ body {
         &.blue-grey-btn {
             background-color: #607D8B;
 
-           &:enabled:not(:focus):hover {
+            &:enabled:not(:focus):hover {
                 background-color: #37474F;
             }
 
@@ -315,7 +313,7 @@ body {
         &.green-btn {
             background-color: #4CAF50;
 
-           &:enabled:not(:focus):hover {
+            &:enabled:not(:focus):hover {
                 background-color: #2E7D32;
             }
 
@@ -571,27 +569,51 @@ body {
     .ui-chkbox {
         display: inline-block;
         vertical-align: middle;
-        line-height: 1.25em;
-        width: 1.25em;
-        height: 1.25em;
+        line-height: 1.429em;
+        width: 1.429em;
+        height: 1.429em;
         cursor: default;
+        margin: 0 .5em 0 0;
 
         .ui-chkbox-box {
             border: 2px solid $checkboxBorderColor;
-            width: 1.25em;
-            height: 1.25em;
-            overflow: hidden;
+            width: 1.429em;
+            height: 1.429em;
+            position: relative;
             @include transition(background-color .3s);
 
+            &:before {
+                position: absolute;
+                left: 6px;
+                top: 6px;
+                content: "";
+                background-color: $primaryLightColor;
+                height: 4px;
+                width: 4px;
+                border-radius: 100%;
+                z-index: 1;
+                opacity: 0;
+                margin: 0;
+            }
+
             .ui-chkbox-icon {
-                font-size: 1.25em;
-                margin-left: -2px;
-                margin-top: -2px;
+                font-size: $fontSize + 4;
+                margin-left: -1px;
+                margin-top: -1px;
             }
 
             &.ui-state-active {
                 border-color: $primaryColor;
                 background-color: $primaryColor;
+
+                .ui-chkbox-icon {
+                    color: $primaryTextColor;
+                }
+
+                &:before {
+                    -webkit-animation: rippleOn 400ms forwards ease-out;
+                    animation: rippleOn 400ms forwards ease-out;
+                }
             }
 
             &.ui-state-focus {
@@ -602,21 +624,34 @@ body {
         }
     }
 
-    .ui-chkbox-label {
-        //margin-left: $inlineSpacing;
-    }
-
     .ui-radiobutton {
         position: relative;
-        margin: 0 .25em 0 0;
+        margin: 0 .5em 0 0;
+        display: inline-block;
         vertical-align: middle;
+        width: 1.429em;
+        height: 1.429em;
 
         .ui-radiobutton-box {
             border: 2px solid $radioButtonBorderColor;
-            width: 1.286em;
-            height: 1.286em;
+            width: 1.429em;
+            height: 1.429em;
             @include transition(box-shadow .3s);
             @include border-radius(50%);
+
+            &:before {
+                position: absolute;
+                left: 8px;
+                top: 8px;
+                content: "";
+                background-color: $primaryLightColor;
+                height: 4px;
+                width: 4px;
+                border-radius: 100%;
+                z-index: 1;
+                opacity: 0;
+                margin: 0;
+            }
 
             &.ui-state-focus {
                 border-color: $primaryColor;
@@ -627,6 +662,11 @@ body {
             &.ui-state-active {
                 border-color: $primaryColor;
                 background-color: transparent;
+
+                &:before {
+                    -webkit-animation: rippleOn 400ms forwards ease-out;
+                    animation: rippleOn 400ms forwards ease-out;
+                }
             }
 
             .ui-radiobutton-icon {
@@ -638,7 +678,7 @@ body {
                 transition: transform ease .28s;
                 -webkit-transform: scale(0);
                 transform: scale(0);
-                margin: 0
+                margin: 0;
             }
 
             .pi-circle-on {
@@ -656,11 +696,8 @@ body {
         }
     }
 
-    .ui-radiobutton-label {
-        //margin-left: $inlineSpacing;
-    }
-
     .ui-autocomplete-panel {
+        padding: $inputListPadding;
         @include border-radius(0);
 
         &.ui-shadow {
@@ -672,7 +709,6 @@ body {
 
             .ui-autocomplete-list-item {
                 @include transition(background-color .3s);
-                //font-size: $inputOptionFontSize;
                 padding: $listItemPadding;
                 @include border-radius(0);
                 color: $textColor;
@@ -796,7 +832,7 @@ body {
         .ui-dropdown-label {
             background: none;
             &.ui-inputtext {
-                //font: $inputFontSize "Roboto","Helvetica Neue",sans-serif;
+                font-family: $fontFamily;
             }
         }
 
@@ -812,6 +848,7 @@ body {
     }
 
     .ui-dropdown-panel {
+        padding: $inputListPadding;
         @include border-radius(0);
 
         .ui-dropdown-list {
@@ -820,7 +857,6 @@ body {
 
         .ui-dropdown-item {
             margin: 0;
-            //font-size: $inputOptionFontSize;
             padding: $listItemPadding;
             color: $textColor;
             @include transition(background-color .3s);
@@ -980,8 +1016,11 @@ body {
             }
         }
 
+        .ui-multiselect-list {
+            padding: $inputListPadding;
+        }
+
         .ui-multiselect-item {
-            //font-size: $inputOptionFontSize;
             padding: $listItemPadding;
             color: $textColor;
             @include border-radius(0);
@@ -1126,6 +1165,8 @@ body {
     }
 
     .ui-slider {
+        padding: 0;
+
         .ui-slider-handle {
             background-color: $accentColor;
             color: $accentTextColor;
@@ -1165,6 +1206,7 @@ body {
         }
 
         .ui-slider-range {
+            padding: 0;
             background-color: $accentColor;
             color: $accentTextColor;
         }
@@ -1220,6 +1262,10 @@ body {
             @include overlay-input-shadow();
         }
 
+        .ui-datepicker-group {
+            padding: 0;
+        }
+
         &:not(.ui-state-disabled) {
             .ui-datepicker-header {
                 .ui-datepicker-prev,
@@ -1247,7 +1293,6 @@ body {
 
         .ui-datepicker-header {
             padding: $inputHeaderPadding;
-            //font-size: $inputHeaderFontSize;
             background: $primaryDarkColor;
             border-color: $primaryDarkColor;
             @include border-radius-top(2px);
@@ -1425,7 +1470,7 @@ body {
 
         .pi-star {
             @include material-icon("star");
-            color: $textSecondaryColor;
+            color: $accentColor;
         }
 
         .pi-star-o {
@@ -1593,7 +1638,7 @@ body {
     p-spinner.ng-dirty.ng-invalid > .ui-inputtext,
     p-selectbutton.ng-dirty.ng-invalid .ui-button,
     p-togglebutton.ng-dirty.ng-invalid .ui-button {
-        //background-image: linear-gradient(to bottom, $invalidInputBorderColor, $invalidInputBorderColor), linear-gradient(to bottom, $invalidInputBorderColor, $invalidInputBorderColor);
+        background-image: linear-gradient(to bottom, $inputInvalidBorderColor, $inputInvalidBorderColor), linear-gradient(to bottom, $inputInvalidBorderColor, $inputInvalidBorderColor);
     }
 }
 

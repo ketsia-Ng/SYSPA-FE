@@ -2,7 +2,7 @@
     <div class="ui-g-12 ui-lg-6">
         <!-- Left Side -->
         <div class="card card-w-title">
-            <h1>InputText</h1>
+            <div class="card-title">InputText</div>
             <div class="ui-g form-group">
                 <div class="ui-g-12 ui-md-4">
                     <span class="md-inputfield">
@@ -38,7 +38,7 @@
                 </div>
             </div>
 
-            <h1>Filled InputText</h1>
+            <div class="card-title">Filled InputText</div>
             <div class="ui-g form-group">
                 <div class="ui-g-12 ui-md-4">
                     <span class="md-inputfield md-inputfield-fill">
@@ -60,7 +60,7 @@
                 </div>
             </div>
 
-            <h1>TextBox</h1>
+            <div class="card-title">TextBox</div>
             <div class="ui-g form-group">
                 <div class="ui-g-12 ui-md-4">
                     <span class="md-inputfield md-inputfield-box">
@@ -84,12 +84,12 @@
         </div>
 
         <div class="card card-w-title">
-            <h1>TextArea</h1>
+            <div class="card-title">TextArea</div>
             <textarea [rows]="3" [cols]="30" pInputTextarea placeholder="Your Message" autoResize="autoResize"></textarea>
         </div>
 
         <div class="card card-w-title">
-            <h1>AutoComplete</h1>
+            <div class="card-title">AutoComplete</div>
             <div class="ui-g form-group">
                 <div class="ui-g-12">
                     <label for="acSimple">Simple</label>
@@ -117,12 +117,12 @@
         </div>
 
         <div class="card card-w-title">
-            <h1>MultiSelect</h1>
+            <div class="card-title">MultiSelect</div>
             <p-multiSelect [options]="carOptions" [(ngModel)]="selectedMultiSelectCars"></p-multiSelect>
         </div>
 
         <div class="card card-w-title">
-            <h1>Calendar</h1>
+            <div class="card-title">Calendar</div>
             <p-calendar [inline]="true"></p-calendar>
 
             <div class="ui-g form-group-m" style="margin-top:20px">
@@ -148,7 +148,7 @@
         </div>
 
         <div class="card card-w-title">
-            <h1>Chips</h1>
+            <div class="card-title">Chips</div>
             <p-chips></p-chips>
         </div>
     </div>
@@ -156,16 +156,13 @@
     <div class="ui-g-12 ui-lg-6">
         <!-- Right Side -->
         <div class="card card-w-title">
-            <h1>Checkboxes</h1>
+            <div class="card-title">Checkboxes</div>
             <div class="ui-g">
                 <div class="ui-g-12 ui-md-4"><p-checkbox name="cg" value="Ultima" label="Ultima" [(ngModel)]="checkboxValues"></p-checkbox></div>
                 <div class="ui-g-12 ui-md-4"><p-checkbox name="cg" value="Icarus" label="Icarus" [(ngModel)]="checkboxValues"></p-checkbox></div>
                 <div class="ui-g-12 ui-md-4"><p-checkbox name="cg" value="Omega" label="Omega" [(ngModel)]="checkboxValues"></p-checkbox></div>
             </div>
-        </div>
-
-        <div class="card card-w-title">
-            <h1>RadioButtons</h1>
+            <div class="card-title">RadioButtons</div>
             <div class="ui-g">
                 <div class="ui-g-12 ui-md-4"><p-radioButton name="rg" value="Ultima" label="Ultima" [(ngModel)]="radioValue"></p-radioButton></div>
                 <div class="ui-g-12 ui-md-4"><p-radioButton name="rg" value="Icarus" label="Icarus" [(ngModel)]="radioValue"></p-radioButton></div>
@@ -174,49 +171,49 @@
         </div>
 
         <div class="card card-w-title">
-            <h1>InputSwitch</h1>
+            <div class="card-title">InputSwitch</div>
             <p-inputSwitch [(ngModel)]="switchChecked"></p-inputSwitch>
         </div>
 
         <div class="card card-w-title">
-            <h1>Dropdown</h1>
-            <p-dropdown [options]="cities" [(ngModel)]="selectedCity1" [autoWidth]="false"></p-dropdown>
+            <div class="card-title">Dropdown</div>
+            <p-dropdown [options]="cities" [(ngModel)]="selectedCity1"></p-dropdown>
         </div>
 
         <div class="card card-w-title">
-            <h1>Password</h1>
+            <div class="card-title">Password</div>
             <input pPassword type="password"/>
         </div>
 
         <div class="card card-w-title">
-            <h1>Spinner</h1>
+            <div class="card-title">Spinner</div>
             <p-spinner></p-spinner>
         </div>
 
         <div class="card card-w-title">
-            <h1>Slider</h1>
+            <div class="card-title">Slider</div>
             <p-slider [(ngModel)]="rangeValues" [range]="true"></p-slider>
         </div>
 
         <div class="card card-w-title">
-            <h1>Listbox</h1>
+            <div class="card-title">Listbox</div>
             <p-listbox [options]="citiesListbox" [(ngModel)]="selectedCity2" filter="true"></p-listbox>
         </div>
 
         <div class="card card-w-title">
-            <h1>Rating</h1>
+            <div class="card-title">Rating</div>
             <p-rating [(ngModel)]="ratingValue"></p-rating>
         </div>
 
         <div class="card card-w-title">
-            <h1>ColorPicker</h1>
+            <div class="card-title">ColorPicker</div>
             <p-colorPicker [(ngModel)]="color" inline="true"></p-colorPicker>
         </div>
     </div>
 
     <div class="ui-g-12">
         <div class="card card-w-title">
-            <h1>Input Groups</h1>
+            <div class="card-title">Input Groups</div>
 
             <div class="ui-g form-group">
                 <div class="ui-g-12 ui-md-6">
@@ -267,7 +264,7 @@
 
     <div class="ui-g-12">
         <div class="card card-w-title">
-            <h1>Editor</h1>
+            <div class="card-title">Editor</div>
             <p-editor [style]="{'height':'320px'}"></p-editor>
         </div>
     </div>
@@ -275,7 +272,7 @@
     <div class="ui-g-12 ui-g-nopad">
         <div class="ui-g-12 ui-lg-6" style="padding-top:0">
             <div class="card card-w-title">
-                <h1>Buttons</h1>
+                <div class="card-title">Buttons</div>
 
                 <div class="ui-g">
                     <div class="ui-g-12">ToggleButton</div>
@@ -320,7 +317,7 @@
         </div>
         <div class="ui-g-12 ui-lg-6" style="padding-top:0">
             <div class="card card-w-title">
-                <h1>Colored Buttons</h1>
+                <div class="card-title">Colored Buttons</div>
                 <p>Raised and Flat buttons with various color alternatives.</p>
                 <div class="ui-g">
                     <div class="ui-g-12 ui-md-6" style="text-align:center">

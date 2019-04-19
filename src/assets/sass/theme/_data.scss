@@ -1,8 +1,7 @@
 body {
     .ui-picklist {
         .ui-picklist-caption {
-            font-size: $inputHeaderFontSize;
-            padding: $inputHeaderPadding;
+            padding: $headerPadding;
         }
 
         .ui-picklist-list {
@@ -10,7 +9,6 @@ body {
         }
 
         li.ui-picklist-item {
-            font-size: $inputOptionFontSize;
             padding: $listItemPadding;
             margin: 0;
             @include border-radius(0);
@@ -71,8 +69,7 @@ body {
 
     .ui-orderlist {
         .ui-orderlist-caption {
-            font-size: $inputHeaderFontSize;
-            padding: $inputHeaderPadding;
+            padding: $headerPadding;
             box-sizing: border-box;
         }
 
@@ -81,7 +78,6 @@ body {
             box-sizing: border-box;
 
             li.ui-orderlist-item {
-                font-size: $inputOptionFontSize;
                 padding: $listItemPadding;
                 margin: 0;
                 @include border-radius(0);
@@ -291,30 +287,30 @@ body {
     .ui-table {
         .ui-table-caption,
         .ui-table-summary {
-          padding: $headerPadding;
-          text-align: center;
-          font-weight: normal;
+            padding: $headerPadding;
+            text-align: center;
+            font-weight: normal;
         }
 
         .ui-table-caption {
-          border-bottom: 0 none;
+            border-bottom: 0 none;
         }
 
         .ui-table-summary {
-          border-top: 0 none;
+            border-top: 0 none;
         }
 
         .ui-table-thead > tr > th,
         .ui-table-tbody > tr > td,
         .ui-table-tfoot > tr > td {
-          padding: .625em .875em;
+            padding: .625em .875em;
         }
 
         .ui-table-thead > tr > th,
         .ui-table-tfoot > tr > td {
-          font-weight: 400;
-          background-color: #ffffff;
-          border: 1px solid $dataTableBorderColor;
+            font-weight: 400;
+            background-color: #ffffff;
+            border: 0 none;
         }
 
         p-sortIcon {
@@ -356,41 +352,41 @@ body {
                 background: $contentBgColor;
 
                 > td {
-                  background: inherit;
-                  border: 1px solid $dataTableBorderColor;
+                    background: inherit;
+                    border: 0 none;
                 }
 
                 &.ui-state-highlight {
-                  background-color: $accentColor;
-                  color: $accentTextColor;
+                    background-color: $accentColor;
+                    color: $accentTextColor;
                 }
 
                 &.ui-contextmenu-selected {
-                  background-color: $accentColor;
-                  color: $accentTextColor;
+                    background-color: $accentColor;
+                    color: $accentTextColor;
                 }
             }
 
-            > tr:nth-child(odd) {
-                background-color: $tableRowBgColorOdd;
+            > tr:nth-child(even) {
+                background-color: $dataTableRowBgColorEven;
 
                 &.ui-state-highlight {
-                  background-color: $accentColor;
-                  color: $accentTextColor;
+                    background-color: $accentColor;
+                    color: $accentTextColor;
                 }
 
                 &.ui-contextmenu-selected {
-                  background-color: $accentColor;
-                  color: $accentTextColor;
+                    background-color: $accentColor;
+                    color: $accentTextColor;
                 }
             }
         }
 
         &.ui-table-hoverable-rows {
-          .ui-table-tbody > tr.ui-selectable-row:not(.ui-state-highlight):not(.ui-contextmenu-selected):hover {
-            cursor: pointer;
-            @include hover-element();
-          }
+            .ui-table-tbody > tr.ui-selectable-row:not(.ui-state-highlight):not(.ui-contextmenu-selected):hover {
+                cursor: pointer;
+                @include hover-element();
+            }
         }
     }
 
@@ -414,9 +410,9 @@ body {
 
         .ui-datatable-thead {
             > tr {
-                 border-color: $dataTableBorderColor;
+                border: 0 none;
 
-                 > th {
+                > th {
                     padding: .625em .875em;
                     background-color: #ffffff;
 
@@ -482,7 +478,7 @@ body {
             }
 
             tr {
-                border: 1px solid $dataTableBorderColor;
+                border: 0 none;
 
                 td {
                     padding: .625em .875em;
@@ -510,7 +506,6 @@ body {
 
                     input.ui-cell-editor {
                         padding: 2px 2px 1px 2px;
-                        font-size: $inputFontSize;
                     }
 
                     &.ui-selection-column {
@@ -627,7 +622,6 @@ body {
             .pi {
                 @include material-icon('refresh');
                 font-size: 2em;
-                @include animation(0, 1000ms, spin);
             }
         }
     }
@@ -637,7 +631,6 @@ body {
 
         .ui-carousel-header{
             padding: $headerPadding;
-            font-size: $headerFontSize;
             overflow: visible;
 
             .ui-carousel-header-title {

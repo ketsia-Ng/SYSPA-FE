@@ -83,7 +83,7 @@ body {
             background-color: $primaryColor;
             padding: 0;
             color:#ffffff;
-            font-size: $headerFontSize;
+            font-size: $fontSize;
             @include transition(background-color .3s);
 
             > a {
@@ -113,7 +113,7 @@ body {
 
         .ui-accordion-content {
             padding: $contentPadding;
-            line-height: $lineHeight;
+            line-height: $panelContentLineHeight;
         }
     }
 

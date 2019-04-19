@@ -25,12 +25,12 @@ body {
     }
 
     .ui-progressbar-indeterminate {
-      .ui-progressbar-value {
-        background-color: $primaryLightColor;
-        &::before {
-          background-color: $primaryColor;
+        .ui-progressbar-value {
+            background-color: $primaryLightColor;
+            &::before {
+                background-color: $primaryColor;
+            }
         }
-      }
     }
 
     .ui-galleria {

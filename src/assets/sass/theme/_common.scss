@@ -9,7 +9,7 @@ body {
 
     .ui-widget,
     .ui-widget .ui-widget {
-        font-family:$fontFamily;
+        font-family: $fontFamily;
         text-decoration: none;
     }
 
@@ -44,6 +44,7 @@ body {
         }
     }
 
+    .ui-widget:disabled,
     .ui-state-disabled {
         opacity: .35;
         filter: Alpha(Opacity=35);
@@ -75,11 +76,7 @@ body {
         @include opacity(.32);
     }
 
-    .ui-shadow {
-
-    }
-
-    .pi {
+    .ui-icon {
         font-family: 'Material Icons';
         font-weight: normal;
         font-style: normal;
@@ -135,13 +132,8 @@ body {
         font-feature-settings: 'liga';
     }
 
-    .fa {
-        font-family: 'FontAwesome';
-    }
-
     a {
         color: $primaryColor;
         text-decoration: none;
     }
-
 }
