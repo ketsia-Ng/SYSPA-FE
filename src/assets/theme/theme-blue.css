@@ -27368,7 +27368,7 @@ body .ui-inputtext:focus, body .ui-inputtext.ui-state-focus {
   outline: none;
   padding-bottom: 2px;
 }
-body .ui-inputtext:disabled {
+body .ui-inputtext:disabled, body .ui-inputtext.ui-state-disabled {
   border-bottom: 1px dotted;
 }
 body .ui-inputtext.ui-widget-content {
@@ -27378,9 +27378,11 @@ body .ui-inputtext.ui-widget-content {
 }
 body .ui-inputtext.ui-state-error {
   border-color: #e62a10;
+  background-image: linear-gradient(to bottom, #e62a10, #e62a10), linear-gradient(to bottom, #e62a10, #e62a10);
 }
 body .ui-widget-header:not(.ui-dataview-header) .ui-inputtext {
-  background-image: linear-gradient(to bottom, #ffffff, #ffffff), linear-gradient(to bottom, #90c4f2, #90c4f2);
+  background-image: linear-gradient(to bottom, #ffffff, #ffffff), linear-gradient(to bottom, #a0c3e3, #a0c3e3);
+  padding-bottom: 2px;
 }
 body .md-inputfield {
   display: block;
@@ -27393,9 +27395,9 @@ body .md-inputfield > label {
   pointer-events: none;
   left: 5px;
   top: 1px;
-  transition: 0.3s ease all;
-  -moz-transition: 0.3s ease all;
-  -webkit-transition: 0.3s ease all;
+  transition: 0.2s ease all;
+  -moz-transition: 0.2s ease all;
+  -webkit-transition: 0.2s ease all;
 }
 body .md-inputfield input:focus ~ label,
 body .md-inputfield input.ui-state-filled ~ label,
@@ -27418,7 +27420,7 @@ body .md-inputfield .ui-message.ui-messages-error {
   border: 0 none;
   margin: 0px;
   color: #e62a10;
-  font-size: 0.75em;
+  font-size: 11px;
 }
 body .md-inputfield.md-inputfield-fill input {
   background-color: #f7f7f7;
@@ -27457,6 +27459,7 @@ body .ui-material-message.ui-message.ui-messages-error {
 body .ui-listbox {
   min-width: 12.5em;
   background-color: #ffffff;
+  border: 0 none;
   -moz-border-radius: 2px;
   -webkit-border-radius: 2px;
   border-radius: 2px;
@@ -27465,19 +27468,15 @@ body .ui-listbox.ui-inputtext {
   padding: 0;
 }
 body .ui-listbox .ui-listbox-list {
-  padding: 0;
+  padding: 0.5em 0;
+  border: 1px solid #d8d8d8;
 }
 body .ui-listbox .ui-listbox-item {
   overflow: hidden;
   padding: 0.571em 0.857em;
   margin: 0;
-  color: #212121;
   position: relative;
   overflow: hidden;
-  -moz-transition: background-color 0.3s;
-  -o-transition: background-color 0.3s;
-  -webkit-transition: background-color 0.3s;
-  transition: background-color 0.3s;
   -moz-border-radius: 0;
   -webkit-border-radius: 0;
   border-radius: 0;
@@ -27491,18 +27490,31 @@ body .ui-listbox:not(.ui-state-disabled) .ui-listbox-item:not(.ui-state-highligh
   color: #000000;
 }
 body .ui-listbox .ui-listbox-header {
-  -moz-border-radius: 0;
-  -webkit-border-radius: 0;
-  border-radius: 0;
+  margin-bottom: 0;
   padding: 0.714em 1em;
+  background-color: #1E88E5;
+  -moz-border-radius-topleft: 2px;
+  -webkit-border-top-left-radius: 2px;
+  border-top-left-radius: 2px;
+  -moz-border-radius-topright: 2px;
+  -webkit-border-top-right-radius: 2px;
+  border-top-right-radius: 2px;
 }
 body .ui-listbox .ui-listbox-header .ui-chkbox .ui-chkbox-box {
-  border-color: #ffffff;
+  border-color: #d9d9d9;
 }
 body .ui-listbox .ui-listbox-header .ui-listbox-filter-container .ui-inputtext {
+  border-color: #d9d9d9;
   color: #ffffff;
+  width: 100%;
   padding: 2px;
   padding-left: 1.5em;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+body .ui-listbox .ui-listbox-header .ui-listbox-filter-container .ui-inputtext.ui-state-focus {
+  border-color: #ffffff;
 }
 body .ui-listbox .ui-listbox-header .ui-listbox-filter-container .pi {
   top: -2px;
@@ -27512,16 +27524,18 @@ body .ui-button, body .ui-datepicker-buttonpane > button {
   overflow: hidden;
   background-color: #1E88E5;
   color: #ffffff;
-  height: 2.25em;
+  height: 2.143em;
+  font-size: 14px;
+  font-family: "Roboto", "Helvetica Neue", sans-serif;
   padding: 0 1em;
   border: 0 none;
   -moz-box-shadow: 0 1px 2.5px 0 rgba(0, 0, 0, 0.26), 0 1px 5px 0 rgba(0, 0, 0, 0.16);
   -webkit-box-shadow: 0 1px 2.5px 0 rgba(0, 0, 0, 0.26), 0 1px 5px 0 rgba(0, 0, 0, 0.16);
   box-shadow: 0 1px 2.5px 0 rgba(0, 0, 0, 0.26), 0 1px 5px 0 rgba(0, 0, 0, 0.16);
-  -moz-transition: background-color 0.3s;
-  -o-transition: background-color 0.3s;
-  -webkit-transition: background-color 0.3s;
-  transition: background-color 0.3s;
+  -moz-transition: background-color 0.2s;
+  -o-transition: background-color 0.2s;
+  -webkit-transition: background-color 0.2s;
+  transition: background-color 0.2s;
 }
 body .ui-button:enabled:not(:focus):hover, body .ui-datepicker-buttonpane > button:enabled:not(:focus):hover {
   background-color: #1565C0;
@@ -27532,7 +27546,7 @@ body .ui-button:enabled:focus, body .ui-datepicker-buttonpane > button:enabled:f
 }
 body .ui-button .ui-button-text, body .ui-datepicker-buttonpane > button .ui-button-text {
   padding: 0;
-  line-height: 2.25em;
+  line-height: 2.143em;
 }
 body .ui-button .pi, body .ui-datepicker-buttonpane > button .pi {
   color: #ffffff;
@@ -27541,28 +27555,45 @@ body .ui-button.ui-button-icon-only, body .ui-datepicker-buttonpane > button.ui-
   -moz-border-radius: 50%;
   -webkit-border-radius: 50%;
   border-radius: 50%;
-  width: 2.5em;
-  height: 2.5em;
+  width: 2.143em;
+  height: 2.143em;
 }
-body .ui-button.ui-button-icon-only .pi, body .ui-datepicker-buttonpane > button.ui-button-icon-only .pi {
-  margin-left: -0.5em;
+body .ui-button.ui-button-text-icon-left .pi, body .ui-button.ui-button-text-icon-right .pi, body .ui-datepicker-buttonpane > button.ui-button-text-icon-left .pi, body .ui-datepicker-buttonpane > button.ui-button-text-icon-right .pi {
+  margin-top: -10px;
 }
 body .ui-button.ui-button-text-icon-left, body .ui-datepicker-buttonpane > button.ui-button-text-icon-left {
-  padding-left: 2.5em;
+  padding-left: 2.571em;
 }
 body .ui-button.ui-button-text-icon-right, body .ui-datepicker-buttonpane > button.ui-button-text-icon-right {
-  padding-right: 2.5em;
+  padding-right: 2.571em;
 }
 body .ui-button.secondary-btn, body .ui-datepicker-buttonpane > button.secondary-btn {
-  background-color: #FFB300;
+  background-color: #ffffff;
   color: #212121;
 }
 body .ui-button.secondary-btn:enabled:not(:focus):hover, body .ui-datepicker-buttonpane > button.secondary-btn:enabled:not(:focus):hover {
-  background-color: #FF8F00;
+  background-color: #f5f5f5;
 }
 body .ui-button.secondary-btn:focus, body .ui-datepicker-buttonpane > button.secondary-btn:focus {
   outline: 0 none;
+  background-color: gainsboro;
+}
+body .ui-button.secondary-btn .pi, body .ui-datepicker-buttonpane > button.secondary-btn .pi {
+  color: #212121;
+}
+body .ui-button.accent-btn, body .ui-datepicker-buttonpane > button.accent-btn {
+  background-color: #FFB300;
+  color: #212121;
+}
+body .ui-button.accent-btn:enabled:not(:focus):hover, body .ui-datepicker-buttonpane > button.accent-btn:enabled:not(:focus):hover {
+  background-color: #FF8F00;
+}
+body .ui-button.accent-btn:focus, body .ui-datepicker-buttonpane > button.accent-btn:focus {
+  outline: 0 none;
   background-color: #ffc233;
+}
+body .ui-button.accent-btn .pi, body .ui-datepicker-buttonpane > button.accent-btn .pi {
+  color: #212121;
 }
 body .ui-button.blue-grey-btn, body .ui-datepicker-buttonpane > button.blue-grey-btn {
   background-color: #607D8B;
@@ -27675,16 +27706,6 @@ body .ui-button.brown-btn:focus, body .ui-datepicker-buttonpane > button.brown-b
   outline: 0 none;
   background-color: #996b5b;
 }
-body .ui-button.indigo-btn, body .ui-datepicker-buttonpane > button.indigo-btn {
-  background-color: #3F51B5;
-}
-body .ui-button.indigo-btn:enabled:not(:focus):hover, body .ui-datepicker-buttonpane > button.indigo-btn:enabled:not(:focus):hover {
-  background-color: #283593;
-}
-body .ui-button.indigo-btn:focus, body .ui-datepicker-buttonpane > button.indigo-btn:focus {
-  outline: 0 none;
-  background-color: #606fc7;
-}
 body .ui-button.flat, body .ui-datepicker-buttonpane > button.flat {
   box-shadow: none;
   -webkit-box-shadow: none;
@@ -27769,6 +27790,9 @@ body .ui-splitbutton {
   -moz-border-radius: 3px;
   -webkit-border-radius: 3px;
   border-radius: 3px;
+  -moz-box-shadow: 0 1px 2.5px 0 rgba(0, 0, 0, 0.26), 0 1px 5px 0 rgba(0, 0, 0, 0.16);
+  -webkit-box-shadow: 0 1px 2.5px 0 rgba(0, 0, 0, 0.26), 0 1px 5px 0 rgba(0, 0, 0, 0.16);
+  box-shadow: 0 1px 2.5px 0 rgba(0, 0, 0, 0.26), 0 1px 5px 0 rgba(0, 0, 0, 0.16);
 }
 body .ui-splitbutton > .ui-button {
   box-shadow: none;
@@ -27780,19 +27804,19 @@ body .ui-splitbutton > .ui-button:active {
   background-color: #4ca0ea;
 }
 body .ui-splitbutton .ui-splitbutton-menubutton {
-  height: 2.25em;
+  height: 2.143em;
   -moz-border-radius-topleft: 0;
   -webkit-border-top-left-radius: 0;
   border-top-left-radius: 0;
   -moz-border-radius-bottomleft: 0;
   -webkit-border-bottom-left-radius: 0;
   border-bottom-left-radius: 0;
-  -moz-border-radius-topright: 2px;
-  -webkit-border-top-right-radius: 2px;
-  border-top-right-radius: 2px;
-  -moz-border-radius-bottomright: 2px;
-  -webkit-border-bottom-right-radius: 2px;
-  border-bottom-right-radius: 2px;
+  -moz-border-radius-topright: 3px;
+  -webkit-border-top-right-radius: 3px;
+  border-top-right-radius: 3px;
+  -moz-border-radius-bottomright: 3px;
+  -webkit-border-bottom-right-radius: 3px;
+  border-bottom-right-radius: 3px;
 }
 body .ui-splitbutton .ui-menu {
   width: 100%;
@@ -27932,12 +27956,19 @@ body .ui-radiobutton .ui-radiobutton-box .ui-radiobutton-icon {
 }
 body .ui-radiobutton .ui-radiobutton-box .pi-circle-on {
   background-color: #1E88E5;
+  -webkit-transform: scale(0.5);
+  transform: scale(0.5);
+  top: 50%;
+  left: 50%;
+  margin-top: -0.5em;
+  margin-left: -0.5em;
 }
 body .ui-radiobutton .ui-radiobutton-box .pi-circle-on.pi:before {
   content: "circle";
 }
 body .ui-autocomplete-panel {
-  padding: 0.5em 0;
+  padding: 0;
+  border: 0 none;
   -moz-border-radius: 0;
   -webkit-border-radius: 0;
   border-radius: 0;
@@ -27948,18 +27979,14 @@ body .ui-autocomplete-panel.ui-shadow {
   box-shadow: 0 2px 4px -1px rgba(0, 0, 0, 0.2), 0 4px 5px 0 rgba(0, 0, 0, 0.14), 0 1px 10px 0 rgba(0, 0, 0, 0.12);
 }
 body .ui-autocomplete-panel .ui-autocomplete-list {
-  padding: 0;
+  padding: 0.5em 0;
 }
 body .ui-autocomplete-panel .ui-autocomplete-list .ui-autocomplete-list-item {
-  -moz-transition: background-color 0.3s;
-  -o-transition: background-color 0.3s;
-  -webkit-transition: background-color 0.3s;
-  transition: background-color 0.3s;
   padding: 0.571em 0.857em;
+  margin: 0;
   -moz-border-radius: 0;
   -webkit-border-radius: 0;
   border-radius: 0;
-  color: #212121;
 }
 body .ui-autocomplete-panel .ui-autocomplete-list .ui-autocomplete-list-item .ui-autocomplete-query {
   font-weight: 700;
@@ -27975,8 +28002,8 @@ body .ui-autocomplete .ui-autocomplete-dropdown.ui-button.ui-button-icon-only {
   box-shadow: none;
   -webkit-box-shadow: none;
   -moz-box-shadow: none;
-  height: 1.5em;
-  width: 1.5em;
+  height: 1.429em;
+  width: 1.429em;
   padding: 0;
   right: 0;
   bottom: 0;
@@ -27987,11 +28014,14 @@ body .ui-autocomplete .ui-autocomplete-dropdown.ui-button.ui-button-icon-only .u
   display: none;
 }
 body .ui-autocomplete .ui-autocomplete-dropdown.ui-button.ui-button-icon-only .pi {
+  font-size: 20px;
   color: #616161;
 }
 body .ui-autocomplete.ui-autocomplete-multiple .ui-autocomplete-multiple-container.ui-inputtext {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
   box-sizing: border-box;
-  padding: 2px;
+  padding: 2px 2px 1px 2px;
 }
 body .ui-autocomplete.ui-autocomplete-multiple .ui-autocomplete-multiple-container.ui-state-disabled {
   border-bottom: 1px dotted;
@@ -28006,17 +28036,18 @@ body .ui-autocomplete.ui-autocomplete-multiple .ui-autocomplete-input-token > in
   padding: 0;
   font-size: 14px;
   margin: 0;
-  vertical-align: bottom;
 }
 body .ui-autocomplete.ui-autocomplete-multiple .ui-autocomplete-token {
   display: inline-block;
   float: none;
   vertical-align: middle;
-  font-size: 1em;
 }
 body .ui-autocomplete.ui-autocomplete-multiple .ui-autocomplete-token .ui-autocomplete-token-label {
   display: inline-block;
   vertical-align: middle;
+}
+body .ui-autocomplete.ui-autocomplete-multiple .ui-autocomplete-token .ui-autocomplete-token-icon {
+  font-size: 14px;
 }
 body .ui-autocomplete.ui-autocomplete-multiple .ui-autocomplete-dropdown.ui-button.ui-button-icon-only {
   bottom: 3px;
@@ -28038,14 +28069,16 @@ body .ui-dropdown {
   border-radius: 0;
 }
 body .ui-dropdown .ui-dropdown-trigger {
-  height: 1.5em;
-  width: 1.5em;
+  height: 20px;
+  width: 20px;
+  font-size: 20px;
   margin-top: 0;
   padding: 0;
   top: 2px;
   margin-right: 0;
 }
 body .ui-dropdown .ui-dropdown-trigger .pi {
+  font-size: 20px;
   color: #616161;
 }
 body .ui-dropdown .ui-dropdown-label {
@@ -28058,27 +28091,24 @@ body .ui-dropdown:not(.ui-state-disabled).ui-state-focus {
   border-width: 0;
   background-size: 100% 2px, 100% 1px;
   padding-bottom: 2px;
+  outline: none;
 }
 body .ui-dropdown:not(.ui-state-disabled).ui-state-focus .ui-dropdown-label {
   padding-bottom: 2px;
 }
 body .ui-dropdown-panel {
-  padding: 0.5em 0;
+  padding: 0;
   -moz-border-radius: 0;
   -webkit-border-radius: 0;
   border-radius: 0;
 }
 body .ui-dropdown-panel .ui-dropdown-list {
-  padding: 0;
+  padding: 0.5em 0;
 }
 body .ui-dropdown-panel .ui-dropdown-item {
   margin: 0;
   padding: 0.571em 0.857em;
   color: #212121;
-  -moz-transition: background-color 0.3s;
-  -o-transition: background-color 0.3s;
-  -webkit-transition: background-color 0.3s;
-  transition: background-color 0.3s;
   -moz-border-radius: 0;
   -webkit-border-radius: 0;
   border-radius: 0;
@@ -28128,16 +28158,18 @@ body .ui-multiselect .ui-multiselect-label-container {
   padding-right: 1.5em;
 }
 body .ui-multiselect .ui-multiselect-label-container .ui-multiselect-label {
-  padding: 0px 2px 0px 2px;
+  padding: 2px;
 }
 body .ui-multiselect .ui-multiselect-trigger {
-  height: 1.5em;
-  width: 1.5em;
+  height: 20px;
+  width: 20px;
+  font-size: 20px;
   margin-top: 0;
   padding: 0;
   top: -2px;
 }
 body .ui-multiselect .ui-multiselect-trigger .pi {
+  font-size: 20px;
   color: #616161;
 }
 body .ui-multiselect:not(.ui-state-disabled).ui-state-focus {
@@ -28145,24 +28177,26 @@ body .ui-multiselect:not(.ui-state-disabled).ui-state-focus {
 }
 body .ui-multiselect-panel.ui-widget {
   padding: 0;
+  border: 0 none;
   -moz-border-radius: 0;
   -webkit-border-radius: 0;
   border-radius: 0;
   -webkit-box-shadow: 0 2px 4px -1px rgba(0, 0, 0, 0.2), 0 4px 5px 0 rgba(0, 0, 0, 0.14), 0 1px 10px 0 rgba(0, 0, 0, 0.12);
   -moz-box-shadow: 0 2px 4px -1px rgba(0, 0, 0, 0.2), 0 4px 5px 0 rgba(0, 0, 0, 0.14), 0 1px 10px 0 rgba(0, 0, 0, 0.12);
   box-shadow: 0 2px 4px -1px rgba(0, 0, 0, 0.2), 0 4px 5px 0 rgba(0, 0, 0, 0.14), 0 1px 10px 0 rgba(0, 0, 0, 0.12);
-  min-width: 12.5em;
 }
 body .ui-multiselect-panel.ui-widget .ui-multiselect-header {
   -moz-border-radius: 0;
   -webkit-border-radius: 0;
   border-radius: 0;
+  margin: 0;
+  border: 0 none;
   padding: 0.714em 1em;
   position: relative;
 }
 body .ui-multiselect-panel.ui-widget .ui-multiselect-header .ui-chkbox {
   float: none;
-  margin: 0 0.5em 0 -0.125em;
+  margin: 0 8px 0 1px;
   position: static;
 }
 body .ui-multiselect-panel.ui-widget .ui-multiselect-header .ui-chkbox .ui-chkbox-box {
@@ -28173,6 +28207,10 @@ body .ui-multiselect-panel.ui-widget .ui-multiselect-header .ui-chkbox .ui-chkbo
 }
 body .ui-multiselect-panel.ui-widget .ui-multiselect-header .ui-chkbox .ui-chkbox-box.ui-state-active .ui-chkbox-icon {
   border-color: #ffffff;
+}
+body .ui-multiselect-panel.ui-widget .ui-multiselect-header .ui-chkbox .ui-chkbox-box.ui-state-active:before {
+  -webkit-animation: none;
+  animation: none;
 }
 body .ui-multiselect-panel.ui-widget .ui-multiselect-header .ui-chkbox .ui-chkbox-box.ui-state-focus {
   background-color: #42A5F5;
@@ -28186,17 +28224,19 @@ body .ui-multiselect-panel.ui-widget .ui-multiselect-header .ui-multiselect-filt
   display: inline-block;
   vertical-align: middle;
   float: none;
-  margin-left: 0;
 }
 body .ui-multiselect-panel.ui-widget .ui-multiselect-header .ui-multiselect-filter-container .pi {
   top: -2px;
   left: 0;
+  color: #ffffff;
 }
 body .ui-multiselect-panel.ui-widget .ui-multiselect-header .ui-multiselect-filter-container .ui-inputtext {
   color: #ffffff;
   padding: 2px;
   padding-left: 1.5em;
   width: 100%;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
   box-sizing: border-box;
 }
 body .ui-multiselect-panel.ui-widget .ui-multiselect-header .ui-multiselect-filter-container .ui-inputtext:focus {
@@ -28231,13 +28271,20 @@ body .ui-multiselect-panel.ui-widget .ui-multiselect-header .ui-multiselect-clos
 }
 body .ui-multiselect-panel.ui-widget .ui-multiselect-list {
   padding: 0.5em 0;
+  background-color: #ffffff;
 }
 body .ui-multiselect-panel.ui-widget .ui-multiselect-item {
-  padding: 0.571em 0.857em;
-  color: #212121;
+  padding: 0.571em 1em;
+  margin: 0;
   -moz-border-radius: 0;
   -webkit-border-radius: 0;
   border-radius: 0;
+  position: relative;
+  overflow: hidden;
+}
+body .ui-multiselect-panel.ui-widget .ui-multiselect-item .ui-chkbox .ui-chkbox-box.ui-state-active:before {
+  -webkit-animation: none;
+  animation: none;
 }
 body .ui-multiselect-panel.ui-widget .ui-multiselect-item:not(.ui-state-highlight):not(.ui-state-disabled):hover {
   background-color: #e8e8e8;
@@ -28247,8 +28294,8 @@ body .ui-multiselect-panel.ui-widget .ui-multiselect-item.ui-state-highlight {
   color: #212121;
 }
 body .ui-spinner .ui-spinner-button {
-  width: 1em;
-  height: 0.75em;
+  width: 1.286em;
+  height: 0.714em;
   padding: 0;
   margin-right: 0.25em;
   background-color: transparent;
@@ -28266,6 +28313,7 @@ body .ui-spinner .ui-spinner-button .pi-triangle-1-s {
 }
 body .ui-spinner .ui-spinner-button .pi {
   top: 0px;
+  font-size: 20px;
   height: 0.5em;
   color: #616161;
 }
@@ -28282,8 +28330,8 @@ body .ui-spinner .ui-spinner-input {
   padding-right: 30px;
 }
 body .ui-fluid .ui-spinner .ui-spinner-button {
-  width: 1em;
-  height: 0.75em;
+  width: 1.786em;
+  height: 0.714em;
 }
 body .ui-fluid .ui-spinner .ui-spinner-button .pi {
   left: auto;
@@ -28297,10 +28345,6 @@ body .ui-inputswitch .ui-inputswitch-slider {
   -moz-border-radius: 8px;
   -webkit-border-radius: 8px;
   border-radius: 8px;
-  -moz-transition: background-color 0.3s;
-  -o-transition: background-color 0.3s;
-  -webkit-transition: background-color 0.3s;
-  transition: background-color 0.3s;
 }
 body .ui-inputswitch .ui-inputswitch-slider:before {
   background-color: #ffffff;
@@ -28347,15 +28391,15 @@ body .ui-slider .ui-slider-handle {
   -moz-border-radius: 50%;
   -webkit-border-radius: 50%;
   border-radius: 50%;
-  width: 1.25em;
-  height: 1.25em;
+  width: 1.429em;
+  height: 1.429em;
   transform: scale(0.7);
   -moz-transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
   -o-transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
   -webkit-transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
   transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
 }
-body .ui-slider .ui-slider-handle.ui-state-focus {
+body .ui-slider .ui-slider-handle.ui-state-hover, body .ui-slider .ui-slider-handle.ui-state-focus {
   transform: scale(1);
 }
 body .ui-slider .ui-slider-handle:focus {
@@ -28367,7 +28411,7 @@ body .ui-slider.ui-slider-horizontal {
   background-color: #bdbdbd;
 }
 body .ui-slider.ui-slider-horizontal .ui-slider-handle {
-  top: -0.55em;
+  top: -0.65em;
 }
 body .ui-slider.ui-slider-vertical {
   width: 2px;
@@ -28375,7 +28419,7 @@ body .ui-slider.ui-slider-vertical {
   background-color: #bdbdbd;
 }
 body .ui-slider.ui-slider-vertical .ui-slider-handle {
-  left: -0.55em;
+  left: -0.643em;
 }
 body .ui-slider .ui-slider-range {
   padding: 0;
@@ -28394,8 +28438,8 @@ body .ui-calendar .ui-datepicker-trigger {
   right: 0;
   background-color: transparent;
   color: #212121;
-  height: 1.5em;
-  width: 1.5em;
+  height: 20px;
+  width: 20px;
   box-shadow: none;
   -webkit-box-shadow: none;
   -moz-box-shadow: none;
@@ -28414,9 +28458,10 @@ body .ui-fluid .ui-calendar.ui-calendar-w-btn .ui-inputtext {
 }
 body .ui-datepicker {
   padding: 0;
-  width: 17.5em;
+  width: 24em;
 }
 body .ui-datepicker.ui-shadow {
+  border: 0 none;
   -webkit-box-shadow: 0 2px 4px -1px rgba(0, 0, 0, 0.2), 0 4px 5px 0 rgba(0, 0, 0, 0.14), 0 1px 10px 0 rgba(0, 0, 0, 0.12);
   -moz-box-shadow: 0 2px 4px -1px rgba(0, 0, 0, 0.2), 0 4px 5px 0 rgba(0, 0, 0, 0.14), 0 1px 10px 0 rgba(0, 0, 0, 0.12);
   box-shadow: 0 2px 4px -1px rgba(0, 0, 0, 0.2), 0 4px 5px 0 rgba(0, 0, 0, 0.14), 0 1px 10px 0 rgba(0, 0, 0, 0.12);
@@ -28426,7 +28471,7 @@ body .ui-datepicker .ui-datepicker-group {
 }
 body .ui-datepicker:not(.ui-state-disabled) .ui-datepicker-header .ui-datepicker-prev:hover,
 body .ui-datepicker:not(.ui-state-disabled) .ui-datepicker-header .ui-datepicker-next:hover {
-  background-color: #42A5F5;
+  background-color: #1E88E5;
 }
 body .ui-datepicker:not(.ui-state-disabled) table td a:not(.ui-state-active):not(.ui-state-highlight):hover {
   background-color: #e8e8e8;
@@ -28456,7 +28501,8 @@ body .ui-datepicker .ui-datepicker-header {
 body .ui-datepicker .ui-datepicker-header .ui-datepicker-prev {
   cursor: pointer;
   top: 0.4em;
-  left: 0.2em;
+  left: 0.5em;
+  font-size: 20px;
   -moz-border-radius: 50%;
   -webkit-border-radius: 50%;
   border-radius: 50%;
@@ -28482,14 +28528,10 @@ body .ui-datepicker .ui-datepicker-header .ui-datepicker-prev {
   -moz-osx-font-smoothing: grayscale;
   /* Support for IE. */
   font-feature-settings: "liga";
-  -moz-transition: background-color 0.3s;
-  -o-transition: background-color 0.3s;
-  -webkit-transition: background-color 0.3s;
-  transition: background-color 0.3s;
   color: #ffffff;
 }
 body .ui-datepicker .ui-datepicker-header .ui-datepicker-prev:before {
-  content: "keyboard_arrow_left";
+  content: "";
 }
 body .ui-datepicker .ui-datepicker-header .ui-datepicker-prev .pi {
   display: none;
@@ -28497,7 +28539,8 @@ body .ui-datepicker .ui-datepicker-header .ui-datepicker-prev .pi {
 body .ui-datepicker .ui-datepicker-header .ui-datepicker-next {
   cursor: pointer;
   top: 0.4em;
-  right: 0.2em;
+  font-size: 20px;
+  right: 0.5em;
   font-family: "Material Icons";
   font-weight: normal;
   font-style: normal;
@@ -28523,14 +28566,10 @@ body .ui-datepicker .ui-datepicker-header .ui-datepicker-next {
   -moz-border-radius: 50%;
   -webkit-border-radius: 50%;
   border-radius: 50%;
-  -moz-transition: background-color 0.3s;
-  -o-transition: background-color 0.3s;
-  -webkit-transition: background-color 0.3s;
-  transition: background-color 0.3s;
   color: #ffffff;
 }
 body .ui-datepicker .ui-datepicker-header .ui-datepicker-next:before {
-  content: "keyboard_arrow_right";
+  content: "";
 }
 body .ui-datepicker .ui-datepicker-header .ui-datepicker-next .pi {
   display: none;
@@ -28543,40 +28582,39 @@ body .ui-datepicker table {
   table-layout: fixed;
   border-spacing: 0;
   border-collapse: collapse;
-  font-size: 12px;
+  margin: 0;
 }
 body .ui-datepicker thead tr {
   color: #ffffff;
   background: #1E88E5;
 }
 body .ui-datepicker tbody td {
-  padding: 0.25em 0.125em;
+  padding: 0.25em;
   box-sizing: border-box;
 }
 body .ui-datepicker tbody td.ui-datepicker-today a {
-  color: #ffffff;
-  background: #79b8f0;
+  color: #212121;
+  background-color: #ffffff;
+  border: 1px solid #FFB300;
 }
 body .ui-datepicker tbody td.ui-datepicker-today a.ui-state-active {
-  color: #ffffff;
   background-color: #FFB300;
   color: #212121;
 }
 body .ui-datepicker tbody td a {
-  padding: 0.25em;
+  padding: 0;
   margin: 0;
   text-align: center;
   color: #212121;
   display: inline-block;
-  height: 2.25em;
-  width: 2.25em;
+  height: 3em;
+  width: 3em;
+  line-height: 3em;
   -moz-border-radius: 50%;
   -webkit-border-radius: 50%;
   border-radius: 50%;
-  line-height: 1.8em;
 }
 body .ui-datepicker tbody td a.ui-state-active {
-  color: #ffffff;
   background-color: #FFB300;
   color: #212121;
 }
@@ -28720,9 +28758,10 @@ body .ui-rating .pi-ban {
   /* Support for IE. */
   font-feature-settings: "liga";
   color: #616161;
+  font-size: 20px;
 }
 body .ui-rating .pi-ban:before {
-  content: "cancel";
+  content: "";
 }
 body .ui-rating .pi-star {
   font-family: "Material Icons";
@@ -28748,9 +28787,10 @@ body .ui-rating .pi-star {
   /* Support for IE. */
   font-feature-settings: "liga";
   color: #FFB300;
+  font-size: 20px;
 }
 body .ui-rating .pi-star:before {
-  content: "star";
+  content: "";
 }
 body .ui-rating .pi-star-o {
   font-family: "Material Icons";
@@ -28776,9 +28816,10 @@ body .ui-rating .pi-star-o {
   /* Support for IE. */
   font-feature-settings: "liga";
   color: #616161;
+  font-size: 20px;
 }
 body .ui-rating .pi-star-o:before {
-  content: "star_border";
+  content: "";
 }
 body .ui-chips > ul.ui-inputtext {
   padding: 2px;
@@ -28814,11 +28855,30 @@ body .ui-password-panel.ui-shadow {
   box-shadow: 0 2px 4px -1px rgba(0, 0, 0, 0.2), 0 4px 5px 0 rgba(0, 0, 0, 0.14), 0 1px 10px 0 rgba(0, 0, 0, 0.12);
 }
 body .ui-inputgroup .ui-inputgroup-addon {
-  border-width: 0 0 1px 0;
-  border-color: #bdbdbd;
-  color: #616161;
   padding: 2px 2px 1px 2px;
-  align-self: flex-end;
+  border-color: #bdbdbd;
+  background-color: transparent;
+  color: #757575;
+  min-width: 28px;
+  border-left: 0;
+  border-right: 0;
+  border-top: 0;
+}
+body .ui-inputgroup .ui-inputgroup-addon:first-child {
+  -moz-border-radius-topleft: 0;
+  -webkit-border-top-left-radius: 0;
+  border-top-left-radius: 0;
+  -moz-border-radius-bottomleft: 0;
+  -webkit-border-bottom-left-radius: 0;
+  border-bottom-left-radius: 0;
+}
+body .ui-inputgroup .ui-inputgroup-addon:last-child {
+  -moz-border-radius-topright: 2px;
+  -webkit-border-top-right-radius: 2px;
+  border-top-right-radius: 2px;
+  -moz-border-radius-bottomright: 2px;
+  -webkit-border-bottom-right-radius: 2px;
+  border-bottom-right-radius: 2px;
 }
 body .ui-inputgroup .ui-inputgroup-addon > i {
   display: -webkit-box;
@@ -28843,8 +28903,8 @@ body .ui-inputgroup .ui-chkbox, body .ui-inputgroup .ui-radiobutton {
   margin-bottom: 0.125em;
 }
 body .ui-fluid .ui-inputgroup .ui-button-icon-only {
-  width: 1.643em;
-  height: 1.643em;
+  width: 2.143em;
+  height: 2.143em;
   padding: 0;
 }
 body .ui-fluid .ui-inputgroup .ui-button-icon-only .ui-button-icon-left {
@@ -28882,6 +28942,8 @@ body .ui-fileupload .ui-fileupload-buttonbar .pi-arrowreturnthick-1-n:before {
 }
 body .ui-fileupload .ui-fileupload-buttonbar .ui-button {
   background-color: #FFB300;
+  color: #212121;
+  margin-right: 6px;
 }
 body .ui-fileupload .ui-fileupload-buttonbar .ui-button:enabled:hover {
   background-color: #FF8F00;

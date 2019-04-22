@@ -18,7 +18,8 @@ body {
             padding-bottom: 2px;
         }
 
-        &:disabled {
+        &:disabled,
+        &.ui-state-disabled {
             border-bottom: 1px dotted;
         }
 
@@ -30,12 +31,14 @@ body {
 
         &.ui-state-error {
             border-color: $inputInvalidBorderColor;
+            background-image: linear-gradient(to bottom, $inputInvalidBorderColor, $inputInvalidBorderColor), linear-gradient(to bottom, $inputInvalidBorderColor, $inputInvalidBorderColor);
         }
     }
 
     .ui-widget-header:not(.ui-dataview-header) {
         .ui-inputtext {
-            background-image: linear-gradient(to bottom, #ffffff, #ffffff), linear-gradient(to bottom, lighten($primaryColor,25%),  lighten($primaryColor,25%));
+            background-image: linear-gradient(to bottom, #ffffff, #ffffff), linear-gradient(to bottom, desaturate(lighten($primaryColor,25%), 25%), desaturate(lighten($primaryColor,25%), 25%));
+            padding-bottom: 2px;
         }
     }
 
@@ -51,9 +54,9 @@ body {
             pointer-events:none;
             left:5px;
             top:1px;
-            transition: 0.3s ease all;
-            -moz-transition: 0.3s ease all;
-            -webkit-transition: 0.3s ease all;
+            transition: $transitionDuration ease all;
+            -moz-transition: $transitionDuration ease all;
+            -webkit-transition: $transitionDuration ease all;
         }
 
         input:focus ~ label,
@@ -81,7 +84,7 @@ body {
                 border: 0 none;
                 margin: 0px;
                 color: $inputErrorTextColor;
-                font-size: .75em;
+                font-size: $errorMessageFontSize;
             }
         }
 
@@ -137,7 +140,8 @@ body {
 
     .ui-listbox {
         min-width: 12.5em;
-        background-color: #ffffff;
+        background-color: $inputBgColor;
+        border: 0 none;
         @include border-radius($borderRadius);
 
         &.ui-inputtext {
@@ -145,16 +149,15 @@ body {
         }
 
         .ui-listbox-list {
-            padding: 0;
+            padding: $inputListPadding;
+            border: 1px solid $contentBorderColor;
         }
 
         .ui-listbox-item {
             overflow: hidden;
             padding: $listItemPadding;
             margin: 0;
-            color: $textColor;
             @include rippleitem();
-            @include transition(background-color .3s);
             @include border-radius(0);
 
             &.ui-state-highlight {
@@ -172,20 +175,29 @@ body {
         }
 
         .ui-listbox-header {
-            @include border-radius(0);
+            margin-bottom: 0;
             padding: $inputHeaderPadding;
+            background-color: $primaryColor;
+            @include border-radius-top($borderRadius);
 
             .ui-chkbox {
                 .ui-chkbox-box {
-                    border-color: #ffffff;
+                    border-color: darken($headerTextColor, 15%);
                 }
             }
 
             .ui-listbox-filter-container {
                 .ui-inputtext {
-                    color: #ffffff;
+                    border-color: darken($headerTextColor, 15%);
+                    color: $headerTextColor;
+                    width: 100%;
                     padding: 2px;
                     padding-left: 1.5em;
+                    @include border-box-sizing();
+
+                    &.ui-state-focus {
+                        border-color: $headerTextColor;
+                    }
                 }
 
                 .pi {
@@ -199,14 +211,16 @@ body {
     .ui-button, .ui-datepicker-buttonpane > button {
         overflow: hidden;
         background-color: $primaryColor;
-        color: $primaryTextColor;
-        height: 2.25em;
+        color: $buttonTextColor;
+        height: 2.143em;
+        font-size: $fontSize;
+        font-family: $fontFamily;
         padding: 0 1em;
         border: 0 none;
         -moz-box-shadow: 0 1px 2.5px 0 rgba(0, 0, 0, 0.26), 0 1px 5px 0 rgba(0, 0, 0, 0.16);
         -webkit-box-shadow: 0 1px 2.5px 0 rgba(0, 0, 0, 0.26), 0 1px 5px 0 rgba(0, 0, 0, 0.16);
         box-shadow: 0 1px 2.5px 0 rgba(0, 0, 0, 0.26), 0 1px 5px 0 rgba(0, 0, 0, 0.16);
-        @include transition(background-color .3s);
+        @include transition(background-color $transitionDuration);
 
         &:enabled:not(:focus):hover {
             background-color: $primaryDarkColor;
@@ -219,42 +233,67 @@ body {
 
         .ui-button-text {
             padding: 0;
-            line-height: 2.25em;
+            line-height: 2.143em;
         }
 
         .pi {
-            color: $primaryTextColor;
+            color: $buttonTextColor;
         }
 
         &.ui-button-icon-only {
             @include border-radius(50%);
-            width: 2.5em;
-            height: 2.5em;
+            width: 2.143em;
+            height: 2.143em;
+        }
 
+        &.ui-button-text-icon-left,
+        &.ui-button-text-icon-right {
             .pi {
-                margin-left: -.5em;
+                margin-top: -1 * $iconWidth / 2;
             }
         }
 
         &.ui-button-text-icon-left {
-            padding-left: 2.5em;
+            padding-left: 2.571em;
         }
 
         &.ui-button-text-icon-right {
-            padding-right: 2.5em;
+            padding-right: 2.571em;
         }
 
         &.secondary-btn {
+            background-color: #ffffff;
+            color: $textColor;
+
+            &:enabled:not(:focus):hover {
+                background-color: #f5f5f5;
+            }
+
+            &:focus {
+                outline: 0 none;
+                background-color: darken(#f5f5f5, 10%);
+            }
+
+            .pi {
+                color: $textColor;
+            }
+        }
+
+        &.accent-btn {
             background-color: $accentColor;
             color: $accentTextColor;
 
-            &:enabled:not(:focus):hover {
+            &:enabled:not(:focus):hover  {
                 background-color: $accentDarkColor;
             }
 
             &:focus {
                 outline: 0 none;
                 background-color: lighten($accentColor,10%);
+            }
+
+            .pi {
+                color: $accentTextColor;
             }
         }
 
@@ -402,19 +441,6 @@ body {
             }
         }
 
-        &.indigo-btn {
-            background-color: #3F51B5;
-
-            &:enabled:not(:focus):hover {
-                background-color: #283593;
-            }
-
-            &:focus {
-                outline: 0 none;
-                background-color: lighten(#3F51B5,10%);
-            }
-        }
-
         &.flat {
             @include no-shadow();
         }
@@ -523,6 +549,9 @@ body {
 
     .ui-splitbutton {
         @include border-radius($borderRadius + 1);
+        -moz-box-shadow: 0 1px 2.5px 0 rgba(0, 0, 0, 0.26), 0 1px 5px 0 rgba(0, 0, 0, 0.16);
+        -webkit-box-shadow: 0 1px 2.5px 0 rgba(0, 0, 0, 0.26), 0 1px 5px 0 rgba(0, 0, 0, 0.16);
+        box-shadow: 0 1px 2.5px 0 rgba(0, 0, 0, 0.26), 0 1px 5px 0 rgba(0, 0, 0, 0.16);
 
         > .ui-button {
             @include no-shadow();
@@ -534,9 +563,9 @@ body {
         }
 
         .ui-splitbutton-menubutton {
-            height: 2.25em;
+            height: 2.143em;
             @include border-radius-left(0);
-            @include border-radius-right($borderRadius);
+            @include border-radius-right(3px);
         }
 
         .ui-menu {
@@ -697,7 +726,8 @@ body {
     }
 
     .ui-autocomplete-panel {
-        padding: $inputListPadding;
+        padding: 0;
+        border: 0 none;
         @include border-radius(0);
 
         &.ui-shadow {
@@ -705,13 +735,12 @@ body {
         }
 
         .ui-autocomplete-list {
-            padding: 0;
+            padding: $inputListPadding;
 
             .ui-autocomplete-list-item {
-                @include transition(background-color .3s);
                 padding: $listItemPadding;
+                margin: 0;
                 @include border-radius(0);
-                color: $textColor;
 
                 .ui-autocomplete-query {
                     font-weight: 700;
@@ -733,8 +762,8 @@ body {
             &.ui-button.ui-button-icon-only {
                 background-color: transparent;
                 @include no-shadow();
-                height: 1.5em;
-                width: 1.5em;
+                height: 1.429em;
+                width: 1.429em;
                 padding: 0;
                 right: 0;
                 bottom: 0;
@@ -746,6 +775,7 @@ body {
                 }
 
                 .pi {
+                    font-size: $iconFontSize;
                     color: $textSecondaryColor;
                 }
             }
@@ -754,8 +784,8 @@ body {
         &.ui-autocomplete-multiple {
             .ui-autocomplete-multiple-container {
                 &.ui-inputtext {
-                    box-sizing: border-box;
-                    padding: 2px;
+                    @include border-box-sizing();
+                    padding: 2px 2px 1px 2px;
                 }
 
                 &.ui-state-disabled {
@@ -773,7 +803,6 @@ body {
                     padding: 0;
                     font-size: $fontSize;
                     margin: 0;
-                    vertical-align: bottom;
                 }
             }
 
@@ -781,11 +810,14 @@ body {
                 display: inline-block;
                 float: none;
                 vertical-align: middle;
-                font-size: 1em;
 
                 .ui-autocomplete-token-label {
                     display: inline-block;
                     vertical-align: middle;
+                }
+
+                .ui-autocomplete-token-icon {
+                    font-size: $fontSize;
                 }
             }
 
@@ -817,14 +849,16 @@ body {
         @include border-radius(0);
 
         .ui-dropdown-trigger {
-            height: 1.5em;
-            width: 1.5em;
+            height: $iconHeight;
+            width:  $iconWidth;
+            font-size: $iconFontSize;
             margin-top: 0;
             padding: 0;
             top: 2px;
             margin-right: 0;
 
             .pi {
+                font-size: $iconFontSize;
                 color: $textSecondaryColor;
             }
         }
@@ -840,6 +874,7 @@ body {
             border-width: 0;
             background-size: 100% 2px, 100% 1px;
             padding-bottom: 2px;
+            outline: none;
 
             .ui-dropdown-label {
                 padding-bottom: 2px;
@@ -848,18 +883,17 @@ body {
     }
 
     .ui-dropdown-panel {
-        padding: $inputListPadding;
+        padding: 0;
         @include border-radius(0);
 
         .ui-dropdown-list {
-            padding: 0;
+            padding: $inputListPadding;
         }
 
         .ui-dropdown-item {
             margin: 0;
             padding: $listItemPadding;
             color: $textColor;
-            @include transition(background-color .3s);
             @include border-radius(0);
 
             &:not(.ui-state-highlight):not(.ui-state-disabled):hover {
@@ -908,18 +942,20 @@ body {
             padding-right: 1.5em;
 
             .ui-multiselect-label {
-                padding: 0px 2px 0px 2px;
+                padding: 2px;
             }
         }
 
         .ui-multiselect-trigger {
-            height: 1.5em;
-            width: 1.5em;
+            height: $iconHeight;
+            width:  $iconWidth;
+            font-size: $iconFontSize;
             margin-top: 0;
             padding: 0;
             top: -2px;
 
             .pi {
+                font-size: $iconFontSize;
                 color: $textSecondaryColor;
             }
         }
@@ -931,30 +967,37 @@ body {
 
     .ui-multiselect-panel.ui-widget {
         padding: 0;
+        border: 0 none;
         @include border-radius(0);
         @include overlay-input-shadow();
-        min-width: 12.5em;
 
         .ui-multiselect-header {
             @include border-radius(0);
+            margin: 0;
+            border: 0 none;
             padding: $inputHeaderPadding;
             position: relative;
 
             .ui-chkbox {
                 float: none;
-                margin: 0 .5em 0 -.125em;
+                margin: 0 8px 0 1px;
                 position: static;
 
                 .ui-chkbox-box {
-                    border-color: #ffffff;
+                    border-color: $headerTextColor;
 
                     .ui-chkbox-icon {
-                        border-color: #ffffff;
+                        border-color: $headerTextColor;
                     }
 
                     &.ui-state-active {
                         .ui-chkbox-icon {
-                            border-color: #ffffff;
+                            border-color: $headerTextColor;
+                        }
+
+                        &:before {
+                            -webkit-animation: none;
+                            animation: none;
                         }
                     }
 
@@ -970,19 +1013,19 @@ body {
                 display: inline-block;
                 vertical-align: middle;
                 float: none;
-                margin-left: 0;
 
                 .pi {
                     top: -2px;
                     left: 0;
+                    color: $headerTextColor;
                 }
 
                 .ui-inputtext {
-                    color: #ffffff;
+                    color: $headerTextColor;
                     padding: 2px;
                     padding-left: 1.5em;
                     width: 100%;
-                    box-sizing: border-box;
+                    @include border-box-sizing();
 
                     &:focus {
                         border-bottom-color: #ffffff;
@@ -1005,7 +1048,7 @@ body {
                     height: 1em;
                     margin-top: -.5em;
                     margin-left: -.5em;
-                    color: #ffffff;
+                    color: $primaryTextColor;
                 }
 
                 &:hover {
@@ -1018,12 +1061,25 @@ body {
 
         .ui-multiselect-list {
             padding: $inputListPadding;
+            background-color: $contentBgColor;
         }
 
         .ui-multiselect-item {
-            padding: $listItemPadding;
-            color: $textColor;
+            padding: 0.571em 1em;
+            margin: 0;
             @include border-radius(0);
+            @include rippleitem();
+
+            .ui-chkbox {
+                .ui-chkbox-box {
+                    &.ui-state-active {
+                        &:before {
+                            -webkit-animation: none;
+                            animation: none;
+                        }
+                    }
+                }
+            }
 
             &:not(.ui-state-highlight):not(.ui-state-disabled):hover {
                 @include hover-element();
@@ -1037,8 +1093,8 @@ body {
 
     .ui-spinner {
         .ui-spinner-button {
-            width: 1em;
-            height: .75em;
+            width: 1.286em;
+            height: 0.714em;
             padding: 0;
             margin-right: .25em;
             background-color: transparent;
@@ -1056,6 +1112,7 @@ body {
 
             .pi {
                 top: 0px;
+                font-size: $iconFontSize;
                 height: .5em;
                 color: $textSecondaryColor;
             }
@@ -1086,8 +1143,8 @@ body {
     .ui-fluid {
         .ui-spinner {
             .ui-spinner-button {
-                width: 1em;
-                height: .75em;
+                width: 1.786em;
+                height: 0.714em;
 
                 .pi {
                     left: auto;
@@ -1096,7 +1153,6 @@ body {
         }
     }
 
-
     .ui-inputswitch {
         height: 14px;
         width: 34px !important;
@@ -1104,10 +1160,9 @@ body {
         .ui-inputswitch-slider {
             background-color: rgb(158,158,158);
             @include border-radius(8px);
-            @include transition(background-color .3s);
 
             &:before {
-                background-color: #ffffff;
+                background-color: $inputBgColor;
                 height: 1.429em;
                 width: 1.429em;
                 left: 0;
@@ -1171,11 +1226,12 @@ body {
             background-color: $accentColor;
             color: $accentTextColor;
             @include border-radius(50%);
-            width: 1.25em;
-            height: 1.25em;
+            width: 1.429em;
+            height: 1.429em;
             transform: scale(.7);
             @include transition(all .4s cubic-bezier(.25,.8,.25,1));
 
+            &.ui-state-hover,
             &.ui-state-focus {
                 transform: scale(1);
             }
@@ -1191,7 +1247,7 @@ body {
             background-color: $inputBorderColor;
 
             .ui-slider-handle {
-                top: -.55em;
+                top: -.65em;
             }
         }
 
@@ -1201,7 +1257,7 @@ body {
             background-color: $inputBorderColor;
 
             .ui-slider-handle {
-                left: -.55em;
+                left: -0.643em;
             }
         }
 
@@ -1231,8 +1287,8 @@ body {
             right: 0;
             background-color: transparent;
             color: $textColor;
-            height: 1.5em;
-            width: 1.5em;
+            height: $iconHeight;
+            width: $iconWidth;
             @include no-shadow();
             @include border-radius(0);
 
@@ -1256,9 +1312,10 @@ body {
 
     .ui-datepicker {
         padding: 0;
-        width: 17.5em;
+        width: 24em;
 
         &.ui-shadow {
+            border: 0 none;
             @include overlay-input-shadow();
         }
 
@@ -1271,7 +1328,7 @@ body {
                 .ui-datepicker-prev,
                 .ui-datepicker-next {
                     &:hover {
-                        background-color: $primaryLightColor;
+                        background-color: $primaryColor;
                     }
                 }
             }
@@ -1292,7 +1349,7 @@ body {
         }
 
         .ui-datepicker-header {
-            padding: $inputHeaderPadding;
+            padding: $headerPadding;
             background: $primaryDarkColor;
             border-color: $primaryDarkColor;
             @include border-radius-top(2px);
@@ -1301,11 +1358,11 @@ body {
             .ui-datepicker-prev {
                 cursor: pointer;
                 top: .4em;
-                left: .2em;
+                left: .5em;
+                font-size: $iconFontSize;
                 @include border-radius(50%);
-                @include material-icon("keyboard_arrow_left");
-                @include transition(background-color .3s);
-                color: #ffffff;
+                @include material-icon("\e5cb");
+                color: $primaryTextColor;
 
                 .pi {
                     display: none;
@@ -1315,11 +1372,11 @@ body {
             .ui-datepicker-next {
                 cursor: pointer;
                 top: .4em;
-                right: .2em;
-                @include material-icon("keyboard_arrow_right");
+                font-size: $iconFontSize;
+                right: .5em;
+                @include material-icon("\e5cc");
                 @include border-radius(50%);
-                @include transition(background-color .3s);
-                color: #ffffff;
+                color: $primaryTextColor;
 
                 .pi {
                     display: none;
@@ -1336,28 +1393,28 @@ body {
             table-layout: fixed;
             border-spacing: 0;
             border-collapse: collapse;
-            font-size: $fontSize - 2;
+            margin: 0;
         }
 
         thead {
             tr {
-                color: #ffffff;
+                color: $primaryTextColor;
                 background: $primaryColor;
             }
         }
 
         tbody {
             td {
-                padding: .25em .125em;
+                padding: .25em;
                 box-sizing: border-box;
 
                 &.ui-datepicker-today {
                     a {
-                        color: #ffffff;
-                        background: lighten($primaryColor,20%);
+                        color: $textColor;
+                        background-color: $contentBgColor;
+                        border: 1px solid $accentColor;
 
                         &.ui-state-active {
-                            color: #ffffff;
                             background-color: $accentColor;
                             color: $accentTextColor;
                         }
@@ -1365,18 +1422,17 @@ body {
                 }
 
                 a {
-                    padding: .25em;
+                    padding: 0;
                     margin: 0;
                     text-align: center;
                     color: $textColor;
                     display: inline-block;
-                    height: 2.250em;
-                    width: 2.250em;
+                    height: 3em;
+                    width: 3em;
+                    line-height: 3em;
                     @include border-radius(50%);
-                    line-height: 1.8em;
 
                     &.ui-state-active {
-                        color: #ffffff;
                         background-color: $accentColor;
                         color: $accentTextColor;
                     }
@@ -1464,18 +1520,21 @@ body {
         min-height: 1.5em;
 
         .pi-ban {
-            @include material-icon("cancel");
+            @include material-icon("\e5c9");
             color: $textSecondaryColor;
+            font-size: $iconFontSize;
         }
 
         .pi-star {
-            @include material-icon("star");
+            @include material-icon("\e838");
             color: $accentColor;
+            font-size: $iconFontSize;
         }
 
         .pi-star-o {
-            @include material-icon("star_border");
+            @include material-icon("\e83a");
             color: $textSecondaryColor;
+            font-size: $iconFontSize;
         }
     }
 
@@ -1525,11 +1584,22 @@ body {
     /* InputGroup */
     .ui-inputgroup {
         .ui-inputgroup-addon {
-            border-width: 0 0 1px 0;
-            border-color: $inputBorderColor;
-            color: $textSecondaryColor;
-            padding: 2px 2px 1px 2px;
-            align-self: flex-end;
+            padding: $inputGroupPadding;
+            border-color: $inputGroupBorderColor;
+            background-color: $inputGroupBgColor;
+            color: $inputGroupTextColor;
+            min-width: $inputGroupAddonMinWidth;
+            border-left: 0;
+            border-right: 0;
+            border-top: 0;
+
+            &:first-child {
+                @include border-radius-left(0);
+            }
+
+            &:last-child {
+                @include border-radius-right($borderRadius);
+            }
 
             > i {
                 @include flex();
@@ -1561,8 +1631,8 @@ body {
     .ui-fluid {
         .ui-inputgroup {
             .ui-button-icon-only {
-                width: 1.643em;
-                height: 1.643em;
+                width: 2.143em;
+                height: 2.143em;
                 padding: 0;
 
                 .ui-button-icon-left {
@@ -1582,6 +1652,8 @@ body {
 
             .ui-button {
                 background-color: $accentColor;
+                color: $accentTextColor;
+                margin-right: 6px;
 
                 &:enabled:hover {
                     background-color: $accentDarkColor;
