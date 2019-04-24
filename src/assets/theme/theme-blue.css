@@ -29319,24 +29319,27 @@ body .ui-picklist li.ui-picklist-item.ui-state-highlight {
   color: #212121;
 }
 body .ui-picklist .ui-picklist-buttons {
-  width: 3em;
+  width: 3.429em;
 }
 body .ui-picklist .ui-picklist-buttons .ui-button.ui-button-icon-only {
-  width: 2.5em;
+  width: 2.286em;
   margin-right: 0;
   display: inline-block;
-  margin-bottom: 0.5em;
+  margin-bottom: 0.286em;
 }
 body .ui-picklist .ui-picklist-buttons-cell {
   text-align: center;
 }
+body .ui-picklist.ui-picklist-responsive .ui-picklist-buttons {
+  width: 3.429em;
+}
 body .ui-picklist.ui-picklist-responsive .ui-picklist-buttons .ui-button.ui-button-icon-only {
   margin: 0 auto;
   display: block;
-  margin-bottom: 0.5em;
+  margin-bottom: 0.571em;
 }
 body .ui-picklist.ui-picklist-responsive .ui-picklist-list .ui-picklist-item .ui-chkbox {
-  margin-right: 0.5em;
+  margin-right: 0.571em;
   vertical-align: top;
 }
 body .ui-picklist.ui-picklist-responsive .ui-picklist-list .ui-picklist-item .ui-chkbox, body .ui-picklist.ui-picklist-responsive .ui-picklist-list .ui-picklist-item .ui-chkbox * {
@@ -29344,6 +29347,8 @@ body .ui-picklist.ui-picklist-responsive .ui-picklist-list .ui-picklist-item .ui
 }
 body .ui-orderlist .ui-orderlist-caption {
   padding: 0.714em 1em;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
   box-sizing: border-box;
 }
 body .ui-orderlist .ui-orderlist-list {
@@ -29367,16 +29372,15 @@ body .ui-orderlist .ui-orderlist-list li.ui-orderlist-item.ui-state-highlight {
   color: #212121;
 }
 body .ui-orderlist.ui-orderlist-responsive .ui-orderlist-controls {
-  width: 3.75em;
+  width: 4.286em;
 }
 body .ui-orderlist .ui-orderlist-controls {
-  width: 3.75em;
+  width: 4.286em;
   text-align: center;
 }
 body .ui-orderlist .ui-orderlist-controls .ui-button.ui-button-icon-only {
-  width: 2.5em;
-  margin-bottom: 0.5em;
-  margin-right: 0;
+  width: 2.286em;
+  margin: 0 auto 0.571em auto;
 }
 body .ui-organizationchart .ui-organizationchart-node-content.ui-organizationchart-selectable-node:not(.ui-state-highlight):hover {
   background-color: #e8e8e8;
@@ -29472,13 +29476,13 @@ body .ui-paginator > a:not(.ui-state-disabled):not(.ui-state-active):hover {
   -moz-border-radius: 50%;
   -webkit-border-radius: 50%;
   border-radius: 50%;
-  -moz-transition: background-color 0.3s;
-  -o-transition: background-color 0.3s;
-  -webkit-transition: background-color 0.3s;
-  transition: background-color 0.3s;
+  -moz-transition: background-color 0.2s;
+  -o-transition: background-color 0.2s;
+  -webkit-transition: background-color 0.2s;
+  transition: background-color 0.2s;
 }
 body .ui-paginator .ui-paginator-next {
-  padding: 0;
+  padding: 0 6px;
   vertical-align: middle;
   font-family: "Material Icons";
   font-weight: normal;
@@ -29595,7 +29599,8 @@ body .ui-paginator .ui-paginator-first:before {
 }
 body .ui-paginator .ui-paginator-pages {
   vertical-align: middle;
-  margin: 0 0.375em 0 0.375em;
+  margin: 0 6px 0 12px;
+  padding: 0;
 }
 body .ui-paginator .ui-paginator-pages a {
   padding: 0;
@@ -29606,10 +29611,10 @@ body .ui-paginator .ui-paginator-pages a {
   -moz-border-radius: 50%;
   -webkit-border-radius: 50%;
   border-radius: 50%;
-  -moz-transition: background-color 0.3s;
-  -o-transition: background-color 0.3s;
-  -webkit-transition: background-color 0.3s;
-  transition: background-color 0.3s;
+  -moz-transition: background-color 0.2s;
+  -o-transition: background-color 0.2s;
+  -webkit-transition: background-color 0.2s;
+  transition: background-color 0.2s;
 }
 body .ui-paginator .ui-paginator-pages a:not(.ui-state-active):hover {
   background-color: #42A5F5;
@@ -29622,15 +29627,14 @@ body .ui-datagrid .ui-datagrid-header {
   padding: 0.714em 1em;
 }
 body .ui-datagrid .ui-panel .ui-panel-titlebar {
-  background-color: #ffffff;
+  background-color: #eeeeee;
   color: #212121;
-  border-color: #dbdbdb;
 }
 body .ui-datalist .ui-datalist-header {
   padding: 0.714em 1em;
 }
 body .ui-dataview .ui-dataview-header {
-  background-color: #ffffff;
+  background-color: #eeeeee;
   color: #212121;
   padding: 0.714em 1em;
   border: 1px solid #dbdbdb;
@@ -29643,10 +29647,10 @@ body .ui-dataview .ui-dataview-header .ui-button.ui-state-active:hover {
 body .ui-dataview .ui-dataview-content {
   background-color: #ffffff;
   color: #212121;
-  border: 1px solid #dbdbdb;
+  border: 1px solid #d8d8d8;
 }
 body .ui-dataview .ui-dataview-footer {
-  background-color: #ffffff;
+  background-color: #eeeeee;
   color: #212121;
   padding: 0.714em 1em;
   border: 1px solid #dbdbdb;
@@ -29655,7 +29659,6 @@ body .ui-dataview .ui-dataview-footer {
 body .ui-table .ui-table-caption,
 body .ui-table .ui-table-summary {
   padding: 0.714em 1em;
-  text-align: center;
   font-weight: normal;
 }
 body .ui-table .ui-table-caption {
@@ -29667,16 +29670,98 @@ body .ui-table .ui-table-summary {
 body .ui-table .ui-table-thead > tr > th,
 body .ui-table .ui-table-tbody > tr > td,
 body .ui-table .ui-table-tfoot > tr > td {
-  padding: 0.625em 0.875em;
+  padding: 0.857em;
 }
 body .ui-table .ui-table-thead > tr > th,
 body .ui-table .ui-table-tfoot > tr > td {
-  font-weight: 400;
+  font-weight: 500;
   background-color: #ffffff;
   border: 0 none;
 }
 body .ui-table p-sortIcon {
   display: inline-block;
+}
+body .ui-table .ui-table-thead > tr > th {
+  padding: 0.857em;
+  border: 0 none;
+  text-align: left;
+  font-weight: 500;
+  border-top: 1px solid #d8d8d8;
+  background-color: #ffffff;
+}
+body .ui-table .ui-table-thead > tr > th:first-child {
+  border-left: 1px solid #d8d8d8;
+}
+body .ui-table .ui-table-thead > tr > th:last-child {
+  border-right: 1px solid #d8d8d8;
+}
+body .ui-table .ui-table-thead > tr > th.ui-state-hover {
+  background-color: #e8e8e8;
+  color: #000000;
+}
+body .ui-table .ui-table-thead > tr > th .ui-sortable-column-icon {
+  vertical-align: middle;
+  margin: -4px 0 0 0;
+  color: #616161;
+}
+body .ui-table .ui-table-thead > tr > th .ui-sortable-column-icon.ui-icon-carat-2-n-s {
+  margin-left: 4px;
+}
+body .ui-table .ui-table-thead > tr > th .ui-column-resizer {
+  font-family: "Material Icons";
+  font-weight: normal;
+  font-style: normal;
+  font-size: 24px;
+  /* Preferred icon size */
+  display: inline-block;
+  width: 1em;
+  height: 1em;
+  line-height: 1;
+  text-transform: none;
+  letter-spacing: normal;
+  word-wrap: normal;
+  white-space: nowrap;
+  direction: ltr;
+  /* Support for all WebKit browsers. */
+  -webkit-font-smoothing: antialiased;
+  /* Support for Safari and Chrome. */
+  text-rendering: optimizeLegibility;
+  /* Support for Firefox. */
+  -moz-osx-font-smoothing: grayscale;
+  /* Support for IE. */
+  font-feature-settings: "liga";
+  font-size: 16px;
+  color: #616161;
+}
+body .ui-table .ui-table-thead > tr > th .ui-column-resizer:before {
+  content: "";
+}
+body .ui-table .ui-table-thead > tr > th.ui-state-active, body .ui-table .ui-table-thead > tr > th.ui-state-highlight {
+  background-color: #FFB300;
+  color: #212121;
+  border-top-color: #FFB300;
+}
+body .ui-table .ui-table-thead > tr > th.ui-state-active .ui-icon, body .ui-table .ui-table-thead > tr > th.ui-state-highlight .ui-icon {
+  color: #212121;
+}
+body .ui-table .ui-table-thead > tr > th.ui-state-active .ui-inputtext, body .ui-table .ui-table-thead > tr > th.ui-state-highlight .ui-inputtext {
+  color: #212121;
+}
+body .ui-table .ui-table-thead > tr > th.ui-state-active .ui-inputtext.ui-state-focus, body .ui-table .ui-table-thead > tr > th.ui-state-highlight .ui-inputtext.ui-state-focus {
+  border-color: #212121;
+}
+body .ui-table .ui-table-tfoot > tr > td {
+  padding: 0.857em;
+  border: 0 none;
+  background-color: #ffffff;
+  text-align: left;
+  font-weight: 500;
+}
+body .ui-table .ui-table-tfoot > tr > td:first-child {
+  border-left: 1px solid #d8d8d8;
+}
+body .ui-table .ui-table-tfoot > tr > td:last-child {
+  border-right: 1px solid #d8d8d8;
 }
 body .ui-table .ui-sortable-column {
   color: #212121;
@@ -29705,9 +29790,11 @@ body .ui-table .ui-sortable-column .ui-sortable-column-icon {
 }
 body .ui-table .ui-table-tbody > tr {
   background: #ffffff;
+  border: 1px solid #d8d8d8;
 }
 body .ui-table .ui-table-tbody > tr > td {
   background: inherit;
+  padding: 0.714em 0.857em;
   border: 0 none;
 }
 body .ui-table .ui-table-tbody > tr.ui-state-highlight {
@@ -29716,6 +29803,9 @@ body .ui-table .ui-table-tbody > tr.ui-state-highlight {
 }
 body .ui-table .ui-table-tbody > tr.ui-contextmenu-selected {
   background-color: #FFB300;
+  color: #212121;
+}
+body .ui-table .ui-table-tbody > tr .ui-editing-cell input {
   color: #212121;
 }
 body .ui-table .ui-table-tbody > tr:nth-child(even) {
@@ -29729,194 +29819,27 @@ body .ui-table .ui-table-tbody > tr:nth-child(even).ui-contextmenu-selected {
   background-color: #FFB300;
   color: #212121;
 }
+body .ui-table .ui-table-scrollable-wrapper .ui-table-scrollable-header, body .ui-table .ui-table-scrollable-wrapper .ui-table-scrollable-footer {
+  border: 0 none;
+  background-color: transparent;
+  padding: 0px;
+}
+body .ui-table .ui-table-scrollable-wrapper thead tr th {
+  color: #212121;
+  font-size: 14px;
+}
+body .ui-table .ui-table-scrollable-wrapper tfoot tr td {
+  color: #212121;
+  font-size: 14px;
+}
 body .ui-table.ui-table-hoverable-rows .ui-table-tbody > tr.ui-selectable-row:not(.ui-state-highlight):not(.ui-contextmenu-selected):hover {
   cursor: pointer;
   background-color: #e8e8e8;
   color: #000000;
 }
-body .ui-datatable .ui-datatable-header,
-body .ui-datatable .ui-datatable-footer {
-  padding: 0.714em 1em;
-}
-body .ui-datatable .ui-datatable-header .ui-inputtext,
-body .ui-datatable .ui-datatable-footer .ui-inputtext {
-  color: #ffffff;
-}
-body .ui-datatable .ui-datatable-header .ui-inputtext:focus,
-body .ui-datatable .ui-datatable-footer .ui-inputtext:focus {
-  border-color: #ffffff;
-}
-body .ui-datatable .ui-paginator {
-  padding: 0.714em 1em;
-}
-body .ui-datatable .ui-datatable-thead > tr {
-  border: 0 none;
-}
-body .ui-datatable .ui-datatable-thead > tr > th {
-  padding: 0.625em 0.875em;
-  background-color: #ffffff;
-}
-body .ui-datatable .ui-datatable-thead > tr > th.ui-sortable-column:not(.ui-state-active):hover {
-  background-color: #e8e8e8;
-  color: #000000;
-}
-body .ui-datatable .ui-datatable-thead > tr > th .ui-column-title {
-  display: inline-block;
-  vertical-align: middle;
-}
-body .ui-datatable .ui-datatable-thead > tr > th .ui-sortable-column-icon {
-  vertical-align: middle;
-  color: #616161;
-}
-body .ui-datatable .ui-datatable-thead > tr > th.ui-state-active, body .ui-datatable .ui-datatable-thead > tr > th.ui-state-highlight {
-  background-color: #FFB300;
-  color: #212121;
-  border-top-color: #FFB300;
-}
-body .ui-datatable .ui-datatable-thead > tr > th.ui-state-active .pi, body .ui-datatable .ui-datatable-thead > tr > th.ui-state-highlight .pi {
-  color: #212121;
-}
-body .ui-datatable .ui-datatable-thead > tr > th.ui-state-active .ui-inputtext, body .ui-datatable .ui-datatable-thead > tr > th.ui-state-highlight .ui-inputtext {
-  color: #212121;
-}
-body .ui-datatable .ui-datatable-thead > tr > th.ui-state-active .ui-inputtext.ui-state-focus, body .ui-datatable .ui-datatable-thead > tr > th.ui-state-highlight .ui-inputtext.ui-state-focus {
-  border-color: #212121;
-}
-body .ui-datatable .ui-datatable-thead > tr > th.ui-selection-column .ui-chkbox-box {
-  box-sizing: content-box;
-}
-body .ui-datatable .ui-datatable-tfoot > tr > td {
-  padding: 0.625em 0.875em;
-  border: 1px solid #bdbdbd;
-  background-color: #ffffff;
-}
-body .ui-datatable .ui-datatable-data tr.ui-datatable-even {
-  background-color: #f4f4f4;
-}
-body .ui-datatable .ui-datatable-data tr.ui-datatable-even.ui-state-highlight {
-  background-color: #FFB300;
-  color: #212121;
-}
-body .ui-datatable .ui-datatable-data tr {
-  border: 0 none;
-}
-body .ui-datatable .ui-datatable-data tr td {
-  padding: 0.625em 0.875em;
-}
-body .ui-datatable .ui-datatable-data tr td .ui-row-toggler {
-  display: inherit;
-}
-body .ui-datatable .ui-datatable-data tr td.ui-state-highlight .ui-inputtext {
-  color: #ffffff;
-  border-color: #ffffff;
-}
-body .ui-datatable .ui-datatable-data tr td.ui-state-highlight .ui-inputtext:focus {
-  border-color: #ffffff;
-}
-body .ui-datatable .ui-datatable-data tr td.ui-state-error {
-  background-color: #e62a10;
-  border-color: #e62a10;
-  color: #ffffff;
-}
-body .ui-datatable .ui-datatable-data tr td input.ui-cell-editor {
-  padding: 2px 2px 1px 2px;
-}
-body .ui-datatable .ui-datatable-data tr td.ui-selection-column .ui-chkbox-box, body .ui-datatable .ui-datatable-data tr td.ui-selection-column .ui-radiobutton-box {
-  box-sizing: content-box;
-}
-body .ui-datatable .ui-datatable-data tr.ui-state-highlight {
-  background-color: #FFB300;
-  border-color:   #FFB300;
-  color: #212121;
-}
-body .ui-datatable .ui-datatable-data tr .ui-cell-editor-input input {
-  color: #212121;
-}
-body .ui-datatable .ui-datatable-data tr.ui-state-error {
-  background-color: #e62a10;
-  border-color: #e62a10;
-  color: #ffffff;
-}
-body .ui-datatable .ui-datatable-data tr.ui-state-error .ui-inputtext,
-body .ui-datatable .ui-datatable-data tr.ui-state-error .ui-inputtext.ui-state-error {
-  border-color: #ffffff;
-}
-body .ui-datatable .ui-datatable-data tr.ui-state-highlight td.ui-selection-column .ui-radiobutton-box {
-  border-color: #ffffff;
-}
-body .ui-datatable .ui-datatable-data tr.ui-state-highlight td.ui-selection-column .ui-radiobutton-box .ui-radiobutton-icon {
-  background-color: #ffffff;
-}
-body .ui-datatable .ui-datatable-data tr.ui-state-highlight td.ui-selection-column .ui-chkbox-box {
-  border-color: #ffffff;
-  background-color: #ffffff;
-}
-body .ui-datatable .ui-datatable-data tr.ui-state-highlight td.ui-selection-column .ui-chkbox-box .ui-chkbox-icon {
-  color: #616161;
-}
-body .ui-datatable .ui-datatable-data tr.ui-state-highlight .ui-inputtext {
-  color: #ffffff;
-  border-color: #ffffff;
-}
-body .ui-datatable .ui-datatable-data tr.ui-state-highlight .ui-inputtext:focus {
-  border-color: #ffffff;
-}
-body .ui-datatable .ui-datatable-data tr.ui-rowgroup-header td a {
-  height: 1.5em;
-}
-body .ui-datatable .ui-datatable-data.ui-datatable-hoverable-rows > tr.ui-widget-content:not(.ui-state-highlight):hover {
-  cursor: pointer;
-  background-color: #e8e8e8;
-  color: #000000;
-}
-body .ui-datatable.ui-datatable-scrollable .ui-datatable-scrollable-header, body .ui-datatable.ui-datatable-scrollable .ui-datatable-scrollable-footer {
-  border: 0 none;
-  background-color: transparent;
-}
-body .ui-datatable.ui-datatable-scrollable .ui-datatable-scrollable-header .ui-datatable-data td, body .ui-datatable.ui-datatable-scrollable .ui-datatable-scrollable-footer .ui-datatable-data td {
-  color: #212121;
-}
-body .ui-datatable.ui-datatable-scrollable thead tr th {
-  color: #212121;
-  font-size: 14px;
-}
-body .ui-datatable.ui-datatable-scrollable tfoot tr td {
-  color: #212121;
-  font-size: 14px;
-}
-body .ui-datatable .ui-datatable-loading-content {
-  top: 30%;
-}
-body .ui-datatable .ui-datatable-loading-content .pi {
-  font-family: "Material Icons";
-  font-weight: normal;
-  font-style: normal;
-  font-size: 24px;
-  /* Preferred icon size */
-  display: inline-block;
-  width: 1em;
-  height: 1em;
-  line-height: 1;
-  text-transform: none;
-  letter-spacing: normal;
-  word-wrap: normal;
-  white-space: nowrap;
-  direction: ltr;
-  /* Support for all WebKit browsers. */
-  -webkit-font-smoothing: antialiased;
-  /* Support for Safari and Chrome. */
-  text-rendering: optimizeLegibility;
-  /* Support for Firefox. */
-  -moz-osx-font-smoothing: grayscale;
-  /* Support for IE. */
-  font-feature-settings: "liga";
-  font-size: 2em;
-}
-body .ui-datatable .ui-datatable-loading-content .pi:before {
-  content: "refresh";
-}
 body .ui-carousel {
   padding: 0;
+  border: 1px solid transparent;
 }
 body .ui-carousel .ui-carousel-header {
   padding: 0.714em 1em;
@@ -29934,31 +29857,38 @@ body .ui-carousel .ui-carousel-header .ui-carousel-button {
 body .ui-carousel .ui-carousel-header .ui-carousel-page-links {
   margin: -0.143em 0 0 0;
 }
+body .ui-carousel .ui-carousel-footer {
+  margin: 0;
+  padding: 0.714em 1em-2px;
+  font-size: 12px;
+}
 body .ui-tree {
-  padding: 0.857em 1em/2;
+  padding: 0.857em 1em;
 }
 body .ui-tree .ui-treenode-children {
-  padding-left: 1.75em;
+  padding-left: 2em;
+}
+body .ui-tree .ui-treenode-content {
+  padding: 0.571em 0.857em;
+  padding-left: 0;
+  padding-right: 0;
+  display: inline-block;
 }
 body .ui-tree .ui-treenode-content .ui-chkbox {
-  margin-right: 0.5em;
+  margin: 0 0.286em 0 0.286em;
 }
 body .ui-tree .ui-treenode-content .ui-chkbox .pi {
   color: #757575;
 }
 body .ui-tree .ui-treenode-content .ui-tree-toggler {
   vertical-align: middle;
-  margin: 0 0 0 0.25em;
 }
 body .ui-tree .ui-treenode-content .ui-treenode-icon {
   vertical-align: middle;
-  margin: 0 0.25em;
-  color: #757575;
-}
-body .ui-tree .ui-treenode-content .ui-chkbox {
-  margin: 0 0.25em;
+  margin: 0 0.286em 0 0.286em;
 }
 body .ui-tree .ui-treenode-content .ui-treenode-label {
+  padding: 0 0.286em 0 0.286em;
   margin: 0;
   vertical-align: middle;
 }
@@ -29978,13 +29908,14 @@ body .ui-tree.ui-tree-horizontal {
 }
 body .ui-tree.ui-tree-horizontal .ui-treenode-content {
   background-color: #ffffff;
-  border: 1px solid #dbdbdb;
+  border: 1px solid #d8d8d8;
+  padding: 0.4em 1em 0.4em 0.2em;
 }
 body .ui-tree.ui-tree-horizontal .ui-treenode-content .ui-tree-toggler {
   vertical-align: top;
 }
 body .ui-tree.ui-tree-horizontal .ui-treenode-content .ui-treenode-icon {
-  margin-right: 0.25em;
+  margin-right: 0.286em;
 }
 body .ui-tree.ui-tree-horizontal .ui-treenode-content.ui-treenode-selectable:not(.ui-state-highlight) .ui-treenode-label:not(.ui-state-highlight):hover {
   background-color: #e8e8e8;
@@ -30071,6 +30002,7 @@ body .fc .fc-toolbar .ui-icon-circle-triangle-w:before {
 }
 body .fc .fc-toolbar .ui-state-active {
   background-color: #FFB300;
+  color: #212121;
 }
 body .fc .fc-event {
   background-color: #42A5F5;
@@ -30079,14 +30011,13 @@ body .fc .fc-event {
 body .fc table {
   box-sizing: border-box;
 }
-body .fc table th {
-  padding: 0.714em 1em;
+body .fc div.ui-widget-content {
+  padding-left: 0px;
+  padding-right: 0px;
 }
 body .ui-treetable .ui-treetable-caption,
 body .ui-treetable .ui-treetable-summary {
   padding: 0.714em 1em;
-  text-align: center;
-  font-weight: normal;
 }
 body .ui-treetable .ui-treetable-caption {
   border-bottom: 0 none;
@@ -30097,17 +30028,98 @@ body .ui-treetable .ui-treetable-summary {
 body .ui-treetable .ui-treetable-thead > tr > th,
 body .ui-treetable .ui-treetable-tbody > tr > td,
 body .ui-treetable .ui-treetable-tfoot > tr > td {
-  padding: 0.857em 1em;
+  padding: 0.857em;
 }
 body .ui-treetable .ui-treetable-thead > tr > th,
 body .ui-treetable .ui-treetable-tfoot > tr > td {
-  font-weight: 400;
-  color: #212121;
+  font-weight: 500;
   background-color: #ffffff;
-  border: 1px solid #dbdbdb;
+  border: 0 none;
 }
 body .ui-treetable .ui-treetable-thead tr .ui-inputtext {
   width: 100%;
+}
+body .ui-treetable .ui-treetable-thead > tr > th {
+  padding: 0.857em;
+  border: 0 none;
+  text-align: left;
+  font-weight: 500;
+  border-top: 1px solid #d8d8d8;
+  background-color: #ffffff;
+}
+body .ui-treetable .ui-treetable-thead > tr > th:first-child {
+  border-left: 1px solid #d8d8d8;
+}
+body .ui-treetable .ui-treetable-thead > tr > th:last-child {
+  border-right: 1px solid #d8d8d8;
+}
+body .ui-treetable .ui-treetable-thead > tr > th.ui-state-hover {
+  background-color: #e8e8e8;
+  color: #000000;
+}
+body .ui-treetable .ui-treetable-thead > tr > th .ui-sortable-column-icon {
+  vertical-align: middle;
+  margin: -4px 0 0 0;
+  color: #616161;
+}
+body .ui-treetable .ui-treetable-thead > tr > th .ui-sortable-column-icon.ui-icon-carat-2-n-s {
+  margin-left: 4px;
+}
+body .ui-treetable .ui-treetable-thead > tr > th .ui-column-resizer {
+  font-family: "Material Icons";
+  font-weight: normal;
+  font-style: normal;
+  font-size: 24px;
+  /* Preferred icon size */
+  display: inline-block;
+  width: 1em;
+  height: 1em;
+  line-height: 1;
+  text-transform: none;
+  letter-spacing: normal;
+  word-wrap: normal;
+  white-space: nowrap;
+  direction: ltr;
+  /* Support for all WebKit browsers. */
+  -webkit-font-smoothing: antialiased;
+  /* Support for Safari and Chrome. */
+  text-rendering: optimizeLegibility;
+  /* Support for Firefox. */
+  -moz-osx-font-smoothing: grayscale;
+  /* Support for IE. */
+  font-feature-settings: "liga";
+  font-size: 16px;
+  color: #616161;
+}
+body .ui-treetable .ui-treetable-thead > tr > th .ui-column-resizer:before {
+  content: "";
+}
+body .ui-treetable .ui-treetable-thead > tr > th.ui-state-active, body .ui-treetable .ui-treetable-thead > tr > th.ui-state-highlight {
+  background-color: #FFB300;
+  color: #212121;
+  border-top-color: #FFB300;
+}
+body .ui-treetable .ui-treetable-thead > tr > th.ui-state-active .ui-icon, body .ui-treetable .ui-treetable-thead > tr > th.ui-state-highlight .ui-icon {
+  color: #212121;
+}
+body .ui-treetable .ui-treetable-thead > tr > th.ui-state-active .ui-inputtext, body .ui-treetable .ui-treetable-thead > tr > th.ui-state-highlight .ui-inputtext {
+  color: #212121;
+}
+body .ui-treetable .ui-treetable-thead > tr > th.ui-state-active .ui-inputtext.ui-state-focus, body .ui-treetable .ui-treetable-thead > tr > th.ui-state-highlight .ui-inputtext.ui-state-focus {
+  border-color: #212121;
+}
+body .ui-treetable .ui-treetable-tfoot > tr > td {
+  padding: 0.857em;
+  border: 0 none;
+  background-color: #ffffff;
+  text-align: left;
+  font-weight: 500;
+}
+body .ui-treetable .ui-treetable-tfoot > tr > td:first-child {
+  border-left: 1px solid #d8d8d8;
+}
+body .ui-treetable .ui-treetable-tfoot > tr > td:last-child {
+  border-right: 1px solid #d8d8d8;
 }
 body .ui-treetable .ui-treetable-scrollable-header {
   border: none;
@@ -30144,10 +30156,11 @@ body .ui-treetable .ui-sortable-column .ui-sortable-column-icon {
 }
 body .ui-treetable .ui-treetable-tbody > tr {
   background: #ffffff;
+  border: 1px solid #d8d8d8;
 }
 body .ui-treetable .ui-treetable-tbody > tr > td {
-  background: inherit;
-  border: 1px solid #dbdbdb;
+  padding: 0.714em 0.857em;
+  border: 0 none;
 }
 body .ui-treetable .ui-treetable-tbody > tr > td .ui-treetable-toggler {
   color: #616161;
@@ -30159,8 +30172,12 @@ body .ui-treetable .ui-treetable-tbody > tr > td .ui-treetable-toggler .pi.pi-ch
   vertical-align: middle;
 }
 body .ui-treetable .ui-treetable-tbody > tr > td .ui-treetable-chkbox {
-  vertical-align: middle;
-  margin-right: 0.4em;
+  margin-right: 0.75em;
+  margin-top: 2px;
+}
+body .ui-treetable .ui-treetable-tbody > tr > td .ui-treetable-chkbox .ui-chkbox-box.ui-state-active:before {
+  -webkit-animation: none;
+  animation: none;
 }
 body .ui-treetable .ui-treetable-tbody > tr.ui-state-highlight {
   background-color: #FFB300;
@@ -30171,6 +30188,13 @@ body .ui-treetable .ui-treetable-tbody > tr.ui-state-highlight > td {
   border: #dbdbdb;
 }
 body .ui-treetable .ui-treetable-tbody > tr.ui-state-highlight > td .ui-treetable-toggler {
+  color: #212121;
+}
+body .ui-treetable .ui-treetable-tbody > tr.ui-state-highlight .ui-chkbox .ui-chkbox-box {
+  border-color: #212121;
+  background: transparent;
+}
+body .ui-treetable .ui-treetable-tbody > tr.ui-state-highlight .ui-chkbox .ui-chkbox-box .ui-chkbox-icon {
   color: #212121;
 }
 body .ui-treetable .ui-treetable-tbody > tr.ui-contextmenu-selected {
@@ -30188,6 +30212,29 @@ body .ui-treetable.ui-treetable-hoverable-rows .ui-treetable-tbody > tr:not(.ui-
   cursor: pointer;
   background-color: #e8e8e8;
   color: #000000;
+}
+body .ui-treetable .ui-treetable-scrollable-wrapper .ui-treetable-scrollable-header, body .ui-treetable .ui-treetable-scrollable-wrapper .ui-treetable-scrollable-footer {
+  border: 0 none;
+  background-color: transparent;
+  padding: 0px;
+}
+body .ui-treetable .ui-treetable-scrollable-wrapper thead tr th {
+  background-color: #ffffff;
+  color: #212121;
+  border-bottom: 1px solid #dbdbdb;
+  border-top: 1px solid #dbdbdb;
+}
+body .ui-treetable .ui-treetable-scrollable-wrapper thead tr th.ui-state-active {
+  background-color: #FFB300;
+  color: #212121;
+}
+body .ui-treetable.ui-treetable-hoverable-rows .ui-treetable-tbody > tr.ui-selectable-row:not(.ui-state-highlight):not(.ui-contextmenu-selected):hover {
+  cursor: pointer;
+  background-color: #e8e8e8;
+  color: #000000;
+}
+body .ui-virtualscroller .ui-virtualscroller-content {
+  padding: 0;
 }
 body .ui-virtualscroller .ui-virtualscroller-list li {
   border-bottom: 1px solid #dbdbdb;
