@@ -4,22 +4,24 @@ body {
 
         .ui-panel-titlebar {
             border: 0 none;
-            border-bottom: 1px solid $primaryColor;
             padding: $headerPadding;
-            @include border-radius-top($borderRadius - 1);
+            @include border-radius-top(2px);
             @include border-radius-bottom(0);
 
             .ui-panel-title {
-                line-height: 1.5em;
+                margin: 0;
+                line-height: $panelContentLineHeight;
             }
 
             .ui-panel-titlebar-icon {
                 position: relative;
-                width: 1.715em;
-                height: 1.715em;
-                color: #ffffff;
+                width: $iconWidth + 4;
+                height: $iconHeight + 4;
+                line-height: $iconHeight + 4;
+                text-align: center;
+                color: $headerTextColor;
                 margin: 0;
-                @include transition(background-color .3s);
+                @include transition(background-color $transitionDuration);
                 @include border-radius(50%);
 
                 &:hover {
@@ -32,6 +34,7 @@ body {
             height: 100%;
             box-sizing: border-box;
             padding: $contentPadding;
+            line-height: $panelContentLineHeight;
         }
 
         .ui-panel-footer {
@@ -40,6 +43,40 @@ body {
             border-top: 1px solid $dividerColor;
             margin: 0;
         }
+
+        &.ui-panel-light {
+            .ui-panel-titlebar {
+                background-color: $panelLightHeaderBgColor;
+                color: $panelLightHeaderTextColor;
+
+                .ui-panel-titlebar-icon {
+                    span {
+                        color: $panelLightHeaderTextColor;
+                    }
+
+                    &:hover {
+                        background-color: $panelLightHeaderIconHoverBgColor;
+                    }
+                }
+            }
+        }
+
+        &.ui-panel-dark {
+            .ui-panel-titlebar {
+                background-color: $panelDarkHeaderBgColor;
+                color: $panelDarkHeaderTextColor;
+
+                .ui-panel-titlebar-icon {
+                    span {
+                        color: $panelDarkHeaderTextColor;
+                    }
+
+                    &:hover {
+                        background-color: $panelDarkHeaderIconHoverBgColor;
+                    }
+                }
+            }
+        }
     }
 
     .ui-fieldset {
@@ -47,21 +84,23 @@ body {
 
         .ui-fieldset-legend {
             padding: $headerPadding;
-            padding-left: .125em;
-            padding-right: .5em;
+            padding-left: 2px;
+            padding-right: 8px;
             color: $primaryColor;
 
             .ui-fieldset-toggler {
-                padding: .5em;
-                height: 2em;
-                width: 2em;
+                width: 36px;
+                height: 36px;
+                padding: 8px;
                 background-color: $primaryColor;
                 color: #ffffff;
                 font-size: 1.5em;
                 @include border-radius(50%);
-                @include transition(background-color .3s);
-                margin-right: .5em;
+                @include transition(background-color $transitionDuration);
+                margin-top: -10px;
+                margin-right: 8px;
                 @include content-shadow();
+                @include rippleitem();
 
                 &:hover {
                     background-color: $primaryDarkColor;
@@ -80,15 +119,17 @@ body {
 
     .ui-accordion {
         .ui-accordion-header {
-            background-color: $primaryColor;
-            padding: 0;
-            color:#ffffff;
+            margin-top: .25em;
+            background-color: $accordionHeaderBgColor;
             font-size: $fontSize;
-            @include transition(background-color .3s);
+            color: $accordionHeaderTextColor;
+            font-weight: $headerFontWeight;
+            @include border-radius($borderRadius);
+            @include transition(background-color $transitionDuration);
 
             > a {
                 padding: $headerPadding;
-                color: #ffffff;
+                color: $accordionHeaderTextColor;
 
                 .ui-accordion-toggle-icon,
                 .ui-accordion-header-text {
@@ -97,16 +138,21 @@ body {
             }
 
             &:not(.ui-state-active):not(.ui-state-disabled):hover {
-                background-color: $primaryDarkColor;
+                background-color: $accordionHeaderHoverBgColor;
+                color: $accordionHeaderHoverTextColor;
             }
 
             &.ui-state-active {
-                background-color: $accentColor;
-                color: $accentTextColor;
+                background-color: $primaryColor;
+                color: $primaryTextColor;
                 @include border-radius-bottom(0);
 
                 > a {
-                    color: $accentTextColor;
+                    color: $primaryTextColor;
+                }
+
+                .ui-accordion-toggle-icon {
+                    color: $primaryTextColor;
                 }
             }
         }
@@ -114,17 +160,20 @@ body {
         .ui-accordion-content {
             padding: $contentPadding;
             line-height: $panelContentLineHeight;
+            margin-top: 0;
+            @include border-radius-bottom($borderRadius);
         }
     }
 
     .ui-toolbar {
         background-color: $primaryDarkColor;
         @include content-shadow();
-        padding: .625em;
+        padding: 10px;
     }
 
     .ui-tabview {
         padding: 0;
+        border: 0 none;
 
         .ui-tabview-nav {
             background-color: #ffffff;
@@ -133,9 +182,11 @@ body {
 
             > li {
                 padding: 0;
-                @include transition(border-color .3s);
+                overflow: hidden;
+                @include transition(border-color $transitionDuration);
 
                 > a {
+                    cursor: pointer;
                     padding: $headerPadding;
 
                     &:focus {
@@ -144,20 +195,9 @@ body {
                 }
 
                 > .pi-times {
-                    margin: .325em 0 0 0;
-                    @include transition(color .3s);
+                    margin: .5em 0 0 0;
+                    @include transition(color $transitionDuration);
                     color: $textSecondaryColor;
-                }
-
-                .ui-tabview-left-icon, .ui-tabview-right-icon {
-                    color: $textSecondaryColor;
-                    display: inline-block;
-                    vertical-align: middle;
-                }
-
-                .ui-tabview-title {
-                    line-height: 1.5em;
-                    vertical-align: middle;
                 }
 
                 &.ui-state-default {
@@ -171,28 +211,41 @@ body {
                 }
 
                 &.ui-state-active {
-                    background-color: #ffffff;
-                    border-color: $accentColor;
+                    background-color: transparent;
+                    border-color: $primaryColor;
                     border-style: solid;
 
                     a {
-                        color: $primaryColor;
+                        color: $textColor;
                     }
 
                     > .pi-times {
-                        color: $accentColor;
+                        color: $primaryColor;
                     }
                 }
 
                 &.ui-tabview-outline {
                     outline: 0 none;
-                    border-color: $accentLightColor;
+                    border-color: $primaryLightColor;
+                }
+
+                .ui-tabview-left-icon, .ui-tabview-right-icon {
+                    color: $textSecondaryColor;
+                    display: inline-block;
+                    vertical-align: middle;
+                    font-size: $iconFontSize;
+                }
+
+                .ui-tabview-title {
+                    line-height: 1.5em;
+                    vertical-align: middle;
                 }
             }
         }
 
         .ui-tabview-panel {
             padding: $contentPadding;
+            line-height: $panelContentLineHeight;
         }
 
         &.ui-tabview-top {
@@ -226,7 +279,7 @@ body {
             > .ui-tabview-nav {
                 padding: 0;
                 margin: 0;
-                @include border-radius-left($borderRadius + 1);
+                @include border-radius-left(4px);
                 border-right: 1px solid $dividerColor;
 
                 > li {
@@ -244,7 +297,7 @@ body {
         &.ui-tabview-right {
             > .ui-tabview-nav {
                 padding: 0;
-                @include border-radius-right($borderRadius + 1);
+                @include border-radius-right(4px);
                 border-left: 1px solid $dividerColor;
 
                 > li {
