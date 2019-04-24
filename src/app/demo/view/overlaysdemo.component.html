@@ -2,7 +2,7 @@
     <div class="ui-g-12 ui-lg-6">
         <!-- Left Side -->
         <div class="card">
-            <h1>Overlay Panel</h1>
+            <div class="card-title">Overlay Panel</div>
             <div class="ui-g">
                 <div class="ui-g-6">
                     <button type="button" pButton label="Image" (click)="op1.toggle($event)"></button>
@@ -36,8 +36,8 @@
         </div>
 
         <div class="card">
-            <h1>Dialog</h1>
-            <p-dialog header="Godfather I" [(visible)]="display" modal="modal" showEffect="fade" width="400">
+            <div class="card-title">Dialog</div>
+            <p-dialog header="Godfather I" [(visible)]="display" modal="modal" showEffect="fade" width="350">
                 <p>The story begins as Don Vito Corleone, the head of a New York Mafia family, oversees his daughter's wedding.
                    His beloved son Michael has just come home from the war, but does not intend to become part of his father's business.
                    Through Michael's life the nature of the family business becomes clear. The business of the family is just like the head of the family,
@@ -55,14 +55,14 @@
         </div>
 
         <div class="card">
-            <h1>Confirm Dialog</h1>
+            <div class="card-title">Confirm Dialog</div>
             <p-confirmDialog header="Confirmation" icon="fa ui-icon-warning" width="425"></p-confirmDialog>
 
             <button type="text" (click)="confirm()" pButton icon="pi pi-check" label="Confirm"></button>
         </div>
 
         <div class="card">
-            <h1>Tooltip</h1>
+            <div class="card-title">Tooltip</div>
             <input type="text" pInputText pTooltip="Enter your username" placeholder="Right" tooltipEvent="focus">
         </div>
     </div>
@@ -70,7 +70,7 @@
     <div class="ui-g-12 ui-lg-6">
         <!-- Right Side -->
         <div class="card">
-            <h1>LightBox</h1>
+            <div class="card-title">LightBox</div>
             <p-lightbox [images]="images"></p-lightbox>
         </div>
     </div>

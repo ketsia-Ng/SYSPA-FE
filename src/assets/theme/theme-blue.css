@@ -31444,25 +31444,21 @@ body .ui-dialog .ui-dialog-titlebar {
   padding: 0.714em 1em;
 }
 body .ui-dialog .ui-dialog-titlebar .ui-dialog-title {
-  font-size: 1.25em;
-  letter-spacing: 0.005em;
-  margin-top: 0.25em;
-  line-height: 2em;
+  font-weight: 500;
+  font-size: 20px;
+  line-height: 32px;
+  margin: 0;
 }
 body .ui-dialog .ui-dialog-titlebar .ui-dialog-titlebar-icon {
-  border: 0 none;
   padding: 0;
+  margin-top: 0.4em;
   -moz-border-radius: 50%;
   -webkit-border-radius: 50%;
   border-radius: 50%;
-  -moz-transition: background-color 0.3s;
-  -o-transition: background-color 0.3s;
-  -webkit-transition: background-color 0.3s;
-  transition: background-color 0.3s;
-  height: 1.5em;
-  width: 1.5em;
-  text-align: center;
-  margin-top: 0.5em;
+  -moz-transition: background-color 0.2s;
+  -o-transition: background-color 0.2s;
+  -webkit-transition: background-color 0.2s;
+  transition: background-color 0.2s;
 }
 body .ui-dialog .ui-dialog-titlebar .ui-dialog-titlebar-icon:hover, body .ui-dialog .ui-dialog-titlebar .ui-dialog-titlebar-icon:focus {
   background-color: #e8e8e8;
@@ -31531,26 +31527,27 @@ body .ui-dialog .ui-dialog-content {
 }
 body .ui-dialog .ui-dialog-footer {
   text-align: right;
+  padding: 0.714em 1em;
   border: 0 none;
-  border-top: 1px solid #d8d8d8;
 }
 body .ui-dialog .ui-dialog-footer .ui-button {
-  background-color: #ffffff;
-  color: #212121;
-  box-shadow: none;
-  -webkit-box-shadow: none;
-  -moz-box-shadow: none;
   width: auto;
+  margin-right: 0.5em;
 }
-body .ui-dialog .ui-dialog-footer .ui-button .pi {
-  color: #616161;
-}
-body .ui-dialog .ui-dialog-footer .ui-button:hover {
-  background-color: #e8e8e8;
-  color: #000000;
+body .ui-dialog .ui-dialog-footer .ui-button:last-child {
+  margin-right: 0;
 }
 body .ui-dialog .ui-confirm-dialog-severity {
   margin: 0px 0.75em;
+}
+body .ui-dialog p {
+  line-height: 1.5;
+}
+body .ui-sidebar .ui-sidebar-close:hover {
+  padding: 1px;
+}
+body .ui-sidebar .ui-button {
+  width: auto;
 }
 body .ui-lightbox.ui-shadow {
   -webkit-box-shadow: 0 11px 15px -7px rgba(0, 0, 0, 0.2), 0 24px 38px 3px rgba(0, 0, 0, 0.14), 0 9px 46px 8px rgba(0, 0, 0, 0.12);
@@ -31567,35 +31564,33 @@ body .ui-lightbox .ui-lightbox-caption .ui-lightbox-close {
   -moz-border-radius: 50%;
   -webkit-border-radius: 50%;
   border-radius: 50%;
-  -moz-transition: background-color 0.3s;
-  -o-transition: background-color 0.3s;
-  -webkit-transition: background-color 0.3s;
-  transition: background-color 0.3s;
+  -moz-transition: background-color 0.2s;
+  -o-transition: background-color 0.2s;
+  -webkit-transition: background-color 0.2s;
+  transition: background-color 0.2s;
   padding: 0;
   margin: 0;
-  width: 1.5em;
-  height: 1.5em;
+  width: 20px;
+  height: 20px;
 }
 body .ui-lightbox .ui-lightbox-caption .ui-lightbox-close:hover {
   background-color: #42A5F5;
-  -moz-border-radius: 50%;
-  -webkit-border-radius: 50%;
-  border-radius: 50%;
-  -moz-transition: background-color 0.3s;
-  -o-transition: background-color 0.3s;
-  -webkit-transition: background-color 0.3s;
-  transition: background-color 0.3s;
+  color: #000000;
+  padding: 0;
 }
 body .ui-lightbox .ui-lightbox-content-wrapper .ui-lightbox-nav-right, body .ui-lightbox .ui-lightbox-content-wrapper .ui-lightbox-nav-left {
   top: 40%;
 }
 body .ui-lightbox .ui-lightbox-content-wrapper .ui-lightbox-nav-right .pi, body .ui-lightbox .ui-lightbox-content-wrapper .ui-lightbox-nav-left .pi {
-  -moz-transition: color 0.3s;
-  -o-transition: color 0.3s;
-  -webkit-transition: color 0.3s;
-  transition: color 0.3s;
-  font-size: 3em;
+  -moz-transition: color 0.2s;
+  -o-transition: color 0.2s;
+  -webkit-transition: color 0.2s;
+  transition: color 0.2s;
+  font-size: 48px;
   color: #42A5F5;
+}
+body .ui-lightbox .ui-lightbox-content-wrapper .ui-lightbox-nav-right:hover .pi, body .ui-lightbox .ui-lightbox-content-wrapper .ui-lightbox-nav-left:hover .pi {
+  color: #ffffff;
 }
 body .ui-overlaypanel.ui-shadow {
   -webkit-box-shadow: 0 11px 15px -7px rgba(0, 0, 0, 0.2), 0 24px 38px 3px rgba(0, 0, 0, 0.14), 0 9px 46px 8px rgba(0, 0, 0, 0.12);
@@ -31621,10 +31616,10 @@ body .ui-overlaypanel .ui-overlaypanel-close {
   -moz-border-radius: 50%;
   -webkit-border-radius: 50%;
   border-radius: 50%;
-  -moz-transition: background-color 0.3s;
-  -o-transition: background-color 0.3s;
-  -webkit-transition: background-color 0.3s;
-  transition: background-color 0.3s;
+  -moz-transition: background-color 0.2s;
+  -o-transition: background-color 0.2s;
+  -webkit-transition: background-color 0.2s;
+  transition: background-color 0.2s;
   right: -16px;
   top: -16px;
   width: 2em;
@@ -31645,9 +31640,13 @@ body .ui-overlaypanel .ui-overlaypanel-close:hover {
 body .ui-tooltip {
   opacity: 0.9;
   filter: alpha(opacity=90);
+  font-size: 12px;
 }
 body .ui-tooltip .ui-tooltip-text {
   background-color: #323232;
+  -webkit-box-shadow: 0 11px 15px -7px rgba(0, 0, 0, 0.2), 0 24px 38px 3px rgba(0, 0, 0, 0.14), 0 9px 46px 8px rgba(0, 0, 0, 0.12);
+  -moz-box-shadow: 0 11px 15px -7px rgba(0, 0, 0, 0.2), 0 24px 38px 3px rgba(0, 0, 0, 0.14), 0 9px 46px 8px rgba(0, 0, 0, 0.12);
+  box-shadow: 0 11px 15px -7px rgba(0, 0, 0, 0.2), 0 24px 38px 3px rgba(0, 0, 0, 0.14), 0 9px 46px 8px rgba(0, 0, 0, 0.12);
 }
 body .ui-tooltip.ui-tooltip-top .ui-tooltip-arrow {
   bottom: 1px;
@@ -31663,6 +31662,12 @@ body .ui-tooltip.ui-tooltip-left .ui-tooltip-arrow {
 body .ui-tooltip.ui-tooltip-right .ui-tooltip-arrow {
   left: 1px;
   border-right-color: #323232;
+}
+body .ui-state-error,
+body .ui-widget.ui-state-error,
+body .ui-widget-content .ui-state-error,
+body .ui-widget-header .ui-state-error {
+  border-color: #e62a10;
 }
 
 body .ui-draggable-dragging.ui-state-default {
