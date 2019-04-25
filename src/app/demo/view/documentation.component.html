@@ -2,10 +2,10 @@
     <div class="ui-g-12">
         <div class="card docs">
 
-            <h1>Current Version</h1>
+            <div class="card-title">Current Version</div>
             <p>Angular 7 and PrimeNG 7</p>
 
-            <h1>Getting Started</h1>
+            <div class="card-title">Getting Started</div>
             <p>Serenity is a true native application template for Angular and is distributed as a CLI project. If you don't have CLI installed already run the following commands to set it up. In case
             you have an application that do not use CLI, skip the <a href="#noncli">Integration with an Existing Non CLI Application</a> part.</p>
 <pre>
@@ -22,7 +22,7 @@ ng serve
 
             <p>That's it, you may now start with the development of your application.</p>
 
-            <h1>Important CLI Commands</h1>
+            <div class="card-title">Important CLI Commands</div>
             <p>Following commands are derived from CLI.</p>
 <pre>
 Run 'ng serve' for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
@@ -38,12 +38,12 @@ Run 'ng e2e' to execute the end-to-end tests via [Protractor](http://www.protrac
 Run 'ng help' for more options.
 </pre>
 
-            <h1>Structure</h1>
+            <div class="card-title">Structure</div>
             <p>Serenity consists of 3 main parts; the application layout, layout resources and theme resources for PrimeNG components. <i>app.component.html</i> inside app folder is the html template for the base layout,
                 required resources for the layout are placed inside the <i>src/assets/layout</i> folder and similarly theme resources are inside <i>src/assets/theme</i> folder.
             </p>
 
-            <h1>Template</h1>
+            <div class="card-title">Template</div>
             <p>Main layout is the html view of the app.component.ts, it is divided into a couple of sections such as topbar, sidebar, breadcrumb and footer. Here is the code for
                 the main template. The component class app.component.ts implements the logic such as opening menus and layout modes.
             </p>
@@ -70,7 +70,7 @@ Run 'ng help' for more options.
 &lt;/div&gt;
 </pre>
 
-            <h1>Menu</h1>
+            <div class="card-title">Menu</div>
             <p>Menu is a separate component defined in app.menu.component.ts file based on PrimeNG MenuModel API. In order to define the menuitems,
             navigate to app.menu.component.ts and define your own model. Here is the menu component from the sample application. The helper
             app-submenu component is also available in the same file.</p>
@@ -241,7 +241,7 @@ export class AppMenuComponent implements OnInit, AfterViewInit, OnDestroy &#123;
 &#125;
 </pre>
 
-            <h1>Integration with an Existing CLI Project</h1>
+            <div class="card-title">Integration with an Existing CLI Project</div>
             <p>To setup Serenity in an existing project, copy the <i>src/assets</i> folder to your projects folder with the same name
                 and replace the contents of app.component.ts, app.component.html with their counterparts in Serenity under <i>src/app</i> folder.</p>
 
@@ -264,13 +264,13 @@ npm install primeicons@latest --save
             <p>Last part is adding theme and layout css files, in the CLI app they are defined using link tags in index.html so the demo can switch them on
             the fly by changing the path however if this is not a requirement, you may also add them to the styles configuration so they go inside the bundle.</p>
 
-            <h1 id="noncli">Integration with an Existing Non-CLI Project</h1>
+            <div class="card-title" id="noncli">Integration with an Existing Non-CLI Project</div>
             <p>For an existing project that do not use CLI, setup steps are more or less similar. Start with installing the dependencies listed above in package.json</p>
             <p>Copy the <i>src/assets</i> folder to your application and include the resources listed above with a module bundler like webpack or using link-script tags.</p>
             <p>Finally copy the contents of app.component.html to your application's main component template such as <i>app/application.html</i> along
             with the sub components which are app.menu.component.ts, app.topbar.component.ts and app.footer.component.ts.</p>
 
-            <h1>Theme</h1>
+            <div class="card-title">Theme</div>
             <p>Serenity provides 18 PrimeNG themes out of the box, setup of a theme simple including the css of theme to your page that are located inside resources/theme folder.</p>
 
             <ul>
@@ -408,7 +408,7 @@ $darksubMenuitemActiveIconTextColor:#9fa8da;
 
             <p>For both cases, several .scss files such as _layout.scss, _theme.scss or _variables.scss has to be present relative to your scss files, these are available inside the resources/sass folder in the distribution.</p>
 
-            <h1>Common SASS Variables</h1>
+            <div class="card-title">Common SASS Variables</div>
             <p>In case you'd like to customize the shared variables, the _variables.scss files are where the options are defined for layout and theme.</p>
 
 <h3>sass/_variables.scss</h3>
@@ -487,7 +487,7 @@ $mobileBreakpoint:1024px;
 $contentMobileMaskBgColor:#424242;
 </pre>
 
-            <h1>Menu Modes</h1>
+            <div class="card-title">Menu Modes</div>
             <p>Menu has 2 modes; static and overlay. Layout container element in application.html is used to define which mode to use by adding specific classes. List
             below indicates the style classes for each mode.</p>
 
@@ -499,14 +499,14 @@ $contentMobileMaskBgColor:#424242;
             <p>It is also possible to leave the choice to the user by keeping the preference at a component and using an expression to bind it so that user can switch between modes. Sample
             application has an example implementation of such use case. Refer to app.component.ts for an example.</p>
 
-            <h1>Dark Menu</h1>
+            <div class="card-title">Dark Menu</div>
             <p>In addition to the layout options, menu also provides a dark alternative to the light mode. This mode is enabled by adding "layout-sidebar-dark" style class
             to "layout-sidebar" element in app.menu.component.html.</p>
 
-            <h1>RTL</h1>
+            <div class="card-title">RTL</div>
             <p>Layout can be used in RTL orientation as well by adding "layout-rtl" to the "layout-wrapper" div in app.component.html.</p>
 
-            <h1>Breadcrumb</h1>
+            <div class="card-title">Breadcrumb</div>
             <p>Serenity has an optional built-in breadcrumb section right below the topbar. The items are dynamically generated using a BreadcrumbService where each
             main page that goes into the router-outlet should provide a collection of MenuItem instances. Here is an example component that updates the breadcrumb.</p>
 <pre>
@@ -529,11 +529,11 @@ export class ControlPanelComponent &#123;
 </pre>
             <p>Result will be reflected at application breadcrumb component such as "Home Icon" -> "Admin" -> "Control Panel".</p>
 
-            <h1>Grid CSS</h1>
+            <div class="card-title">Grid CSS</div>
             <p>Serenity uses PrimeNG Grid CSS (ui-g-*) throughout the samples, we strongly suggest using Grid CSS as your layout framework as it is well tested and supported by PrimeNG. Grid CSS is
             available inside primeng.css.</p>
 
-            <h1>Customizing Styles</h1>
+            <div class="card-title">Customizing Styles</div>
             <p>It is suggested to add your customizations in the following sass files under the override folder instead of adding them to the
                 scss files under sass folder to avoid maintenance issues after an update.</p>
 
@@ -544,7 +544,7 @@ export class ControlPanelComponent &#123;
                 <li><b>_theme_styles</b>: Styles for the theme.</li>
             </ul>
 
-            <h1>Migration Guide</h1>
+            <div class="card-title">Migration Guide</div>
             <h4>6.1.1 to 7.0.0</h4>
             <ul>
                 <li>Update layout css files.</li>
