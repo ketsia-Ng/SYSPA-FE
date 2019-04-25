@@ -1,6 +1,6 @@
 <div class="ui-g">
     <div class="ui-g-12">
-        <div class="card card-w-title">
+        <div class="card">
             <div class="card-title">DataTable</div>
             <p-table [columns]="cols" [value]="cars1" selectionMode="single" dataKey="vin" [(selection)]="selectedCar"
                      [paginator]="true" [rows]="10" [responsive]="true" paginatorPosition="both">
@@ -26,7 +26,7 @@
         </div>
     </div>
     <div class="ui-g-12">
-        <div class="card card-w-title">
+        <div class="card">
             <div class="card-title">DataView</div>
             <p-dataView #dv [value]="cars2" [paginator]="true" [rows]="10" paginatorPosition="both" filterBy="brand" [sortField]="sortField"
                         [sortOrder]="sortOrder">
@@ -94,7 +94,7 @@
         </div>
     </div>
     <div class="ui-g-12">
-        <div class="card card-w-title">
+        <div class="card">
             <div class="card-title">VirtualScroller</div>
             <p-virtualScroller [value]="cars3" scrollHeight="500px" [itemSize]="150" [rows]="40" [cache]="false"
                                [lazy]="true" (onLazyLoad)="loadCarsLazy($event)" [totalRecords]="200">
@@ -148,7 +148,7 @@
         </div>
     </div>
     <div class="ui-g-12">
-        <div class="card card-w-title">
+        <div class="card">
             <div class="card-title">PickList</div>
             <p-pickList [source]="sourceCars" [target]="targetCars" sourceHeader="Available" targetHeader="Selected" [responsive]="true"
                         [sourceStyle]="{'height':'250px'}" [targetStyle]="{'height':'250px'}">
@@ -163,7 +163,7 @@
     </div>
 
     <div class="ui-g-12">
-        <div class="card card-w-title">
+        <div class="card">
             <div class="card-title">OrderList</div>
             <p-orderList [value]="orderListCars" [listStyle]="{'height':'250px'}" [responsive]="true" header="OrderList">
                 <ng-template let-car pTemplate="item">
@@ -199,7 +199,7 @@
     </div>
 
     <div class="ui-g-12">
-        <div class="card card-w-title">
+        <div class="card">
             <div class="card-title">TreeTable</div>
             <p-treeTable [value]="files4" [columns]="cols2" selectionMode="checkbox" [(selection)]="selectedNode3">
                 <ng-template pTemplate="caption">
@@ -226,14 +226,14 @@
     </div>
 
     <div class="ui-g-12">
-        <div class="card card-w-title" style="overflow: auto">
+        <div class="card" style="overflow: auto">
             <div class="card-title">Organization Chart</div>
             <p-organizationChart [value]="data" selectionMode="single" [(selection)]="selectedNodeOrg"></p-organizationChart>
         </div>
     </div>
 
     <div class="ui-g-12">
-        <div class="card card-w-title">
+        <div class="card">
             <div class="card-title">Carousel</div>
             <p-carousel headerText="Cars" [value]="carouselCars">
                 <ng-template let-car pTemplate="item">
@@ -258,7 +258,7 @@
         </div>
     </div>
     <div class="ui-g-12">
-        <div class="card card-w-title">
+        <div class="card">
             <div class="card-title">Schedule</div>
             <p-fullCalendar [events]="events" [options]="fullcalendarOptions"></p-fullCalendar>
         </div>

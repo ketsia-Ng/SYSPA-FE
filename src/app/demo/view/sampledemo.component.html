@@ -9,7 +9,7 @@
                     </li>
                 </ul>
             </div>
-            <div class="card card-w-title">
+            <div class="card">
                 <div class="card-title">Form Elements</div>
                 <div class="ui-g form-group">
                     <div class="ui-g-12 ui-md-2">
@@ -166,7 +166,7 @@
                 </p-dialog>
             </div>
 
-            <div class="card card-w-title">
+            <div class="card">
                 <div class="card-title">DataTable</div>
                 <p-table [columns]="cols" [value]="cars" selectionMode="single" dataKey="vin" [style]="{'margin-bottom':'20px'}" [(selection)]="selectedCar3">
                     <ng-template pTemplate="caption">
@@ -193,7 +193,7 @@
 
         <div class="ui-g-12 ui-lg-6">
             <!-- Left Side -->
-            <div class="card card-w-title">
+            <div class="card">
                 <div class="card-title">DataView</div>
                 <p-dataView #dv [value]="carsLarge" [paginator]="true" [rows]="10" paginatorPosition="both" filterBy="brand">
                     <p-header>
@@ -258,7 +258,7 @@
         </div>
         <div class="ui-g-12 ui-lg-6">
             <!-- Right Side -->
-            <div class="card card-w-title">
+            <div class="card">
                 <div class="card-title">PickList</div>
                 <p-pickList [source]="sourceCars" [target]="targetCars" sourceHeader="Available" targetHeader="Selected" [responsive]="true">
                     <ng-template let-car pTemplate="item">
@@ -267,7 +267,7 @@
                 </p-pickList>
             </div>
 
-            <div class="card card-w-title">
+            <div class="card">
                 <div class="card-title">OrderList</div>
                 <p-orderList [value]="orderListCars" [listStyle]="{'height':'250px'}" [responsive]="true" header="OrderList">
                     <ng-template let-car pTemplate="item">
@@ -279,7 +279,7 @@
                 </p-orderList>
             </div>
 
-            <div class="card card-w-title">
+            <div class="card">
                 <div class="card-title">Accordion Panel</div>
                 <p-accordion>
                     <p-accordionTab header="Godfather I" [selected]="true">
@@ -294,7 +294,7 @@
                 </p-accordion>
             </div>
 
-            <div class="card card-w-title">
+            <div class="card">
                 <div class="card-title">Panel</div>
                 <p-panel header="Godfather I" [toggleable]="true">
                     The story begins as Don Vito Corleone, the head of a New York Mafia family, oversees his daughter's wedding.
@@ -304,29 +304,29 @@
                 </p-panel>
             </div>
 
-            <div class="card card-w-title">
+            <div class="card">
                 <div class="card-title">ProgressBar - Static Display</div>
                 <p-progressBar [value]="50"></p-progressBar>
             </div>
 
-            <div class="card card-w-title">
+            <div class="card">
                 <div class="card-title">Tree</div>
                 <p-tree [value]="filesTree" selectionMode="single" [(selection)]="selectedFile"></p-tree>
             </div>
 
-            <div class="card card-w-title">
+            <div class="card">
                 <div class="card-title">Menu</div>
                 <p-menu [model]="menuItems" [style]="{'width':'100%'}"></p-menu>
             </div>
 
-            <div class="card card-w-title">
+            <div class="card">
                 <div class="card-title">PanelMenu</div>
                 <p-panelMenu [model]="panelMenuItems"></p-panelMenu>
             </div>
         </div>
 
         <div class="ui-g-12">
-            <div class="card card-w-title">
+            <div class="card">
                 <div class="card-title">Carousel</div>
                 <p-carousel headerText="Cars" [value]="carouselCars">
                     <ng-template let-car pTemplate="item">
