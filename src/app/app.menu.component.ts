@@ -3,7 +3,7 @@ import {trigger, state, style, transition, animate} from '@angular/animations';
 import {Location} from '@angular/common';
 import {Router} from '@angular/router';
 import {MenuItem, ScrollPanel} from 'primeng/primeng';
-import {AppComponent} from './app.component';
+import {AppMainComponent} from './app.main.component';
 
 @Component({
     selector: 'app-menu',
@@ -17,7 +17,7 @@ export class AppMenuComponent implements OnInit, AfterViewInit {
 
     @ViewChild('scrollPanel') layoutMenuScrollerViewChild: ScrollPanel;
 
-    constructor(public app: AppComponent) {}
+    constructor(public app: AppMainComponent) {}
 
     ngAfterViewInit() {
       setTimeout(() => {this.layoutMenuScrollerViewChild.moveBar(); }, 100);
@@ -89,10 +89,10 @@ export class AppMenuComponent implements OnInit, AfterViewInit {
                 items: [
                     {label: 'Empty Page', icon: 'hourglass_empty', routerLink: ['/empty']},
                     {label: 'Landing Page', icon: 'flight_land', url: 'assets/pages/landing.html', target: '_blank'},
-                    {label: 'Login Page', icon: 'verified_user', url: 'assets/pages/login.html', target: '_blank'},
-                    {label: 'Error Page', icon: 'error', url: 'assets/pages/error.html', target: '_blank'},
-                    {label: '404 Page', icon: 'error_outline', url: 'assets/pages/404.html', target: '_blank'},
-                    {label: 'Access Denied Page', icon: 'security', url: 'assets/pages/access.html', target: '_blank'}
+                    {label: 'Login Page', icon: 'verified_user', routerLink: ['/login'], target: '_blank'},
+                    {label: 'Error Page', icon: 'error', routerLink: ['/error'], target: '_blank'},
+                    {label: '404 Page', icon: 'error_outline', routerLink: ['/404'], target: '_blank'},
+                    {label: 'Access Denied Page', icon: 'security', routerLink: ['/accessdenied'], target: '_blank'}
                 ]
             },
             {
@@ -230,7 +230,7 @@ export class AppSubMenuComponent {
 
     activeIndex: number;
 
-    constructor(public app: AppComponent, public router: Router, public location: Location, public appMenu: AppMenuComponent) {}
+    constructor(public app: AppMainComponent, public router: Router, public location: Location, public appMenu: AppMenuComponent) {}
 
     itemClick(event: Event, item: MenuItem, index: number) {
         if (this.root) {

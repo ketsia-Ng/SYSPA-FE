@@ -1,11 +1,11 @@
 .exception-body {
-	height: 100%;
+	height: 100vh;
 	background-position: center;
 	background-repeat: no-repeat;
 	background-size: cover;
 
 	&.error {
-		background-image: url("../images/exception/bg-error.jpg");
+		background-image: url("../../layout/images/exception/bg-error.jpg");
 
 		.exception-panel {
 			.exception-image {
@@ -20,7 +20,7 @@
 	}
 
 	&.notfound {
-		background-image: url("../images/exception/bg-404.jpg");
+		background-image: url("../../layout/images/exception/bg-404.jpg");
 
 		.exception-panel {
 			.exception-image {
@@ -35,7 +35,7 @@
 	}
 
 	&.accessdenied {
-		background-image: url("../images/exception/bg-access.jpg");
+		background-image: url("../../layout/images/exception/bg-access.jpg");
 
 		.exception-panel {
 			.exception-image {

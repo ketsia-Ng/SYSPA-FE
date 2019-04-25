@@ -717,8 +717,8 @@
   }
 }
 .login-body {
-  background-image: url("../images/login/bg-login.jpg");
-  height: 100%;
+  background-image: url("../../layout/images/login/bg-login.jpg");
+  height: 100vh;
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -795,13 +795,13 @@
   }
 }
 .exception-body {
-  height: 100%;
+  height: 100vh;
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
 }
 .exception-body.error {
-  background-image: url("../images/exception/bg-error.jpg");
+  background-image: url("../../layout/images/exception/bg-error.jpg");
 }
 .exception-body.error .exception-panel .exception-image {
   width: 102px;
@@ -812,7 +812,7 @@
   height: 64px;
 }
 .exception-body.notfound {
-  background-image: url("../images/exception/bg-404.jpg");
+  background-image: url("../../layout/images/exception/bg-404.jpg");
 }
 .exception-body.notfound .exception-panel .exception-image {
   width: 108px;
@@ -823,7 +823,7 @@
   height: 64px;
 }
 .exception-body.accessdenied {
-  background-image: url("../images/exception/bg-access.jpg");
+  background-image: url("../../layout/images/exception/bg-access.jpg");
 }
 .exception-body.accessdenied .exception-panel .exception-image {
   width: 108px;
