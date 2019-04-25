@@ -28971,11 +28971,42 @@ body .ui-tree.ui-tree-horizontal .ui-treenode-content.ui-state-highlight .ui-tre
 body .ui-tree-draghelper {
   border: 1px solid #1E88E5;
 }
-body .fc button {
+body .fc .fc-button {
+  background-color: #1E88E5;
+  color: #ffffff;
+  font-size: 14px;
+  font-family: "Roboto", "Helvetica Neue", sans-serif;
   height: 2.25em;
   padding: 0 1em;
+  border: 0 none;
 }
-body .fc .fc-toolbar .ui-icon-circle-triangle-e {
+body .fc .fc-button:enabled:not(:focus):not(.fc-button-active):hover {
+  background-color: #1565C0;
+}
+body .fc .fc-button:enabled:not(.fc-button-active):focus {
+  outline: 0 none;
+  background-color: #4ca0ea;
+}
+body .fc .fc-button.fc-button-active {
+  background-color: #FFB300;
+  color: #212121;
+}
+body .fc .fc-head th {
+  border-color: #1E88E5;
+}
+body .fc .fc-head .fc-row {
+  background-color: #1E88E5;
+  color: #ffffff;
+  border: 1px solid #1E88E5;
+  padding: 0.714em 1em;
+  font-weight: 500;
+}
+body .fc td.fc-today {
+  background-color: #FFB300;
+  color: #212121;
+}
+body .fc .fc-toolbar .fc-icon-chevron-right {
+  font-family: "Material Icons" !important;
   font-family: "Material Icons";
   font-weight: normal;
   font-style: normal;
@@ -29001,10 +29032,11 @@ body .fc .fc-toolbar .ui-icon-circle-triangle-e {
   position: relative;
   top: 1px;
 }
-body .fc .fc-toolbar .ui-icon-circle-triangle-e:before {
+body .fc .fc-toolbar .fc-icon-chevron-right:before {
   content: "play_circle_outline";
 }
-body .fc .fc-toolbar .ui-icon-circle-triangle-w {
+body .fc .fc-toolbar .fc-icon-chevron-left {
+  font-family: "Material Icons" !important;
   font-family: "Material Icons";
   font-weight: normal;
   font-style: normal;
@@ -29035,7 +29067,7 @@ body .fc .fc-toolbar .ui-icon-circle-triangle-w {
   position: relative;
   top: 1px;
 }
-body .fc .fc-toolbar .ui-icon-circle-triangle-w:before {
+body .fc .fc-toolbar .fc-icon-chevron-left:before {
   content: "play_circle_outline";
 }
 body .fc .fc-toolbar .ui-state-active {

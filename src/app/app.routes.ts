@@ -12,6 +12,7 @@ import { MiscDemoComponent } from './demo/view/miscdemo.component';
 import { EmptyDemoComponent } from './demo/view/emptydemo.component';
 import { ChartsDemoComponent } from './demo/view/chartsdemo.component';
 import { FileDemoComponent } from './demo/view/filedemo.component';
+import { UtilsDemoComponent } from './demo/view/utilsdemo.component';
 import { DocumentationComponent } from './demo/view/documentation.component';
 import { AppMainComponent } from './app.main.component';
 import { AppNotfoundComponent } from './pages/app.notfound.component';
@@ -34,6 +35,7 @@ export const routes: Routes = [
             { path: 'empty', component: EmptyDemoComponent },
             { path: 'charts', component: ChartsDemoComponent },
             { path: 'file', component: FileDemoComponent },
+            { path: 'utils', component: UtilsDemoComponent },
             { path: 'documentation', component: DocumentationComponent }
         ]
     },
