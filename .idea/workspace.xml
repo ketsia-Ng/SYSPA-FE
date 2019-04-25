@@ -231,62 +231,78 @@
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
         <counts>
-          <entry key="html" value="12" />
-          <entry key="scss" value="61" />
-          <entry key="ts" value="2" />
+          <entry key="html" value="15" />
+          <entry key="scss" value="65" />
+          <entry key="ts" value="4" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
-          <entry key="HTML" value="12" />
-          <entry key="SCSS" value="61" />
-          <entry key="TypeScript" value="2" />
+          <entry key="HTML" value="15" />
+          <entry key="SCSS" value="65" />
+          <entry key="TypeScript" value="4" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="html" value="85" />
-          <entry key="scss" value="771" />
-          <entry key="ts" value="109" />
+          <entry key="html" value="135" />
+          <entry key="scss" value="784" />
+          <entry key="ts" value="117" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="HTML" value="85" />
-          <entry key="SCSS" value="771" />
-          <entry key="TypeScript" value="109" />
+          <entry key="HTML" value="135" />
+          <entry key="SCSS" value="784" />
+          <entry key="TypeScript" value="117" />
         </counts>
       </usages-collector>
     </session>
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/app/app.component.ts">
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/app/demo/view/sampledemo.component.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="195">
-              <caret line="13" column="27" lean-forward="true" selection-start-line="13" selection-start-column="27" selection-end-line="13" selection-end-column="27" />
+            <state relative-caret-position="186">
+              <caret line="313" column="94" selection-start-line="313" selection-start-column="94" selection-end-line="313" selection-end-column="94" />
               <folding>
-                <element signature="n#!!block;n#ngOnInit#0;n#AppComponent#0" />
-                <element signature="n#!!block;n#bindRipple#0;n#AppComponent#0" />
-                <element signature="n#!!block;n#init#0;n#AppComponent#0" />
-                <element signature="n#!!block;n#isVisible#0;n#AppComponent#0" />
-                <element signature="n#!!block;n#hasClass#0;n#AppComponent#0" />
-                <element signature="n#!!block;n#addClass#0;n#AppComponent#0" />
-                <element signature="n#!!block;n#removeClass#0;n#AppComponent#0" />
-                <element signature="n#!!block;n#getOffset#0;n#AppComponent#0" />
-                <element signature="n#!!block;n#unbindRipple#0;n#AppComponent#0" />
-                <element signature="n#!!block;n#ngOnDestroy#0;n#AppComponent#0" />
+                <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#div#0;n#p-header#0;n#p-dataView#0;n#div#0;n#div#1;n#div#0;n#div#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#1;n#div#0;n#div#0;n#p-header#0;n#p-dataView#0;n#div#0;n#div#1;n#div#0;n#div#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#0;n#ng-template#0;n#p-dataView#0;n#div#0;n#div#1;n#div#0;n#div#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#0;n#div#0;n#ng-template#0;n#p-dataView#0;n#div#0;n#div#1;n#div#0;n#div#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#0;n#ng-template#1;n#p-dataView#0;n#div#0;n#div#1;n#div#0;n#div#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#hr#0;n#p-panel#0;n#div#0;n#ng-template#1;n#p-dataView#0;n#div#0;n#div#1;n#div#0;n#div#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#button#0;n#p-panel#0;n#div#0;n#ng-template#1;n#p-dataView#0;n#div#0;n#div#1;n#div#0;n#div#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#img#0;n#div#0;n#ng-template#0;n#p-orderList#0;n#div#1;n#div#2;n#div#0;n#div#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#0;n#div#0;n#ng-template#0;n#p-orderList#0;n#div#1;n#div#2;n#div#0;n#div#0;n#!!top" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/assets/sass/theme/_misc.scss">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/app/demo/view/sampledemo.component.ts">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="255">
-              <caret line="17" column="20" lean-forward="true" selection-start-line="17" selection-start-column="20" selection-end-line="17" selection-end-column="20" />
+            <state relative-caret-position="735">
+              <caret line="55" column="1" lean-forward="true" selection-start-line="55" selection-start-column="1" selection-end-line="55" selection-end-column="1" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/app/demo/view/formsdemo.component.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="2550">
+              <caret line="170" column="14" selection-start-line="170" selection-start-column="14" selection-end-line="170" selection-end-column="14" />
+              <folding>
+                <element signature="n#style#0;n#div#1;n#div#1;n#div#2;n#div#0;n#div#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#img#0;n#div#0;n#ng-template#0;n#p-autoComplete#0;n#div#3;n#div#1;n#div#2;n#div#0;n#div#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#0;n#div#0;n#ng-template#0;n#p-autoComplete#0;n#div#3;n#div#1;n#div#2;n#div#0;n#div#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#1;n#div#4;n#div#0;n#div#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#0;n#div#4;n#div#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#1;n#div#4;n#div#0;n#!!top" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -295,9 +311,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>nano</find>
-      <find>sidebar-scroll-content</find>
-      <find>config-form</find>
       <find>topbarthemes-panel</find>
       <find>-tab</find>
       <find>sidebarActive</find>
@@ -325,6 +338,9 @@
       <find>fileup</find>
       <find>ui-icon</find>
       <find>&lt;/h1&gt;</find>
+      <find>ui-inputtext</find>
+      <find>ui-inputf</find>
+      <find>tree</find>
     </findStrings>
     <replaceStrings>
       <replace>7.2.12</replace>
@@ -337,6 +353,7 @@
       <replace>SapphireLanding</replace>
       <replace>&lt;div class=&quot;card-title&quot;&gt;</replace>
       <replace>&lt;div class=&quot;centerText card-title&quot;&gt;</replace>
+      <replace>ui-inputtext</replace>
       <replace>&lt;/div&gt;</replace>
     </replaceStrings>
     <dirStrings>
@@ -355,11 +372,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/index.html" />
-        <option value="$PROJECT_DIR$/src/app/app.footer.component.ts" />
-        <option value="$PROJECT_DIR$/package.json" />
-        <option value="$PROJECT_DIR$/angular.json" />
-        <option value="$PROJECT_DIR$/src/app/app.menu.component.html" />
         <option value="$PROJECT_DIR$/src/assets/sass/layout/_config.scss" />
         <option value="$PROJECT_DIR$/src/app/app.config.component.ts" />
         <option value="$PROJECT_DIR$/src/app/app.topbar.component.html" />
@@ -406,6 +418,11 @@
         <option value="$PROJECT_DIR$/src/assets/sass/_mixins.scss" />
         <option value="$PROJECT_DIR$/src/app/demo/view/miscdemo.component.html" />
         <option value="$PROJECT_DIR$/src/assets/sass/theme/_misc.scss" />
+        <option value="$PROJECT_DIR$/src/assets/sass/layout/topbar/_topbar_common.scss" />
+        <option value="$PROJECT_DIR$/src/assets/sass/layout/topbar/_topbar_theme.scss" />
+        <option value="$PROJECT_DIR$/src/assets/sass/layout/menu/_menu_theme.scss" />
+        <option value="$PROJECT_DIR$/src/app/demo/view/sampledemo.component.ts" />
+        <option value="$PROJECT_DIR$/src/app/demo/view/sampledemo.component.html" />
       </list>
     </option>
   </component>
@@ -593,18 +610,18 @@
       <workItem from="1555482778148" duration="8082000" />
       <workItem from="1555572601720" duration="138000" />
       <workItem from="1555572862599" duration="8825000" />
-      <workItem from="1555914652412" duration="23632000" />
+      <workItem from="1555914652412" duration="24823000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="81352000" />
+    <option name="totallyTimeSpent" value="82543000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="764" y="0" width="916" height="1050" extended-state="0" />
+    <frame x="0" y="0" width="1680" height="1050" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" weight="0.1329609" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.11452682" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="npm" order="2" side_tool="true" />
       <window_info id="Favorites" order="3" side_tool="true" />
@@ -632,65 +649,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/app/demo/view/sampledemo.component.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="313">
-          <caret line="247" column="57" selection-start-line="247" selection-start-column="57" selection-end-line="247" selection-end-column="57" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/assets/sass/layout/_config.scss">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1260">
-          <caret line="84" column="23" lean-forward="true" selection-start-line="84" selection-start-column="23" selection-end-line="84" selection-end-column="23" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/app/app.config.component.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1155">
-          <caret line="79" column="94" selection-start-line="79" selection-start-column="94" selection-end-line="79" selection-end-column="94" />
-          <folding>
-            <element signature="n#style#0;n#img#0;n#a#0;n#div#1;n#div#1;n#p-tabPanel#1;n#p-tabView#0;n#div#0;n#div#0;n#!!top" expanded="true" />
-            <element signature="e#5052#11060#0" />
-            <element signature="e#11089#17222#0" />
-            <element signature="e#7245#7978#0" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/app/app.topbar.component.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="30">
-          <caret line="2" column="64" selection-start-line="2" selection-start-column="64" selection-end-line="2" selection-end-column="64" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/app/app.menu.component.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="45">
-          <caret line="3" column="67" selection-start-line="3" selection-start-column="67" selection-end-line="3" selection-end-column="67" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/assets/sass/layout/menu/_menu_vertical.scss">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1860">
-          <caret line="124" column="29" selection-start-line="124" selection-start-column="29" selection-end-line="124" selection-end-column="29" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/app/app.menu.component.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="765">
-          <caret line="169" column="14" lean-forward="true" selection-start-line="169" selection-start-column="14" selection-end-line="169" selection-end-column="14" />
-          <folding>
-            <element signature="e#0#114#0" expanded="true" />
-            <element signature="e#846#7933#0" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/app/demo/view/dashboard.component.ts">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="299">
@@ -1004,21 +962,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/app/demo/view/formsdemo.component.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="322">
-          <caret line="170" column="14" selection-start-line="170" selection-start-column="14" selection-end-line="170" selection-end-column="14" />
-          <folding>
-            <element signature="n#style#0;n#div#1;n#div#1;n#div#2;n#div#0;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#img#0;n#div#0;n#ng-template#0;n#p-autoComplete#0;n#div#3;n#div#1;n#div#2;n#div#0;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#0;n#div#0;n#ng-template#0;n#p-autoComplete#0;n#div#3;n#div#1;n#div#2;n#div#0;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#1;n#div#4;n#div#0;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#0;n#div#4;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#1;n#div#4;n#div#0;n#!!top" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/assets/sass/theme/_forms.scss">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="532">
@@ -1040,25 +983,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/app/app.component.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="195">
-          <caret line="13" column="27" lean-forward="true" selection-start-line="13" selection-start-column="27" selection-end-line="13" selection-end-column="27" />
-          <folding>
-            <element signature="n#!!block;n#ngOnInit#0;n#AppComponent#0" />
-            <element signature="n#!!block;n#bindRipple#0;n#AppComponent#0" />
-            <element signature="n#!!block;n#init#0;n#AppComponent#0" />
-            <element signature="n#!!block;n#isVisible#0;n#AppComponent#0" />
-            <element signature="n#!!block;n#hasClass#0;n#AppComponent#0" />
-            <element signature="n#!!block;n#addClass#0;n#AppComponent#0" />
-            <element signature="n#!!block;n#removeClass#0;n#AppComponent#0" />
-            <element signature="n#!!block;n#getOffset#0;n#AppComponent#0" />
-            <element signature="n#!!block;n#unbindRipple#0;n#AppComponent#0" />
-            <element signature="n#!!block;n#ngOnDestroy#0;n#AppComponent#0" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/app/demo/view/miscdemo.component.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="195">
@@ -1077,6 +1001,104 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="255">
           <caret line="17" column="20" lean-forward="true" selection-start-line="17" selection-start-column="20" selection-end-line="17" selection-end-column="20" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/assets/sass/layout/topbar/_topbar.scss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="23" selection-start-column="23" selection-end-column="23" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/assets/sass/layout/topbar/_topbar_common.scss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="291">
+          <caret line="97" column="21" selection-start-line="97" selection-start-column="9" selection-end-line="97" selection-end-column="21" />
+          <folding>
+            <element signature="e#260#880#0" />
+            <element signature="e#905#2294#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/assets/sass/layout/topbar/_topbar_theme.scss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="195">
+          <caret line="13" column="12" lean-forward="true" selection-start-line="13" selection-start-column="12" selection-end-line="13" selection-end-column="12" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/assets/sass/layout/menu/_menu_theme.scss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="566">
+          <caret line="132" column="21" selection-start-line="132" selection-start-column="21" selection-end-line="132" selection-end-column="21" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/app/app.component.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="195">
+          <caret line="191" column="4" selection-start-line="191" selection-start-column="4" selection-end-line="191" selection-end-column="4" />
+          <folding>
+            <element signature="n#!!block;n#ngOnInit#0;n#AppComponent#0" />
+            <element signature="n#!!block;n#bindRipple#0;n#AppComponent#0" />
+            <element signature="n#!!block;n#init#0;n#AppComponent#0" />
+            <element signature="n#!!block;n#isVisible#0;n#AppComponent#0" />
+            <element signature="n#!!block;n#hasClass#0;n#AppComponent#0" />
+            <element signature="n#!!block;n#addClass#0;n#AppComponent#0" />
+            <element signature="n#!!block;n#removeClass#0;n#AppComponent#0" />
+            <element signature="n#!!block;n#getOffset#0;n#AppComponent#0" />
+            <element signature="n#!!block;n#unbindRipple#0;n#AppComponent#0" />
+            <element signature="n#!!block;n#ngOnDestroy#0;n#AppComponent#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/app/app.topbar.component.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="420">
+          <caret line="28" column="104" selection-start-line="28" selection-start-column="104" selection-end-line="28" selection-end-column="104" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/app/demo/view/formsdemo.component.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2550">
+          <caret line="170" column="14" selection-start-line="170" selection-start-column="14" selection-end-line="170" selection-end-column="14" />
+          <folding>
+            <element signature="n#style#0;n#div#1;n#div#1;n#div#2;n#div#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#img#0;n#div#0;n#ng-template#0;n#p-autoComplete#0;n#div#3;n#div#1;n#div#2;n#div#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#div#0;n#ng-template#0;n#p-autoComplete#0;n#div#3;n#div#1;n#div#2;n#div#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#1;n#div#4;n#div#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#div#4;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#1;n#div#4;n#div#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/app/demo/view/sampledemo.component.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="735">
+          <caret line="55" column="1" lean-forward="true" selection-start-line="55" selection-start-column="1" selection-end-line="55" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/app/demo/view/sampledemo.component.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="186">
+          <caret line="313" column="94" selection-start-line="313" selection-start-column="94" selection-end-line="313" selection-end-column="94" />
+          <folding>
+            <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#div#0;n#p-header#0;n#p-dataView#0;n#div#0;n#div#1;n#div#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#1;n#div#0;n#div#0;n#p-header#0;n#p-dataView#0;n#div#0;n#div#1;n#div#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#ng-template#0;n#p-dataView#0;n#div#0;n#div#1;n#div#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#div#0;n#ng-template#0;n#p-dataView#0;n#div#0;n#div#1;n#div#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#ng-template#1;n#p-dataView#0;n#div#0;n#div#1;n#div#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#hr#0;n#p-panel#0;n#div#0;n#ng-template#1;n#p-dataView#0;n#div#0;n#div#1;n#div#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#button#0;n#p-panel#0;n#div#0;n#ng-template#1;n#p-dataView#0;n#div#0;n#div#1;n#div#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#img#0;n#div#0;n#ng-template#0;n#p-orderList#0;n#div#1;n#div#2;n#div#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#div#0;n#ng-template#0;n#p-orderList#0;n#div#1;n#div#2;n#div#0;n#div#0;n#!!top" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

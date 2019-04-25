@@ -95,7 +95,7 @@
     }
 
     .layout-topbar-search {
-        .ui-inputfield {
+        .ui-inputtext {
             width: 150px;
             padding: 6px 24px 6px 6px;
             @include transition(all $transitionDuration);
@@ -168,7 +168,7 @@
             display: none;
             padding: 1em;
 
-            .ui-inputfield {
+            .ui-inputtext {
                 width: 100%;
             }
         }

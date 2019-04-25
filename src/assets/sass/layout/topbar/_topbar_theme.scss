@@ -11,7 +11,7 @@
 
 .layout-topbar {
     .layout-topbar-search {
-        .ui-inputfield {
+        .ui-inputtext {
             color: $topbarSearchFocusedInputColor;
             background-image: linear-gradient(to bottom, $topbarSearchFocusedInputColor, $topbarSearchFocusedInputColor), linear-gradient(to bottom, $topbarSearchInputColor, $topbarSearchInputColor);
             

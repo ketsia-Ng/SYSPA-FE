@@ -1683,7 +1683,7 @@ body.blocked-scroll, body.blocked-scroll-config {
 .layout-topbar .layout-logo img {
   height: 20px;
 }
-.layout-topbar .layout-topbar-search .ui-inputfield {
+.layout-topbar .layout-topbar-search .ui-inputtext {
   width: 150px;
   padding: 6px 24px 6px 6px;
   -moz-transition: all 0.2s;
@@ -1761,7 +1761,7 @@ body.blocked-scroll, body.blocked-scroll-config {
   display: none;
   padding: 1em;
 }
-.layout-topbar .layout-profile-menu .layout-profile-menu-search .ui-inputfield {
+.layout-topbar .layout-profile-menu .layout-profile-menu-search .ui-inputtext {
   width: 100%;
 }
 
@@ -1805,11 +1805,11 @@ body.blocked-scroll, body.blocked-scroll-config {
   background-image: linear-gradient(left, #457fca, #5691c8);
   filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#457fca", endColorstr="#5691c8", gradientType="1");
 }
-.layout-topbar-blue .layout-topbar .layout-topbar-search .ui-inputfield {
+.layout-topbar-blue .layout-topbar .layout-topbar-search .ui-inputtext {
   color: #ffffff;
   background-image: linear-gradient(to bottom, #ffffff, #ffffff), linear-gradient(to bottom, #cbdeee, #cbdeee);
 }
-.layout-topbar-blue .layout-topbar .layout-topbar-search .ui-inputfield:focus ~ label, .layout-topbar-blue .layout-topbar .layout-topbar-search .ui-inputfield:focus ~ i {
+.layout-topbar-blue .layout-topbar .layout-topbar-search .ui-inputtext:focus ~ label, .layout-topbar-blue .layout-topbar .layout-topbar-search .ui-inputtext:focus ~ i {
   color: #ffffff;
 }
 .layout-topbar-blue .layout-topbar .layout-topbar-search i {
@@ -2391,11 +2391,11 @@ body.blocked-scroll, body.blocked-scroll-config {
 .layout-menu-light .layout-profile-menu a:hover i {
   color: #212121;
 }
-.layout-menu-light .layout-profile-menu .layout-profile-menu-search .ui-inputfield {
+.layout-menu-light .layout-profile-menu .layout-profile-menu-search .ui-inputtext {
   color: #616161;
   background-image: linear-gradient(to bottom, #616161, #616161), linear-gradient(to bottom, #616161, #616161);
 }
-.layout-menu-light .layout-profile-menu .layout-profile-menu-search .ui-inputfield:focus ~ label, .layout-menu-light .layout-profile-menu .layout-profile-menu-search .ui-inputfield:focus ~ i {
+.layout-menu-light .layout-profile-menu .layout-profile-menu-search .ui-inputtext:focus ~ label, .layout-menu-light .layout-profile-menu .layout-profile-menu-search .ui-inputtext:focus ~ i {
   color: #616161;
 }
 .layout-menu-light .layout-profile-menu .layout-profile-menu-search i {

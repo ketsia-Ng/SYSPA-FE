@@ -53,6 +53,8 @@ export class SampleDemoComponent implements OnInit {
 
     filesTree: TreeNode[];
 
+    selectedFile: TreeNode;
+
     menuItems: MenuItem[];
 
     panelMenuItems: MenuItem[];
