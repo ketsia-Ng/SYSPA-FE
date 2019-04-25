@@ -30825,7 +30825,7 @@ body {
   /* Messages */
 }
 body .ui-messages {
-  padding: 0.714em 1em;
+  padding: 1em;
 }
 body .ui-messages ul {
   display: inline-block;
@@ -30836,25 +30836,40 @@ body .ui-messages.ui-messages-info {
   border-color: #2196F3;
   color: #ffffff;
 }
+body .ui-messages.ui-messages-info .ui-messages-close:hover {
+  background-color: #6ab8f7;
+}
 body .ui-messages.ui-messages-warn {
   background-color: #ffc107;
   border-color: #ffc107;
   color: #ffffff;
+}
+body .ui-messages.ui-messages-warn .ui-messages-close:hover {
+  background-color: #ffd454;
 }
 body .ui-messages.ui-messages-error {
   background-color: #e62a10;
   border-color: #e62a10;
   color: #ffffff;
 }
+body .ui-messages.ui-messages-error .ui-messages-close:hover {
+  background-color: #f36450;
+}
 body .ui-messages.ui-messages-fatal {
   background-color: #212121;
   border-color: #212121;
   color: #ffffff;
 }
+body .ui-messages.ui-messages-fatal .ui-messages-close:hover {
+  background-color: #474747;
+}
 body .ui-messages.ui-messages-success {
   background-color: #8BC34A;
   border-color: #8BC34A;
   color: #ffffff;
+}
+body .ui-messages.ui-messages-success .ui-messages-close:hover {
+  background-color: #b0d683;
 }
 body .ui-messages .ui-messages-close {
   text-decoration: none;
@@ -31310,32 +31325,44 @@ body .ui-toast .ui-toast-message.ui-toast-message-info {
   border: 0 none;
   color: #ffffff;
 }
-body .ui-toast .ui-toast-message.ui-toast-message-info .ui-toast-close-icon {
+body .ui-toast .ui-toast-message.ui-toast-message-info .ui-toast-message-content .ui-toast-close-icon {
   color: #ffffff;
+}
+body .ui-toast .ui-toast-message.ui-toast-message-info .ui-toast-message-content .ui-toast-close-icon:hover {
+  background-color: #6ab8f7;
 }
 body .ui-toast .ui-toast-message.ui-toast-message-success {
   background-color: #8BC34A;
   border: 0 none;
   color: #ffffff;
 }
-body .ui-toast .ui-toast-message.ui-toast-message-success .ui-toast-close-icon {
+body .ui-toast .ui-toast-message.ui-toast-message-success .ui-toast-message-content .ui-toast-close-icon {
   color: #ffffff;
+}
+body .ui-toast .ui-toast-message.ui-toast-message-success .ui-toast-message-content .ui-toast-close-icon:hover {
+  background-color: #b0d683;
 }
 body .ui-toast .ui-toast-message.ui-toast-message-warn {
   background-color: #ffc107;
   border: 0 none;
   color: #ffffff;
 }
-body .ui-toast .ui-toast-message.ui-toast-message-warn .ui-toast-close-icon {
+body .ui-toast .ui-toast-message.ui-toast-message-warn .ui-toast-message-content .ui-toast-close-icon {
   color: #ffffff;
+}
+body .ui-toast .ui-toast-message.ui-toast-message-warn .ui-toast-message-content .ui-toast-close-icon:hover {
+  background-color: #ffd454;
 }
 body .ui-toast .ui-toast-message.ui-toast-message-error {
   background-color: #e62a10;
   border: 0 none;
   color: #ffffff;
 }
-body .ui-toast .ui-toast-message.ui-toast-message-error .ui-toast-close-icon {
+body .ui-toast .ui-toast-message.ui-toast-message-error .ui-toast-message-content .ui-toast-close-icon {
   color: #ffffff;
+}
+body .ui-toast .ui-toast-message.ui-toast-message-error .ui-toast-message-content .ui-toast-close-icon:hover {
+  background-color: #f36450;
 }
 body .ui-toast .ui-toast-icon.pi-info-circle {
   font-family: "Material Icons";

@@ -1,7 +1,7 @@
 <div class="ui-g">
     <div class="ui-g-12">
         <div class="card no-margin">
-            <h1>Toast</h1>
+            <div class="card-title">Toast</div>
             <p-toast key="tst" [style]="{marginTop: '70px'}"></p-toast>
 
             <button type="button" pButton (click)="showInfoViaToast()" label="Info" class="ui-button-info"></button>
@@ -14,7 +14,7 @@
 
     <div class="ui-g-12">
         <div class="card no-margin">
-            <h1>Messages</h1>
+            <div class="card-title">Messages</div>
             <button type="button" pButton (click)="showInfoViaMessages()" label="Info" class="ui-button-info"></button>
             <button type="button" pButton (click)="showSuccessViaMessages()" label="Success" class="ui-button-success"></button>
             <button type="button" pButton (click)="showWarnViaMessages()" label="Warn" class="ui-button-warning"></button>
@@ -27,7 +27,7 @@
 
     <div class="ui-g-12">
         <div class="card no-margin">
-            <h1>Inline Message</h1>
+            <div class="card-title">Inline Message</div>
             <div>
                 <p-message severity="info" text="PrimeNG Rocks" [style]="{marginLeft: 0}"></p-message>
                 <p-message severity="success" text="Record Saved"></p-message>

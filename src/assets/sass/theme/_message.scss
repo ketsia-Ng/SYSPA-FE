@@ -1,7 +1,7 @@
 body {
     /* Messages */
     .ui-messages {
-        padding: $headerPadding;
+        padding: 1em;
 
         ul {
             display: inline-block;
@@ -12,30 +12,50 @@ body {
             background-color: #2196F3;
             border-color: #2196F3;
             color: #ffffff;
+
+            .ui-messages-close:hover {
+                background-color: lighten(#2196F3,15%);
+            }
         }
 
         &.ui-messages-warn {
             background-color: #ffc107;
             border-color: #ffc107;
             color: #ffffff;
+
+            .ui-messages-close:hover {
+                background-color: lighten(#ffc107,15%);
+            }
         }
 
         &.ui-messages-error {
             background-color: #e62a10;
             border-color: #e62a10;
             color: #ffffff;
+
+            .ui-messages-close:hover {
+                background-color: lighten(#e62a10,15%);
+            }
         }
 
         &.ui-messages-fatal {
             background-color: #212121;
             border-color: #212121;
             color: #ffffff;
+
+            .ui-messages-close:hover {
+                background-color: lighten(#212121,15%);
+            }
         }
 
         &.ui-messages-success {
             background-color: #8BC34A;
             border-color: #8BC34A;
             color: #ffffff;
+
+            .ui-messages-close:hover {
+                background-color: lighten(#8BC34A,15%);
+            }
         }
 
         .ui-messages-close {
@@ -215,8 +235,13 @@ body {
                 border: 0 none;
                 color: #ffffff;
 
-                .ui-toast-close-icon {
-                    color: #ffffff;
+                .ui-toast-message-content {
+                    .ui-toast-close-icon {
+                        color: #ffffff;
+                        &:hover {
+                            background-color: lighten(#2196F3,15%);
+                        }
+                    }
                 }
             }
 
@@ -225,8 +250,13 @@ body {
                 border: 0 none;
                 color: #ffffff;
 
-                .ui-toast-close-icon {
-                    color: #ffffff;
+                .ui-toast-message-content {
+                    .ui-toast-close-icon {
+                        color: #ffffff;
+                        &:hover {
+                            background-color: lighten(#8BC34A,15%);
+                        }
+                    }
                 }
             }
 
@@ -235,8 +265,13 @@ body {
                 border: 0 none;
                 color: #ffffff;
 
-                .ui-toast-close-icon {
-                    color: #ffffff;
+                .ui-toast-message-content {
+                    .ui-toast-close-icon {
+                        color: #ffffff;
+                        &:hover {
+                            background-color: lighten(#ffc107,15%);
+                        }
+                    }
                 }
             }
 
@@ -245,8 +280,13 @@ body {
                 border: 0 none;
                 color: #ffffff;
 
-                .ui-toast-close-icon {
-                    color: #ffffff;
+                .ui-toast-message-content {
+                    .ui-toast-close-icon {
+                        color: #ffffff;
+                        &:hover {
+                            background-color: lighten(#e62a10,15%);
+                        }
+                    }
                 }
             }
         }
