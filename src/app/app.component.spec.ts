@@ -8,12 +8,13 @@ import { AppFooterComponent } from './app.footer.component';
 import { AppBreadcrumbComponent } from './app.breadcrumb.component';
 import { BreadcrumbService } from './breadcrumb.service';
 import { ScrollPanelModule } from 'primeng/primeng';
+import { TabViewModule } from 'primeng/primeng';
 
 describe('AppComponent', () => {
   beforeEach(async(() => {
     TestBed.configureTestingModule({
       imports: [
-          RouterTestingModule, ScrollPanelModule
+          RouterTestingModule, ScrollPanelModule, TabViewModule
       ],
       declarations: [
           AppComponent,
