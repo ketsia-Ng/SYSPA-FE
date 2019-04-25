@@ -635,11 +635,15 @@ body {
             &:enabled:not(.fc-button-active):focus {
                 outline: 0 none;
                 background-color: lighten($primaryColor,10%);
+                box-shadow: none;
             }
 
             &.fc-button-active {
                 background-color: $accentColor;
                 color: $accentTextColor;
+                &:focus {
+                    box-shadow: none;
+                }
             }
         }
 

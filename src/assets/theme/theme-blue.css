@@ -28986,10 +28986,14 @@ body .fc .fc-button:enabled:not(:focus):not(.fc-button-active):hover {
 body .fc .fc-button:enabled:not(.fc-button-active):focus {
   outline: 0 none;
   background-color: #4ca0ea;
+  box-shadow: none;
 }
 body .fc .fc-button.fc-button-active {
   background-color: #FFB300;
   color: #212121;
+}
+body .fc .fc-button.fc-button-active:focus {
+  box-shadow: none;
 }
 body .fc .fc-head th {
   border-color: #1E88E5;
