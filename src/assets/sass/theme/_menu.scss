@@ -1,14 +1,27 @@
 body {
     .ui-breadcrumb {
-        padding: $inputHeaderPadding;
+        a {
+            color: #ffffff;
+        }
 
-        ul {
-            li {
-                a {
-                    color: #ffffff;
+        li:first-child {
+            a {
+                position: relative;
+                margin-top: 0;
+
+                span {
                     font-size: $iconFontSize;
                 }
             }
+        }
+
+        .ui-breadcrumb-chevron {
+            margin: 0;
+            font-size: $iconFontSize;
+        }
+
+        li {
+            margin: 0;
         }
     }
 
@@ -32,27 +45,26 @@ body {
                     display: inline-block;
                     background-color: #757575;
                     @include border-radius(50%);
-                    font-size: 1em;
+                    font-size: 16px;
                     color: #ffffff;
                     vertical-align: middle;
                     text-align: center;
-                    width: 2em;
-                    height: 2em;
+                    width: 25px;
+                    height: 27px;
                     padding: 0;
-                    line-height: 2em;
+                    line-height: 27px;
                 }
 
                 .ui-steps-title {
                     display: inline;
-                    margin-left: .625em;
+                    margin-left: .714em;
                     color: $textSecondaryColor;
                 }
             }
 
             &.ui-state-highlight {
                 .ui-steps-number {
-                    background-color: $accentColor;
-                    color: $accentTextColor;
+                    background-color: $primaryColor;
                 }
 
                 .ui-steps-title {
@@ -85,9 +97,9 @@ body {
     .ui-contextmenu .ui-menuitem-link,
     .ui-megamenu .ui-menuitem-link,
     .ui-slidemenu .ui-menuitem-link {
-        padding: .625em 1em;
+        padding: $menuitemPadding;
         color: $textColor;
-        min-height: 2.75em;
+        min-height: 2.286em;
         @include border-radius(0);
 
         &:hover {
@@ -101,7 +113,8 @@ body {
             vertical-align: middle;
         }
         .ui-menuitem-icon {
-            color: #757575;
+            font-size: 18px;
+            color: $textSecondaryColor;
         }
     }
 
@@ -118,10 +131,11 @@ body {
 
     .ui-menu {
         min-width: 12.5em;
-        padding: .5em 0;
+        padding: $menuListPadding;
 
         .ui-menuitem {
             margin: 0;
+            @include border-radius(0);
 
             .ui-menuitem-link {
                 .ui-menuitem-icon {
@@ -137,8 +151,9 @@ body {
         .ui-submenu-header {
             border: 0 none;
             margin: 0;
-            padding: .625em 1em;
-            border-radius: 0;
+            font-size: $fontSize;
+            padding: $menuitemPadding;
+            font-weight: 400;
         }
     }
 
@@ -147,7 +162,7 @@ body {
 
         .ui-menubar-root-list {
             &>.ui-menuitem>.ui-menuitem-link {
-                padding: .625em 1em;
+                padding: $menuitemPadding;
             }
         }
 
@@ -252,7 +267,7 @@ body {
 
         .ui-megamenu-submenu-header {
             border-radius: 0;
-            padding: $headerPadding;
+            padding: .25em;
         }
 
         .ui-submenu-list {
@@ -296,11 +311,11 @@ body {
 
             > .ui-tabmenuitem {
                 top: auto;
-                margin: 0 .25em 0 0;
+                margin: 0 4px 0 0;
                 padding: 0;
                 border-style: solid;
                 border-width: 0 0 2px 0;
-                @include transition(border-color .3s);
+                @include transition(border-color $transitionDuration);
 
                 > a {
                     padding: $headerPadding;
@@ -316,7 +331,6 @@ body {
                     }
 
                     .ui-menuitem-icon {
-                        font-weight: 1em;
                         margin-right: .25em;
                     }
                 }
@@ -358,20 +372,27 @@ body {
             vertical-align: middle;
         }
         .ui-panelmenu-header {
-            background-color: $primaryColor;
-            margin-bottom: 1px;
+            background-color: $accordionHeaderBgColor;
+            margin-top: .25em;
 
             a {
-                padding: .625em 1em;
-                color: #ffffff;
+                color: $accordionHeaderTextColor;
                 font-size: $fontSize;
+                font-weight: $headerFontWeight;
+            }
+
+            .ui-panelmenu-icon,
+            .ui-menuitem-icon {
+                font-size: $iconFontSize - 2;
             }
 
             &.ui-state-active {
-                background-color: $accentColor;
+                background-color: $primaryColor;
+                color: $primaryTextColor;
                 @include border-radius-bottom(0);
+
                 a, .pi {
-                    color: $accentTextColor;
+                    color: $primaryTextColor;
                 }
             }
         }
@@ -385,22 +406,24 @@ body {
 
             .ui-menuitem {
                 margin: 0;
-                border-radius: 0;
 
                 .ui-menuitem-link {
                     border: 0 none;
-                    padding: .625em 1em;;
+                    padding: $menuitemPadding;
                     width: 100%;
-                    min-height: 2.750em;
+                    min-height: 30px;
                     box-sizing: border-box;
                     color: $textColor;
-                    line-height: 1.5em;
                     @include border-radius(0);
                     position: relative;
 
                     &:hover {
                         @include hover-element();
-                        @include border-radius(0);
+                    }
+
+                    .ui-panelmenu-icon,
+                    .ui-menuitem-icon {
+                        font-size: $iconFontSize - 2;
                     }
 
                     .ui-menuitem-text {

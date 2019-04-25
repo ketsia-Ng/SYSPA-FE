@@ -1,17 +1,17 @@
 <div class="ui-g ui-fluid">
     <div class="ui-g-12">
         <div class="card card-w-title">
-            <h1>Breadcrumb</h1>
-            <p-breadcrumb [model]="breadcrumbItems" [home]="{icon: 'fa fa-home'}"></p-breadcrumb>
+            <div class="card-title">Breadcrumb</div>
+            <p-breadcrumb [model]="breadcrumbItems" [home]="{icon: 'ui-icon-home'}"></p-breadcrumb>
         </div>
 
         <div class="card card-w-title">
-            <h1>Steps</h1>
+            <div class="card-title">Steps</div>
             <p-steps [model]="stepsItems"></p-steps>
         </div>
 
         <div class="card card-w-title">
-            <h1>MenuBar</h1>
+            <div class="card-title">MenuBar</div>
             <p-menubar [model]="tieredItems"></p-menubar>
         </div>
     </div>
@@ -19,7 +19,7 @@
     <div class="ui-g-12 ui-lg-6">
         <!-- Left Colum -->
         <div class="card card-w-title">
-            <h1>Plain Menu</h1>
+            <div class="card-title">Plain Menu</div>
             <p-menu #menu [model]="items" [style]="{'width':'250px'}"></p-menu>
 
             <p-menu #menu popup="popup" [model]="items" [style]="{'width':'250px'}"></p-menu>
@@ -27,43 +27,43 @@
         </div>
 
         <div class="card card-w-title">
-            <h1>TieredMenu</h1>
+            <div class="card-title">TieredMenu</div>
             <p-tieredMenu [model]="tieredItems" [style]="{'width':'250px','margin-bottom':'20px'}"></p-tieredMenu>
         </div>
     </div>
     <div class="ui-g-12 ui-lg-6">
         <!-- Right Colum -->
         <div class="card card-w-title">
-            <h1 style="margin-top:40px">ContextMenu</h1>
+            <div class="card-title" style="margin-top:40px">ContextMenu</div>
             Right click!
 
             <p-contextMenu [global]="true" [model]="tieredItems" [style]="{'width':'12.5em'}"></p-contextMenu>
         </div>
 
         <div class="card">
-            <h1>SlideMenu</h1>
+            <div class="card-title">SlideMenu</div>
             <p-slideMenu [model]="items" [style]="{'width':'260px'}" [menuWidth]="260"></p-slideMenu>
         </div>
 
         <div class="card">
-            <h1>PanelMenu</h1>
+            <div class="card-title">PanelMenu</div>
             <p-panelMenu [model]="panelMenuItems"></p-panelMenu>
         </div>
     </div>
 
     <div class="ui-g-12 ui-g-6">
         <div class="card">
-            <h1>TabMenu</h1>
+            <div class="card-title">TabMenu</div>
             <p-tabMenu [model]="tabMenuItems" [activeItem]="tabMenuItems[2]"></p-tabMenu>
         </div>
     </div>
 
     <div class="ui-g-12 ui-g-6">
         <div class="card">
-            <h1>MegaMenu - Horizontal</h1>
+            <div class="card-title">MegaMenu - Horizontal</div>
             <p-megaMenu [model]="megaMenuItems"></p-megaMenu>
 
-            <h1>MegaMenu - Vertical</h1>
+            <div class="card-title">MegaMenu - Vertical</div>
             <p-megaMenu [model]="megaMenuItems" orientation="vertical" [style]="{'width':'200px'}"></p-megaMenu>
         </div>
     </div>
