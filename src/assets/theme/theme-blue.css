@@ -27978,6 +27978,9 @@ body p-selectbutton.ng-dirty.ng-invalid .ui-button,
 body p-togglebutton.ng-dirty.ng-invalid .ui-button {
   background-image: linear-gradient(to bottom, #e62a10, #e62a10), linear-gradient(to bottom, #e62a10, #e62a10);
 }
+body .ui-fluid .ui-colorpicker-preview {
+  width: 2em;
+}
 
 @media (max-width: 640px) {
   body .ui-buttonset > .ui-button {

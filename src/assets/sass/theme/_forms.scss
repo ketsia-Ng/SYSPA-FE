@@ -1716,6 +1716,10 @@ body {
     p-togglebutton.ng-dirty.ng-invalid .ui-button {
         background-image: linear-gradient(to bottom, $inputInvalidBorderColor, $inputInvalidBorderColor), linear-gradient(to bottom, $inputInvalidBorderColor, $inputInvalidBorderColor);
     }
+
+    .ui-fluid .ui-colorpicker-preview {
+        width: 2em;
+    }
 }
 
 @media (max-width: 640px) {

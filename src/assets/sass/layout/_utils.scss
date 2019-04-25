@@ -16,7 +16,7 @@
     .card-title {
         font-size: 16px;
         font-weight: 500;
-        margin: 1em 0;
+        margin: 2em 0 1em 0;
         letter-spacing: .3px;
     }
 
@@ -172,29 +172,12 @@
 
     &.form-group {
         > div {
-            padding: 12px 16px;
-        }
-    }
-}
-
-.ui-panelgrid {
-    &.form-group {
-        .ui-panelgrid-cell {
-            padding: 12px 16px;
-        }
-    }
-}
-
-.ui-selectoneradio, .ui-selectmanycheckbox  {
-    &.form-group {
-        .ui-grid-row > div {
-            padding: 8px 16px;
+            padding: 1em;
         }
     }
 }
 
 /* Ripple Effect Style like Google Material Buttons Effect*/
-
 .ripplelink{
     /* display:block; */
     /*color:#fff;*/
