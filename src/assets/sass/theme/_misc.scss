@@ -9,13 +9,14 @@ body {
     }
 
     .ui-progressbar {
-        height: .5em;
-        background-color: $primaryLightColor;
+        height: 1.5em;
+        padding: 0;
         overflow: hidden;
-        border: 0 none;
+        border-color: $contentBorderColor;
 
         .ui-progressbar-value {
-            height: .5em;
+            height: 1.5em;
+            border: 1px solid $primaryColor;
         }
 
         .ui-progressbar-label {
@@ -34,6 +35,8 @@ body {
     }
 
     .ui-galleria {
+        padding: 0;
+
         .ui-galleria-nav-prev {
             left: 0;
             margin-bottom: -.4em;

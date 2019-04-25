@@ -37,7 +37,7 @@ export class ChartsDemoComponent implements OnInit {
                     label: 'Second Dataset',
                     data: [28, 48, 40, 19, 86, 27, 90],
                     fill: false,
-                    borderColor: '#FFC107'
+                    borderColor: '#E91E63'
                 }
             ]
         };
@@ -47,8 +47,8 @@ export class ChartsDemoComponent implements OnInit {
             datasets: [
                 {
                     label: 'My First dataset',
-                    backgroundColor: '#03A9F4',
-                    borderColor: '#03A9F4',
+                    backgroundColor: '#4CAF50',
+                    borderColor: '#4CAF50',
                     data: [65, 59, 80, 81, 56, 55, 40]
                 },
                 {
@@ -61,19 +61,21 @@ export class ChartsDemoComponent implements OnInit {
         };
 
         this.pieData = {
-            labels: ['A', 'B', 'C'],
+            labels: ['A', 'B', 'C', 'D'],
             datasets: [
                 {
-                    data: [300, 50, 100],
+                    data: [540, 325, 702, 421],
                     backgroundColor: [
-                        '#FFC107',
                         '#03A9F4',
-                        '#4CAF50'
+                        '#E91E63',
+                        '#4CAF50',
+                        '#FFC107'
                     ],
                     hoverBackgroundColor: [
-                        '#FFE082',
                         '#81D4FA',
-                        '#A5D6A7'
+                        '#e976a1',
+                        '#A5D6A7',
+                        '#FFE082'
                     ]
                 }]
             };
@@ -97,11 +99,11 @@ export class ChartsDemoComponent implements OnInit {
                 label: 'My dataset'
             }],
             labels: [
-                'Red',
-                'Green',
                 'Yellow',
-                'Grey',
-                'Blue'
+                'Blue',
+                'Green',
+                'Red',
+                'Purple'
             ]
         };
 
@@ -110,22 +112,22 @@ export class ChartsDemoComponent implements OnInit {
             datasets: [
                 {
                     label: 'My First dataset',
-                    backgroundColor: 'rgba(179,181,198,0.2)',
-                    borderColor: 'rgba(179,181,198,1)',
-                    pointBackgroundColor: 'rgba(179,181,198,1)',
+                    backgroundColor: 'rgba(255,193,7,0.2)',
+                    borderColor: 'rgba(255,193,7,1)',
+                    pointBackgroundColor: 'rgba(255,193,7,1)',
                     pointBorderColor: '#fff',
                     pointHoverBackgroundColor: '#fff',
-                    pointHoverBorderColor: 'rgba(179,181,198,1)',
+                    pointHoverBorderColor: 'rgba(255,193,7,1)',
                     data: [65, 59, 90, 81, 56, 55, 40]
                 },
                 {
                     label: 'My Second dataset',
-                    backgroundColor: 'rgba(255,99,132,0.2)',
-                    borderColor: 'rgba(255,99,132,1)',
-                    pointBackgroundColor: 'rgba(255,99,132,1)',
+                    backgroundColor: 'rgba(76,175,80,0.2)',
+                    borderColor: 'rgba(76,175,80,1)',
+                    pointBackgroundColor: 'rgba(76,175,80,1)',
                     pointBorderColor: '#fff',
                     pointHoverBackgroundColor: '#fff',
-                    pointHoverBorderColor: 'rgba(255,99,132,1)',
+                    pointHoverBorderColor: 'rgba(76,175,80,1)',
                     data: [28, 48, 40, 19, 96, 27, 100]
                 }
             ]
