@@ -486,6 +486,7 @@
   vertical-align: middle;
 }
 .dashboard .team .dot {
+  margin-right: 0.3em;
   vertical-align: middle;
 }
 .dashboard .userprofile {
@@ -1701,6 +1702,7 @@ body.blocked-scroll, body.blocked-scroll-config {
   margin-top: 6px;
 }
 .layout-topbar .profile-menu-button {
+  height: 40px;
   margin-left: 2em;
   display: inline-block;
   border: 2px solid transparent;

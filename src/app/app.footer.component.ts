@@ -9,8 +9,8 @@ import {Component} from '@angular/core';
                     <img src="assets/layout/images/logo-white.svg" alt="sapphire-layout" />
                     <div class="layout-footer-appname">PrimeFaces Premium Template</div>
                 </div>
-                <div class="p-col p-col-align-center">
-                    <span class="ui-icon ui-icon-copyright"></span>
+                <div class="p-col p-col-align-right">
+                    <span class="ui-icon-copyright"></span>
                     <span>All Rights Reserved</span>
                 </div>
             </div>
