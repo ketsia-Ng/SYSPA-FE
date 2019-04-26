@@ -557,7 +557,6 @@
 }
 .dashboard .quarterreport .dashboard-chart-container {
   position: relative;
-  height: 325px;
 }
 .dashboard .switchpanel {
   border-left: 6px solid #00bcd4;
@@ -579,12 +578,17 @@
 .dashboard .switchpanel.switchpanel-off .switch-status {
   color: #e91e63;
 }
-.dashboard .switchpanel .ui-inputswitch.ui-inputswitch-checked .ui-inputswitch-handle {
+.dashboard .switchpanel .ui-inputswitch-checked .ui-inputswitch-slider {
+  background-color: #00bcd4;
+}
+.dashboard .switchpanel .ui-inputswitch-checked .ui-inputswitch-slider:before {
   background-color: #0097a7;
 }
-.dashboard .switchpanel .ui-inputswitch.ui-inputswitch-checked {
+.dashboard .switchpanel .ui-inputswitch-checked:not(.ui-state-disabled):hover .ui-inputswitch-slider {
   background-color: #00bcd4;
-  border-color: #00bcd4;
+}
+.dashboard .switchpanel .ui-inputswitch-checked.ui-inputswitch-focus .ui-inputswitch-slider {
+  background: #00bcd4;
 }
 .dashboard .timeline h3 {
   margin: 0;

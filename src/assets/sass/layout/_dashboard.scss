@@ -344,7 +344,6 @@
 
         .dashboard-chart-container {
             position:relative;
-            height:325px
         }
     }
 
@@ -372,13 +371,26 @@
             }
         }
 
-        .ui-inputswitch.ui-inputswitch-checked .ui-inputswitch-handle {
-            background-color: #0097a7;
-        }
+        .ui-inputswitch-checked {
+            .ui-inputswitch-slider {
+                background-color: #00bcd4;
 
-        .ui-inputswitch.ui-inputswitch-checked {
-            background-color: #00bcd4;
-            border-color: #00bcd4;
+                &:before {
+                    background-color: #0097a7;
+                }
+            }
+
+            &:not(.ui-state-disabled):hover {
+                .ui-inputswitch-slider {
+                    background-color: #00bcd4;
+                }
+            }
+
+            &.ui-inputswitch-focus {
+                .ui-inputswitch-slider {
+                    background: #00bcd4;
+                }
+            }
         }
     }
 
