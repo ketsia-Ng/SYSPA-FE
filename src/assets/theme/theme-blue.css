@@ -29868,7 +29868,10 @@ body .ui-messages.ui-messages-info .ui-messages-close:hover {
 body .ui-messages.ui-messages-warn {
   background-color: #ffc107;
   border-color: #ffc107;
-  color: #ffffff;
+  color: #212121;
+}
+body .ui-messages.ui-messages-warn .ui-messages-close {
+  color: #212121;
 }
 body .ui-messages.ui-messages-warn .ui-messages-close:hover {
   background-color: #ffd454;
@@ -29957,6 +29960,7 @@ body .ui-messages .ui-messages-icon.pi-exclamation-triangle {
   /* Support for IE. */
   font-feature-settings: "liga";
   font-size: 1.75em;
+  color: #212121;
 }
 body .ui-messages .ui-messages-icon.pi-exclamation-triangle:before {
   content: "warning";
@@ -30023,7 +30027,7 @@ body .ui-message.ui-message-info {
 body .ui-message.ui-message-warn {
   background-color: #ffc107;
   border-color: #ffc107;
-  color: #ffffff;
+  color: #212121;
 }
 body .ui-message.ui-message-error {
   background-color: #e62a10;
@@ -30100,6 +30104,7 @@ body .ui-message .ui-message-icon.pi-exclamation-triangle {
   /* Support for IE. */
   font-feature-settings: "liga";
   font-size: 1.75em;
+  color: #212121;
 }
 body .ui-message .ui-message-icon.pi-exclamation-triangle:before {
   content: "warning";
@@ -30239,6 +30244,7 @@ body .ui-growl .ui-growl-item .ui-growl-image.pi-exclamation-triangle {
   /* Support for IE. */
   font-feature-settings: "liga";
   font-size: 1.75em;
+  color: #212121;
 }
 body .ui-growl .ui-growl-item .ui-growl-image.pi-exclamation-triangle:before {
   content: "warning";
@@ -30358,10 +30364,10 @@ body .ui-toast .ui-toast-message.ui-toast-message-success .ui-toast-message-cont
 body .ui-toast .ui-toast-message.ui-toast-message-warn {
   background-color: #ffc107;
   border: 0 none;
-  color: #ffffff;
+  color: #212121;
 }
 body .ui-toast .ui-toast-message.ui-toast-message-warn .ui-toast-message-content .ui-toast-close-icon {
-  color: #ffffff;
+  color: #212121;
 }
 body .ui-toast .ui-toast-message.ui-toast-message-warn .ui-toast-message-content .ui-toast-close-icon:hover {
   background-color: #ffd454;
@@ -30427,6 +30433,7 @@ body .ui-toast .ui-toast-icon.pi-exclamation-triangle {
   /* Support for IE. */
   font-feature-settings: "liga";
   font-size: 1.75em;
+  color: #212121;
 }
 body .ui-toast .ui-toast-icon.pi-exclamation-triangle:before {
   content: "warning";

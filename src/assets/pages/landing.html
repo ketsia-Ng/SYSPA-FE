@@ -27,16 +27,16 @@
 
                     <ul id="landing-menu">
                         <li>
-                            <a href="#introduction">HOME</a>
+                            <a href="#introduction">Home</a>
                         </li>
                         <li>
-                            <a href="#features">FEATURES</a>
+                            <a href="#features">Features</a>
                         </li>
                         <li>
-                            <a href="#stats">STATS</a>
+                            <a href="#stats">Stats</a>
                         </li>
                         <li>
-                            <a href="#pricing">PRICING</a>
+                            <a href="#pricing">Pricing</a>
                         </li>
                         <li>
                             <a href="#multimedia">Multimedia</a>
@@ -309,13 +309,9 @@
 
                 if(SapphireLanding.hasClass(menu, 'landing-menu-active')) {
                     SapphireLanding.hideMenu();
-                    console.log(
-                        document.getElementById('landing-menu-button')
-                    )
                 }
                 else
                     SapphireLanding.showMenu();
-                document.getElementById('landing-menu-button').children('i').text('menu');
 
                 e.preventDefault();
             });

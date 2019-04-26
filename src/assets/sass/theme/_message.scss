@@ -21,10 +21,14 @@ body {
         &.ui-messages-warn {
             background-color: #ffc107;
             border-color: #ffc107;
-            color: #ffffff;
+            color: #212121;
 
-            .ui-messages-close:hover {
-                background-color: lighten(#ffc107,15%);
+            .ui-messages-close{
+                color: #212121;
+
+                &:hover {
+                    background-color: lighten(#ffc107,15%);
+                }
             }
         }
 
@@ -78,6 +82,7 @@ body {
         &.pi-exclamation-triangle {
             @include material-icon("warning");
             font-size: 1.75em;
+            color: #212121;
         }
 
         &.pi-times {
@@ -102,7 +107,7 @@ body {
         &.ui-message-warn {
             background-color: #ffc107;
             border-color: #ffc107;
-            color: #ffffff;
+            color: #212121;
         }
 
         &.ui-message-error {
@@ -143,6 +148,7 @@ body {
         &.pi-exclamation-triangle {
             @include material-icon("warning");
             font-size: 1.75em;
+            color: #212121;
         }
 
         &.pi-times {
@@ -201,6 +207,7 @@ body {
                 &.pi-exclamation-triangle {
                     @include material-icon("warning");
                     font-size: 1.75em;
+                    color: #212121;
                 }
 
                 &.pi-times {
@@ -263,11 +270,11 @@ body {
             &.ui-toast-message-warn {
                 background-color: #ffc107;
                 border: 0 none;
-                color: #ffffff;
+                color: #212121;
 
                 .ui-toast-message-content {
                     .ui-toast-close-icon {
-                        color: #ffffff;
+                        color: #212121;
                         &:hover {
                             background-color: lighten(#ffc107,15%);
                         }
@@ -301,6 +308,7 @@ body {
         &.pi-exclamation-triangle {
             @include material-icon("warning");
             font-size: 1.75em;
+            color: #212121;
         }
 
         &.pi-times {

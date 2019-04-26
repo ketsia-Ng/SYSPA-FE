@@ -198,12 +198,15 @@
 					margin-top: 12px;
 					margin-bottom: 8px;
 					height: 4px;
+                    overflow: visible;
 					background-color: #eeeeee;
 
 					.ui-progressbar-value {
 						background-color: #ffc107;
 						border-color: #ffc107;
 						height: 4px;
+                        margin: -1px;
+                        padding: 0;
 					}
 				}
 
@@ -309,6 +312,10 @@
 						margin-left: -68px;
 						@include border-radius(4px);
 						@include multi-shadow(0 1px 3px 0 rgba(0, 0, 0, 0.2), 0 2px 1px -1px rgba(0, 0, 0, 0.12), 0 1px 1px 0 rgba(0, 0, 0, 0.14));
+
+                        &:enabled:hover {
+                            background-color: #1565C0;
+                        }
 					}
 				}
 			}
