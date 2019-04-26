@@ -297,10 +297,12 @@
 
                 hideMenu: function() {
                     this.removeClass(document.getElementById('landing-menu'), 'landing-menu-active');
+                    this.removeClass(document.getElementById('landing-menu-button'), 'landing-menu-active');
                 },
 
                 showMenu: function() {
                     this.addClass(document.getElementById('landing-menu'), 'landing-menu-active');
+                    this.addClass(document.getElementById('landing-menu-button'), 'landing-menu-active');
                 }
             };
 
@@ -310,8 +312,9 @@
                 if(SapphireLanding.hasClass(menu, 'landing-menu-active')) {
                     SapphireLanding.hideMenu();
                 }
-                else
+                else {
                     SapphireLanding.showMenu();
+                }
 
                 e.preventDefault();
             });
