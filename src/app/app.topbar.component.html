@@ -1,6 +1,6 @@
 <div class="layout-topbar">
 
-    <a id="layout-menubutton" href="#" class="layout-menubutton" (click)="app.onMenuButtonClick($event)">
+    <a id="layout-menubutton" href="#" class="layout-menubutton" [ngClass]="{'layout-menubutton-active': app.mobileMenuActive}" (click)="app.onMenuButtonClick($event)">
         <div class="layout-menubutton-icon"></div>
     </a>
 
