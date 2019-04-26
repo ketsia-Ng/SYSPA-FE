@@ -169,6 +169,10 @@ body {
         background-color: $primaryDarkColor;
         @include content-shadow();
         padding: 10px;
+
+        .ui-toolbar-separator {
+            margin-right: 0.25em;
+        }
     }
 
     .ui-tabview {

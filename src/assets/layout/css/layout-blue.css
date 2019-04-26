@@ -449,6 +449,7 @@
   padding: 1em 0;
 }
 .dashboard .tasks i {
+  font-size: 24px;
   color: #616161;
 }
 .dashboard .tasks .p-col-fixed {
