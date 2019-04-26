@@ -175,7 +175,7 @@ export class AppMenuComponent implements OnInit, AfterViewInit {
                     {{child.label}}
                 </span>
                 <div class="layout-submenu-container" *ngIf="child.items"
-                     [ngClass]="{'layout-submenu-megamenu-container':child.mega}"
+                     [ngClass]="{'layout-submenu-megamenu-container':child.mega}" [ngStyle]="{'padding':isActive(i) ? '':'0'}"
                      [@children]="app.horizontal && root ? isActive(i) ? 'visible' : 'hidden' : !root && mega ? 'visible' :
                      isActive(i) ? 'visibleAnimated' : 'hiddenAnimated'">
                     <ul app-submenu [item]="child" class="layout-submenu"
@@ -189,11 +189,9 @@ export class AppMenuComponent implements OnInit, AfterViewInit {
         trigger('children', [
             state('void', style({
                 height: '0px',
-                padding: 0
             })),
             state('hiddenAnimated', style({
                 height: '0px',
-                padding: 0
             })),
             state('visibleAnimated', style({
                 height: '*',
@@ -205,7 +203,6 @@ export class AppMenuComponent implements OnInit, AfterViewInit {
             state('hidden', style({
                 height: '0px',
                 'z-index': '*',
-                padding: 0
             })),
             transition('visibleAnimated => hiddenAnimated', animate('400ms cubic-bezier(0.86, 0, 0.07, 1)')),
             transition('hiddenAnimated => visibleAnimated', animate('400ms cubic-bezier(0.86, 0, 0.07, 1)')),
