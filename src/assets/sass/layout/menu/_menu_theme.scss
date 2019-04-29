@@ -1,6 +1,6 @@
 .layout-menu-container {
     @if variable-exists(menuBgImage) {
-        background-image: url("\#{resource['sapphire-layout:images/special/#{$menuBgImage}']}");
+        background-image: url("../../layout/images/special/#{$menuBgImage}");
         background-size: cover;
         background-repeat: no-repeat;
     }
@@ -84,7 +84,7 @@
             > li {
                 > .layout-submenu-container {
                     @if variable-exists(menuBgImage) {
-                        background-image: url("\#{resource['sapphire-layout:images/special/#{$menuBgImage}']}");
+                        background-image: url("../../layout/images/special/#{$menuBgImage}");
                         background-position: 0 0;
                         background-size: 100% auto;
                     }
@@ -99,7 +99,7 @@
 
 .layout-profile-menu { 
     @if variable-exists(menuBgImage) {
-        background-image: url("\#{resource['sapphire-layout:images/special/#{$menuBgImage}']}");
+        background-image: url("../../layout/images/special/#{$menuBgImage}");
         background-position: 0 0;
         background-size: 100% auto;
     }

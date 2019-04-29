@@ -1,6 +1,6 @@
 .layout-top {
     @if variable-exists(topbarBgImage) {
-        background-image: url("\#{resource['sapphire-layout:images/special/#{$topbarBgImage}']}");
+        background-image: url("../../layout/images/special/#{$topbarBgImage}");
         background-size: cover;
         background-repeat: no-repeat;
     }
