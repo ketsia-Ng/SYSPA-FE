@@ -46,30 +46,33 @@ Run 'ng help' for more options.
                 the main template. The component class app.main.component.ts implements the logic such as opening menus and layout modes.
             </p>
 <pre>
-&lt;div class=&quot;layout-container&quot; (click)=&quot;onWrapperClick()&quot;
-    [ngClass]=&quot;&#123;&#39;layout-menu-horizontal&#39;: horizontal,
-               &#39;layout-menu-active&#39;: menuActive&#125;&quot; 
-               [class]=&quot;topbarColor + &#39; &#39; + menuColor&quot;&gt;
+&lt;div class="layout-container" (click)="onWrapperClick()"
+    [ngClass]="&#123;'layout-menu-horizontal': horizontal,
+               'layout-menu-active': menuActive
+               'layout-top-small': topbarSize === 'small',
+               'layout-top-medium': topbarSize === 'medium',
+               'layout-top-large': topbarSize === 'large'&#125;" 
+               [class]="topbarColor + ' ' + menuColor"&gt;
 
-   &lt;div class=&quot;layout-top&quot;&gt;
+   &lt;div class="layout-top"&gt;
        &lt;app-topbar&gt;&lt;/app-topbar&gt;
 
-       &lt;div class=&quot;layout-topbar-separator&quot;&gt;&lt;/div&gt;
+       &lt;div class="layout-topbar-separator"&gt;&lt;/div&gt;
 
        &lt;app-breadcrumb&gt;&lt;/app-breadcrumb&gt;
    &lt;/div&gt;
 
-   &lt;div class=&quot;layout-content&quot;&gt;
+   &lt;div class="layout-content"&gt;
        &lt;router-outlet&gt;&lt;/router-outlet&gt;
    &lt;/div&gt;
 
    &lt;app-config&gt;&lt;/app-config&gt;
 
-   &lt;div class=&quot;layout-mask&quot; *ngIf=&quot;menuActive&quot;&gt;&lt;/div&gt;
+   &lt;div class="layout-mask" *ngIf="menuActive"&gt;&lt;/div&gt;
 
    &lt;app-footer&gt;&lt;/app-footer&gt;
 
-   &lt;div class=&quot;layout-config-mask&quot; *ngIf=&quot;configDialogActive&quot;&gt;&lt;/div&gt;
+   &lt;div class="layout-config-mask" *ngIf="configDialogActive"&gt;&lt;/div&gt;
 
 &lt;/div&gt;
 </pre>
@@ -315,10 +318,17 @@ sass --watch src/assets:src/assets
 </pre>
 
             <h1>TopBar</h1>
-            <p>TopBar style is defined at the main container element, template below uses the default blue topbar.</p>
-            <pre>
-            &lt;div class="layout-container layout-topbar-blue"&gt;
-            </pre>
+            <p>TopBar comes in 3 sizes; large, medium and small. A specific style class with the layout-top-* prefix is defined at the main container element in order to apply a size. Below are the all 3 options;</p>
+<pre>
+&lt;div class="layout-container layout-top-small"&gt;
+&lt;div class="layout-container layout-top-medium"&gt;
+&lt;div class="layout-container layout-top-large"&gt;
+</pre>
+
+            <p>Similarly TopBar style theme is also defined at the main container element, template below uses the default blue topbar.</p>
+<pre>
+&lt;div class="layout-container layout-topbar-blue"&gt;
+</pre>
 
             <p>Full list of topbar options are the following, note that <i>layout-topbar-</i> prefix needs to be added to apply the style such as <b>layout-topbar-midnight</b>.</p>
 
