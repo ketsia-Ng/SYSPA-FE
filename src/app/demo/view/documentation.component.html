@@ -68,11 +68,11 @@ Run 'ng help' for more options.
 
    &lt;app-config&gt;&lt;/app-config&gt;
 
-   &lt;div class="layout-mask" *ngIf="menuActive"&gt;&lt;/div&gt;
+   &lt;div class="layout-mask" *ngIf="menuActive" [@mask-anim]="'visible'"&gt;&lt;/div&gt;
 
    &lt;app-footer&gt;&lt;/app-footer&gt;
 
-   &lt;div class="layout-config-mask" *ngIf="configDialogActive"&gt;&lt;/div&gt;
+   &lt;div class="layout-config-mask" *ngIf="configDialogActive" [@mask-anim]="'visible'"&gt;&lt;/div&gt;
 
 &lt;/div&gt;
 </pre>

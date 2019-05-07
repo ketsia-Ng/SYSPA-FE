@@ -20,10 +20,10 @@
 
     <app-config></app-config>
 
-    <div class="layout-mask" *ngIf="menuActive"></div>
+    <div class="layout-mask" *ngIf="menuActive" [@mask-anim]="'visible'"></div>
 
     <app-footer></app-footer>
 
-    <div class="layout-config-mask" *ngIf="configDialogActive"></div>
+    <div class="layout-config-mask" *ngIf="configDialogActive" [@mask-anim]="'visible'"></div>
 
 </div>

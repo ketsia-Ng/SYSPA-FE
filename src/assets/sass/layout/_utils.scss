@@ -88,26 +88,6 @@
   }
 }
 
-@-webkit-keyframes fadeInMask {
-    from {
-      opacity: 0;
-    }
-  
-    to {
-      opacity: .8;
-    }
-  }
-  
-  @keyframes fadeInMask {
-    from {
-      opacity: 0;
-    }
-  
-    to {
-      opacity: .8;
-    }
-  }
-
   @keyframes rippleOn {
     0% {
       opacity: 0.5;
