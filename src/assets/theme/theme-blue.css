@@ -26959,8 +26959,8 @@ body .ui-radiobutton .ui-radiobutton-box .ui-radiobutton-icon {
 }
 body .ui-radiobutton .ui-radiobutton-box .pi-circle-on {
   background-color: #1E88E5;
-  -webkit-transform: scale(0.5);
-  transform: scale(0.5);
+  -webkit-transform: scale(0.6);
+  transform: scale(0.6);
   top: 50%;
   left: 50%;
   margin-top: -0.5em;
@@ -28050,9 +28050,9 @@ body .ui-panel .ui-panel-titlebar .ui-panel-title {
 }
 body .ui-panel .ui-panel-titlebar .ui-panel-titlebar-icon {
   position: relative;
-  width: 24px;
-  height: 24px;
-  line-height: 24px;
+  width: 20px;
+  height: 20px;
+  line-height: 20px;
   text-align: center;
   color: #ffffff;
   margin: 0;

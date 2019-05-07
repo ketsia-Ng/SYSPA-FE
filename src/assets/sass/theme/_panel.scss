@@ -15,9 +15,9 @@ body {
 
             .ui-panel-titlebar-icon {
                 position: relative;
-                width: $iconWidth + 4;
-                height: $iconHeight + 4;
-                line-height: $iconHeight + 4;
+                width: $iconWidth;
+                height: $iconHeight;
+                line-height: $iconHeight;
                 text-align: center;
                 color: $headerTextColor;
                 margin: 0;
