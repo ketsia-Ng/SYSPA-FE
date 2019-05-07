@@ -17,6 +17,32 @@ import {AppMainComponent} from './app.main.component';
                 </a>
                 <p-tabView id="config-form-tabs">
                     <p-tabPanel header="TopBar">
+                        <div class="layout-config-subtitle">Size</div>
+                        <div class="p-grid">
+                            <div class="p-col p-col-fixed">
+                                <a href="#" class="layout-config-option layout-config-option-image layout-config-option-light ui-shadow-1"
+                                   (click)="changeTopBarSize($event,'large')">
+                                   <img src="assets/layout/images/configurator/topbar-large.png" alt="sapphire"  style="width:100%"/>
+                                    <i class="material-icons" *ngIf="app.topbarSize === 'large'">check</i>
+                                </a>
+                            </div>
+                            <div class="p-col p-col-fixed">
+                                <a href="#" class="layout-config-option layout-config-option-image layout-config-option-light ui-shadow-1"
+                                   (click)="changeTopBarSize($event,'medium')">
+                                   <img src="assets/layout/images/configurator/topbar-medium.png" alt="sapphire"  style="width:100%"/>
+                                    <i class="material-icons" *ngIf="app.topbarSize === 'medium'">check</i>
+                                </a>
+                            </div>   
+                            <div class="p-col p-col-fixed">
+                                <a href="#" class="layout-config-option layout-config-option-image layout-config-option-light ui-shadow-1"
+                                   (click)="changeTopBarSize($event,'small')">
+                                    <img src="assets/layout/images/configurator/topbar-small.png" alt="sapphire"  style="width:100%"/>
+                                    <i class="material-icons" *ngIf="app.topbarSize === 'small'">check</i>
+                                </a>
+                            </div>                  
+                        </div>
+
+                        <div class="layout-config-subtitle">Themes</div>
                         <div class="p-grid">
                             <div class="p-col" *ngFor="let topbarTheme of topbarThemes">
                                 <a href="#" class="layout-config-option layout-config-option-image ui-shadow-1"
@@ -338,6 +364,11 @@ export class AppConfigComponent implements OnInit {
             {name: 'Teal', file: 'teal', image: 'teal.svg'},
             {name: 'Yellow', file: 'yellow', image: 'yellow.svg'}
         ];
+    }
+
+    changeTopBarSize(event, size) {
+        this.app.topbarSize = size;
+        event.preventDefault();
     }
 
     onConfigButtonClick(event) {

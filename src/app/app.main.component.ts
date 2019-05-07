@@ -34,6 +34,8 @@ export class AppMainComponent implements OnDestroy, OnInit {
 
     layoutColor = 'blue';
 
+    topbarSize = 'large';
+
     configDialogActive: boolean;
 
     constructor(public renderer: Renderer2, public zone: NgZone) {}

@@ -1,5 +1,7 @@
 .layout-top {
-    padding: 15px $bodySidePadding 150px $bodySidePadding;
+    padding-top: 15px;
+    padding-left: $bodySidePadding;
+    padding-right: $bodySidePadding;
 }
 
 .layout-topbar {
@@ -179,6 +181,55 @@
 .layout-topbar-separator {
     height: 1px;
     margin-top: -3px;
+}
+
+.layout-container {
+    &.layout-top-small {
+        .layout-top {
+            padding-bottom: 15px;
+            @include double-shadow(0 2px 10px 0 rgba(0, 0, 0, 0.03), 0 2px 5px 0 rgba(0, 0, 0, 0.05));
+        }
+
+        .layout-breadcrumb,
+        .layout-topbar-separator {
+            display: none;
+        }
+
+        .layout-content {
+            margin-top: 15px;
+        }
+
+        &.layout-menu-horizontal {
+            .layout-menu, .layout-menu > li, .layout-menu > li > a {
+                height: 56px;
+            }
+        }
+    }
+
+    &.layout-top-medium {
+        .layout-top {
+            padding-bottom: 15px;
+            @include double-shadow(0 2px 10px 0 rgba(0, 0, 0, 0.03), 0 2px 5px 0 rgba(0, 0, 0, 0.05));
+        }
+
+        .layout-breadcrumb {
+            @include shadow(none);
+        }
+
+        .layout-content {
+            margin-top: 15px;
+        }
+    }
+
+    &.layout-top-large {
+        .layout-top {
+            padding-bottom: 150px;
+        }
+
+        .layout-content {
+            margin-top: -120px;
+        }
+    }
 }
 
 @media screen and (max-width: $mobileBreakpoint) {
