@@ -8,8 +8,6 @@ export class AppMainComponent implements OnDestroy, OnInit {
 
     menuClick: boolean;
 
-    menuButtonClick: boolean;
-
     userMenuClick: boolean;
 
     topbarUserMenuActive: boolean;
@@ -153,12 +151,29 @@ export class AppMainComponent implements OnDestroy, OnInit {
         }
     }
 
+    blockBodyScroll(): void {
+        if (document.body.classList) {
+            document.body.classList.add('blocked-scroll');
+        } else {
+            document.body.className += ' blocked-scroll';
+        }
+    }
+
+    unblockBodyScroll(): void {
+        if (document.body.classList) {
+            document.body.classList.remove('blocked-scroll');
+        } else {
+            document.body.className = document.body.className.replace(new RegExp('(^|\\b)' +
+                'blocked-scroll'.split(' ').join('|') + '(\\b|$)', 'gi'), ' ');
+        }
+    }
+
     ngOnDestroy() {
         this.unbindRipple();
     }
 
     onWrapperClick() {
-        if (!this.menuClick && !this.menuButtonClick) {
+        if (!this.menuClick) {
             this.menuActive = false;
         }
 
@@ -172,19 +187,23 @@ export class AppMainComponent implements OnDestroy, OnInit {
             }
 
             this.menuHoverActive = false;
+            this.unblockBodyScroll();
         }
 
         this.userMenuClick = false;
         this.menuClick = false;
-        this.menuButtonClick = false;
     }
 
     onMenuButtonClick(event: Event) {
-        this.menuButtonClick = true;
-        this.topbarUserMenuActive = false;
+        this.menuClick = true;
 
         if (!this.horizontal || this.isMobile()) {
             this.menuActive = !this.menuActive;
+            
+            if (this.menuActive)
+                this.blockBodyScroll();
+            else
+                this.unblockBodyScroll();
         }
 
         event.preventDefault();
