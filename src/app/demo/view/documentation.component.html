@@ -48,7 +48,7 @@ Run 'ng help' for more options.
 <pre>
 &lt;div class=&quot;layout-container&quot; (click)=&quot;onWrapperClick()&quot;
     [ngClass]=&quot;&#123;&#39;layout-menu-horizontal&#39;: horizontal,
-               &#39;layout-menu-active&#39;: mobileMenuActive&#125;&quot; 
+               &#39;layout-menu-active&#39;: menuActive&#125;&quot; 
                [class]=&quot;topbarColor + &#39; &#39; + menuColor&quot;&gt;
 
    &lt;div class=&quot;layout-top&quot;&gt;
@@ -65,7 +65,7 @@ Run 'ng help' for more options.
 
    &lt;app-config&gt;&lt;/app-config&gt;
 
-   &lt;div class=&quot;layout-mask&quot; *ngIf=&quot;mobileMenuActive&quot;&gt;&lt;/div&gt;
+   &lt;div class=&quot;layout-mask&quot; *ngIf=&quot;menuActive&quot;&gt;&lt;/div&gt;
 
    &lt;app-footer&gt;&lt;/app-footer&gt;
 

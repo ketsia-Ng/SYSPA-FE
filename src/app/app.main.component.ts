@@ -16,7 +16,7 @@ export class AppMainComponent implements OnDestroy, OnInit {
 
     horizontal = true;
 
-    mobileMenuActive: boolean;
+    menuActive: boolean;
 
     rippleInitListener: any;
 
@@ -157,7 +157,7 @@ export class AppMainComponent implements OnDestroy, OnInit {
 
     onWrapperClick() {
         if (!this.menuClick && !this.menuButtonClick) {
-            this.mobileMenuActive = false;
+            this.menuActive = false;
         }
 
         if (!this.userMenuClick) {
@@ -182,7 +182,7 @@ export class AppMainComponent implements OnDestroy, OnInit {
         this.topbarUserMenuActive = false;
 
         if (!this.horizontal || this.isMobile()) {
-            this.mobileMenuActive = !this.mobileMenuActive;
+            this.menuActive = !this.menuActive;
         }
 
         event.preventDefault();
@@ -193,6 +193,14 @@ export class AppMainComponent implements OnDestroy, OnInit {
         this.topbarUserMenuActive = !this.topbarUserMenuActive;
 
         event.preventDefault();
+    }
+
+    onTopbarUserMenuClick(event) {
+        this.userMenuClick = true;
+
+        if (event.target.nodeName === 'A' || event.target.parentNode.nodeName === 'A') {
+            this.topbarUserMenuActive = false;
+        }
     }
 
     onSidebarClick(event: Event) {

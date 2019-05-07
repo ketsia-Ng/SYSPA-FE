@@ -263,7 +263,7 @@ export class AppSubMenuComponent {
         // hide menu
         if (!item.items) {
             if (!this.app.horizontal) {
-                this.app.mobileMenuActive = false;
+                this.app.menuActive = false;
             }
 
             if (this.app.horizontal) {

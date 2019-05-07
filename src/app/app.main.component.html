@@ -1,6 +1,6 @@
 <div class="layout-container" (click)="onWrapperClick()"
      [ngClass]="{'layout-menu-horizontal': horizontal,
-                'layout-menu-active': mobileMenuActive}" [class]="topbarColor + ' ' + menuColor">
+                'layout-menu-active': menuActive}" [class]="topbarColor + ' ' + menuColor">
 
     <div class="layout-top">
         <app-topbar></app-topbar>
@@ -16,7 +16,7 @@
 
     <app-config></app-config>
 
-    <div class="layout-mask" *ngIf="mobileMenuActive"></div>
+    <div class="layout-mask" *ngIf="menuActive"></div>
 
     <app-footer></app-footer>
 
