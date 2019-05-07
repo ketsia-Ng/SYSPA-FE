@@ -2,7 +2,8 @@ import {Component, Input, OnInit, AfterViewInit, OnDestroy, ElementRef, Renderer
 import {trigger, state, style, transition, animate} from '@angular/animations';
 import {Location} from '@angular/common';
 import {Router} from '@angular/router';
-import {MenuItem, ScrollPanel} from 'primeng/primeng';
+import {MenuItem} from 'primeng/api';
+import {ScrollPanel} from 'primeng/scrollpanel';
 import {AppMainComponent} from './app.main.component';
 
 @Component({
@@ -20,7 +21,7 @@ export class AppMenuComponent implements OnInit, AfterViewInit {
     constructor(public app: AppMainComponent) {}
 
     ngAfterViewInit() {
-      setTimeout(() => {this.layoutMenuScrollerViewChild.moveBar(); }, 100);
+        setTimeout(() => {this.layoutMenuScrollerViewChild.moveBar(); }, 100);
     }
 
     ngOnInit() {

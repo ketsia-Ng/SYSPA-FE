@@ -1,11 +1,14 @@
 .dashboard {
-    margin-right: -1em;
-        margin-left: -1em;
-        margin-top: -1em;
         
     > div {
         padding: 1em;
-        
+    }
+
+    .dashboard-grid {
+        margin-left: 0;
+        margin-right: 0;
+        margin-top: 0;
+        padding: 0;
     }
     
     .card {
