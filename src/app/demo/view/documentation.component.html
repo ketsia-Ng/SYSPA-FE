@@ -82,31 +82,24 @@ Run 'ng help' for more options.
             navigate to app.menu.component.ts and define your own model. Here is the menu component from the sample application. The helper
             app-submenu component is also available in the same file.</p>
 <pre>
-import &#123;Component, Input, OnInit, AfterViewInit, OnDestroy, ElementRef, Renderer, ViewChild&#125; from '@angular/core';
+import &#123;Component, Input, OnInit&#125; from '@angular/core';
 import &#123;trigger, state, style, transition, animate&#125; from '@angular/animations';
 import &#123;Location&#125; from '@angular/common';
 import &#123;Router&#125; from '@angular/router';
 import &#123;MenuItem&#125; from 'primeng/api';
-import &#123;ScrollPanel&#125; from 'primeng/scrollpanel';
 import &#123;AppMainComponent&#125; from './app.main.component';
 
 @Component(&#123;
     selector: 'app-menu',
     templateUrl: './app.menu.component.html'
 &#125;)
-export class AppMenuComponent implements OnInit, AfterViewInit &#123;
+export class AppMenuComponent implements OnInit &#123;
 
     @Input() reset: boolean;
 
     model: any[];
 
-    @ViewChild('scrollPanel') layoutMenuScrollerViewChild: ScrollPanel;
-
     constructor(public app: AppMainComponent) &#123;&#125;
-
-    ngAfterViewInit() &#123;
-        setTimeout(() => &#123;this.layoutMenuScrollerViewChild.moveBar(); &#125;, 100);
-    &#125;
 
     ngOnInit() &#123;
         this.model = [

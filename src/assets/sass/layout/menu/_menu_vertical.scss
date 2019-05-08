@@ -9,6 +9,7 @@
 
     .layout-menu-container {
         position: fixed;
+        overflow: auto;
         width: 240px;
         height: 100%;
         top: 68px;
@@ -16,37 +17,6 @@
         z-index: 999;
         @include transition(left $transitionDuration);
         @include double-shadow(0 6px 20px 0 rgba(0, 0, 0, 0.19), 0 8px 17px 0 rgba(0, 0, 0, 0.2));
-
-        
-        .ui-scrollpanel {
-            border: none;
-            padding: 0;
-            background-color: transparent;
-
-            .layout-menu-wrapper {
-                width: 258px;
-                padding-right: 18px;
-            }
-
-            .ui-scrollpanel-content {
-                overflow-x: hidden;
-            }
-
-            .ui-scrollpanel-hidden {
-                display: block;
-                visibility: hidden;
-            }
-
-            .ui-scrollpanel-bar-x {
-                display: none;
-            }
-
-            .ui-scrollpanel-bar {
-                background-color: #aaaaaa;
-                opacity: 0.3;
-                filter: alpha(opacity=30);
-            }
-        }
     }
 
     .layout-menu {

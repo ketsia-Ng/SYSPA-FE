@@ -53,7 +53,6 @@ import { PickListModule } from 'primeng/picklist';
 import { ProgressBarModule } from 'primeng/progressbar';
 import { RadioButtonModule } from 'primeng/radiobutton';
 import { RatingModule } from 'primeng/rating';
-import { ScrollPanelModule } from 'primeng/scrollpanel';
 import { SelectButtonModule } from 'primeng/selectbutton';
 import { SlideMenuModule } from 'primeng/slidemenu';
 import { SliderModule } from 'primeng/slider';
@@ -160,7 +159,6 @@ import {BreadcrumbService} from './breadcrumb.service';
         ProgressBarModule,
         RadioButtonModule,
         RatingModule,
-        ScrollPanelModule,
         SelectButtonModule,
         SlideMenuModule,
         SliderModule,

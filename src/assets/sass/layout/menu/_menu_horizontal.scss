@@ -14,37 +14,9 @@
             z-index: auto;
             width: auto;
             height: auto;
+            overflow: visible;
             @include transition(none);
             @include shadow(none);
-
-            .ui-scrollpanel {
-                overflow: visible;
-                border: none;
-                background-color: transparent;
-                border-radius: 0;
-
-                .ui-scrollpanel-wrapper {
-                    overflow: visible;
-                    
-                    .ui-scrollpanel-content {
-                        overflow: visible;
-                        padding: 0;
-                    }
-                }
-
-                .ui-scrollpanel-bar {
-                    display: block;
-                    visibility: hidden;
-                }
-
-                .layout-menu {
-                    padding-bottom: 0;
-                }
-
-                .layout-menu-wrapper {
-                    width: 100%;
-                }
-            }
         }
     
         .layout-menu {
