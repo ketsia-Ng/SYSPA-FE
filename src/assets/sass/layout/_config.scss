@@ -123,6 +123,10 @@
                 margin-left: -24px;
                 margin-top: -40px;
             }
+
+            img {
+                border: 0 none;
+            }
         }
 
         &.layout-config-option-light {
@@ -134,6 +138,7 @@
 
     .p-col {
         padding: 1em;
+        -ms-flex-preferred-size: auto;
     }
 
     .ui-tabview {
