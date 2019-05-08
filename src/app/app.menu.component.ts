@@ -170,7 +170,7 @@ export class AppMenuComponent implements OnInit {
                 </span>
                 <div class="layout-submenu-container" *ngIf="child.items"
                      [ngClass]="{'layout-submenu-megamenu-container':child.mega}" [ngStyle]="{'padding':isActive(i) ? '':'0'}"
-                     [@children]="app.horizontal && root ? isActive(i) ? 'visible' : 'hidden' : !root && mega ? 'visible' :
+                     [@children]="(app.horizontal && !app.isMobile() && root) ? isActive(i) ? 'visible' : 'hidden' : !root && mega ? 'visible' :
                      isActive(i) ? 'visibleAnimated' : 'hiddenAnimated'">
                     <ul app-submenu [item]="child" class="layout-submenu"
                         [ngClass]="{'layout-megamenu':child.mega}" [mega]="child.mega"
