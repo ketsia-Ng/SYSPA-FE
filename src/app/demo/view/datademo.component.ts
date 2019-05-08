@@ -6,7 +6,7 @@ import {CarService} from '../service/carservice';
 import {NodeService} from '../service/nodeservice';
 import {EventService} from '../service/eventservice';
 import {Car} from '../domain/car';
-import {TreeNode, SelectItem, LazyLoadEvent} from 'primeng/primeng';
+import {TreeNode, SelectItem, LazyLoadEvent} from 'primeng/api';
 import {BreadcrumbService} from '../../breadcrumb.service';
 
 @Component({

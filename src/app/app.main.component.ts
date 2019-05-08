@@ -1,5 +1,5 @@
-import {Component, OnDestroy, Renderer2, OnInit, NgZone} from '@angular/core';
-import {trigger, state, style, transition, animate} from '@angular/animations';
+import { Component, OnDestroy, Renderer2, OnInit, NgZone } from '@angular/core';
+import { trigger, state, style, transition, animate } from '@angular/animations';
 
 @Component({
     selector: 'app-main',
@@ -211,11 +211,12 @@ export class AppMainComponent implements OnDestroy, OnInit {
 
         if (!this.horizontal || this.isMobile()) {
             this.menuActive = !this.menuActive;
-            
-            if (this.menuActive)
+
+            if (this.menuActive) {
                 this.blockBodyScroll();
-            else
+            } else {
                 this.unblockBodyScroll();
+            }
         }
 
         event.preventDefault();
@@ -235,7 +236,7 @@ export class AppMainComponent implements OnDestroy, OnInit {
             this.topbarUserMenuActive = false;
         }
     }
-    
+
     onTopbarSubItemClick(event) {
         event.preventDefault();
     }

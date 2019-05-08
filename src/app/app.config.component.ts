@@ -5,17 +5,17 @@ import {AppMainComponent} from './app.main.component';
 @Component({
     selector: 'app-config',
     template: `
-        <a href="#" id="layout-config-button" class="layout-config-button" (click)="onConfigButtonClick($event)">
+        <a href="#" class="layout-config-button" (click)="onConfigButtonClick($event)">
             <i class="material-icons">settings</i>
         </a>
-        <div id="layout-config" class="layout-config" [ngClass]="{'layout-config-exit-done': !app.configDialogActive,
+        <div class="layout-config" [ngClass]="{'layout-config-exit-done': !app.configDialogActive,
         'layout-config-enter-done': app.configDialogActive}"
              [@children]="app.configDialogActive ? 'visibleAnimated' : 'hiddenAnimated'">
             <div class="layout-config-content">
                 <a href="#" class="layout-config-close" (click)="onConfigCloseClick($event)">
                     <i class="material-icons">close</i>
                 </a>
-                <p-tabView id="config-form-tabs">
+                <p-tabView>
                     <p-tabPanel header="TopBar">
                         <div class="layout-config-subtitle">Size</div>
                         <div class="p-grid">
@@ -32,14 +32,14 @@ import {AppMainComponent} from './app.main.component';
                                    <img src="assets/layout/images/configurator/topbar-medium.png" alt="sapphire"  style="width:100%"/>
                                     <i class="material-icons" *ngIf="app.topbarSize === 'medium'">check</i>
                                 </a>
-                            </div>   
+                            </div>
                             <div class="p-col p-col-fixed">
                                 <a href="#" class="layout-config-option layout-config-option-image layout-config-option-light ui-shadow-1"
                                    (click)="changeTopBarSize($event,'small')">
                                     <img src="assets/layout/images/configurator/topbar-small.png" alt="sapphire"  style="width:100%"/>
                                     <i class="material-icons" *ngIf="app.topbarSize === 'small'">check</i>
                                 </a>
-                            </div>                  
+                            </div>
                         </div>
 
                         <div class="layout-config-subtitle">Themes</div>

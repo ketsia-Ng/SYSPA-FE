@@ -1,9 +1,9 @@
-import {Component, Input, OnInit} from '@angular/core';
-import {trigger, state, style, transition, animate} from '@angular/animations';
-import {Location} from '@angular/common';
-import {Router} from '@angular/router';
-import {MenuItem} from 'primeng/api';
-import {AppMainComponent} from './app.main.component';
+import { Component, Input, OnInit } from '@angular/core';
+import { trigger, state, style, transition, animate } from '@angular/animations';
+import { Location } from '@angular/common';
+import { Router } from '@angular/router';
+import { MenuItem } from 'primeng/api';
+import { AppMainComponent } from './app.main.component';
 
 @Component({
     selector: 'app-menu',

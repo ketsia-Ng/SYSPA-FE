@@ -1,10 +1,10 @@
-import {NgModule} from '@angular/core';
-import {FormsModule} from '@angular/forms';
-import {HttpClientModule} from '@angular/common/http';
-import {BrowserModule} from '@angular/platform-browser';
-import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
-import {LocationStrategy, HashLocationStrategy} from '@angular/common';
-import {AppRoutes} from './app.routes';
+import { NgModule } from '@angular/core';
+import { FormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
+import { BrowserModule } from '@angular/platform-browser';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { LocationStrategy, HashLocationStrategy } from '@angular/common';
+import { AppRoutes } from './app.routes';
 
 import { AccordionModule } from 'primeng/accordion';
 import { AutoCompleteModule } from 'primeng/autocomplete';
@@ -78,32 +78,32 @@ import { AppNotfoundComponent } from './pages/app.notfound.component';
 import { AppErrorComponent } from './pages/app.error.component';
 import { AppAccessdeniedComponent } from './pages/app.accessdenied.component';
 import { AppLoginComponent } from './pages/app.login.component';
-import {AppMenuComponent, AppSubMenuComponent} from './app.menu.component';
-import {AppBreadcrumbComponent} from './app.breadcrumb.component';
-import {AppConfigComponent} from './app.config.component';
-import {AppTopBarComponent} from './app.topbar.component';
-import {AppFooterComponent} from './app.footer.component';
-import {DashboardComponent} from './demo/view/dashboard.component';
-import {SampleDemoComponent} from './demo/view/sampledemo.component';
-import {FormsDemoComponent} from './demo/view/formsdemo.component';
-import {DataDemoComponent} from './demo/view/datademo.component';
-import {PanelsDemoComponent} from './demo/view/panelsdemo.component';
-import {OverlaysDemoComponent} from './demo/view/overlaysdemo.component';
-import {MenusDemoComponent} from './demo/view/menusdemo.component';
-import {MessagesDemoComponent} from './demo/view/messagesdemo.component';
-import {MiscDemoComponent} from './demo/view/miscdemo.component';
-import {EmptyDemoComponent} from './demo/view/emptydemo.component';
-import {ChartsDemoComponent} from './demo/view/chartsdemo.component';
-import {FileDemoComponent} from './demo/view/filedemo.component';
-import {UtilsDemoComponent} from './demo/view/utilsdemo.component';
-import {DocumentationComponent} from './demo/view/documentation.component';
+import { AppMenuComponent, AppSubMenuComponent } from './app.menu.component';
+import { AppBreadcrumbComponent } from './app.breadcrumb.component';
+import { AppConfigComponent } from './app.config.component';
+import { AppTopBarComponent } from './app.topbar.component';
+import { AppFooterComponent } from './app.footer.component';
+import { DashboardComponent } from './demo/view/dashboard.component';
+import { SampleDemoComponent } from './demo/view/sampledemo.component';
+import { FormsDemoComponent } from './demo/view/formsdemo.component';
+import { DataDemoComponent } from './demo/view/datademo.component';
+import { PanelsDemoComponent } from './demo/view/panelsdemo.component';
+import { OverlaysDemoComponent } from './demo/view/overlaysdemo.component';
+import { MenusDemoComponent } from './demo/view/menusdemo.component';
+import { MessagesDemoComponent } from './demo/view/messagesdemo.component';
+import { MiscDemoComponent } from './demo/view/miscdemo.component';
+import { EmptyDemoComponent } from './demo/view/emptydemo.component';
+import { ChartsDemoComponent } from './demo/view/chartsdemo.component';
+import { FileDemoComponent } from './demo/view/filedemo.component';
+import { UtilsDemoComponent } from './demo/view/utilsdemo.component';
+import { DocumentationComponent } from './demo/view/documentation.component';
 
-import {CarService} from './demo/service/carservice';
-import {CountryService} from './demo/service/countryservice';
-import {EventService} from './demo/service/eventservice';
-import {NodeService} from './demo/service/nodeservice';
+import { CarService } from './demo/service/carservice';
+import { CountryService } from './demo/service/countryservice';
+import { EventService } from './demo/service/eventservice';
+import { NodeService } from './demo/service/nodeservice';
 
-import {BreadcrumbService} from './breadcrumb.service';
+import { BreadcrumbService } from './breadcrumb.service';
 
 @NgModule({
     imports: [
