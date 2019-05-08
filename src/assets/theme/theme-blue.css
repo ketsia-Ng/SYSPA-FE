@@ -29593,6 +29593,7 @@ body .ui-contextmenu .ui-menuitem-link .ui-submenu-icon,
 body .ui-megamenu .ui-menuitem-link .ui-submenu-icon,
 body .ui-slidemenu .ui-menuitem-link .ui-submenu-icon {
   right: 0.857em;
+  margin-right: -0.5em;
 }
 body .ui-menubar .ui-submenu-list, body .ui-contextmenu .ui-submenu-list,
 body .ui-slidemenu .ui-submenu-list, body .ui-tieredmenu .ui-submenu-list {
@@ -29635,6 +29636,7 @@ body .ui-menubar .ui-menubar-root-list > .ui-menuitem > .ui-menuitem-link {
 }
 body .ui-menubar .ui-submenu-list .ui-menuitem-link .ui-submenu-icon {
   right: 0.857em;
+  margin-right: -0.5em;
 }
 body .ui-menubar .ui-menuitem .ui-menuitem-link .ui-menuitem-icon {
   vertical-align: middle;
@@ -29728,6 +29730,7 @@ body .ui-megamenu .ui-menuitem.ui-menuitem-active > .ui-menuitem-link {
 }
 body .ui-megamenu-vertical .ui-megamenu-root-list .ui-menuitem .ui-menuitem-link .ui-submenu-icon {
   right: 0.857em;
+  margin-right: -0.5em;
 }
 body .ui-tabmenu {
   padding: 0;
