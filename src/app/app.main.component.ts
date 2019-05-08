@@ -235,6 +235,10 @@ export class AppMainComponent implements OnDestroy, OnInit {
             this.topbarUserMenuActive = false;
         }
     }
+    
+    onTopbarSubItemClick(event) {
+        event.preventDefault();
+    }
 
     onSidebarClick(event: Event) {
         this.menuClick = true;
