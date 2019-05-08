@@ -28133,11 +28133,12 @@ body .ui-fieldset .ui-fieldset-legend .ui-fieldset-toggler {
 body .ui-fieldset .ui-fieldset-legend .ui-fieldset-toggler:hover {
   background-color: #1565C0;
 }
+body .ui-fieldset .ui-fieldset-legend a:focus {
+  background-color: transparent;
+  outline: 0;
+}
 body .ui-fieldset .ui-fieldset-legend .ui-fieldset-legend-text {
   color: #1E88E5;
-}
-body .ui-fieldset .ui-fieldset-legend.ui-state-focus {
-  background-color: transparent;
 }
 body .ui-accordion .ui-accordion-header {
   margin-top: 0.25em;
