@@ -109,12 +109,18 @@ body {
         &:focus {
             @include hover-element();
         }
+
         .ui-menuitem-text {
             vertical-align: middle;
         }
+
         .ui-menuitem-icon {
             font-size: 18px;
             color: $textSecondaryColor;
+        }
+
+        .ui-submenu-icon {
+            right: .857em;
         }
     }
 
@@ -163,6 +169,14 @@ body {
         .ui-menubar-root-list {
             &>.ui-menuitem>.ui-menuitem-link {
                 padding: $menuitemPadding;
+            }
+        }
+
+        .ui-submenu-list {
+            .ui-menuitem-link {
+                .ui-submenu-icon {
+                    right: .857em;
+                }
             }
         }
 
@@ -296,6 +310,18 @@ body {
                 > .ui-menuitem-link {
                     @include hover-element;
                 }
+            }
+        }
+    }
+    .ui-megamenu-vertical {
+        .ui-megamenu-root-list {
+            .ui-menuitem {
+                .ui-menuitem-link {
+                    .ui-submenu-icon {
+                        right: .857em;
+                    }
+                }
+
             }
         }
     }

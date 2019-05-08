@@ -29585,6 +29585,14 @@ body .ui-slidemenu .ui-menuitem-link .ui-menuitem-icon {
   font-size: 18px;
   color: #616161;
 }
+body .ui-menu .ui-menuitem-link .ui-submenu-icon,
+body .ui-menubar .ui-menuitem-link .ui-submenu-icon,
+body .ui-tieredmenu .ui-menuitem-link .ui-submenu-icon,
+body .ui-contextmenu .ui-menuitem-link .ui-submenu-icon,
+body .ui-megamenu .ui-menuitem-link .ui-submenu-icon,
+body .ui-slidemenu .ui-menuitem-link .ui-submenu-icon {
+  right: 0.857em;
+}
 body .ui-menubar .ui-submenu-list, body .ui-contextmenu .ui-submenu-list,
 body .ui-slidemenu .ui-submenu-list, body .ui-tieredmenu .ui-submenu-list {
   padding: 0.5em 0;
@@ -29623,6 +29631,9 @@ body .ui-menubar {
 }
 body .ui-menubar .ui-menubar-root-list > .ui-menuitem > .ui-menuitem-link {
   padding: 0.571em 0.857em;
+}
+body .ui-menubar .ui-submenu-list .ui-menuitem-link .ui-submenu-icon {
+  right: 0.857em;
 }
 body .ui-menubar .ui-menuitem .ui-menuitem-link .ui-menuitem-icon {
   vertical-align: middle;
@@ -29713,6 +29724,9 @@ body .ui-megamenu .ui-menuitem .ui-menuitem-link .ui-submenu-icon {
 body .ui-megamenu .ui-menuitem.ui-menuitem-active > .ui-menuitem-link {
   background-color: #e8e8e8;
   color: #000000;
+}
+body .ui-megamenu-vertical .ui-megamenu-root-list .ui-menuitem .ui-menuitem-link .ui-submenu-icon {
+  right: 0.857em;
 }
 body .ui-tabmenu {
   padding: 0;
