@@ -27503,7 +27503,7 @@ body .ui-datepicker .ui-datepicker-header {
 }
 body .ui-datepicker .ui-datepicker-header .ui-datepicker-prev {
   cursor: pointer;
-  top: 0.4em;
+  top: 12px;
   left: 0.5em;
   font-size: 20px;
   -moz-border-radius: 50%;
@@ -27540,7 +27540,7 @@ body .ui-datepicker .ui-datepicker-header .ui-datepicker-prev .pi {
 }
 body .ui-datepicker .ui-datepicker-header .ui-datepicker-next {
   cursor: pointer;
-  top: 0.4em;
+  top: 12px;
   font-size: 20px;
   right: 0.5em;
   font-family: "Material Icons";

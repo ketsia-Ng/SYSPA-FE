@@ -1357,7 +1357,7 @@ body {
 
             .ui-datepicker-prev {
                 cursor: pointer;
-                top: .4em;
+                top: 12px;
                 left: .5em;
                 font-size: $iconFontSize;
                 @include border-radius(50%);
@@ -1371,7 +1371,7 @@ body {
 
             .ui-datepicker-next {
                 cursor: pointer;
-                top: .4em;
+                top: 12px;
                 font-size: $iconFontSize;
                 right: .5em;
                 @include material-icon("\e5cc");
