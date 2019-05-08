@@ -158,7 +158,8 @@
             }
         }
 
-        .layout-mask {
+        .layout-mask,
+        &.layout-top-small .layout-mask {
             top: 0;
             left: 0;
         }
