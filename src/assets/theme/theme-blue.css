@@ -29922,7 +29922,6 @@ body .ui-messages .ui-messages-close {
 body .ui-messages .ui-messages-icon {
   background: none;
   color: #fff;
-  margin-top: -2px;
 }
 body .ui-messages .ui-messages-icon.pi-info-circle {
   font-family: "Material Icons";
@@ -30033,6 +30032,9 @@ body .ui-messages .ui-messages-icon.pi-check {
 body .ui-messages .ui-messages-icon.pi-check:before {
   content: "check_circle";
 }
+body .ui-message .ui-message-text {
+  margin-left: 5px;
+}
 body .ui-message.ui-message-info {
   background-color: #2196F3;
   border-color: #2196F3;
@@ -30090,7 +30092,7 @@ body .ui-message .ui-message-icon.pi-info-circle {
   -moz-osx-font-smoothing: grayscale;
   /* Support for IE. */
   font-feature-settings: "liga";
-  font-size: 1.75em;
+  font-size: 1.286em;
 }
 body .ui-message .ui-message-icon.pi-info-circle:before {
   content: "info";
@@ -30117,7 +30119,7 @@ body .ui-message .ui-message-icon.pi-exclamation-triangle {
   -moz-osx-font-smoothing: grayscale;
   /* Support for IE. */
   font-feature-settings: "liga";
-  font-size: 1.75em;
+  font-size: 1.286em;
   color: #212121;
 }
 body .ui-message .ui-message-icon.pi-exclamation-triangle:before {
@@ -30145,7 +30147,7 @@ body .ui-message .ui-message-icon.pi-times {
   -moz-osx-font-smoothing: grayscale;
   /* Support for IE. */
   font-feature-settings: "liga";
-  font-size: 1.75em;
+  font-size: 1.286em;
 }
 body .ui-message .ui-message-icon.pi-times:before {
   content: "error_outline";
@@ -30172,7 +30174,7 @@ body .ui-message .ui-message-icon.pi-check {
   -moz-osx-font-smoothing: grayscale;
   /* Support for IE. */
   font-feature-settings: "liga";
-  font-size: 1.75em;
+  font-size: 1.286em;
 }
 body .ui-message .ui-message-icon.pi-check:before {
   content: "check_circle";
