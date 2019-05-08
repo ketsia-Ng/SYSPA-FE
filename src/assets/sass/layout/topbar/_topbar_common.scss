@@ -197,6 +197,11 @@
         .layout-content {
             margin-top: 15px;
         }
+
+        .layout-menu-container,
+        .layout-mask {
+            top: 86px;
+        }
     }
 
     &.layout-top-medium {
@@ -253,6 +258,23 @@
         .layout-profile-menu {
             .layout-profile-menu-search {
                 display: block;
+            }
+        }
+    }
+
+    .layout-container {
+        &.layout-top-small {
+            .layout-top {
+                padding-bottom: 0;
+            }
+
+            .layout-menubutton {
+                top: 0.786em;
+            }
+
+            .layout-menu-container,
+            .layout-mask {
+                top: 70px;
             }
         }
     }
