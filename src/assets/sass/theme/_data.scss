@@ -184,7 +184,7 @@ body {
         }
 
         .ui-paginator-next {
-            padding: 0 6px;
+            padding: 0;
             vertical-align: middle;
             @include material-icon("navigate_next");
         }
@@ -205,6 +205,14 @@ body {
             padding: 0;
             vertical-align: middle;
             @include material-icon("first_page");
+        }
+
+        .ui-paginator-first, .ui-paginator-prev,
+        .ui-paginator-next, .ui-paginator-last {
+            min-width: 1.200em;
+            width: 1.200em;
+            height: 1.200em;
+            line-height: 1.2;
         }
 
         .ui-paginator-pages {
