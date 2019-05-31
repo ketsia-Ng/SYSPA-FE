@@ -28531,7 +28531,7 @@ body .ui-paginator > a:not(.ui-state-disabled):not(.ui-state-active):hover {
   transition: background-color 0.2s;
 }
 body .ui-paginator .ui-paginator-next {
-  padding: 0 6px;
+  padding: 0;
   vertical-align: middle;
   font-family: "Material Icons";
   font-weight: normal;
@@ -28641,6 +28641,13 @@ body .ui-paginator .ui-paginator-first {
 }
 body .ui-paginator .ui-paginator-first:before {
   content: "first_page";
+}
+body .ui-paginator .ui-paginator-first, body .ui-paginator .ui-paginator-prev,
+body .ui-paginator .ui-paginator-next, body .ui-paginator .ui-paginator-last {
+  min-width: 1.2em;
+  width: 1.2em;
+  height: 1.2em;
+  line-height: 1.2;
 }
 body .ui-paginator .ui-paginator-pages {
   vertical-align: middle;
