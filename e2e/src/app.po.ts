@@ -1,7 +1,7 @@
-import { browser, by, element } from 'protractor';
+import { browser } from 'protractor';
 
 export class SapphirePage {
-  navigateTo() {
-    return browser.get('/');
-  }
+    navigateTo() {
+        return browser.get(browser.baseUrl) as Promise<any>;
+    }
 }
