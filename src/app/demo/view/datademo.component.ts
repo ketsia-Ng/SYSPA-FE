@@ -165,7 +165,7 @@ export class DataDemoComponent implements OnInit {
     timeout: any;
 
     constructor(private carService: CarService, private eventService: EventService, private nodeService: NodeService,
-            private breadcrumbService: BreadcrumbService) {
+                private breadcrumbService: BreadcrumbService) {
         this.breadcrumbService.setItems([
             {label: 'Components'},
             {label: 'Data Components', routerLink: ['/data']}
