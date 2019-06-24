@@ -65,7 +65,8 @@ export class AppMainComponent implements OnDestroy, OnInit {
     }
 
     rippleMouseDown(e) {
-        for (let target = e.target; target && target !== this; target = target['parentNode']) {
+        const parentNode = 'parentNode';
+        for (let target = e.target; target && target !== this; target = target[parentNode]) {
             if (!this.isVisible(target)) {
                 continue;
             }
@@ -80,8 +81,12 @@ export class AppMainComponent implements OnDestroy, OnInit {
     }
 
     selectorMatches(el, selector) {
+        const matches = 'matches';
+        const webkitMatchesSelector = 'webkitMatchesSelector';
+        const mozMatchesSelector = 'mozMatchesSelector';
+        const msMatchesSelector = 'msMatchesSelector';
         const p = Element.prototype;
-        const f = p['matches'] || p['webkitMatchesSelector'] || p['mozMatchesSelector'] || p['msMatchesSelector'] || function (s) {
+        const f = p[matches] || p[webkitMatchesSelector] || p[mozMatchesSelector] || p[msMatchesSelector] || function(s) {
             return [].indexOf.call(document.querySelectorAll(s), this) !== -1;
         };
         return f.call(el, selector);
@@ -257,25 +262,35 @@ export class AppMainComponent implements OnDestroy, OnInit {
 
     changeTopbarTheme(event, color) {
         this.topbarColor = 'layout-topbar-' + color;
+
+        event.preventDefault();
     }
 
     changeMenuToHorizontal(event, mode) {
         this.horizontal = mode;
+
+        event.preventDefault();
     }
 
     changeMenuTheme(event, color) {
         this.menuColor = 'layout-menu-' + color;
+
+        event.preventDefault();
     }
 
     changeComponentTheme(event, theme) {
         this.themeColor = theme;
-        const themeLink: HTMLLinkElement = <HTMLLinkElement>document.getElementById('theme-css');
+        const themeLink: HTMLLinkElement = document.getElementById('theme-css') as HTMLLinkElement;
         themeLink.href = 'assets/theme/' + 'theme-' + theme + '.css';
+
+        event.preventDefault();
     }
 
     changePrimaryColor(event, color) {
         this.layoutColor = color;
-        const layoutLink: HTMLLinkElement = <HTMLLinkElement>document.getElementById('layout-css');
+        const layoutLink: HTMLLinkElement = document.getElementById('layout-css') as HTMLLinkElement;
         layoutLink.href = 'assets/layout/css/layout-' + color + '.css';
+
+        event.preventDefault();
     }
 }
