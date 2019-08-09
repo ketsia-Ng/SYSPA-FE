@@ -192,19 +192,17 @@ export class AppMainComponent implements OnDestroy, OnInit {
     onWrapperClick() {
         if (!this.menuClick) {
             this.menuActive = false;
-        }
 
-        if (!this.userMenuClick) {
-            this.topbarUserMenuActive = false;
-        }
-
-        if (!this.menuClick) {
             if (this.horizontal) {
                 this.resetMenu = true;
             }
 
             this.menuHoverActive = false;
             this.unblockBodyScroll();
+        }
+
+        if (!this.userMenuClick) {
+            this.topbarUserMenuActive = false;
         }
 
         this.userMenuClick = false;

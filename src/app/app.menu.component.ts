@@ -255,6 +255,7 @@ export class AppSubMenuComponent {
         if (!item.items) {
             if (!this.app.horizontal) {
                 this.app.menuActive = false;
+                this.app.unblockBodyScroll();
             }
 
             if (this.app.horizontal) {
