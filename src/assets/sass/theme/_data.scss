@@ -407,18 +407,18 @@ body {
                 border-width: 0;
                 padding: 2px;
                 color: #ffffff;
+            }
 
-                ::-webkit-input-placeholder { /* Edge */
-                    color: #ffffff;
-                }
+            input::-webkit-input-placeholder { /* Edge */
+                color: #ffffff;
+            }
 
-                :-ms-input-placeholder { /* Internet Explorer 10-11 */
-                    color: #ffffff;
-                }
+            input:-ms-input-placeholder { /* Internet Explorer 10-11 */
+                color: #ffffff;
+            }
 
-                ::placeholder {
-                    color: #ffffff;
-                }
+            input::placeholder {
+                color: #ffffff;
             }
         }
 
@@ -712,13 +712,13 @@ body {
         .fc-head {
             th {
                 border-color: $primaryColor;
+                padding: $headerPadding;
             }
 
             .fc-row {
                 background-color: $primaryColor;
                 color: $headerTextColor;
                 border: 1px solid $primaryColor;
-                padding: $headerPadding;
                 font-weight: $headerFontWeight;
             }
         }
