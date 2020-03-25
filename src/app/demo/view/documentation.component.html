@@ -2,17 +2,20 @@
     <div class="ui-g-12">
         <div class="card docs">
             <h1 class="primary" style="margin-top:0">Current Version</h1>
-            <p>Angular 8 and PrimeNG 8</p>
+            <p>Angular 9 and PrimeNG 9</p>
+
+            <h1>Dependencies</h1>
+            <p>Sapphire has no direct dependency. More information about dependencies is available at <a href="https://www.primefaces.org/why-primeng-templates/">Why PrimeNG Templates</a> article.</p>
 
             <h1>Getting Started</h1>
             <p>Sapphire is a true native application template for Angular and is distributed as a CLI project. If you don't have CLI installed already run the following commands to set it up.</p>
-<pre>
+<pre class="doc-command">
 npm install -g @angular-cli
 </pre>
 
             <p>Once CLI is ready in your system, extract the contents of the Sapphire zip file distribution, cd to the directory,
             install the libraries from npm and then execute "ng serve" to run the application in your local environment at http://localhost:4200/.</p>
-<pre>
+<pre class="doc-command">
 cd sapphire-ng
 npm install
 ng serve
@@ -22,7 +25,7 @@ ng serve
 
             <h1>Important CLI Commands</h1>
             <p>Following commands are derived from CLI.</p>
-<pre>
+<pre class="doc-command">
 Run 'ng serve' for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
 
 Run 'ng generate component component-name' to generate a new component. You can also use `ng generate directive/pipe/service/class/module`.
@@ -46,6 +49,7 @@ Run 'ng help' for more options.
                 the main template. The component class app.main.component.ts implements the logic such as opening menus and layout modes.
             </p>
 <pre>
+<code class="language-markup" pCode>
 &lt;div class="layout-container" (click)="onWrapperClick()"
     [ngClass]="&#123;'layout-menu-horizontal': horizontal,
                'layout-menu-active': menuActive
@@ -75,27 +79,23 @@ Run 'ng help' for more options.
    &lt;div class="layout-config-mask" *ngIf="configDialogActive" [@mask-anim]="'visible'"&gt;&lt;/div&gt;
 
 &lt;/div&gt;
+</code>
 </pre>
 
             <h1>Menu</h1>
             <p>Menu is a separate component defined in app.menu.component.ts file based on PrimeNG MenuModel API. In order to define the menuitems,
-            navigate to app.menu.component.ts and define your own model. Here is the menu component from the sample application. The helper
-            app-submenu component is also available in the same file.</p>
+            navigate to app.menu.component.ts and define your own model. Here is the menu component from the sample application.</p>
+<div style="height:400px;overflow: auto;">
 <pre>
-import &#123;Component, Input, OnInit&#125; from '@angular/core';
-import &#123;trigger, state, style, transition, animate&#125; from '@angular/animations';
-import &#123;Location&#125; from '@angular/common';
-import &#123;Router&#125; from '@angular/router';
-import &#123;MenuItem&#125; from 'primeng/api';
-import &#123;AppMainComponent&#125; from './app.main.component';
+<code class="language-javascript" pCode>
+import &#123; Component, OnInit &#125; from '@angular/core';
+import &#123; AppMainComponent &#125; from './app.main.component';
 
 @Component(&#123;
     selector: 'app-menu',
     templateUrl: './app.menu.component.html'
 &#125;)
 export class AppMenuComponent implements OnInit &#123;
-
-    @Input() reset: boolean;
 
     model: any[];
 
@@ -105,18 +105,18 @@ export class AppMenuComponent implements OnInit &#123;
         this.model = [
             &#123;label: 'Dashboard', icon: 'dashboard', routerLink: ['/']&#125;,
             &#123;
-                label: 'Components', icon: 'list',
+                label: 'Components', icon: 'list', routerLink: ['/components'],
                 items: [
-                    &#123;label: 'Sample Page', icon: 'desktop_mac', routerLink: ['/sample']&#125;,
-                    &#123;label: 'Forms', icon: 'input', routerLink: ['/forms']&#125;,
-                    &#123;label: 'Data', icon: 'grid_on', routerLink: ['/data']&#125;,
-                    &#123;label: 'Panels', icon: 'content_paste', routerLink: ['/panels']&#125;,
-                    &#123;label: 'Overlays', icon: 'content_copy', routerLink: ['/overlays']&#125;,
-                    &#123;label: 'Menus', icon: 'menu', routerLink: ['/menus']&#125;,
-                    &#123;label: 'Messages', icon: 'message', routerLink: ['/messages']&#125;,
-                    &#123;label: 'Charts', icon: 'insert_chart', routerLink: ['/charts']&#125;,
-                    &#123;label: 'File', icon: 'attach_file', routerLink: ['/file']&#125;,
-                    &#123;label: 'Misc', icon: 'toys', routerLink: ['/misc']&#125;
+                    &#123;label: 'Sample Page', icon: 'desktop_mac', routerLink: ['/components/sample']&#125;,
+                    &#123;label: 'Forms', icon: 'input', routerLink: ['/components/forms']&#125;,
+                    &#123;label: 'Data', icon: 'grid_on', routerLink: ['/components/data']&#125;,
+                    &#123;label: 'Panels', icon: 'content_paste', routerLink: ['/components/panels']&#125;,
+                    &#123;label: 'Overlays', icon: 'content_copy', routerLink: ['/components/overlays']&#125;,
+                    &#123;label: 'Menus', icon: 'menu', routerLink: ['/components/menus']&#125;,
+                    &#123;label: 'Messages', icon: 'message', routerLink: ['/components/messages']&#125;,
+                    &#123;label: 'Charts', icon: 'insert_chart', routerLink: ['/components/charts']&#125;,
+                    &#123;label: 'File', icon: 'attach_file', routerLink: ['/components/file']&#125;,
+                    &#123;label: 'Misc', icon: 'toys', routerLink: ['/components/misc']&#125;
                 ]
             &#125;,
             &#123;
@@ -125,16 +125,16 @@ export class AppMenuComponent implements OnInit &#123;
                     &#123;
                         label: 'Components',
                         items: [
-                            &#123;label: 'Sample Page', icon: 'desktop_mac', routerLink: ['/sample']&#125;,
-                            &#123;label: 'Forms', icon: 'input', routerLink: ['/forms']&#125;,
-                            &#123;label: 'Data', icon: 'grid_on', routerLink: ['/data']&#125;,
-                            &#123;label: 'Panels', icon: 'content_paste', routerLink: ['/panels']&#125;,
-                            &#123;label: 'Overlays', icon: 'content_copy', routerLink: ['/overlays']&#125;,
-                            &#123;label: 'Menus', icon: 'menu', routerLink: ['/menus']&#125;,
-                            &#123;label: 'Messages', icon: 'message', routerLink: ['/messages']&#125;,
-                            &#123;label: 'Charts', icon: 'insert_chart', routerLink: ['/charts']&#125;,
-                            &#123;label: 'File', icon: 'attach_file', routerLink: ['/file']&#125;,
-                            &#123;label: 'Misc', icon: 'toys', routerLink: ['/misc']&#125;
+                            &#123;label: 'Sample Page', icon: 'desktop_mac', routerLink: ['/components/sample']&#125;,
+                            &#123;label: 'Forms', icon: 'input', routerLink: ['/components/forms']&#125;,
+                            &#123;label: 'Data', icon: 'grid_on', routerLink: ['/components/data']&#125;,
+                            &#123;label: 'Panels', icon: 'content_paste', routerLink: ['/components/panels']&#125;,
+                            &#123;label: 'Overlays', icon: 'content_copy', routerLink: ['/components/overlays']&#125;,
+                            &#123;label: 'Menus', icon: 'menu', routerLink: ['/components/menus']&#125;,
+                            &#123;label: 'Messages', icon: 'message', routerLink: ['/components/messages']&#125;,
+                            &#123;label: 'Charts', icon: 'insert_chart', routerLink: ['/components/charts']&#125;,
+                            &#123;label: 'File', icon: 'attach_file', routerLink: ['/components/file']&#125;,
+                            &#123;label: 'Misc', icon: 'toys', routerLink: ['/components/misc']&#125;
                         ]
                     &#125;,
                     &#123;
@@ -163,9 +163,9 @@ export class AppMenuComponent implements OnInit &#123;
                 ]
             &#125;,
             &#123;
-                label: 'Pages', icon: 'get_app',
+                label: 'Pages', icon: 'get_app', routerLink: ['/pages'],
                 items: [
-                    &#123;label: 'Empty Page', icon: 'hourglass_empty', routerLink: ['/empty']&#125;,
+                    &#123;label: 'Empty Page', icon: 'hourglass_empty', routerLink: ['/pages/empty']&#125;,
                     &#123;label: 'Landing Page', icon: 'flight_land', url: 'assets/pages/landing.html', target: '_blank'&#125;,
                     &#123;label: 'Login Page', icon: 'verified_user', routerLink: ['/login'], target: '_blank'&#125;,
                     &#123;label: 'Error Page', icon: 'error', routerLink: ['/error'], target: '_blank'&#125;,
@@ -223,14 +223,16 @@ export class AppMenuComponent implements OnInit &#123;
         ];
     &#125;
 &#125;
+</code>
 </pre>
+</div>
 
             <h1>Integration with an Existing CLI Project</h1>
             <p>To setup Sapphire in an existing project, copy the <i>src/assets</i> folder to your projects folder with the same name
                 and replace the contents of app.component.ts, app.component.html with their counterparts in Sapphire under <i>src/app</i> folder.</p>
 
             <p>Install PrimeNG</p>
-<pre>
+<pre class="doc-command">
 npm install primeng@latest --save
 npm install primeicons@latest --save
 </pre>
@@ -238,12 +240,14 @@ npm install primeicons@latest --save
             <p>Add PrimeNG CSS at styles section in angular.json.</p>
 
 <pre>
+<code class="language-json" pCode>
 "styles": [
     "../node_modules/primeng/resources/primeng.min.css",        //required: PrimeNG components
     "node_modules/primeicons/primeicons.css",                   //required: PrimeIcons
     "styles.scss"                                               //your styles and overrides
     ...
 ],
+</code>
 </pre>
 
             <p>Last part is adding theme and layout css files, in the CLI app they are defined using link tags in index.html so the demo can switch them on
@@ -285,6 +289,7 @@ npm install primeicons@latest --save
             <p>Here are the variables required to create a theme which are the primary and accent colors along with their shades.</p>
 
 <pre>
+<code class="language-css" pCode>
 $primaryColor:#1E88E5;
 $primaryDarkColor:#1565C0;
 $primaryLightColor:#42A5F5;
@@ -296,31 +301,36 @@ $accentLightColor: #FFCA28;
 $accentTextColor: #212121;
 
 @import '../sass/theme/_theme';
+</code>
 </pre>
 
             <p> An example sass command to compile the css would be;</p>
 
-<pre>
+<pre class="doc-command">
 sass src/assets/theme-myown/theme.scss:src/assets/theme-myown/theme.css
 </pre>
 
             <p>Watch mode is handy to avoid compiling everytime when a change is made, instead use the following command
             so that sass generates the file whenever you make a customization. This builds all css files whenever a change is made to any scss file.</p>
-<pre>
+<pre class="doc-command">
 sass --watch src/assets:src/assets
 </pre>
 
             <h1>TopBar</h1>
             <p>TopBar comes in 3 sizes; large, medium and small. A specific style class with the layout-top-* prefix is defined at the main container element in order to apply a size. Below are the all 3 options;</p>
 <pre>
+<code class="language-markup" pCode>
 &lt;div class="layout-container layout-top-small"&gt;
 &lt;div class="layout-container layout-top-medium"&gt;
 &lt;div class="layout-container layout-top-large"&gt;
+</code>
 </pre>
 
             <p>Similarly TopBar style theme is also defined at the main container element, template below uses the default blue topbar.</p>
 <pre>
+<code class="language-markup" pCode>
 &lt;div class="layout-container layout-topbar-blue"&gt;
+</code>
 </pre>
 
             <p>Full list of topbar options are the following, note that <i>layout-topbar-</i> prefix needs to be added to apply the style such as <b>layout-topbar-midnight</b>.</p>
@@ -428,12 +438,15 @@ sass --watch src/assets:src/assets
             </ul>
 
 <pre>
+<code class="language-markup" pCode>
 &lt;div class="layout-container layout-topbar-mytopbar"&gt;
+</code>
 </pre>
 
 <p>Here are the variables required to create a gradient based topbar.</p>
 
 <pre>
+<code class="language-css" pCode>
 .layout-topbar-mytopbar &#123;
     $topbarLeftBgColor:#F1719A;
     $topbarRightBgColor:#FE9473;
@@ -463,11 +476,13 @@ sass --watch src/assets:src/assets
 
     @import '../_topbar_theme';
 &#125;
+</code>
 </pre>
 
 <p>If you prefer an image for the background, use the template below.</p>
 
 <pre>
+<code class="language-css" pCode>
 .layout-topbar-mytopbar &#123;
     $topbarBgImage:'reflection-topbar.jpg';
     $topbarSearchInputColor:#BFDEE2;
@@ -496,12 +511,15 @@ sass --watch src/assets:src/assets
 
     @import '../_topbar_theme';
 &#125;
+</code>
 </pre>
 
                     <h1>Menu Themes</h1>
                     <p>Menu themes apply to the vertical menu, submenus of horizontal menu and the profile menu. Menu style used across the template is defined at the main container element, template below uses the default light menus.</p>
 <pre>
+<code class="language-markup" pCode>
 &lt;div class="layout-container layout-menu-light"&gt;
+</code>
 </pre>
 
                     <p>Full list of menu themes are the following, note that <i>layout-menu-</i> prefix needs to be added to apply the style such as <b>layout-menu-dark</b>.</p>
@@ -609,12 +627,15 @@ sass --watch src/assets:src/assets
                     </ul>
 
 <pre>
+<code class="language-markup" pCode>
 &lt;div class="layout-container layout-menu-mymenu"&gt;
+</code>
 </pre>
 
                     <p>Here are the variables required to create a gradient based topbar.</p>
 
 <pre>
+<code class="language-css" pCode>
 .layout-menu-mymenu &#123;
     $menuTopBgColor:#457fca;
     $menuBottomBgColor:#5691c8;
@@ -632,11 +653,13 @@ sass --watch src/assets:src/assets
 
     @import '../_menu_theme';
 &#125;
+</code>
 </pre>
 
                     <p>If you prefer an image for the background, use the template below.</p>
 
 <pre>
+<code class="language-css" pCode>
 .layout-menu-mymenu &#123;
     $menuBgImage:'architecture-menu.jpg';
     $menuitemTextColor:#ffffff;
@@ -653,6 +676,7 @@ sass --watch src/assets:src/assets
 
     @import '../_menu_theme';
 &#125;
+</code>
 </pre>
 
                     <h1>Menu Highlight Color</h1>
@@ -691,12 +715,14 @@ sass --watch src/assets:src/assets
                     </ul>
 
 <pre>
+<code class="language-css" pCode>
 $primaryColor:#607D8B;
 $primaryTextColor:#ffffff;
 $accentColor:#FFC107;
 $accentTextColor:#212121;
 
 @import '../../sass/layout/_layout';
+</code>
 </pre>
 
             <h1>Common SASS Variables</h1>
@@ -704,6 +730,7 @@ $accentTextColor:#212121;
 
 <h3>sass/_common.scss</h3>
 <pre>
+<code class="language-css" pCode>
 //general
 $fontSize:14px;
 $fontFamily:"Roboto","Helvetica Neue",sans-serif;
@@ -724,10 +751,12 @@ $hoverTextColor:#000000;
 
 $dividerColor:#dbdbdb;
 $dividerLightColor:#f8f8f8;
+</code>
 </pre>
 
 <h3>sass/variables/_layout.scss</h3>
 <pre>
+<code class="language-css" pCode>
 @import './common';
 
 $bodyBgColor:#f4f4f7;
@@ -740,10 +769,12 @@ $maskBgColor:#252529;
 
 //horizontal menu
 $horizontalOverlaySubmenuShadow:0 6px 20px 0 rgba(0, 0, 0, 0.19), 0 8px 17px 0 rgba(0, 0, 0, 0.2);
+</code>
 </pre>
 
 <h3>sass/variables/_theme.scss</h3>
 <pre>
+<code class="language-css" pCode>
 @import './common';
 
 $headerPadding:.714em 1em;
@@ -813,6 +844,7 @@ $paginatorPadding:.714em 1em;
 //menus
 $menuitemPadding:.571em .857em;
 $menuListPadding: .5em 0;
+</code>
 </pre>
 
             <h1>Menu Modes</h1>
@@ -831,6 +863,7 @@ $menuListPadding: .5em 0;
             <p>Sapphire has an optional built-in breadcrumb section right below the topbar. The items are dynamically generated using a BreadcrumbService where each
             main page that goes into the router-outlet should provide a collection of MenuItem instances. Here is an example component that updates the breadcrumb.</p>
 <pre>
+<code class="language-javascript" pCode>
 import &#123;Component&#125; from '@angular/core';
 import &#123;BreadcrumbService&#125; from '../../breadcrumb.service';
 
@@ -847,6 +880,7 @@ export class ControlPanelComponent &#123;
     &#125;
 
 &#125;
+</code>
 </pre>
             <p>Result will be reflected at application breadcrumb component such as "Home Icon" -> "Admin" -> "Control Panel".</p>
 
@@ -862,6 +896,17 @@ export class ControlPanelComponent &#123;
             </ul>
 
             <h1>Migration Guide</h1>
+
+            <h4>8.0.0 to 9.0.0</h4>
+            <p>Angular 9 and PrimeNG 9</p>
+            <ul>
+                <li>Update dependencies with <a href="https://angular.io/cli/update">ng update</a>.</li>
+                <li>Update theme.css and layout.css files.</li>
+                <li>Update app.menu.component.ts and app.menu.component.html while retaining your MenuModel.</li>
+                <li>Include app.menuitem.component.ts under app folder and define it app.module.ts with declarations property.</li>
+                <li>Include app.menu.service.ts under app folder and define it app.module.ts with providers property.</li>
+            </ul>
+
             <h4>1.0.1 to 8.0.0</h4>
             <ul>
                 <li>Update your project to Angular 8 with ng update. View the official update guide -<a href="https://update.angular.io/">https://update.angular.io/</a>- for more information.</li>

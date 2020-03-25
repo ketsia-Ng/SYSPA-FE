@@ -10,7 +10,7 @@ import {BreadcrumbService} from '../../breadcrumb.service';
             font-size: 24px;
         }
 
-        .docs pre {
+        .docs pre.doc-command {
             font-family: monospace;
             background-color: #424242;
             color: #ffffff;
