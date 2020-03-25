@@ -3,7 +3,7 @@ import { RouterTestingModule } from '@angular/router/testing';
 import { NoopAnimationsModule } from '@angular/platform-browser/animations';
 import { AppComponent } from './app.component';
 import { AppMainComponent } from './app.main.component';
-import { AppMenuComponent, AppSubMenuComponent } from './app.menu.component';
+import { AppMenuComponent } from './app.menu.component';
 import { AppTopBarComponent } from './app.topbar.component';
 import { AppConfigComponent } from './app.config.component';
 import { AppFooterComponent } from './app.footer.component';
@@ -21,7 +21,6 @@ describe('AppComponent', () => {
           AppComponent,
           AppMainComponent,
           AppMenuComponent,
-          AppSubMenuComponent,
           AppTopBarComponent,
           AppConfigComponent,
           AppFooterComponent,
