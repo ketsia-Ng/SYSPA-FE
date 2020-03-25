@@ -1,18 +1,19 @@
 import { Component } from '@angular/core';
 import { Message } from 'primeng/api';
 import { MessageService } from 'primeng/api';
+import {BreadcrumbService} from '../../breadcrumb.service';
 
 @Component({
     templateUrl: './messagesdemo.component.html',
     styles: [`
-        :host ::ng-deep button {
-            margin-right: .25em;
-            min-width: 8em;
-        }
+		:host ::ng-deep button {
+			margin-right: .25em;
+			min-width: 8em;
+		}
 
-        :host ::ng-deep .ui-message {
-            margin-left: .25em;
-        }
+		:host ::ng-deep .ui-message {
+			margin-left: .25em;
+		}
     `],
     providers: [MessageService]
 })
@@ -20,7 +21,12 @@ export class MessagesDemoComponent {
 
     msgs: Message[] = [];
 
-    constructor(private service: MessageService) {}
+    constructor(private service: MessageService, private breadcrumbService: BreadcrumbService) {
+        this.breadcrumbService.setItems([
+            {label: 'Components'},
+            {label: 'Messages', routerLink: ['/components/messages']}
+        ]);
+    }
 
     showInfoViaToast() {
         this.service.add({ key: 'tst', severity: 'info', summary: 'Info Message', detail: 'PrimeNG rocks' });

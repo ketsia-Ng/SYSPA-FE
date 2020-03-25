@@ -1,5 +1,6 @@
 import { Component, OnDestroy, Renderer2, OnInit, NgZone } from '@angular/core';
 import { trigger, state, style, transition, animate } from '@angular/animations';
+import { MenuService } from './app.menu.service';
 
 @Component({
     selector: 'app-main',
@@ -34,8 +35,6 @@ export class AppMainComponent implements OnDestroy, OnInit {
 
     menuHoverActive: boolean;
 
-    resetMenu: boolean;
-
     topbarColor = 'layout-topbar-blue';
 
     menuColor = 'layout-menu-light';
@@ -48,7 +47,7 @@ export class AppMainComponent implements OnDestroy, OnInit {
 
     configDialogActive: boolean;
 
-    constructor(public renderer: Renderer2, public zone: NgZone) {}
+    constructor(public renderer: Renderer2, public zone: NgZone, private menuService: MenuService) {}
 
     ngOnInit() {
         this.zone.runOutsideAngular(() => {this.bindRipple(); });
@@ -194,7 +193,7 @@ export class AppMainComponent implements OnDestroy, OnInit {
             this.menuActive = false;
 
             if (this.horizontal) {
-                this.resetMenu = true;
+                this.menuService.reset();
             }
 
             this.menuHoverActive = false;
@@ -246,7 +245,6 @@ export class AppMainComponent implements OnDestroy, OnInit {
 
     onSidebarClick(event: Event) {
         this.menuClick = true;
-        this.resetMenu = false;
     }
 
     isMobile() {
@@ -279,7 +277,9 @@ export class AppMainComponent implements OnDestroy, OnInit {
     changeComponentTheme(event, theme) {
         this.themeColor = theme;
         const themeLink: HTMLLinkElement = document.getElementById('theme-css') as HTMLLinkElement;
-        themeLink.href = 'assets/theme/' + 'theme-' + theme + '.css';
+        const href = 'assets/theme/' + 'theme-' + theme + '.css';
+
+        this.replaceLink(themeLink, href);
 
         event.preventDefault();
     }
@@ -287,8 +287,33 @@ export class AppMainComponent implements OnDestroy, OnInit {
     changePrimaryColor(event, color) {
         this.layoutColor = color;
         const layoutLink: HTMLLinkElement = document.getElementById('layout-css') as HTMLLinkElement;
-        layoutLink.href = 'assets/layout/css/layout-' + color + '.css';
+        const href = 'assets/layout/css/layout-' + color + '.css';
+
+        this.replaceLink(layoutLink, href);
 
         event.preventDefault();
+    }
+
+    isIE() {
+        return /(MSIE|Trident\/|Edge\/)/i.test(window.navigator.userAgent);
+    }
+
+    replaceLink(linkElement, href) {
+        if (this.isIE()) {
+            linkElement.setAttribute('href', href);
+        } else {
+            const id = linkElement.getAttribute('id');
+            const cloneLinkElement = linkElement.cloneNode(true);
+
+            cloneLinkElement.setAttribute('href', href);
+            cloneLinkElement.setAttribute('id', id + '-clone');
+
+            linkElement.parentNode.insertBefore(cloneLinkElement, linkElement.nextSibling);
+
+            cloneLinkElement.addEventListener('load', () => {
+                linkElement.remove();
+                cloneLinkElement.setAttribute('id', id);
+            });
+        }
     }
 }

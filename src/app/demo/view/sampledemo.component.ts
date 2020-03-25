@@ -77,7 +77,7 @@ export class SampleDemoComponent implements OnInit {
                 private breadcrumbService: BreadcrumbService) {
         this.breadcrumbService.setItems([
             {label: 'Components'},
-            {label: 'Sample', routerLink: ['/sample']}
+            {label: 'Sample', routerLink: ['/components/sample']}
         ]);
     }
 

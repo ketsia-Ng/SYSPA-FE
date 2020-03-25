@@ -1,5 +1,7 @@
 <div class="layout-menu-container" (click)="app.onSidebarClick($event)">
     <div class="layout-menu-wrapper">
-        <ul app-submenu [item]="model" root="true" mega="false" class="layout-menu" visible="true" [reset]="reset" parentActive="true"></ul>
+        <ul class="layout-menu">
+            <li app-menuitem *ngFor="let item of model; let i = index;" [item]="item" [index]="i" [root]="true" [mega]="false"></li>
+        </ul>
    </div>
 </div>

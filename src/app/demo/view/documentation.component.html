@@ -1,7 +1,7 @@
 <div class="ui-g">
     <div class="ui-g-12">
         <div class="card docs">
-            <h1 style="margin-top:0">Current Version</h1>
+            <h1 class="primary" style="margin-top:0">Current Version</h1>
             <p>Angular 8 and PrimeNG 8</p>
 
             <h1>Getting Started</h1>
@@ -51,7 +51,7 @@ Run 'ng help' for more options.
                'layout-menu-active': menuActive
                'layout-top-small': topbarSize === 'small',
                'layout-top-medium': topbarSize === 'medium',
-               'layout-top-large': topbarSize === 'large'&#125;" 
+               'layout-top-large': topbarSize === 'large'&#125;"
                [class]="topbarColor + ' ' + menuColor"&gt;
 
    &lt;div class="layout-top"&gt;
@@ -460,7 +460,7 @@ sass --watch src/assets:src/assets
     $breadcrumbIconColor:#ffffff;
     $breadcrumbTextColor:#ffffff;
     $breadcrumbLinkColor:#80CBC4;
-    
+
     @import '../_topbar_theme';
 &#125;
 </pre>
@@ -625,8 +625,8 @@ sass --watch src/assets:src/assets
     $menuitemHoverIconColor:#ffffff;
     $menuitemActiveTextColor:#ffc107;
     $menuitemActiveIconColor:#ffc107;
-    $verticalActiveRootMenuitemBgColor:#ffffff; 
-    $verticalActiveRootMenuitemTextColor:#457fca;   
+    $verticalActiveRootMenuitemBgColor:#ffffff;
+    $verticalActiveRootMenuitemTextColor:#457fca;
     $verticalActiveRootMenuitemIconColor:#457fca;
     $verticalSubmenuBgColor:#6a98d4;
 
@@ -646,8 +646,8 @@ sass --watch src/assets:src/assets
     $menuitemHoverIconColor:#ffffff;
     $menuitemActiveTextColor:#B39DDB;
     $menuitemActiveIconColor:#B39DDB;
-    $verticalActiveRootMenuitemBgColor:#673AB7; 
-    $verticalActiveRootMenuitemTextColor:#ffffff;   
+    $verticalActiveRootMenuitemBgColor:#673AB7;
+    $verticalActiveRootMenuitemTextColor:#ffffff;
     $verticalActiveRootMenuitemIconColor:#ffffff;
     $verticalSubmenuBgColor:rgba(0,0,0,0.2);
 
@@ -656,7 +656,7 @@ sass --watch src/assets:src/assets
 </pre>
 
                     <h1>Menu Highlight Color</h1>
-                    <p>When light and dark menus are used, a highlight color needs to be defined to show the selected menuitem whereas in other menu themes, the highlight color is defined by the menu theme itself. 
+                    <p>When light and dark menus are used, a highlight color needs to be defined to show the selected menuitem whereas in other menu themes, the highlight color is defined by the menu theme itself.
                         This color scheme is specified by the layout file such as layout-blue.scss which is still a mandatory file to be included regardless of the menu type as it defines the structure for the layout itself.</p>
 
                     <p>Full list of menu highlight themes are the following.</p>
@@ -812,7 +812,7 @@ $paginatorPadding:.714em 1em;
 
 //menus
 $menuitemPadding:.571em .857em;
-$menuListPadding: .5em 0;    
+$menuListPadding: .5em 0;
 </pre>
 
             <h1>Menu Modes</h1>
