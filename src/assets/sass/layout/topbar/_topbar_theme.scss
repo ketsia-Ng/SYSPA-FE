@@ -11,14 +11,8 @@
 
 .layout-topbar {
     .layout-topbar-search {
-        .ui-inputtext {
+        .p-inputtext {
             color: $topbarSearchFocusedInputColor;
-            background-image: linear-gradient(to bottom, $topbarSearchFocusedInputColor, $topbarSearchFocusedInputColor), linear-gradient(to bottom, $topbarSearchInputColor, $topbarSearchInputColor);
-            
-            &:focus ~ label,
-            &:focus ~ i {
-                color: $topbarSearchFocusedInputColor;
-            }
         }
 
         i {
@@ -82,21 +76,21 @@
                         background-color: transparent;
                     }
                 }
-                
+
                 > a {
                     .menuitem-text {
                         color: $horizontalMenuitemTextColor;
                     }
-    
+
                     i {
                         color: $horizontalMenuitemIconColor;
                     }
-    
+
                     &:hover {
                         border-bottom-color: $horizontalMenuitemHoverBorderColor;
                     }
                 }
-    
+
                 &.active-menuitem {
                     > a {
                         background-color: transparent;
@@ -105,7 +99,7 @@
                         .menuitem-text {
                             color: $horizontalMenuitemTextColor;
                         }
-        
+
                         i {
                             color: $horizontalMenuitemIconColor;
                         }
@@ -117,13 +111,13 @@
 }
 
 .layout-topbar-separator {
-    background-color: $topbarSeparatorColor; 
+    background-color: $topbarSeparatorColor;
 }
 
 .layout-breadcrumb {
     li {
         color: $breadcrumbTextColor;
-        
+
         i {
             color: $breadcrumbIconColor;
         }

@@ -56,7 +56,7 @@
         i {
             color: #ffffff;
             line-height: inherit;
-            font-size: 24px;
+            font-size: 18px;
         }
 
         &:hover {
@@ -69,13 +69,13 @@
         opacity: 0;
         transform: translateX(-50%) translateY(-50%) scale(0.7);
     }
-    
+
     &.layout-config-enter-active {
         opacity: 1;
         transform: translateX(-50%) translateY(-50%) scale(1);
         transition: all 150ms cubic-bezier(0, 0, 0.2, 1);
     }
-    
+
     &.layout-config-enter-done {
         display: block;
     }
@@ -84,13 +84,13 @@
         opacity: 1;
         display: block;
     }
-    
+
     &.layout-config-exit-active {
         opacity: 0;
         transform:  translateX(-50%) translateY(-50%);
         transition: all 150ms cubic-bezier(0.4, 0.0, 0.2, 1);
     }
-    
+
     &.layout-config-exit-done {
         display: none;
     }
@@ -105,7 +105,7 @@
 
         i {
             line-height: inherit;
-            font-size: 48px;
+            font-size: 36px;
             color: #ffffff;
         }
 
@@ -141,21 +141,26 @@
         -ms-flex-preferred-size: auto;
     }
 
-    .ui-tabview {
+    .p-tabview {
         border: 0 none;
 
-        &.ui-tabview-top > .ui-tabview-nav {
+        &.p-tabview-top > .p-tabview-nav {
             li {
                 vertical-align: bottom;
                 top: auto;
                 margin: 0 0.125em 0px 0;
             }
-        } 
+        }
 
-        .ui-tabview-panels {
+        .p-tabview-panels {
             padding: 1em 0;
             height: 500px;
             overflow: auto;
+
+            .p-tabview-panel {
+                padding: 0.857em 1em;
+                line-height: 1.5;
+            }
         }
     }
 

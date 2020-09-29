@@ -17,10 +17,9 @@
 
         <div class="layout-topbar-grid-column layout-topbar-grid-column-fixed">
             <span class="layout-topbar-search">
-                <span class="md-inputfield">
-                    <input type="text" pInputText />
-                    <label>Search</label>
-                    <i class="material-icons">search</i>
+                <span class="p-input-icon-right">
+                    <input type="text" pInputText placeholder="Search"/>
+                    <i class="pi pi-search"></i>
                 </span>
             </span>
         </div>
@@ -37,26 +36,26 @@
                     </span>
                 </li>
                 <li role="menuitem">
-                    <a href="#" class="ripplelink" (click)="app.onTopbarSubItemClick($event)">
-                        <i class="material-icons">account_circle</i>
+                    <a href="#" pRipple (click)="app.onTopbarSubItemClick($event)">
+                        <i class="pi pi-user"></i>
                         <span>Profile</span>
                     </a>
                 </li>
                 <li role="menuitem">
-                    <a href="#" class="ripplelink" (click)="app.onTopbarSubItemClick($event)">
-                        <i class="material-icons">inbox</i>
+                    <a href="#" pRipple (click)="app.onTopbarSubItemClick($event)">
+                        <i class="pi pi-envelope"></i>
                         <span>Inbox</span>
                     </a>
                 </li>
                 <li role="menuitem">
-                    <a href="#" class="ripplelink" (click)="app.onTopbarSubItemClick($event)">
-                        <i class="material-icons">settings</i>
+                    <a href="#" pRipple (click)="app.onTopbarSubItemClick($event)">
+                        <i class="pi pi-cog"></i>
                         <span>Settings</span>
                     </a>
                 </li>
                 <li role="menuitem">
-                    <a href="#" class="ripplelink" (click)="app.onTopbarSubItemClick($event)">
-                        <i class="material-icons">cancel</i>
+                    <a href="#" pRipple (click)="app.onTopbarSubItemClick($event)">
+                        <i class="pi pi-times"></i>
                         <span>Logout</span>
                     </a>
                 </li>

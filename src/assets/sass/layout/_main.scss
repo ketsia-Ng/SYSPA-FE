@@ -1,5 +1,6 @@
 html {
     height: 100%;
+    font-size: $fontSize;
 }
 
 body {
@@ -21,5 +22,10 @@ body {
     &.blocked-scroll,
     &.blocked-scroll-config {
         overflow: hidden;
+    }
+
+    a {
+        text-decoration: none;
+        color: $primaryColor;
     }
 }

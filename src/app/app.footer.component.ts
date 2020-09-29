@@ -10,7 +10,6 @@ import { Component } from '@angular/core';
                     <div class="layout-footer-appname">PrimeNG Premium Template</div>
                 </div>
                 <div class="p-col p-col-align-right">
-                    <span class="ui-icon-copyright"></span>
                     <span>All Rights Reserved</span>
                 </div>
             </div>

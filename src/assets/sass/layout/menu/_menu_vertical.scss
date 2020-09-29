@@ -28,7 +28,7 @@
             .layout-submenu-toggler {
                 @include transition(transform $transitionDuration);
             }
-    
+
             &.active-menuitem {
                 > a {
                     .layout-submenu-toggler {
@@ -75,10 +75,10 @@
             .menuitem-text {
                 vertical-align: middle;
             }
-    
+
             i {
                 vertical-align: middle;
-                font-size: 20px;
+                font-size: 16px;
 
                 &.layout-submenu-toggler {
                     position: absolute;
@@ -167,7 +167,7 @@
                     -ms-transform: translateY(-9px) rotate(-45deg);
                     transform: translateY(-9px) rotate(-45deg);
                 }
-                
+
             }
         }
     }

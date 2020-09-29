@@ -8,7 +8,7 @@ import { AppTopBarComponent } from './app.topbar.component';
 import { AppConfigComponent } from './app.config.component';
 import { AppFooterComponent } from './app.footer.component';
 import { AppBreadcrumbComponent } from './app.breadcrumb.component';
-import { BreadcrumbService } from './breadcrumb.service';
+import { BreadcrumbService } from './app.breadcrumb.service';
 import { TabViewModule } from 'primeng/tabview';
 
 describe('AppComponent', () => {
