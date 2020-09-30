@@ -105,6 +105,7 @@ import {TreeDemoComponent} from './demo/view/treedemo.component';
 import {PanelsDemoComponent} from './demo/view/panelsdemo.component';
 import {OverlaysDemoComponent} from './demo/view/overlaysdemo.component';
 import {MenusDemoComponent} from './demo/view/menusdemo.component';
+import {MediaDemoComponent} from './demo/view/mediademo.component';
 import {MessagesDemoComponent} from './demo/view/messagesdemo.component';
 import {MiscDemoComponent} from './demo/view/miscdemo.component';
 import {EmptyDemoComponent} from './demo/view/emptydemo.component';
@@ -226,7 +227,7 @@ import {MenuService} from './app.menu.service';
         PanelsDemoComponent,
         OverlaysDemoComponent,
         MenusDemoComponent,
-        MessagesDemoComponent,
+        MediaDemoComponent,
         MessagesDemoComponent,
         MiscDemoComponent,
         ChartsDemoComponent,

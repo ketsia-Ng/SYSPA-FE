@@ -11,7 +11,7 @@
         display: inline-block;
         vertical-align: middle;
 
-        &:nth-child(2) {
+        &:nth-child(2n) {
             i {
                 font-size: 14px;
             }
