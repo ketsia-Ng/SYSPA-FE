@@ -4,14 +4,14 @@
             <h5>Toolbar</h5>
             <p-toolbar>
                 <div class="p-toolbar-group-left">
-                    <button pButton type="button" label="New" icon="pi pi-plus"></button>
-                    <button pButton type="button" label="Update" class="p-button-secondary" icon="pi pi-refresh"></button>
+                    <button pButton pRipple type="button" label="New" icon="pi pi-plus"></button>
+                    <button pButton pRipple type="button" label="Update" class="p-button-secondary" icon="pi pi-refresh"></button>
 
                     <i class="pi pi-bars p-toolbar-separator"></i>
 
-                    <button pButton type="button" class="p-button-success" icon="pi pi-check"></button>
-                    <button pButton type="button" class="p-button-help" icon="pi pi-print"></button>
-                    <button pButton type="button" class="p-button-danger" icon="pi pi-trash"></button>
+                    <button pButton pRipple type="button" class="p-button-success" icon="pi pi-check"></button>
+                    <button pButton pRipple type="button" class="p-button-help" icon="pi pi-print"></button>
+                    <button pButton pRipple type="button" class="p-button-danger" icon="pi pi-trash"></button>
                 </div>
 
                 <div class="p-toolbar-group-right">
@@ -96,7 +96,7 @@
             <div class="card-header">
                 <h5>Card</h5>
                 <p-menu #menu [popup]="true" [model]="cardMenu"></p-menu>
-                <button pButton type="button" icon="pi pi-plus" class="p-button-rounded p-button-plain p-button-text" (click)="menu.toggle($event)"></button>
+                <button pButton pRipple type="button" icon="pi pi-plus" class="p-button-rounded p-button-plain p-button-text" (click)="menu.toggle($event)"></button>
             </div>
 
             <p class="card-subtitle">Subtitle</p>

@@ -10,25 +10,25 @@
                     Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
                 </div>
                 <p-footer>
-                    <button type="button" pButton icon="pi pi-check" (click)="display=false" label="Yes" class="p-button-text"></button>
-                    <button type="button" pButton icon="pi pi-times" (click)="display=false" label="No" class="p-button-text"></button>
+                    <button type="button" pButton pRipple icon="pi pi-check" (click)="display=false" label="Yes" class="p-button-text"></button>
+                    <button type="button" pButton pRipple icon="pi pi-times" (click)="display=false" label="No" class="p-button-text"></button>
                 </p-footer>
             </p-dialog>
 
-            <button type="text" (click)="display=true" pButton icon="pi pi-external-link" label="Show"></button>
+            <button type="text" (click)="display=true" pButton pRipple icon="pi pi-external-link" label="Show"></button>
         </div>
 
         <div class="card p-fluid">
             <h5>Overlay Panel</h5>
             <div class="p-grid">
                 <div class="p-col-6">
-                    <button type="button" pButton label="Image" (click)="op1.toggle($event)" class="p-button-success"></button>
+                    <button type="button" pButton pRipple label="Image" (click)="op1.toggle($event)" class="p-button-success"></button>
                     <p-overlayPanel #op1>
                         <img src="assets/demo/images/nature/nature1.jpg" alt="Nature 1" />
                     </p-overlayPanel>
                 </div>
                 <div class="p-col-6">
-                    <button type="button" pButton label="DataTable" (click)="op2.toggle($event)" class="p-button-success"></button>
+                    <button type="button" pButton pRipple label="DataTable" (click)="op2.toggle($event)" class="p-button-success"></button>
                     <p-overlayPanel #op2 [showCloseIcon]="true" [style]="{width: '450px'}">
                         <ng-template pTemplate>
                             <p-table [value]="products" selectionMode="single" [(selection)]="selectedProduct" [paginator]="true" [rows]="5" (onRowSelect)="op2.hide()">
@@ -61,7 +61,7 @@
             <p-confirmDialog header="Confirmation" icon="pi pi-exclamation-triangle" message="Are you sure you want to proceed?"
                              [style]="{width: '425px'}" acceptButtonStyleClass="p-button-text" rejectButtonStyleClass="p-button-text"></p-confirmDialog>
 
-            <button type="text" (click)="confirm()" pButton icon="pi pi-trash" label="Delete" class="p-button-danger"></button>
+            <button type="text" (click)="confirm()" pButton pRipple icon="pi pi-trash" label="Delete" class="p-button-danger"></button>
         </div>
 
         <div class="card">
@@ -86,11 +86,11 @@
                 <h3 style="font-weight:normal">Full Screen Sidebar</h3>
             </p-sidebar>
 
-            <button pButton type="button" (click)="visibleSidebar1 = true" icon="pi pi-arrow-right" class="p-button-warning"></button>
-            <button pButton type="button" (click)="visibleSidebar2 = true" icon="pi pi-arrow-left" class="p-button-warning"></button>
-            <button pButton type="button" (click)="visibleSidebar3 = true" icon="pi pi-arrow-down" class="p-button-warning"></button>
-            <button pButton type="button" (click)="visibleSidebar4 = true" icon="pi pi-arrow-up" class="p-button-warning"></button>
-            <button pButton type="button" (click)="visibleSidebar5 = true" icon="pi pi-th-large" class="p-button-warning"></button>
+            <button pButton pRipple type="button" (click)="visibleSidebar1 = true" icon="pi pi-arrow-right" class="p-button-warning"></button>
+            <button pButton pRipple type="button" (click)="visibleSidebar2 = true" icon="pi pi-arrow-left" class="p-button-warning"></button>
+            <button pButton pRipple type="button" (click)="visibleSidebar3 = true" icon="pi pi-arrow-down" class="p-button-warning"></button>
+            <button pButton pRipple type="button" (click)="visibleSidebar4 = true" icon="pi pi-arrow-up" class="p-button-warning"></button>
+            <button pButton pRipple type="button" (click)="visibleSidebar5 = true" icon="pi pi-th-large" class="p-button-warning"></button>
         </div>
     </div>
     <div class="p-col-12">
