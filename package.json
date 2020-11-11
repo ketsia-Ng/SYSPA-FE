@@ -1,6 +1,6 @@
 {
     "name": "sapphire",
-    "version": "10.0.1",
+    "version": "10.0.2-SNAPSHOT",
     "license": "PrimeNG Commercial",
     "scripts": {
         "ng": "ng",
