@@ -34,7 +34,7 @@ export class AppMenuComponent implements OnInit {
                 ]
             },
             {
-                label: 'Mega', icon: 'list', badge: 2, mega: true,
+                label: 'Mega', icon: 'pi pi-fw pi-list', badge: 2, mega: true,
                 items: [
                     {
                         label: 'UI Kit', icon: 'pi pi-fw pi-star', routerLink: ['/uikit'],

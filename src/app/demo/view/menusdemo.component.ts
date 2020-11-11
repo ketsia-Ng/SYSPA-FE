@@ -4,6 +4,14 @@ import {BreadcrumbService} from '../../app.breadcrumb.service';
 
 @Component({
     templateUrl: './menusdemo.component.html',
+    styles: [`
+        @media screen and (max-width: 960px) {
+            .p-steps ul {
+                display: flex;
+                flex-wrap: wrap;
+            }
+        }
+    `],
     encapsulation: ViewEncapsulation.None
 })
 export class MenusDemoComponent implements OnInit {
