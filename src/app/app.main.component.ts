@@ -18,7 +18,7 @@ import { PrimeNGConfig } from 'primeng/api';
         ])
     ]
 })
-export class AppMainComponent implements OnInit {
+export class AppMainComponent {
 
     menuClick: boolean;
 
@@ -51,10 +51,6 @@ export class AppMainComponent implements OnInit {
     compactMode = false;
 
     constructor(private menuService: MenuService, private primengConfig: PrimeNGConfig) {}
-
-    ngOnInit() {
-        this.primengConfig.ripple = true;
-    }
 
     blockBodyScroll(): void {
         if (document.body.classList) {
@@ -143,6 +139,7 @@ export class AppMainComponent implements OnInit {
 
     onRippleChange(event) {
         this.ripple = event.checked;
+        this.primengConfig.ripple = event.checked;
     }
 
     changeTopbarTheme(event, color) {
