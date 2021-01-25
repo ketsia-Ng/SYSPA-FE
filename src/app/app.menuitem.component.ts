@@ -14,17 +14,17 @@ import { AppMainComponent } from './app.main.component';
     template: `
 		<ng-container>
 			<a [attr.href]="item.url" (click)="itemClick($event)" *ngIf="!item.routerLink || item.items"
-               (mouseenter)="onMouseEnter()" (keydown.enter)="itemClick($event)" pRipple
+               (mouseenter)="onMouseEnter()" (keydown.enter)="itemClick($event)" pRipple [ngClass]="item.class"
 			   [attr.target]="item.target" [attr.tabindex]="0">
-				<i *ngIf="item.icon" [ngClass]="item.icon"></i>
+				<i *ngIf="item.icon" [ngClass]="item.icon" class="layout-menuitem-icon"></i>
 				<span class="menuitem-text">{{item.label}}</span>
 				<i class="pi pi-fw pi-angle-down layout-submenu-toggler" *ngIf="item.items"></i>
 				<span class="menuitem-badge" *ngIf="item.badge">{{item.badge}}</span>
 			</a>
 			<a (click)="itemClick($event)" (mouseenter)="onMouseEnter()" *ngIf="item.routerLink && !item.items"
-			   [routerLink]="item.routerLink" routerLinkActive="active-menuitem-routerlink" pRipple
+			   [routerLink]="item.routerLink" routerLinkActive="active-menuitem-routerlink" pRipple [ngClass]="item.class"
 			   [routerLinkActiveOptions]="{exact: true}" [attr.target]="item.target" [attr.tabindex]="0">
-                <i *ngIf="item.icon" [ngClass]="item.icon"></i>
+                <i *ngIf="item.icon" [ngClass]="item.icon" class="layout-menuitem-icon"></i>
 				<span class="menuitem-text">{{item.label}}</span>
 				<i class="pi pi-fw pi-angle-down layout-submenu-toggler" *ngIf="item.items"></i>
 				<span class="menuitem-badge" *ngIf="item.badge">{{item.badge}}</span>

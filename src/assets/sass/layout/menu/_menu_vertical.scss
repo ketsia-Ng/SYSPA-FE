@@ -76,6 +76,12 @@
                 vertical-align: middle;
             }
 
+            &.rotated-icon {
+                .layout-menuitem-icon {
+                    transform: rotate(90deg);
+                }
+            }
+
             i {
                 vertical-align: middle;
                 font-size: 16px;
