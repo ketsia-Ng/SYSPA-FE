@@ -1,5 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 import {trigger, state, style, transition, animate} from '@angular/animations';
+import {AppComponent} from './app.component';
 import {AppMainComponent} from './app.main.component';
 
 @Component({
@@ -8,9 +9,9 @@ import {AppMainComponent} from './app.main.component';
         <a href="#" class="layout-config-button" (click)="onConfigButtonClick($event)">
             <i class="pi pi-cog"></i>
         </a>
-        <div class="layout-config" [ngClass]="{'layout-config-exit-done': !app.configDialogActive,
-        'layout-config-enter-done': app.configDialogActive}"
-             [@children]="app.configDialogActive ? 'visibleAnimated' : 'hiddenAnimated'">
+        <div class="layout-config" [ngClass]="{'layout-config-exit-done': !appMain.configDialogActive,
+        'layout-config-enter-done': appMain.configDialogActive}"
+             [@children]="appMain.configDialogActive ? 'visibleAnimated' : 'hiddenAnimated'">
             <div class="layout-config-content">
                 <a href="#" class="layout-config-close" (click)="onConfigCloseClick($event)">
                     <i class="pi pi-times"></i>
@@ -46,7 +47,7 @@ import {AppMainComponent} from './app.main.component';
                         <div class="p-grid">
                             <div class="p-col" *ngFor="let topbarTheme of topbarThemes">
                                 <a href="#" class="layout-config-option layout-config-option-image p-shadow-1"
-                                   (click)="app.changeTopbarTheme($event,topbarTheme.file)">
+                                   (click)="changeTopbarTheme($event,topbarTheme.file)">
                                     <img src="assets/layout/images/configurator/{{topbarTheme.image}}" alt="{{topbarTheme.name}}"/>
                                     <i class="pi pi-check" *ngIf="'layout-topbar-'+topbarTheme.file === app.topbarColor"></i>
                                 </a>
@@ -58,14 +59,14 @@ import {AppMainComponent} from './app.main.component';
                         <div class="p-grid">
                             <div class="p-col p-col-fixed">
                                 <a href="#" class="layout-config-option layout-config-option-image layout-config-option-light p-shadow-1"
-                                   (click)="app.changeMenuToHorizontal($event,true)">
+                                   (click)="changeMenuToHorizontal($event,true)">
                                     <img src="assets/layout/images/configurator/horizontal.png" alt="sapphire"  style="width:100%"/>
                                     <i class="pi pi-check" *ngIf="app.horizontal"></i>
                                 </a>
                             </div>
                             <div class="p-col p-col-fixed">
                                 <a href="#" class="layout-config-option layout-config-option-image layout-config-option-light p-shadow-1"
-                                   (click)="app.changeMenuToHorizontal($event,false)">
+                                   (click)="changeMenuToHorizontal($event,false)">
                                     <img src="assets/layout/images/configurator/vertical.png" alt="sapphire"  style="width:100%"/>
                                     <i class="pi pi-check" *ngIf="!app.horizontal"></i>
                                 </a>
@@ -77,7 +78,7 @@ import {AppMainComponent} from './app.main.component';
                             <div class="p-col" *ngFor="let menuTheme of menuThemes">
                                 <a href="#" class="layout-config-option layout-config-option-image p-shadow-1"
                                    [ngClass]="{'layout-config-option-light':menuTheme.file==='light'}"
-                                   (click)="app.changeMenuTheme($event,menuTheme.file)">
+                                   (click)="changeMenuTheme($event,menuTheme.file)">
                                     <img src="assets/layout/images/configurator/{{menuTheme.image}}" alt="{{menuTheme.name}}"/>
                                     <i class="pi pi-check" *ngIf="'layout-menu-'+menuTheme.file === app.menuColor"></i>
                                 </a>
@@ -101,17 +102,17 @@ import {AppMainComponent} from './app.main.component';
                             </div>
                             <div class="p-col-12 p-md-3">
                                 <div class="layout-config-subtitle">Ripple Effect</div>
-                                <p-inputSwitch [ngModel]="app.ripple" (onChange)="app.onRippleChange($event)"></p-inputSwitch>
+                                <p-inputSwitch [ngModel]="app.ripple" (onChange)="appMain.onRippleChange($event)"></p-inputSwitch>
                             </div>
                             <div class="p-col-12 p-md-5">
                                 <div class="layout-config-subtitle">Theme Modes</div>
                                 <div class="p-formgroup-inline">
                                     <div class="p-field-radiobutton">
-                                        <p-radioButton name="compactMode" [value]="true" [(ngModel)]="app.compactMode" inputId="compactMode1" (onClick)="app.changeThemeStyle($event, true)"></p-radioButton>
+                                        <p-radioButton name="compactMode" [value]="true" [(ngModel)]="app.compactMode" inputId="compactMode1" (onClick)="changeThemeStyle($event, true)"></p-radioButton>
                                         <label for="compactMode1">Compact</label>
                                     </div>
                                     <div class="p-field-radiobutton">
-                                        <p-radioButton name="compactMode" [value]="false" [(ngModel)]="app.compactMode" inputId="compactMode2" (onClick)="app.changeThemeStyle($event, false)"></p-radioButton>
+                                        <p-radioButton name="compactMode" [value]="false" [(ngModel)]="app.compactMode" inputId="compactMode2" (onClick)="changeThemeStyle($event, false)"></p-radioButton>
                                         <label for="compactMode2">Standart</label>
                                     </div>
                                 </div>
@@ -122,7 +123,7 @@ import {AppMainComponent} from './app.main.component';
                         <div class="p-grid">
                             <div class="p-col" *ngFor="let componentTheme of componentThemes">
                                 <a href="#" class="layout-config-option layout-config-option-image p-shadow-1"
-                                   (click)="app.changeComponentTheme($event,componentTheme.file)">
+                                   (click)="changeComponentTheme($event,componentTheme.file)">
                                     <img src="assets/layout/images/configurator/theme/{{componentTheme.image}}"
                                          alt="{{componentTheme.name}}"/>
                                     <i class="pi pi-check" *ngIf="componentTheme.file === app.themeColor"></i>
@@ -137,7 +138,7 @@ import {AppMainComponent} from './app.main.component';
                         <div class="p-grid p-primary-colors-grid">
                             <div class="p-col" *ngFor="let primaryColor of primaryColors">
                                 <a href="#" class="layout-config-option p-shadow-1" [ngStyle]="{'background': primaryColor.color}"
-                                   (click)="app.changePrimaryColor($event,primaryColor.file)">
+                                   (click)="changePrimaryColor($event,primaryColor.file)">
                                     <i class="pi pi-check" *ngIf="primaryColor.file === app.layoutColor"></i>
                                 </a>
                             </div>
@@ -172,7 +173,7 @@ export class AppConfigComponent implements OnInit {
 
     componentThemes: any;
 
-    constructor(public app: AppMainComponent) {}
+    constructor(public app: AppComponent, public appMain: AppMainComponent) {}
 
     ngOnInit() {
         this.topbarThemes = [
@@ -400,18 +401,101 @@ export class AppConfigComponent implements OnInit {
         ];
     }
 
+    changeTopbarTheme(event, color) {
+        this.app.topbarColor = 'layout-topbar-' + color;
+
+        event.preventDefault();
+    }
+
+    changeMenuToHorizontal(event, mode) {
+        this.app.horizontal = mode;
+
+        event.preventDefault();
+    }
+
+    changeMenuTheme(event, color) {
+        this.app.menuColor = 'layout-menu-' + color;
+
+        event.preventDefault();
+    }
+
+    changeThemeStyle(event, compactMode) {
+        let href;
+        const themeLink: HTMLLinkElement = document.getElementById('theme-css') as HTMLLinkElement;
+        if (compactMode) {
+            href = 'assets/theme/' + 'theme-' + this.app.themeColor + '-compact.css';
+        }
+        else {
+            href = 'assets/theme/' + 'theme-' + this.app.themeColor + '.css';
+        }
+
+        this.replaceLink(themeLink, href);
+
+        event.preventDefault();
+    }
+
+    changeComponentTheme(event, theme) {
+        let href;
+        this.app.themeColor = theme;
+        const themeLink: HTMLLinkElement = document.getElementById('theme-css') as HTMLLinkElement;
+
+        if (this.app.compactMode) {
+            href = 'assets/theme/' + 'theme-' + this.app.themeColor + '-compact.css';
+        }
+        else {
+            href = 'assets/theme/' + 'theme-' + this.app.themeColor + '.css';
+        }
+
+        this.replaceLink(themeLink, href);
+
+        event.preventDefault();
+    }
+
+    changePrimaryColor(event, color) {
+        this.app.layoutColor = color;
+        const layoutLink: HTMLLinkElement = document.getElementById('layout-css') as HTMLLinkElement;
+        const href = 'assets/layout/css/layout-' + color + '.css';
+
+        this.replaceLink(layoutLink, href);
+
+        event.preventDefault();
+    }
+
+    isIE() {
+        return /(MSIE|Trident\/|Edge\/)/i.test(window.navigator.userAgent);
+    }
+
+    replaceLink(linkElement, href) {
+        if (this.isIE()) {
+            linkElement.setAttribute('href', href);
+        } else {
+            const id = linkElement.getAttribute('id');
+            const cloneLinkElement = linkElement.cloneNode(true);
+
+            cloneLinkElement.setAttribute('href', href);
+            cloneLinkElement.setAttribute('id', id + '-clone');
+
+            linkElement.parentNode.insertBefore(cloneLinkElement, linkElement.nextSibling);
+
+            cloneLinkElement.addEventListener('load', () => {
+                linkElement.remove();
+                cloneLinkElement.setAttribute('id', id);
+            });
+        }
+    }
+
     changeTopBarSize(event, size) {
         this.app.topbarSize = size;
         event.preventDefault();
     }
 
     onConfigButtonClick(event) {
-        this.app.configDialogActive = true;
+        this.appMain.configDialogActive = true;
         event.preventDefault();
     }
 
     onConfigCloseClick(event) {
-        this.app.configDialogActive = false;
+        this.appMain.configDialogActive = false;
         event.preventDefault();
     }
 }

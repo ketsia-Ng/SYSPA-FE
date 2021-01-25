@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { trigger, state, style, transition, animate } from '@angular/animations';
 import { MenuService } from './app.menu.service';
 import { PrimeNGConfig } from 'primeng/api';
+import {AppComponent} from './app.component';
 
 @Component({
     selector: 'app-main',
@@ -26,31 +27,13 @@ export class AppMainComponent {
 
     topbarUserMenuActive: boolean;
 
-    horizontal = true;
-
     menuActive: boolean;
 
     menuHoverActive: boolean;
 
-    topbarColor = 'layout-topbar-blue';
-
-    menuColor = 'layout-menu-light';
-
-    themeColor = 'blue';
-
-    layoutColor = 'blue';
-
-    topbarSize = 'large';
-
     configDialogActive: boolean;
 
-    inputStyle = 'outlined';
-
-    ripple = true;
-
-    compactMode = false;
-
-    constructor(private menuService: MenuService, private primengConfig: PrimeNGConfig) {}
+    constructor(private menuService: MenuService, private primengConfig: PrimeNGConfig, public app: AppComponent) {}
 
     blockBodyScroll(): void {
         if (document.body.classList) {
@@ -73,7 +56,7 @@ export class AppMainComponent {
         if (!this.menuClick) {
             this.menuActive = false;
 
-            if (this.horizontal) {
+            if (this.app.horizontal) {
                 this.menuService.reset();
             }
 
@@ -92,7 +75,7 @@ export class AppMainComponent {
     onMenuButtonClick(event: Event) {
         this.menuClick = true;
 
-        if (!this.horizontal || this.isMobile()) {
+        if (!this.app.horizontal || this.isMobile()) {
             this.menuActive = !this.menuActive;
 
             if (this.menuActive) {
@@ -138,90 +121,7 @@ export class AppMainComponent {
     }
 
     onRippleChange(event) {
-        this.ripple = event.checked;
+        this.app.ripple = event.checked;
         this.primengConfig.ripple = event.checked;
-    }
-
-    changeTopbarTheme(event, color) {
-        this.topbarColor = 'layout-topbar-' + color;
-
-        event.preventDefault();
-    }
-
-    changeMenuToHorizontal(event, mode) {
-        this.horizontal = mode;
-
-        event.preventDefault();
-    }
-
-    changeMenuTheme(event, color) {
-        this.menuColor = 'layout-menu-' + color;
-
-        event.preventDefault();
-    }
-
-    changeThemeStyle(event, compactMode) {
-        let href;
-        const themeLink: HTMLLinkElement = document.getElementById('theme-css') as HTMLLinkElement;
-        if (compactMode) {
-            href = 'assets/theme/' + 'theme-' + this.themeColor + '-compact.css';
-        }
-        else {
-            href = 'assets/theme/' + 'theme-' + this.themeColor + '.css';
-        }
-
-        this.replaceLink(themeLink, href);
-
-        event.preventDefault();
-    }
-
-    changeComponentTheme(event, theme) {
-        let href;
-        this.themeColor = theme;
-        const themeLink: HTMLLinkElement = document.getElementById('theme-css') as HTMLLinkElement;
-
-        if (this.compactMode) {
-            href = 'assets/theme/' + 'theme-' + this.themeColor + '-compact.css';
-        }
-        else {
-            href = 'assets/theme/' + 'theme-' + this.themeColor + '.css';
-        }
-
-        this.replaceLink(themeLink, href);
-
-        event.preventDefault();
-    }
-
-    changePrimaryColor(event, color) {
-        this.layoutColor = color;
-        const layoutLink: HTMLLinkElement = document.getElementById('layout-css') as HTMLLinkElement;
-        const href = 'assets/layout/css/layout-' + color + '.css';
-
-        this.replaceLink(layoutLink, href);
-
-        event.preventDefault();
-    }
-
-    isIE() {
-        return /(MSIE|Trident\/|Edge\/)/i.test(window.navigator.userAgent);
-    }
-
-    replaceLink(linkElement, href) {
-        if (this.isIE()) {
-            linkElement.setAttribute('href', href);
-        } else {
-            const id = linkElement.getAttribute('id');
-            const cloneLinkElement = linkElement.cloneNode(true);
-
-            cloneLinkElement.setAttribute('href', href);
-            cloneLinkElement.setAttribute('id', id + '-clone');
-
-            linkElement.parentNode.insertBefore(cloneLinkElement, linkElement.nextSibling);
-
-            cloneLinkElement.addEventListener('load', () => {
-                linkElement.remove();
-                cloneLinkElement.setAttribute('id', id);
-            });
-        }
     }
 }

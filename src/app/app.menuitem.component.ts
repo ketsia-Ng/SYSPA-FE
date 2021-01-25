@@ -4,6 +4,7 @@ import { trigger, state, style, transition, animate } from '@angular/animations'
 import { Subscription } from 'rxjs';
 import { filter } from 'rxjs/operators';
 import { MenuService } from './app.menu.service';
+import { AppComponent } from './app.component';
 import { AppMainComponent } from './app.main.component';
 
 @Component({
@@ -34,7 +35,7 @@ import { AppMainComponent } from './app.main.component';
 
 			<div class="layout-submenu-container" *ngIf="item.items && (active || (!root && mega)) "
 				 [ngClass]="{'layout-submenu-megamenu-container':mega}" [ngStyle]="{'padding':active ? '':'0'}"
-				 [@children]="(app.horizontal && !app.isMobile() && root) ? active ? 'visible' : 'hidden' :
+				 [@children]="(app.horizontal && !appMain.isMobile() && root) ? active ? 'visible' : 'hidden' :
                      !root && mega ? 'visible' : active ? 'visibleAnimated' : 'hiddenAnimated'">
                 <ul class="layout-submenu" [ngClass]="{'layout-megamenu': item.mega}">
                     <ng-template ngFor let-child let-i="index" [ngForOf]="item.items">
@@ -93,7 +94,8 @@ export class AppMenuitemComponent implements OnInit, OnDestroy {
 
     key: string;
 
-    constructor(public app: AppMainComponent, public router: Router, private cd: ChangeDetectorRef, private menuService: MenuService) {
+    constructor(public app: AppComponent, public appMain: AppMainComponent, public router: Router,
+                private cd: ChangeDetectorRef, private menuService: MenuService) {
         this.menuSourceSubscription = this.menuService.menuSource$.subscribe(key => {
             // deactivate current active menu
             if (this.active && this.key !== key && key.indexOf(this.key) !== 0) {
@@ -140,7 +142,7 @@ export class AppMenuitemComponent implements OnInit, OnDestroy {
 
         // navigate with hover in horizontal mode
         if (this.root) {
-            this.app.menuHoverActive = !this.app.menuHoverActive;
+            this.appMain.menuHoverActive = !this.appMain.menuHoverActive;
         }
 
         // notify other items
@@ -164,16 +166,16 @@ export class AppMenuitemComponent implements OnInit, OnDestroy {
             }
 
             if (!this.app.horizontal) {
-                this.app.menuActive = false;
-                this.app.unblockBodyScroll();
+                this.appMain.menuActive = false;
+                this.appMain.unblockBodyScroll();
             }
-            this.app.menuHoverActive = !this.app.menuHoverActive;
+            this.appMain.menuHoverActive = !this.appMain.menuHoverActive;
         }
     }
 
     onMouseEnter() {
         // activate item on hover
-        if (this.root && this.app.menuHoverActive && this.app.horizontal && !this.app.isMobile() && !this.app.isTablet()) {
+        if (this.root && this.appMain.menuHoverActive && this.app.horizontal && !this.appMain.isMobile() && !this.appMain.isTablet()) {
             this.menuService.onMenuStateChange(this.key);
             this.active = true;
         }
