@@ -165,10 +165,11 @@ export class AppMenuitemComponent implements OnInit, OnDestroy {
                 this.menuService.reset();
             }
 
-            if (!this.app.horizontal) {
+            if (!this.app.horizontal || this.appMain.isMobile()) {
                 this.appMain.menuActive = false;
                 this.appMain.unblockBodyScroll();
             }
+
             this.appMain.menuHoverActive = !this.appMain.menuHoverActive;
         }
     }
