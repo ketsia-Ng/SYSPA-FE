@@ -2,7 +2,7 @@
     <div class="p-col-12">
         <div class="card docs">
             <h4 class="primary" style="margin-top:0">Current Version</h4>
-            <p>Angular 10 and PrimeNG 10</p>
+            <p>Angular 11 and PrimeNG 11</p>
 
             <h4>Dependencies</h4>
             <p>Sapphire has no direct dependency. More information about dependencies is available at <a href="https://www.primefaces.org/why-primeng-templates/">Why PrimeNG Templates</a> article.</p>
@@ -50,12 +50,12 @@ Run 'ng help' for more options.
             </p>
 <app-code ngPreserveWhitespaces ngNonBindable>
 &lt;div class="layout-container" (click)="onWrapperClick()"
-    [ngClass]="&#123;'layout-menu-horizontal': horizontal,
+    [ngClass]="&#123;'layout-menu-horizontal': app.horizontal,
                'layout-menu-active': menuActive
-               'layout-top-small': topbarSize === 'small',
-               'layout-top-medium': topbarSize === 'medium',
-               'layout-top-large': topbarSize === 'large', 'p-ripple-disabled': !ripple, 'p-input-filled': inputStyle === 'filled'&#125;"
-               [class]="topbarColor + ' ' + menuColor"&gt;
+               'layout-top-small': app.topbarSize === 'small',
+               'layout-top-medium': app.topbarSize === 'medium',
+               'layout-top-large': app.topbarSize === 'large', 'p-ripple-disabled': !app.ripple, 'p-input-filled': app.inputStyle === 'filled'&#125;"
+               [class]="app.topbarColor + ' ' + app.menuColor"&gt;
 
    &lt;div class="layout-top"&gt;
        &lt;app-topbar&gt;&lt;/app-topbar&gt;
@@ -96,16 +96,18 @@ export class AppMenuComponent implements OnInit &#123;
 
     model: any[];
 
-    constructor(public app: AppMainComponent) &#123;&#125;
+    constructor(public appMain: AppMainComponent) &#123;&#125;
 
     ngOnInit() &#123;
         this.model = [
-            &#123;label: 'Dashboard', icon: 'dashboard', routerLink: ['/']&#125;,
+            &#123;label: 'Dashboard', icon: 'pi pi-home', routerLink: ['/']&#125;,
             &#123;
                 label: 'UI Kit', icon: 'pi pi-fw pi-star-o', routerLink: ['/uikit'], badge: 6,
                 items: [
                     &#123;label: 'Form Layout', icon: 'pi pi-fw pi-id-card', routerLink: ['/uikit/formlayout']&#125;,
                     &#123;label: 'Input', icon: 'pi pi-fw pi-check-square', routerLink: ['/uikit/input']&#125;,
+                    &#123;label: 'Float Label', icon: 'pi pi-bookmark', routerLink: ['/uikit/floatlabel']&#125;,
+                    &#123;label: 'Invalid State', icon: 'pi pi-exclamation-circle', routerLink: ['/uikit/invalidstate']&#125;,
                     &#123;label: 'Button', icon: 'pi pi-fw pi-mobile', routerLink: ['/uikit/button'], class: 'rotated-icon'&#125;,
                     &#123;label: 'Table', icon: 'pi pi-fw pi-table', routerLink: ['/uikit/table']&#125;,
                     &#123;label: 'List', icon: 'pi pi-fw pi-list', routerLink: ['/uikit/list']&#125;,
@@ -184,6 +186,7 @@ export class AppMenuComponent implements OnInit &#123;
                 items: [
                     &#123;label: 'Crud', icon: 'pi pi-fw pi-pencil', routerLink: ['/pages/crud']&#125;,
                     &#123;label: 'Calendar', icon: 'pi pi-fw pi-calendar-plus', routerLink: ['/pages/calendar']&#125;,
+                    &#123;label: 'Timeline', icon: 'pi pi-fw pi-calendar', routerLink: ['/pages/timeline']&#125;,
                     &#123;label: 'Landing', icon: 'pi pi-fw pi-globe', url: 'assets/pages/landing.html', target: '_blank'&#125;,
                     &#123;label: 'Login', icon: 'pi pi-fw pi-sign-in', routerLink: ['/login']&#125;,
                     &#123;label: 'Invoice', icon: 'pi pi-fw pi-dollar', routerLink: ['/pages/invoice']&#125;,
@@ -262,9 +265,7 @@ npm install primeicons@latest --save
 
 <app-code ngPreserveWhitespaces ngNonBindable lang="markup">
 "styles": [
-    "../node_modules/primeng/resources/primeng.min.css",        //required: PrimeNG components
-    "node_modules/primeicons/primeicons.css",                   //required: PrimeIcons
-    "styles.scss"                                               //your styles and overrides
+    "styles.scss"                        //your styles and overrides
     ...
 ],
 </app-code>
@@ -943,8 +944,8 @@ $dangerButtonTextActiveColor:#ffffff;
 $dangerButtonActiveBorderColor:transparent;
 $dangerButtonFocusShadow:none;
 
-$linkButtonColor:transparent;
-$linkButtonHoverColor:transparent;
+$linkButtonColor:$primaryColor;
+$linkButtonHoverColor:$primaryColor;
 $linkButtonTextHoverDecoration:underline;
 $linkButtonFocusShadow:none;
 
@@ -1271,6 +1272,17 @@ $treeNodeContentPadding:.75rem;
 $treeNodeChildrenPadding:0 0 0 1rem;
 $treeNodeIconColor:$textSecondaryColor;
 
+//timeline
+$timelineVerticalEventContentPadding:0 1rem !default;
+$timelineHorizontalEventContentPadding:1rem 0 !default;
+$timelineEventMarkerWidth:1rem !default;
+$timelineEventMarkerHeight:1rem !default;
+$timelineEventMarkerBorderRadius:50% !default;
+$timelineEventMarkerBorder:0 none !default;
+$timelineEventMarkerBackground:#bdbdbd !default;
+$timelineEventConnectorSize:2px !default;
+$timelineEventColor:#bdbdbd !default;
+
 //org chart
 $organizationChartConnectorColor:rgba(0,0,0,.12);
 
@@ -1382,6 +1394,7 @@ $overlayMenuBg:$menuBg;
 $overlayMenuBorder:0 none;
 $overlayMenuShadow:0 2px 4px -1px rgba(0,0,0,.2), 0 4px 5px 0 rgba(0,0,0,.14), 0 1px 10px 0 rgba(0,0,0,.12);
 $verticalMenuPadding:.5rem 0;
+$verticalMenuitemMargin:0;
 $menuSeparatorMargin:.5rem 0;
 
 $breadcrumbPadding:1rem;
@@ -1471,6 +1484,40 @@ $galleriaThumbnailNavigatorHoverColor:rgba(255,255,255,.87);
 $galleriaThumbnailNavigatorBorderRadius:50%;
 $galleriaThumbnailNavigatorWidth:2rem;
 $galleriaThumbnailNavigatorHeight:2rem;
+
+//divider
+$dividerHorizontalMargin:1.25rem 0;
+$dividerHorizontalPadding:0 1.25rem;
+$dividerVerticalMargin:0 1.25rem;
+$dividerVerticalPadding:1.25rem 0;
+$dividerSize:1px;
+$dividerColor:rgba(0,0,0,.12);
+
+//avatar
+$avatarBg:rgba(0,0,0,.12);
+$avatarTextColor:$textColor;
+
+//chip
+$chipBg:rgba(0,0,0,.12);
+$chipTextColor:$textColor;
+$chipBorderRadius: 16px;
+
+//scrollTop
+$scrollTopBg:$accentColor;
+$scrollTopHoverBg:rgba($accentColor, .92);
+$scrollTopWidth:3rem;
+$scrollTopHeight:3rem;
+$scrollTopBorderRadius:50%;
+$scrollTopFontSize:1.5rem;
+$scrollTopTextColor:$accentTextColor;
+
+//skeleton
+$skeletonBg:rgba(0,0,0,.08);
+$skeletonAnimationBg:rgba(255,255,255,0.4);
+
+//splitter
+$splitterGutterBg:rgba(0,0,0,.04);
+$splitterGutterHandleBg:rgba(0,0,0,.12);
 
 :root &#123;
 --surface-a:#ffffff;
