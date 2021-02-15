@@ -13,7 +13,7 @@ import { AppMainComponent } from './app.main.component';
     /* tslint:enable:component-selector */
     template: `
 		<ng-container>
-			<a [attr.href]="item.url" (click)="itemClick($event)" *ngIf="!item.routerLink || item.items"
+			<a [attr.href]="item.url" (click)="itemClick($event)" *ngIf="(!item.routerLink || item.items) && item.visible !== false "
                (mouseenter)="onMouseEnter()" (keydown.enter)="itemClick($event)" pRipple [ngClass]="item.class"
 			   [attr.target]="item.target" [attr.tabindex]="0">
 				<i *ngIf="item.icon" [ngClass]="item.icon" class="layout-menuitem-icon"></i>
@@ -21,7 +21,7 @@ import { AppMainComponent } from './app.main.component';
 				<i class="pi pi-fw pi-angle-down layout-submenu-toggler" *ngIf="item.items"></i>
 				<span class="menuitem-badge" *ngIf="item.badge">{{item.badge}}</span>
 			</a>
-			<a (click)="itemClick($event)" (mouseenter)="onMouseEnter()" *ngIf="item.routerLink && !item.items"
+			<a (click)="itemClick($event)" (mouseenter)="onMouseEnter()" *ngIf="(item.routerLink && !item.items) && item.visible !== false "
 			   [routerLink]="item.routerLink" routerLinkActive="active-menuitem-routerlink" pRipple [ngClass]="item.class"
 			   [routerLinkActiveOptions]="{exact: true}" [attr.target]="item.target" [attr.tabindex]="0">
                 <i *ngIf="item.icon" [ngClass]="item.icon" class="layout-menuitem-icon"></i>
@@ -33,7 +33,7 @@ import { AppMainComponent } from './app.main.component';
                 {{item.label}}
             </span>
 
-			<div class="layout-submenu-container" *ngIf="item.items && (active || (!root && mega)) "
+			<div class="layout-submenu-container" *ngIf="item.items && (active || (!root && mega)) && item.visible !== false "
 				 [ngClass]="{'layout-submenu-megamenu-container':mega}" [ngStyle]="{'padding':active ? '':'0'}"
 				 [@children]="(app.horizontal && !appMain.isMobile() && root) ? active ? 'visible' : 'hidden' :
                      !root && mega ? 'visible' : active ? 'visibleAnimated' : 'hiddenAnimated'">
@@ -46,7 +46,7 @@ import { AppMainComponent } from './app.main.component';
 		</ng-container>
     `,
     host: {
-        '[class.active-menuitem]': 'active'
+        '[class.active-menuitem]': 'active && item.visible !== false'
     },
     animations: [
         trigger('children', [
