@@ -133,7 +133,7 @@ import {AppMainComponent} from './app.main.component';
                     </p-tabPanel>
                     <p-tabPanel header="Primary Color">
                         <p>Primary Color defines the highlight color of active menus. Note that this setting is only utilized in
-                            <b>light</b> and <b>light</b>menu modes as other menu themes have their own color to highlight the active
+                            <b>light</b> and <b>dark</b> menu modes as other menu themes have their own color to highlight the active
                             menus.</p>
                         <div class="p-grid p-primary-colors-grid">
                             <div class="p-col" *ngFor="let primaryColor of primaryColors">
