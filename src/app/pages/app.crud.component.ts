@@ -34,6 +34,7 @@ export class AppCrudComponent implements OnInit {
     constructor(private productService: ProductService, private messageService: MessageService,
                 private confirmationService: ConfirmationService, private breadcrumbService: BreadcrumbService) {
         this.breadcrumbService.setItems([
+            {label: 'Pages'},
             {label: 'Crud'}
         ]);
     }

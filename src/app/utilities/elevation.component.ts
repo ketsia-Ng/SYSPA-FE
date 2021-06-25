@@ -20,6 +20,7 @@ export class ElevationComponent {
 
     constructor(private breadcrumbService: BreadcrumbService) {
         this.breadcrumbService.setItems([
+            {label: 'Utilities'},
             {label: 'Elevation'}
         ]);
     }

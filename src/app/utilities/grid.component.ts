@@ -55,6 +55,7 @@ export class GridComponent implements OnInit{
 
     constructor(private breadcrumbService: BreadcrumbService) {
         this.breadcrumbService.setItems([
+            {label: 'Utilities'},
             {label: 'Grid System'}
         ]);
     }

@@ -8,6 +8,7 @@ export class DisplayComponent {
 
     constructor(private breadcrumbService: BreadcrumbService) {
         this.breadcrumbService.setItems([
+            {label: 'Utilities'},
             {label: 'Display'}
         ]);
     }

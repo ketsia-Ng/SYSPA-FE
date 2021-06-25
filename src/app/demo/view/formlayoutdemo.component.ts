@@ -26,6 +26,7 @@ export class FormLayoutDemoComponent {
 
     constructor(private breadcrumbService: BreadcrumbService) {
         this.breadcrumbService.setItems([
+            {label: 'UI Kit'},
             {label: 'Form Layout'}
         ]);
     }

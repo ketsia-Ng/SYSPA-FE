@@ -20,6 +20,7 @@ export class SpacingComponent {
 
     constructor(private breadcrumbService: BreadcrumbService) {
         this.breadcrumbService.setItems([
+            {label: 'Utilities'},
             {label: 'Spacing'}
         ]);
     }

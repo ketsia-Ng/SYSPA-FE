@@ -7,6 +7,7 @@ import {BreadcrumbService} from '../app.breadcrumb.service';
 export class WidgetsComponent {
     constructor(private breadcrumbService: BreadcrumbService) {
         this.breadcrumbService.setItems([
+            {label: 'Utilities'},
             {label: 'Widgets'}
         ]);
     }

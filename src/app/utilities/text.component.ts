@@ -13,6 +13,7 @@ export class TextComponent {
 
     constructor(private breadcrumbService: BreadcrumbService) {
         this.breadcrumbService.setItems([
+            {label: 'Utilities'},
             {label: 'Text'}
         ]);
     }

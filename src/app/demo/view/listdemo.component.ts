@@ -26,6 +26,7 @@ export class ListDemoComponent implements OnInit {
 
     constructor(private productService: ProductService, private breadcrumbService: BreadcrumbService) {
         this.breadcrumbService.setItems([
+            {label: 'UI Kit'},
             {label: 'List'}
         ]);
     }

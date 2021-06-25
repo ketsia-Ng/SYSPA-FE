@@ -21,6 +21,7 @@ export class MessagesDemoComponent {
 
     constructor(private service: MessageService, private breadcrumbService: BreadcrumbService) {
         this.breadcrumbService.setItems([
+            {label: 'UI Kit'},
             {label: 'Messages'}
         ]);
     }
