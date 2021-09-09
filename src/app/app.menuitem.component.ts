@@ -29,7 +29,7 @@ import { AppMainComponent } from './app.main.component';
 				<i class="pi pi-fw pi-angle-down layout-submenu-toggler" *ngIf="item.items"></i>
 				<span class="menuitem-badge" *ngIf="item.badge">{{item.badge}}</span>
 			</a>
-			<span class="layout-megamenu-submenu-text" *ngIf="!root && mega">
+			<span class="layout-megamenu-submenu-text" *ngIf="(!root && mega) && item.visible !== false">
                 {{item.label}}
             </span>
 
@@ -137,7 +137,7 @@ export class AppMenuitemComponent implements OnInit, OnDestroy {
         // avoid processing disabled items
         if (this.item.disabled) {
             event.preventDefault();
-            return true;
+            return;
         }
 
         // navigate with hover in horizontal mode
