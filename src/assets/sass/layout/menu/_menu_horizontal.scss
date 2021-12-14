@@ -106,6 +106,7 @@
                         display: block;
                         position: relative;
                         padding: .75em;
+                        cursor: pointer;
                         @include border-radius($menuitemBorderRadius);
 
                         .menuitem-text {
