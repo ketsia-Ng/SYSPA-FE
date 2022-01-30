@@ -9,6 +9,17 @@ import {BreadcrumbService} from '../../app.breadcrumb.service';
 		min-width: 15rem;
 	}
 
+	:host ::ng-deep .multiselect-custom-virtual-scroll .p-multiselect {
+		min-width: 20rem;
+	}
+
+	:host ::ng-deep .multiselect-custom .p-multiselect-label {
+		padding-top: .25rem;
+		padding-bottom: .25rem;
+
+	}
+
+
 	:host ::ng-deep .multiselect-custom .country-item.country-item-value {
 		padding: .25rem .5rem;
 		border-radius: 3px;
@@ -30,6 +41,10 @@ import {BreadcrumbService} from '../../app.breadcrumb.service';
 	:host ::ng-deep .multiselect-custom .country-item img.flag {
 		width: 18px;
 		margin-right: .5rem;
+	}
+
+	:host ::ng-deep .multiselect-custom .country-placeholder {
+		padding: 0.25rem;
 	}
 
 	:host ::ng-deep .p-colorpicker {

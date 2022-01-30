@@ -19,23 +19,23 @@ import {AppMainComponent} from './app.main.component';
                 <p-tabView>
                     <p-tabPanel header="TopBar">
                         <div class="layout-config-subtitle">Size</div>
-                        <div class="p-grid">
-                            <div class="p-col p-col-fixed">
-                                <a href="#" class="layout-config-option layout-config-option-image layout-config-option-light p-shadow-1"
+                        <div class="grid">
+                            <div class="col col-fixed">
+                                <a href="#" class="layout-config-option layout-config-option-image layout-config-option-light shadow-1"
                                    (click)="changeTopBarSize($event,'large')">
                                    <img src="assets/layout/images/configurator/topbar-large.png" alt="sapphire"  style="width:100%"/>
                                     <i class="pi pi-check" *ngIf="app.topbarSize === 'large'"></i>
                                 </a>
                             </div>
-                            <div class="p-col p-col-fixed">
-                                <a href="#" class="layout-config-option layout-config-option-image layout-config-option-light p-shadow-1"
+                            <div class="col col-fixed">
+                                <a href="#" class="layout-config-option layout-config-option-image layout-config-option-light shadow-1"
                                    (click)="changeTopBarSize($event,'medium')">
                                    <img src="assets/layout/images/configurator/topbar-medium.png" alt="sapphire"  style="width:100%"/>
                                     <i class="pi pi-check" *ngIf="app.topbarSize === 'medium'"></i>
                                 </a>
                             </div>
-                            <div class="p-col p-col-fixed">
-                                <a href="#" class="layout-config-option layout-config-option-image layout-config-option-light p-shadow-1"
+                            <div class="col col-fixed">
+                                <a href="#" class="layout-config-option layout-config-option-image layout-config-option-light shadow-1"
                                    (click)="changeTopBarSize($event,'small')">
                                     <img src="assets/layout/images/configurator/topbar-small.png" alt="sapphire"  style="width:100%"/>
                                     <i class="pi pi-check" *ngIf="app.topbarSize === 'small'"></i>
@@ -44,9 +44,9 @@ import {AppMainComponent} from './app.main.component';
                         </div>
 
                         <div class="layout-config-subtitle">Themes</div>
-                        <div class="p-grid">
-                            <div class="p-col" *ngFor="let topbarTheme of topbarThemes">
-                                <a href="#" class="layout-config-option layout-config-option-image p-shadow-1"
+                        <div class="grid">
+                            <div class="col" *ngFor="let topbarTheme of topbarThemes">
+                                <a href="#" class="layout-config-option layout-config-option-image shadow-1"
                                    (click)="changeTopbarTheme($event,topbarTheme.file)">
                                     <img src="assets/layout/images/configurator/{{topbarTheme.image}}" alt="{{topbarTheme.name}}"/>
                                     <i class="pi pi-check" *ngIf="'layout-topbar-'+topbarTheme.file === app.topbarColor"></i>
@@ -56,16 +56,16 @@ import {AppMainComponent} from './app.main.component';
                     </p-tabPanel>
                     <p-tabPanel header="Menu">
                         <div class="layout-config-subtitle">Orientation</div>
-                        <div class="p-grid">
-                            <div class="p-col p-col-fixed">
-                                <a href="#" class="layout-config-option layout-config-option-image layout-config-option-light p-shadow-1"
+                        <div class="grid">
+                            <div class="col col-fixed">
+                                <a href="#" class="layout-config-option layout-config-option-image layout-config-option-light shadow-1"
                                    (click)="changeMenuToHorizontal($event,true)">
                                     <img src="assets/layout/images/configurator/horizontal.png" alt="sapphire"  style="width:100%"/>
                                     <i class="pi pi-check" *ngIf="app.horizontal"></i>
                                 </a>
                             </div>
-                            <div class="p-col p-col-fixed">
-                                <a href="#" class="layout-config-option layout-config-option-image layout-config-option-light p-shadow-1"
+                            <div class="col col-fixed">
+                                <a href="#" class="layout-config-option layout-config-option-image layout-config-option-light shadow-1"
                                    (click)="changeMenuToHorizontal($event,false)">
                                     <img src="assets/layout/images/configurator/vertical.png" alt="sapphire"  style="width:100%"/>
                                     <i class="pi pi-check" *ngIf="!app.horizontal"></i>
@@ -74,9 +74,9 @@ import {AppMainComponent} from './app.main.component';
                         </div>
 
                         <div class="layout-config-subtitle">Theme</div>
-                        <div class="p-grid">
-                            <div class="p-col" *ngFor="let menuTheme of menuThemes">
-                                <a href="#" class="layout-config-option layout-config-option-image p-shadow-1"
+                        <div class="grid">
+                            <div class="col" *ngFor="let menuTheme of menuThemes">
+                                <a href="#" class="layout-config-option layout-config-option-image shadow-1"
                                    [ngClass]="{'layout-config-option-light':menuTheme.file==='light'}"
                                    (click)="changeMenuTheme($event,menuTheme.file)">
                                     <img src="assets/layout/images/configurator/{{menuTheme.image}}" alt="{{menuTheme.name}}"/>
@@ -86,32 +86,32 @@ import {AppMainComponent} from './app.main.component';
                         </div>
                     </p-tabPanel>
                     <p-tabPanel header="Components">
-                        <div class="p-grid">
-                            <div class="p-col-12 p-md-4">
+                        <div class="grid">
+                            <div class="col-12 md:col-4">
                                 <div class="layout-config-subtitle">Input Style</div>
-                                <div class="p-formgroup-inline">
-                                    <div class="p-field-radiobutton">
+                                <div class="formgroup-inline">
+                                    <div class="field-radiobutton">
                                         <p-radioButton name="inputStyle" value="outlined" [(ngModel)]="app.inputStyle" inputId="inputStyle1"></p-radioButton>
                                         <label for="inputStyle1">Outlined</label>
                                     </div>
-                                    <div class="p-field-radiobutton">
+                                    <div class="field-radiobutton">
                                         <p-radioButton name="inputStyle" value="filled" [(ngModel)]="app.inputStyle" inputId="inputStyle2"></p-radioButton>
                                         <label for="inputStyle2">Filled</label>
                                     </div>
                                 </div>
                             </div>
-                            <div class="p-col-12 p-md-3">
+                            <div class="col-12 md:col-3">
                                 <div class="layout-config-subtitle">Ripple Effect</div>
                                 <p-inputSwitch [ngModel]="app.ripple" (onChange)="appMain.onRippleChange($event)"></p-inputSwitch>
                             </div>
-                            <div class="p-col-12 p-md-5">
+                            <div class="col-12 md:col-5">
                                 <div class="layout-config-subtitle">Theme Modes</div>
-                                <div class="p-formgroup-inline">
-                                    <div class="p-field-radiobutton">
+                                <div class="formgroup-inline">
+                                    <div class="field-radiobutton">
                                         <p-radioButton name="compactMode" [value]="true" [(ngModel)]="app.compactMode" inputId="compactMode1" (onClick)="changeThemeStyle($event, true)"></p-radioButton>
                                         <label for="compactMode1">Compact</label>
                                     </div>
-                                    <div class="p-field-radiobutton">
+                                    <div class="field-radiobutton">
                                         <p-radioButton name="compactMode" [value]="false" [(ngModel)]="app.compactMode" inputId="compactMode2" (onClick)="changeThemeStyle($event, false)"></p-radioButton>
                                         <label for="compactMode2">Standart</label>
                                     </div>
@@ -120,9 +120,9 @@ import {AppMainComponent} from './app.main.component';
                         </div>
 
                         <div class="layout-config-subtitle">Component Themes</div>
-                        <div class="p-grid">
-                            <div class="p-col" *ngFor="let componentTheme of componentThemes">
-                                <a href="#" class="layout-config-option layout-config-option-image p-shadow-1"
+                        <div class="grid">
+                            <div class="col" *ngFor="let componentTheme of componentThemes">
+                                <a href="#" class="layout-config-option layout-config-option-image shadow-1"
                                    (click)="changeComponentTheme($event,componentTheme.file)">
                                     <img src="assets/layout/images/configurator/theme/{{componentTheme.image}}"
                                          alt="{{componentTheme.name}}"/>
@@ -135,9 +135,9 @@ import {AppMainComponent} from './app.main.component';
                         <p>Primary Color defines the highlight color of active menus. Note that this setting is only utilized in
                             <b>light</b> and <b>dark</b> menu modes as other menu themes have their own color to highlight the active
                             menus.</p>
-                        <div class="p-grid p-primary-colors-grid">
-                            <div class="p-col" *ngFor="let primaryColor of primaryColors">
-                                <a href="#" class="layout-config-option p-shadow-1" [ngStyle]="{'background': primaryColor.color}"
+                        <div class="grid p-primary-colors-grid">
+                            <div class="col" *ngFor="let primaryColor of primaryColors">
+                                <a href="#" class="layout-config-option shadow-1" [ngStyle]="{'background': primaryColor.color}"
                                    (click)="changePrimaryColor($event,primaryColor.file)">
                                     <i class="pi pi-check" *ngIf="primaryColor.file === app.layoutColor"></i>
                                 </a>

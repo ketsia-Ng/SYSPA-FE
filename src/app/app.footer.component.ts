@@ -4,12 +4,12 @@ import { Component } from '@angular/core';
     selector: 'app-footer',
     template: `
         <div class="layout-footer">
-            <div class="p-grid">
-                <div class="p-col">
+            <div class="grid">
+                <div class="col">
                     <img src="assets/layout/images/logo-white.svg" alt="sapphire-layout" />
                     <div class="layout-footer-appname">PrimeNG Premium Template</div>
                 </div>
-                <div class="p-col p-col-align-right">
+                <div class="col">
                     <span>All Rights Reserved</span>
                 </div>
             </div>

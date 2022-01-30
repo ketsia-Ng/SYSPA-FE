@@ -4,7 +4,6 @@ import {BreadcrumbService} from '../app.breadcrumb.service';
 
 @Component({
     templateUrl: './icons.component.html',
-    styleUrls: ['./icons.scss']
 })
 export class IconsComponent implements OnInit {
 
@@ -20,7 +19,7 @@ export class IconsComponent implements OnInit {
             {label: 'Icons'}
         ]);
     }
-    
+
     ngOnInit() {
 		this.iconService.getIcons().subscribe(data => {
             data = data.filter(value => {

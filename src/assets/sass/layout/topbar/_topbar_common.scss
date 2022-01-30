@@ -7,11 +7,11 @@
 .layout-topbar {
     @include clearfix();
 
-    .p-grid {
+    .grid {
         margin: 0;
         min-height: 4em;
 
-        .p-col {
+        .col {
             padding: 0;
         }
     }
