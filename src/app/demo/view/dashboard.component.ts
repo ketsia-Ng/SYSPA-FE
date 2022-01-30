@@ -21,7 +21,7 @@ export class DashboardComponent implements OnInit {
 
     constructor(private productService: ProductService, private eventService: EventService, private breadcrumbService: BreadcrumbService) {
         this.breadcrumbService.setItems([
-            {label: 'Dashboard', routerLink: ['/']}
+            {label: 'Dashboard'}
         ]);
     }
 
