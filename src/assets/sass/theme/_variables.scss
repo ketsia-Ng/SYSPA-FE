@@ -8,7 +8,8 @@ $colors: (
     "teal": #009688,
     "orange": #F57C00,
     "bluegray": #607D8B,
-    "purple": #9C27B0
+    "purple": #9C27B0,
+    "primary": $primaryColor
 ) !default;
 
 $emphasis-high:rgba(0,0,0,.87);
@@ -351,6 +352,7 @@ $panelHeaderTextHoverColor:$textColor;
 $panelContentBorderColor: #e0e0e0 !default;
 $panelContentBorder:1px solid #e0e0e0;
 $panelContentBg:#ffffff;
+$panelContentEvenRowBg:rgba(0,0,0,.02) !default;
 $panelContentTextColor:$textColor;
 $panelContentPadding:1rem;
 
