@@ -1,4 +1,4 @@
-import {NgModule, CUSTOM_ELEMENTS_SCHEMA} from '@angular/core';
+import {NgModule} from '@angular/core';
 import {FormsModule} from '@angular/forms';
 import {HttpClientModule} from '@angular/common/http';
 import {BrowserModule} from '@angular/platform-browser';
@@ -86,6 +86,7 @@ import {TooltipModule} from 'primeng/tooltip';
 import {TreeModule} from 'primeng/tree';
 import {TreeTableModule} from 'primeng/treetable';
 import {VirtualScrollerModule} from 'primeng/virtualscroller';
+import {FullCalendarModule} from '@fullcalendar/angular';
 
 // Application Components
 import {AppCodeModule} from './blocks/app-code/app.code.component';
@@ -186,6 +187,7 @@ import {MenuService} from './app.menu.service';
         KnobModule,
         LightboxModule,
         ListboxModule,
+        FullCalendarModule,
         MegaMenuModule,
         MenuModule,
         MenubarModule,
@@ -276,7 +278,6 @@ import {MenuService} from './app.menu.service';
         CountryService, CustomerService, EventService, IconService, NodeService,
         PhotoService, ProductService, MenuService, BreadcrumbService
     ],
-    bootstrap: [AppComponent],
-    schemas: [CUSTOM_ELEMENTS_SCHEMA]
+    bootstrap: [AppComponent]
 })
 export class AppModule { }
