@@ -40,7 +40,7 @@
                     "configurations": {
                         "production": {
                             "budgets": [
-                                {
+                                {   
                                     "type": "initial",
                                     "maximumWarning": "3mb",
                                     "maximumError": "5mb"
@@ -125,5 +125,8 @@
             }
         }
     },
-    "defaultProject": "sapphire"
+    "defaultProject": "sapphire",
+    "cli": {
+      "analytics": "735c2535-2b28-41a6-a7ca-e4bfe10469e2"
+    }
 }

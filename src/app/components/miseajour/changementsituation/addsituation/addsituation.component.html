@@ -1,0 +1,151 @@
+<form #frmsituation="ngForm">
+<div class="field grid">
+    <div class="field p-2">
+        <img src="assets/images/profil.jpeg" height="150px">
+    </div>
+    <div class="field p-2">
+        <div class="formgroup-inline" >
+            <div class="field text-bold" >
+                 Matricule :
+            </div>
+            <div class="field " >
+               {{identification.matricule}}
+            </div>
+        </div>
+        <div class="formgroup-inline"  >
+            <div class="field text-bold">
+                <label  class="">Nom :</label>
+            </div>
+            <div class="field">
+                <label  class="">{{identification.nom}}</label>
+            </div>
+        </div>
+        <div class="formgroup-inline"  >
+            <div class="field text-bold">
+                <label  class="">   Genre :</label>
+            </div>
+            <div class="field">
+                <label  class="">{{identification.genre}}</label>
+            </div>
+        </div>
+        <div class="formgroup-inline" >
+            <div class="field text-bold">
+                <label  class="">Date de naissance :</label>
+            </div>
+            <div class="field">
+                <label  class="">{{identification.datenaiss|date:"dd/MM/yyyy"}}</label>
+            </div>
+        </div>
+        <div class="formgroup-inline" >
+            <div class="field text-bold">
+                <label  class="">Lieu de naissance :</label>
+            </div>
+            <div class="field">
+                <label  class="">{{identification.lieunaiss}}</label>
+            </div>
+        </div>
+        <div class="formgroup-inline" >
+            <div class="field text-bold">
+                <label  class="">Date d'Engagement :</label>
+            </div>
+            <div class="field">
+                <label  class="">{{identification.dateengagement|date:"dd/MM/yyyy"}}</label>
+            </div>
+        </div>
+    </div>
+    </div>
+    <div class="grid p-fluid">
+        <div class="col-12 md:col-6 mb-2">
+            <p-dropdown [options]="section"  optionLabel="nomsection" ngModel name="codesection" optionValue="codesection" (onChange)="changesection($event)"  placeholder="Selectionnez une section"></p-dropdown>
+
+        </div>
+        <div class="col-12 md:col-6 mb-2">
+            <p-dropdown [options]="province" optionLabel="nomprovince" ngModel name="codeprovince" optionValue="codeprovince" (onChange)="changeprovince($event)" placeholder="Selectionnez une province" ></p-dropdown>
+
+        </div>
+    </div>
+    <div class="grid p-fluid">
+        <div class="col-12 md:col-6 mb-2">
+            <p-dropdown [options]="entite" optionLabel="nomentite" ngModel name="codeentite" optionValue="codeentite"  placeholder="Selectionnez une entité" class=""></p-dropdown>
+
+        </div>
+        <div class="col-12 md:col-6 mb-2">
+            <p-dropdown [options]="unite" optionLabel="nomunite" ngModel name="codeunite" optionValue="codeunite"  placeholder="Selectionnez une unite" class=""></p-dropdown>
+        </div>
+    </div>
+    <div class="grid p-fluid">
+        <div class="col-12 md:col-6 mb-2">
+            <p-dropdown [options]="fonction" optionLabel="nomfonction" ngModel name="codefonction" optionValue="codefonction" (onChange)="getbarem($event)" placeholder="Selectionnez une fonction" class=""></p-dropdown>
+
+        </div>
+        <div class="col-12 md:col-6 mb-2">
+            <p-dropdown [options]="barem" optionLabel="libelle" ngModel name="codebarem" optionValue="codebarem" (onChange)="getdetailbarem($event)" placeholder="Selectionnez un barème" class=""></p-dropdown>
+        </div>
+    </div>
+    <div class="grid p-fluid">
+        <div class="col-12 md:col-6 mb-2">
+            <p-dropdown [options]="banque" optionLabel="nombanque" ngModel name="codebanque" optionValue="codebanque"  placeholder="Selectionnez une banque" class=""></p-dropdown>
+        </div>
+        <div class="col-12 md:col-6 mb-2">
+            <p-dropdown [options]="position" optionLabel="nomposition" ngModel name="codeposition" optionValue="codeposition"  placeholder="Selectionnez une position" class=""></p-dropdown>
+        </div>
+    </div>
+    <p-table #dt [value]="detailbarem" *ngIf="detailbarem.length!=0">
+        <ng-template pTemplate="caption">
+            <div class="flex flex-column md:flex-row md:justify-content-between md:align-items-center">
+                <div>
+                    <span class="block md:mt-0 p-input-icon-left">
+                       <h6> {{baremone.libelle}}</h6>
+                    </span>
+                </div>
+            </div>
+        </ng-template>
+        <ng-template pTemplate="header">
+            <tr>
+                <th pSortableColumn="denomination" style="width:80%;">Intitulé <p-sortIcon field="denomination"></p-sortIcon></th>
+                <th pSortableColumn="rccmassu" style="width: 10%;">Sigle<p-sortIcon field="rccmassu"></p-sortIcon></th>
+                <th pSortableColumn="rccmassu" style="width: 10%;">Montant<p-sortIcon field="rccmassu"></p-sortIcon></th>
+            </tr>
+        </ng-template>
+        <ng-template pTemplate="body" let-item>
+            <tr>
+                <td style="width:80%; min-width:10rem;" >
+                <span class="p-column-title">Barème</span>
+                <a style="cursor: pointer;"(click)="fonctionclick(item)">{{item.intitule}}</a>
+                </td>
+                <td style="width:10%; min-width:10rem;" >
+                    <a style="cursor: pointer;">{{item.sigle}}</a>
+                    </td>
+                <td style="width:10%; min-width:10rem;" >
+                    <a style="cursor: pointer;">{{item.montant}}</a>
+                    </td>
+            </tr>
+        </ng-template>
+        <ng-template pTemplate="footer">
+         <tr>
+             <td style="width:80%; min-width:10rem;" colspan="2" >
+                 total
+             </td>
+             <td style="width:10%; min-width:10rem;" >
+                 <a style="cursor: pointer;">{{baremone.montant}}</a>
+                 </td>
+         </tr>
+     </ng-template>
+    </p-table>
+    <div class="d-flex justify-content-center mt-3" *ngIf="detailbarem.length!=0">
+        <p-paginator
+        (onPageChange)="onPageChange($event)"
+        [first]="page"
+        [rows]="size"
+        [totalRecords]="count"
+        [showFirstLastIcon]="true"
+        [showCurrentPageReport]="true"
+        currentPageReportTemplate="{{page+1}} - {{size}} sur {{count}}"
+
+        [rowsPerPageOptions]="[10, 20, 30,50]" />
+     </div>
+    <div class="mt-1">
+        <button pButton pRipple label="Cancel" icon="pi pi-times" class="p-button-text" (click)="effacer()"></button>
+        <button pButton pRipple label="Save" icon="pi pi-check" class="p-button-text" (click)="create(frmsituation)"></button>
+    </div>
+</form>

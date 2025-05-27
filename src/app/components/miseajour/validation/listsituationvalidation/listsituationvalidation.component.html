@@ -1,0 +1,154 @@
+<!--
+ 0:en attente
+ 1:validé
+ 2:rejeté
+ 3:était validé
+-->
+<div class="grid mt-2">
+    <div class="col-12">
+<div class="card">
+    <div class="field grid">
+    <div class="field p-2">
+        <img src="assets/images/profil.jpeg">
+    </div>
+    <div class="field p-2">
+        <div class="formgroup-inline" style="font-size: 20px;">
+            <div class="field text-bold" >
+                 Matricule :
+            </div>
+            <div class="field " >
+               {{identification.matricule}}
+            </div>
+        </div>
+        <div class="formgroup-inline"  style="font-size: 20px;">
+            <div class="field text-bold">
+                <label  class="">Nom :</label>
+            </div>
+            <div class="field">
+                <label  class="">{{identification.nom}}</label>
+            </div>
+        </div>
+        <div class="formgroup-inline"  style="font-size: 20px;">
+            <div class="field text-bold">
+                <label  class="">   Genre :</label>
+            </div>
+            <div class="field">
+                <label  class="">{{identification.genre}}</label>
+            </div>
+        </div>
+        <div class="formgroup-inline" style="font-size: 20px;">
+            <div class="field text-bold">
+                <label  class="">Date de naissance :</label>
+            </div>
+            <div class="field">
+                <label  class="">{{identification.datenaiss|date:"dd/MM/yyyy"}}</label>
+            </div>
+        </div>
+        <div class="formgroup-inline" style="font-size: 20px;">
+            <div class="field text-bold">
+                <label  class="">Lieu de naissance :</label>
+            </div>
+            <div class="field">
+                <label  class="">{{identification.lieunaiss}}</label>
+            </div>
+        </div>
+        <div class="formgroup-inline" style="font-size: 20px;">
+            <div class="field text-bold">
+                <label  class="">Date d'Engagement :</label>
+            </div>
+            <div class="field">
+                <label  class="">{{identification.dateengagement|date:"dd/MM/yyyy"}}</label>
+            </div>
+        </div>
+    </div>
+    </div>
+</div>
+<br>
+<div class="card">
+    <p-table #dt [value]="situation"  [(selection)]="tableausituation " >
+        <ng-template pTemplate="caption">
+            <div *ngIf="param.validation==0" class="flex flex-column md:flex-row md:justify-content-end md:align-items-center">
+                <div class="grid">
+                    <div class="col-12 md:col-4 mr-4">
+                        <div class="field-radiobutton">
+                            <p-radioButton name="city" value="1" [(ngModel)]="validation" id="city1"></p-radioButton>
+                            <label for="city1">validé</label>
+                        </div>
+                    </div>
+                    <div class="col-12 md:col-4">
+                        <div class="field-radiobutton">
+                            <p-radioButton name="city" value="2" [(ngModel)]="validation"
+                                           id="city2"></p-radioButton>
+                            <label for="city2">Rejeté</label>
+                        </div>
+                    </div>
+                </div>
+                <button pButton pRipple type="button" icon="pi pi-check"  class="mr-2 mb-2" (click)="validationenattente()"></button>
+            </div>
+            <div *ngIf="param.validation==1" class="flex flex-column md:flex-row md:justify-content-end md:align-items-center">
+                <button pButton pRipple type="button" icon="pi pi-lock"  class="mr-2 mb-2" (click)="validationsituation(3)"></button>
+            </div>
+            <div *ngIf="param.validation==2" class="flex flex-column md:flex-row md:justify-content-end md:align-items-center">
+
+                <button pButton pRipple type="button" icon="pi pi-replay"  class="mr-2 mb-2" (click)="validationsituation(1)"></button>
+            </div>
+            <div *ngIf="param.validation==3" class="flex flex-column md:flex-row md:justify-content-end md:align-items-center">
+
+                <button pButton pRipple type="button" icon="pi pi-replay"  class="mr-2 mb-2" (click)="validationsituation(1)"></button>
+            </div>
+        </ng-template>
+        <ng-template pTemplate="header">
+            <tr *ngIf="situation.length!=0">
+                <th pSortableColumn="denomination" style="width: 15%;">section <p-sortIcon field="denomination"></p-sortIcon></th>
+                <th pSortableColumn="rccmassu" style="width: 15%;">Province<p-sortIcon field="rccmassu"></p-sortIcon></th>
+                <th pSortableColumn="rccmassu" style="width: 15%;">Entité<p-sortIcon field="rccmassu"></p-sortIcon></th>
+                <th pSortableColumn="rccmassu" style="width: 10%;">Unité<p-sortIcon field="rccmassu"></p-sortIcon></th>
+                <th pSortableColumn="rccmassu" style="width: 10%;">Fonction<p-sortIcon field="rccmassu"></p-sortIcon></th>
+                <th pSortableColumn="rccmassu" style="width: 10%;">Banque<p-sortIcon field="rccmassu"></p-sortIcon></th>
+                <th pSortableColumn="rccmassu" style="width: 10%;">Position<p-sortIcon field="rccmassu"></p-sortIcon></th>
+                <th pSortableColumn="nifassu" style="width: 10%;">Date Creation<p-sortIcon field="nifassu"></p-sortIcon></th>
+                <th style="width: 5%;">
+                    <div class="col-fixed align-self-center">
+                        <p-tableHeaderCheckbox [value]="item" (click)="selct()" />
+                    </div>
+                </th>
+            </tr>
+        </ng-template>
+        <ng-template pTemplate="body" let-item>
+            <tr  >
+                <td style="width:15%; min-width:10rem;" (click)="openmodalfiche(item)" >
+                <a style="cursor: pointer;">{{item.nomsection}}</a>
+                </td>
+                <td style="width:15%; min-width:10rem;" (click)="openmodalfiche(item)" >
+                    <a style="cursor: pointer;">{{item.nomprovince}}</a>
+                    </td>
+                <td style="width:15%; min-width:10rem;" (click)="openmodalfiche(item)">
+                    {{item.nomentite}}
+                </td>
+                <td style="width:10%; min-width:10rem;" (click)="openmodalfiche(item)">
+                    {{item.nomunite}}
+                </td>
+                <td style="width:10%; min-width:10rem;" (click)="openmodalfiche(item)">
+                    {{item.nomfonction}}
+                </td>
+                <td style="width:10%; min-width:10rem;" (click)="openmodalfiche(item)">
+                    {{item.nombanque}}
+                </td>
+                <td style="width:10%; min-width:10rem;" (click)="openmodalfiche(item)">
+                    {{item.nomposition}}
+                </td>
+                <td style="width:10%; min-width:10rem;" (click)="openmodalfiche(item)">
+                       {{item.datecreation|date:"dd/MM/yyyy"}}
+                    </td>
+                <td style="width:5%; min-width:10rem;" >
+                    <div class="col-fixed align-self-center">
+                        <p-tableCheckbox [value]="item" (click)="selct()"/> </div>
+                </td>
+            </tr>
+        </ng-template>
+    </p-table>
+</div>
+</div>
+
+</div>
+

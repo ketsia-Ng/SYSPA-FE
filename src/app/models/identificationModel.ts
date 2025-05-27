@@ -1,0 +1,32 @@
+export class identificationModel{
+     identifiant:number=0;
+	 nom:string="";
+	 postnom:string="";
+	 prenom:string="";
+	 matricule:string="";
+	 genre:string="";
+	 datenaiss:Date=new Date();
+	 dateengagement:Date=new Date();
+	 lieunaiss:string="";
+	 datecreation:Date=new Date();
+	 id:number=0;
+     effectif:number=0;
+	 codesection:number=0;
+	 nomsection:string="";
+	 codeprovince:number=0;
+	 nomprovince:string="";
+	 codeentite:number=0;
+	 nomentite:string="";
+	 codeunite:number=0;
+	 nomunite:string="";
+     codebarem:number=0;
+     libelle:string="";
+     montant:number=0;
+	 codeposition:number=0;
+	 nomposition:string="";
+	 codefonction:number=0;
+	 nomfonction:string="";
+	 codebanque:number=0;
+	 nombanque:string="";
+	 validation:number=0;
+}

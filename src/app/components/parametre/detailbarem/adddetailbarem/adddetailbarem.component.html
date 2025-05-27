@@ -1,0 +1,21 @@
+<form #formdetaillbarem="ngForm" novalidate>
+    <div class="row">
+     <div class="field">
+       <div class="mb-2"> <label >Intitule</label></div>
+         <input type="text" ngModel name="intitule" pInputText id="name" required autofocus />
+     </div>
+     <div class="field">
+        <div class="mb-2"> <label >Sigle</label></div>
+          <input type="text" ngModel name="sigle" pInputText id="name" required autofocus />
+      </div>
+     <div class="field">
+        <div class="mb-2"> <label >Montant</label></div>
+          <input type="text" ngModel name="montant" pInputText id="name" required autofocus />
+      </div>
+ </div>
+ <div class="">
+     <button pButton pRipple label="Cancel" icon="pi pi-times" class="p-button-text" (click)="effacer()"></button>
+     <button pButton pRipple label="Save" icon="pi pi-check" class="p-button-text" (click)="create(formdetaillbarem)"></button>
+ </div>
+ </form>
+

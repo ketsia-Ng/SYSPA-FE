@@ -5,3 +5,10 @@
 @import "../node_modules/prismjs/themes/prism-coy.css";
 @import "assets/demo/flags/flags.css";
 @import "assets/demo/documentation.scss";
+
+.selectedRow {
+    color:white;
+    font-weight: bold;
+    background-color: #457fca;
+    text-decoration: none;
+  }

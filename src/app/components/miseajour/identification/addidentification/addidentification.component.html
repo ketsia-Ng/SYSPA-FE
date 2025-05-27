@@ -1,0 +1,56 @@
+<form #formidentif="ngForm">
+<div class="formgroup-inline">
+    <div class="field">
+        <label htmlFor="firstname1" class="p-sr-only">Nom</label>
+        <input pInputText ngModel name="nom" id="firstname1" type="text" placeholder="Firstname" />
+    </div>
+    <div class="field">
+        <label htmlFor="lastname1" class="p-sr-only">Postnom</label>
+        <input pInputText ngModel name="postnom" id="lastname1" type="text" placeholder="Lastname" />
+    </div>
+    <div class="field">
+        <label htmlFor="lastname1" class="p-sr-only">Prenom</label>
+        <input pInputText ngModel name="prenom" id="lastname1" type="text" placeholder="Lastname" />
+    </div>
+</div>
+	<div class="grid mt-2">
+        <div class="col-12 md:col-4">
+            <div class="field-radiobutton">
+                <p-radioButton ngModel name="genre" value="F" id="city1"></p-radioButton>
+                <label for="city1">Feminin</label>
+            </div>
+        </div>
+        <div class="col-12 md:col-4">
+            <div class="field-radiobutton">
+                <p-radioButton ngModel name="genre" value="M" id="city2"></p-radioButton>
+                <label for="city2">Masculin</label>
+            </div>
+    </div>
+
+
+</div>
+<div class="formgroup-inline">
+    <div class="field">
+        <label htmlFor="firstname1" class="p-sr-only">Date de naissance</label>
+        <input pInputText ngModel name="datenaiss" id="firstname1" type="date" placeholder="Firstname" />
+    </div>
+    <div class="field">
+        <label htmlFor="lastname1" class="p-sr-only">Lieu de naissance</label>
+        <input pInputText ngModel name="lieunaiss" id="lastname1" type="text" placeholder="Lastname" />
+    </div>
+</div>
+<div class="formgroup-inline">
+    <div class="field">
+        <label htmlFor="firstname1" class="p-sr-only">Matricule</label>
+        <input pInputText ngModel name="matricule" id="firstname1" type="text" placeholder="Firstname" />
+    </div>
+    <div class="field">
+        <label htmlFor="lastname1" class="p-sr-only">Date d'engagement</label>
+        <input pInputText  ngModel name="dateengagement" id="lastname1" type="date" placeholder="Lastname" />
+    </div>
+</div>
+<div class="mt-2 text">
+    <button pButton pRipple label="Cancel" icon="pi pi-times" class="p-button-text" (click)="effacer()"></button>
+    <button pButton pRipple label="Save" icon="pi pi-check" class="p-button-text" (click)="create(formidentif)"></button>
+</div>
+</form>

@@ -7,10 +7,10 @@ import { Component } from '@angular/core';
             <div class="grid">
                 <div class="col">
                     <img src="assets/layout/images/logo-white.svg" alt="sapphire-layout" />
-                    <div class="layout-footer-appname">PrimeNG Premium Template</div>
+                    <div class="layout-footer-appname">Syspa</div>
                 </div>
                 <div class="col">
-                    <span>All Rights Reserved</span>
+                    <span>Tout droit reservé</span>
                 </div>
             </div>
         </div>

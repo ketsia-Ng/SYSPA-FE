@@ -1,9 +1,9 @@
 import {NgModule} from '@angular/core';
-import {FormsModule} from '@angular/forms';
+import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {HttpClientModule} from '@angular/common/http';
 import {BrowserModule} from '@angular/platform-browser';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
-import {HashLocationStrategy, LocationStrategy} from '@angular/common';
+import {DatePipe, HashLocationStrategy, LocationStrategy} from '@angular/common';
 import {AppRoutingModule} from './app-routing.module';
 
 // PrimeNG Components for demos
@@ -29,6 +29,8 @@ import {ColorPickerModule} from 'primeng/colorpicker';
 import {ContextMenuModule} from 'primeng/contextmenu';
 import {DataViewModule} from 'primeng/dataview';
 import {DialogModule} from 'primeng/dialog';
+import { DialogService } from 'primeng/dynamicdialog';
+import { DynamicDialogModule } from 'primeng/dynamicdialog';
 import {DividerModule} from 'primeng/divider';
 import {DropdownModule} from 'primeng/dropdown';
 import {FieldsetModule} from 'primeng/fieldset';
@@ -89,7 +91,6 @@ import {VirtualScrollerModule} from 'primeng/virtualscroller';
 import {FullCalendarModule} from '@fullcalendar/angular';
 
 // Application Components
-import {AppCodeModule} from './blocks/app-code/app.code.component';
 import {AppComponent} from './app.component';
 import {AppMainComponent} from './app.main.component';
 import {AppMenuComponent} from './app.menu.component';
@@ -98,55 +99,62 @@ import {AppBreadcrumbComponent} from './app.breadcrumb.component';
 import {AppConfigComponent} from './app.config.component';
 import {AppTopBarComponent} from './app.topbar.component';
 import {AppFooterComponent} from './app.footer.component';
-import {AppCrudComponent} from './pages/app.crud.component';
-import {AppCalendarComponent} from './pages/app.calendar.component';
-import {AppTimelineDemoComponent} from './pages/app.timelinedemo.component';
-import {AppInvoiceComponent} from './pages/app.invoice.component';
-import {AppHelpComponent} from './pages/app.help.component';
-import {AppNotfoundComponent} from './pages/app.notfound.component';
-import {AppErrorComponent} from './pages/app.error.component';
-import {AppAccessdeniedComponent} from './pages/app.accessdenied.component';
-import {AppLoginComponent} from './pages/app.login.component';
-
-// Demo pages
-import {DashboardComponent} from './demo/view/dashboard.component';
-import {FormLayoutDemoComponent} from './demo/view/formlayoutdemo.component';
-import {FloatLabelDemoComponent} from './demo/view/floatlabeldemo.component';
-import {InvalidStateDemoComponent} from './demo/view/invalidstatedemo.component';
-import {InputDemoComponent} from './demo/view/inputdemo.component';
-import {ButtonDemoComponent} from './demo/view/buttondemo.component';
-import {TableDemoComponent} from './demo/view/tabledemo.component';
-import {ListDemoComponent} from './demo/view/listdemo.component';
-import {TreeDemoComponent} from './demo/view/treedemo.component';
-import {PanelsDemoComponent} from './demo/view/panelsdemo.component';
-import {OverlaysDemoComponent} from './demo/view/overlaysdemo.component';
-import {MenusComponent} from './demo/view/menus/menus.component';
-import {MediaDemoComponent} from './demo/view/mediademo.component';
-import {MessagesDemoComponent} from './demo/view/messagesdemo.component';
-import {MiscDemoComponent} from './demo/view/miscdemo.component';
-import {EmptyDemoComponent} from './demo/view/emptydemo.component';
-import {ChartsDemoComponent} from './demo/view/chartsdemo.component';
-import {FileDemoComponent} from './demo/view/filedemo.component';
-import {DocumentationComponent} from './demo/view/documentation.component';
-import {IconsComponent} from './utilities/icons.component';
-import {BlocksComponent} from './blocks/blocks/blocks.component';
-import {BlockViewer} from './blocks/blockviewer/blockviewer.component';
 
 // Demo services
-import {CountryService} from './demo/service/countryservice';
-import {CustomerService} from './demo/service/customerservice';
-import {EventService} from './demo/service/eventservice';
-import {IconService} from './demo/service/iconservice';
-import {NodeService} from './demo/service/nodeservice';
-import {PhotoService} from './demo/service/photoservice';
-import {ProductService} from './demo/service/productservice';
 import {BreadcrumbService} from './app.breadcrumb.service';
 import {MenuService} from './app.menu.service';
+import { NgxExtendedPdfViewerModule } from 'ngx-extended-pdf-viewer';
+import { ConfirmationService, MessageService } from 'primeng/api';
+import { ListbanqueComponent } from './components/parametre/banque/listbanque/listbanque.component';
+import { AddbanqueComponent } from './components/parametre/banque/addbanque/addbanque.component';
+import { EditbanqueComponent } from './components/parametre/banque/editbanque/editbanque.component';
+import { ListpositionComponent } from './components/parametre/position/listposition/listposition.component';
+import { AddpositionComponent } from './components/parametre/position/addposition/addposition.component';
+import { EditpositionComponent } from './components/parametre/position/editposition/editposition.component';
+import { ListprovinceComponent } from './components/parametre/province/listprovince/listprovince.component';
+import { AddprovinceComponent } from './components/parametre/province/addprovince/addprovince.component';
+import { EditprovinceComponent } from './components/parametre/province/editprovince/editprovince.component';
+import { ListsectionComponent } from './components/parametre/section/listsection/listsection.component';
+import { AddsectionComponent } from './components/parametre/section/addsection/addsection.component';
+import { EditsectionComponent } from './components/parametre/section/editsection/editsection.component';
+import { ListuniteComponent } from './components/parametre/unite/listunite/listunite.component';
+import { AdduniteComponent } from './components/parametre/unite/addunite/addunite.component';
+import { EdituniteComponent } from './components/parametre/unite/editunite/editunite.component';
+import { ListfonctionComponent } from './components/parametre/fonction/listfonction/listfonction.component';
+import { AddfonctionComponent } from './components/parametre/fonction/addfonction/addfonction.component';
+import { EditfonctionComponent } from './components/parametre/fonction/editfonction/editfonction.component';
+import { ListentiteremComponent } from './components/parametre/entiterem/listentiterem/listentiterem.component';
+import { AddentiteremComponent } from './components/parametre/entiterem/addentiterem/addentiterem.component';
+import { EditentiteremComponent } from './components/parametre/entiterem/editentiterem/editentiterem.component';
+import { ListbaremComponent } from './components/parametre/barem/listbarem/listbarem.component';
+import { AddbaremComponent } from './components/parametre/barem/addbarem/addbarem.component';
+import { EditbaremComponent } from './components/parametre/barem/editbarem/editbarem.component';
+import { ListdetailbaremComponent } from './components/parametre/detailbarem/listdetailbarem/listdetailbarem.component';
+import { AdddetailbaremComponent } from './components/parametre/detailbarem/adddetailbarem/adddetailbarem.component';
+import { EditdetailbaremComponent } from './components/parametre/detailbarem/editdetailbarem/editdetailbarem.component';
+import { ListidentificationComponent } from './components/miseajour/identification/listidentification/listidentification.component';
+import { AddidentificationComponent } from './components/miseajour/identification/addidentification/addidentification.component';
+import { EditidentificationComponent } from './components/miseajour/identification/editidentification/editidentification.component';
+import { ListidentifsituationComponent } from './components/miseajour/changementsituation/listidentifsituation/listidentifsituation.component';
+import { AddsituationComponent } from './components/miseajour/changementsituation/addsituation/addsituation.component';
+import { EditsituationComponent } from './components/miseajour/changementsituation/editsituation/editsituation.component';
+import { ListsituationComponent } from './components/miseajour/changementsituation/listsituation/listsituation.component';
+import { ListidentifvalidationComponent } from './components/miseajour/validation/listidentifvalidation/listidentifvalidation.component';
+import { ListsituationvalidationComponent } from './components/miseajour/validation/listsituationvalidation/listsituationvalidation.component';
+import { ListidentifconsultationComponent } from './components/consultation/simple/listidentifconsultation/listidentifconsultation.component';
+import { ListsituationconsultationComponent } from './components/consultation/simple/listsituationconsultation/listsituationconsultation.component';
+import { ListidentifavanceComponent } from './components/consultation/avancé/listidentifavance/listidentifavance.component';
+import { ListsituationavanceComponent } from './components/consultation/avancé/listsituationavance/listsituationavance.component';
+import { ListidentifadminsectComponent } from './components/administration/listsection/listidentifadminsect/listidentifadminsect.component';
+import { ListsituationsectComponent } from './components/administration/listsection/listsituationsect/listsituationsect.component';
+import { ListidentifsectentiteComponent } from './components/administration/listsectionentite/listidentifsectentite/listidentifsectentite.component';
+import { ListsituationsectentiteComponent } from './components/administration/listsectionentite/listsituationsectentite/listsituationsectentite.component';
+import { ListentiteComponent } from './components/administration/listsectionentite/listentite/listentite.component';
+import { FichesituationComponent } from './components/consultation/fichesituation/fichesituation.component';
 
 @NgModule({
     imports: [
         BrowserModule,
-        FormsModule,
         AppRoutingModule,
         HttpClientModule,
         BrowserAnimationsModule,
@@ -172,6 +180,7 @@ import {MenuService} from './app.menu.service';
         ContextMenuModule,
         DataViewModule,
         DialogModule,
+        DynamicDialogModule,
         DividerModule,
         DropdownModule,
         FieldsetModule,
@@ -230,7 +239,9 @@ import {MenuService} from './app.menu.service';
         TreeModule,
         TreeTableModule,
         VirtualScrollerModule,
-        AppCodeModule
+        ReactiveFormsModule,
+        FormsModule,
+        NgxExtendedPdfViewerModule
     ],
     declarations: [
         AppComponent,
@@ -241,42 +252,56 @@ import {MenuService} from './app.menu.service';
         AppFooterComponent,
         AppConfigComponent,
         AppBreadcrumbComponent,
-        DashboardComponent,
-        FormLayoutDemoComponent,
-        FloatLabelDemoComponent,
-        InvalidStateDemoComponent,
-        InputDemoComponent,
-        ButtonDemoComponent,
-        TableDemoComponent,
-        ListDemoComponent,
-        TreeDemoComponent,
-        PanelsDemoComponent,
-        OverlaysDemoComponent,
-        MenusComponent,
-        MediaDemoComponent,
-        MessagesDemoComponent,
-        MiscDemoComponent,
-        ChartsDemoComponent,
-        EmptyDemoComponent,
-        FileDemoComponent,
-        DocumentationComponent,
-        IconsComponent,
-        AppCrudComponent,
-        AppCalendarComponent,
-        AppLoginComponent,
-        AppInvoiceComponent,
-        AppHelpComponent,
-        AppNotfoundComponent,
-        AppErrorComponent,
-        AppTimelineDemoComponent,
-        AppAccessdeniedComponent,
-        BlocksComponent,
-        BlockViewer
+        ListbanqueComponent,
+        AddbanqueComponent,
+        EditbanqueComponent,
+        ListpositionComponent,
+        AddpositionComponent,
+        EditpositionComponent,
+        ListprovinceComponent,
+        AddprovinceComponent,
+        EditprovinceComponent,
+        ListsectionComponent,
+        AddsectionComponent,
+        EditsectionComponent,
+        ListuniteComponent,
+        AdduniteComponent,
+        EdituniteComponent,
+        ListfonctionComponent,
+        AddfonctionComponent,
+        EditfonctionComponent,
+        ListentiteremComponent,
+        AddentiteremComponent,
+        EditentiteremComponent,
+        ListbaremComponent,
+        AddbaremComponent,
+        EditbaremComponent,
+        ListdetailbaremComponent,
+        AdddetailbaremComponent,
+        EditdetailbaremComponent,
+        ListidentificationComponent,
+        AddidentificationComponent,
+        EditidentificationComponent,
+        ListidentifsituationComponent,
+        AddsituationComponent,
+        EditsituationComponent,
+        ListsituationComponent,
+        ListidentifvalidationComponent,
+        ListsituationvalidationComponent,
+        ListidentifconsultationComponent,
+        ListsituationconsultationComponent,
+        ListidentifavanceComponent,
+        ListsituationavanceComponent,
+        ListidentifadminsectComponent,
+        ListsituationsectComponent,
+        ListidentifsectentiteComponent,
+        ListsituationsectentiteComponent,
+        ListentiteComponent,
+        FichesituationComponent,
     ],
     providers: [
         {provide: LocationStrategy, useClass: HashLocationStrategy},
-        CountryService, CustomerService, EventService, IconService, NodeService,
-        PhotoService, ProductService, MenuService, BreadcrumbService
+         MenuService, BreadcrumbService, DatePipe,MessageService,ConfirmationService, DialogService
     ],
     bootstrap: [AppComponent]
 })

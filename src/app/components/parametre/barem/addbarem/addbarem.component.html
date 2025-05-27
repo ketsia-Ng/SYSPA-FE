@@ -1,0 +1,12 @@
+<form #formbarem="ngForm" novalidate>
+    <div class="row">
+     <div class="field">
+       <div class="mb-2"> <label >Libéllé</label></div>
+         <input type="text" ngModel name="libelle" pInputText id="name" required autofocus />
+     </div>
+ </div>
+ <div class="">
+     <button pButton pRipple label="Cancel" icon="pi pi-times" class="p-button-text" (click)="effacer()"></button>
+     <button pButton pRipple label="Save" icon="pi pi-check" class="p-button-text" (click)="create(formbarem)"></button>
+ </div>
+ </form>
