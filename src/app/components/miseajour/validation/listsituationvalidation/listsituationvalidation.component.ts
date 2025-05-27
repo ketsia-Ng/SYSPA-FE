@@ -2,15 +2,12 @@ import { Component, Input, OnChanges, OnInit ,EventEmitter, Output} from '@angul
 
 import { ConfirmationService, MessageService } from 'primeng/api';
 import { DialogService, DynamicDialogRef } from 'primeng/dynamicdialog';
-import { ValidationModel } from 'sapphire-ng-15.0.0/src/app/models/AppModels';
 import { FichesituationComponent } from 'src/app/components/consultation/fichesituation/fichesituation.component';
 import { identification } from 'src/app/entity/identification';
 import { identificationModel } from 'src/app/models/identificationModel';
 import { paramModel } from 'src/app/models/paramModel';
 import { IdentificationService } from 'src/app/service/identification.service';
 import { SituationService } from 'src/app/service/situation.service';
-import {  } from 'stream';
-
 @Component({
   selector: 'app-listsituationvalidation',
   templateUrl: './listsituationvalidation.component.html',
