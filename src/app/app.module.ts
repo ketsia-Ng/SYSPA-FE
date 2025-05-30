@@ -151,6 +151,7 @@ import { ListidentifsectentiteComponent } from './components/administration/list
 import { ListsituationsectentiteComponent } from './components/administration/listsectionentite/listsituationsectentite/listsituationsectentite.component';
 import { ListentiteComponent } from './components/administration/listsectionentite/listentite/listentite.component';
 import { FichesituationComponent } from './components/consultation/fichesituation/fichesituation.component';
+import { ImpressionComponent } from './components/administration/impression/impression.component';
 
 @NgModule({
     imports: [
@@ -298,6 +299,7 @@ import { FichesituationComponent } from './components/consultation/fichesituatio
         ListsituationsectentiteComponent,
         ListentiteComponent,
         FichesituationComponent,
+        ImpressionComponent,
     ],
     providers: [
         {provide: LocationStrategy, useClass: HashLocationStrategy},

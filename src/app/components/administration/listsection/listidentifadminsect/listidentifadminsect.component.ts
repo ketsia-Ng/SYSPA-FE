@@ -7,6 +7,8 @@ import { IdentificationService } from 'src/app/service/identification.service';
 import { SectionService } from 'src/app/service/section.service';
 import { SituationService } from 'src/app/service/situation.service';
 import { MessageService } from 'primeng/api';
+import { DialogService, DynamicDialogRef } from 'primeng/dynamicdialog';
+import { ImpressionComponent } from '../../impression/impression.component';
 
 @Component({
   selector: 'app-listidentifadminsect',
@@ -26,9 +28,11 @@ export class ListidentifadminsectComponent  implements OnInit {
     recherche:string=""
     message:string=""
     @Output() param!:paramModel
+    modalref!:DynamicDialogRef|undefined
     constructor(
      private identificationservice:IdentificationService,
      private sectionservice:SectionService,
+          private dialogservice:DialogService,
      private toastservice:MessageService,
      private situationservice:SituationService
     ){}
@@ -88,9 +92,23 @@ imprimeragent(identification:identification){
 
     this.situationservice.impressionpersidentifsection(this.codesection,identification.identifiant).subscribe(
         (data:any)=>{
-          printJS({printable: data.report, type: 'pdf', base64: true, showModal:true});
+            // printJS({printable: data.report, type: 'pdf', base64: true, showModal:true});
+          //window.open("data:application/pdf;base64," + data.report, "_blank");
+           this.openmodal(data)
         }
       );
 
 }
+openmodal(data:any){
+        this.modalref=this.dialogservice.open(ImpressionComponent,{
+            width:"100%",
+            contentStyle: { overflow: 'auto' },
+            baseZIndex: 10000,
+            maximizable: false,
+            data:{
+                pdfSrc:data.report
+            }
+        });
+}
+
 }

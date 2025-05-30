@@ -25,6 +25,7 @@
                         "inlineStyleLanguage": "scss",
                         "aot": true,
                         "assets": [
+
                             "src/assets",
                             "src/upload.php",
                             "src/_redirect",
