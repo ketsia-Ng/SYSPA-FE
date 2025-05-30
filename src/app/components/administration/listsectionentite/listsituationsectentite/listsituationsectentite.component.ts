@@ -7,6 +7,7 @@ import { SituationService } from 'src/app/service/situation.service';
 import printJS from 'print-js';
 import { DialogService, DynamicDialogRef } from 'primeng/dynamicdialog';
 import { FichesituationComponent } from 'src/app/components/consultation/fichesituation/fichesituation.component';
+import { ImpressionComponent } from '../../impression/impression.component';
 
 @Component({
   selector: 'app-listsituationsectentite',
@@ -80,9 +81,22 @@ export class ListsituationsectentiteComponent  implements OnInit,OnChanges {
 
                 this.situationservice.impressionpersidentifentite(this.codeentite,this.identificat.identifiant).subscribe(
                     (data:any)=>{
-                      printJS({printable: data.report, type: 'pdf', base64: true, showModal:true});
+                     // printJS({printable: data.report, type: 'pdf', base64: true, showModal:true});
+                       this.openmodal(data)
                     }
                   );
 
+    }
+    openmodal(data:any){
+            this.modalref=this.dialogservice.open(ImpressionComponent,{
+                width:"100%",
+                height:"100%",
+                contentStyle: { overflow: 'auto' },
+                baseZIndex: 10000,
+                maximizable: false,
+                data:{
+                    pdfSrc:data.report
+                }
+            });
     }
 }

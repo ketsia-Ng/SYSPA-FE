@@ -1,6 +1,6 @@
 import { Component, OnInit, Output } from '@angular/core';
 import { ConfirmationService, MessageService } from 'primeng/api';
-import { DialogService } from 'primeng/dynamicdialog';
+import { DialogService, DynamicDialogRef } from 'primeng/dynamicdialog';
 import { province } from 'src/app/entity/province';
 import { section } from 'src/app/entity/section';
 import { identificationModel } from 'src/app/models/identificationModel';
@@ -9,6 +9,7 @@ import { ProvinceService } from 'src/app/service/province.service';
 import { SectionService } from 'src/app/service/section.service';
 import printJS from 'print-js';
 import { SituationService } from 'src/app/service/situation.service';
+import { ImpressionComponent } from '../../impression/impression.component';
 
 @Component({
   selector: 'app-listentite',
@@ -29,7 +30,9 @@ export class ListentiteComponent implements OnInit{
     search:string=""
     recherche:string=""
     message:string=""
-    constructor(
+        modalref!:DynamicDialogRef|undefined
+        constructor(
+        private dialogservice:DialogService,
      private entiteremservice:EntiteremService,
     private toastservice:MessageService,
     private provinceservice:ProvinceService,
@@ -83,10 +86,23 @@ collectioncharger(){
         imprimerentite(entite:identificationModel){
             this.situationservice.impressionlistidentifentite(entite.codeentite).subscribe(
                 (data:any)=>{
-                  printJS({printable: data.report, type: 'pdf', base64: true, showModal:true});
+                 // printJS({printable: data.report, type: 'pdf', base64: true, showModal:true});
+                   this.openmodal(data)
                 }
               );
 
         }
+ openmodal(data:any){
+         this.modalref=this.dialogservice.open(ImpressionComponent,{
+             width:"100%",
+             height:"100%",
+             contentStyle: { overflow: 'auto' },
+             baseZIndex: 10000,
+             maximizable: false,
+             data:{
+                 pdfSrc:data.report
+             }
+         });
+ }
 }
 

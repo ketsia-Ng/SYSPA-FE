@@ -7,6 +7,7 @@ import { IdentificationService } from 'src/app/service/identification.service';
 import { SituationService } from 'src/app/service/situation.service';
 import { DialogService, DynamicDialogRef } from 'primeng/dynamicdialog';
 import { FichesituationComponent } from 'src/app/components/consultation/fichesituation/fichesituation.component';
+import { ImpressionComponent } from '../../impression/impression.component';
 
 @Component({
   selector: 'app-listsituationsect',
@@ -71,7 +72,8 @@ export class ListsituationsectComponent   implements OnInit,OnChanges {
 
                 this.situationservice.impressionpersidentifsection(this.param.codesection,this.identification.identifiant).subscribe(
                     (data:any)=>{
-                      printJS({printable: data.report, type: 'pdf', base64: true, showModal:true});
+                    //  printJS({printable: data.report, type: 'pdf', base64: true, showModal:true});
+                      this.openmodal(data)
                     }
                   );
 
@@ -93,5 +95,16 @@ export class ListsituationsectComponent   implements OnInit,OnChanges {
                 }
             });
                   }
- 
+openmodal(data:any){
+        this.modalref=this.dialogservice.open(ImpressionComponent,{
+            width:"100%",
+            height:"100%",
+            contentStyle: { overflow: 'auto' },
+            baseZIndex: 10000,
+            maximizable: false,
+            data:{
+                pdfSrc:data.report
+            }
+        });
+}
 }

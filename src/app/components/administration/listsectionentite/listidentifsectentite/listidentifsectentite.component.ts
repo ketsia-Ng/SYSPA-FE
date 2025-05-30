@@ -12,6 +12,8 @@ import { SectionService } from 'src/app/service/section.service';
 import printJS from 'print-js';
 import { SituationService } from 'src/app/service/situation.service';
 import { identificationModel } from 'src/app/models/identificationModel';
+import { ImpressionComponent } from '../../impression/impression.component';
+import { DialogService, DynamicDialogRef } from 'primeng/dynamicdialog';
 
 
 @Component({
@@ -37,7 +39,9 @@ export class ListidentifsectentiteComponent  implements OnInit,OnChanges {
     recherche:string=""
     message:string=""
     @Output() identificat!:identification
+    modalref!:DynamicDialogRef|undefined
     constructor(
+          private dialogservice:DialogService,
      private identificationservice:IdentificationService,
      private sectionservice:SectionService,
      private provinceservice:ProvinceService,
@@ -99,9 +103,22 @@ imprimeragent(identification:identification){
 
     this.situationservice.impressionpersidentifentite(this.entit.codeentite,identification.identifiant).subscribe(
         (data:any)=>{
-          printJS({printable: data.report, type: 'pdf', base64: true, showModal:true});
+        //  printJS({printable: data.report, type: 'pdf', base64: true, showModal:true});
+         this.openmodal(data)
         }
       );
 
+}
+openmodal(data:any){
+        this.modalref=this.dialogservice.open(ImpressionComponent,{
+            width:"100%",
+            height:"100%",
+            contentStyle: { overflow: 'auto' },
+            baseZIndex: 10000,
+            maximizable: false,
+            data:{
+                pdfSrc:data.report
+            }
+        });
 }
 }

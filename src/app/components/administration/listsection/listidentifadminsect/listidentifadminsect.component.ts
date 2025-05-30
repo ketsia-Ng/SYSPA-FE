@@ -30,9 +30,10 @@ export class ListidentifadminsectComponent  implements OnInit {
     @Output() param!:paramModel
     modalref!:DynamicDialogRef|undefined
     constructor(
+          private dialogservice:DialogService,
      private identificationservice:IdentificationService,
      private sectionservice:SectionService,
-          private dialogservice:DialogService,
+
      private toastservice:MessageService,
      private situationservice:SituationService
     ){}
@@ -83,7 +84,8 @@ imprimersection(){
     }else{
     this.situationservice.impressionlistidentifsection(this.codesection).subscribe(
         (data:any)=>{
-          printJS({printable: data.report, type: 'pdf', base64: true, showModal:true});
+         // printJS({printable: data.report, type: 'pdf', base64: true, showModal:true});
+           this.openmodal(data)
         }
       );
 }
