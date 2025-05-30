@@ -102,6 +102,7 @@ imprimeragent(identification:identification){
 openmodal(data:any){
         this.modalref=this.dialogservice.open(ImpressionComponent,{
             width:"100%",
+            height:"100%",
             contentStyle: { overflow: 'auto' },
             baseZIndex: 10000,
             maximizable: false,
